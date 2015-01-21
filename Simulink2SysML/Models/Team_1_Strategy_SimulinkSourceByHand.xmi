@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulinksource:Model
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:simulinksource="http://simulinksource/1.0"
+    xsi:schemaLocation="http://simulinksource/1.0 ../MetaModels/SimulinkSource.ecore"
+    Name="Team_1_Strategy">
+  <Block xsi:type="simulinksource:System"
+      Name="Team_1_Strategy"
+      ID="Root">
+    <Block xsi:type="simulinksource:Block"
+        Name="Ball Position"
+        ID="1"
+        Type="Inport">
+      <Property
+          Name="PortDimensions"
+          Type="Array:Int"
+          Value="[2, 1]"/>
+      <Port
+          Direction="out"
+          Name="1#out:1"
+          Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksource:Block"
+        Name="Power"
+        ID="2"
+        Type="Inport">
+      <Property
+          Name="Port"
+          Type="Int"
+          Value="2"/>
+      <Property
+          Name="PortDimensions"
+          Type="Array:Int"
+          Value="[4, 1]"/>
+      <Port
+          Direction="out"
+          Name="2#out:1"
+          Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksource:Block"
+        Name="Robot Position"
+        ID="3"
+        Type="Inport">
+      <Property
+          Name="Port"
+          Type="Int"
+          Value="3"/>
+      <Property
+          Name="PortDimensions"
+          Type="Array:Int"
+          Value="[4, 1]"/>
+      <Port
+          Direction="out"
+          Name="3#out:1"
+          Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksource:System"
+        Name="Embedded MATLAB"
+        ID="4">
+      <Property
+          Name="Position"
+          Type="Array: Int"
+          Value="[100, 45, 270, 215]"/>
+      <Port
+          Direction="in"
+          Name="4#in:1"
+          Num="1"/>
+      <Port
+          Direction="in"
+          Name="4#in:2"
+          Num="2"/>
+      <Port
+          Direction="in"
+          Name="4#in:3"
+          Num="3"/>
+      <Port
+          Direction="out"
+          Name="4#out:1"
+          Num="1"/>
+      <Port
+          Direction="out"
+          Name="4#out:2"
+          Num="2"/>
+      <Block
+          xsi:type="simulinksource:Block"
+          Name="ball_position"
+          ID="4::1"
+          Type="Inport">
+        <Port
+            Direction="out"
+            Name="4::1#out:1"
+            Num="1"/>
+      </Block>
+      <Block
+          xsi:type="simulinksource:Block"
+          Name="power"
+          ID="4::21"
+          Type="Inport">
+        <Property
+            Name="Port"
+            Type="Int"
+            Value="2"/>
+        <Port
+            Direction="out"
+            Name="4::21#out:1"
+            Num="1"/>
+      </Block>
+      <Block
+          xsi:type="simulinksource:Block"
+          Name="robot_position"
+          ID="4::19"
+          Type="Inport">
+        <Property
+            Name="Port"
+            Type="Int"
+            Value="3"/>
+        <Port
+            Direction="out"
+            Name="4::19#out:1"
+            Num="1"/>
+      </Block>
+      <Block
+          xsi:type="simulinksource:Block"
+          Name=" Demux "
+          ID="4::23"
+          Type="Demux">
+        <Port
+            Direction="in"
+            Name="4::23#in:1"
+            Num="1"/>
+        <Port
+            Direction="out"
+            Name="4::23#out:1"
+            Num="1"/>
+      </Block>
+      <Block
+          xsi:type="simulinksource:Block"
+          Name=" SFunction"
+          ID="4::22"
+          Type="S-Function">
+        <Property
+            Name="Tag"
+            Type="String"
+            Value="Stateflow S-Function Team_1_Strategy 7"/>
+        <Port
+            Direction="in"
+            Name="4::22#in:1"
+            Num="1"/>
+        <Port
+            Direction="in"
+            Name="4::22#in:2"
+            Num="2"/>
+        <Port
+            Direction="in"
+            Name="4::22#in:3"
+            Num="3"/>
+        <Port
+            Direction="out"
+            Name="4::22#out:1"
+            Num="1"/>
+        <Port
+            Direction="out"
+            Name="4::22#out:2 actuator_force_1"
+            Num="2"/>
+        <Port
+            Direction="out"
+            Name="4::22#out:3 actuator_force_2"
+            Num="3"/>
+      </Block>
+      <Block
+          xsi:type="simulinksource:Block"
+          Name=" Terminator "
+          ID="4::25"
+          Type="Terminator">
+        <Port
+            Direction="in"
+            Name="4::25#in:1"
+            Num="1"/>
+        <Port
+            Direction="out"
+            Name="4::25#out:1"
+            Num="1"/>
+      </Block>
+      <Block
+          xsi:type="simulinksource:Block"
+          Name="actuator_force_1"
+          ID="4::5"
+          Type="Outport">
+        <Port
+            Direction="in"
+            Name="4::5#in:1"
+            Num="1"/>
+      </Block>
+      <Block
+          xsi:type="simulinksource:Block"
+          Name="actuator_force_2"
+          ID="4::20"
+          Type="Outport">
+        <Property
+            Name="Port"
+            Type="Int"
+            Value="2"/>
+        <Port
+            Direction="in"
+            Name="4::20#in:1"
+            Num="1"/>
+      </Block>
+      <Connection
+          src="//@Block.0/@Block.3/@Block.0/@Port.0"
+          dst="//@Block.0/@Block.3/@Block.4/@Port.0"/>
+      <Connection
+          src="//@Block.0/@Block.3/@Block.1/@Port.0"
+          dst="//@Block.0/@Block.3/@Block.4/@Port.1"/>
+      <Connection
+          src="//@Block.0/@Block.3/@Block.2/@Port.0"
+          dst="//@Block.0/@Block.3/@Block.4/@Port.2"/>
+      <Connection
+          src="//@Block.0/@Block.3/@Block.4/@Port.4"
+          dst="//@Block.0/@Block.3/@Block.6/@Port.0"
+          Name="actuator_force_1"/>
+      <Connection
+          src="//@Block.0/@Block.3/@Block.4/@Port.5"
+          dst="//@Block.0/@Block.3/@Block.7/@Port.0"
+          Name="actuator_force_2"/>
+      <Connection
+          src="//@Block.0/@Block.3/@Block.3/@Port.1"
+          dst="//@Block.0/@Block.3/@Block.5/@Port.0"/>
+      <Connection
+          src="//@Block.0/@Block.3/@Block.4/@Port.3"
+          dst="//@Block.0/@Block.3/@Block.3/@Port.0"/>
+    </Block>
+    <Block xsi:type="simulinksource:Block"
+        Name=" Actuator Force 1"
+        ID="5"
+        Type="Outport">
+      <Port
+          Direction="in"
+          Name="5#in:1"
+          Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksource:Block"
+        Name="Actuator Force 2"
+        ID="6"
+        Type="Outport">
+      <Property
+          Name="Port"
+          Type="Int"
+          Value="2"/>
+      <Port
+          Direction="in"
+          Name="6#in:1"
+          Num="1"/>
+    </Block>
+    <Connection
+        src="//@Block.0/@Block.0/@Port.0"
+        dst="//@Block.0/@Block.3/@Port.0"/>
+    <Connection
+        src="//@Block.0/@Block.2/@Port.0"
+        dst="//@Block.0/@Block.3/@Port.2"/>
+    <Connection
+        src="//@Block.0/@Block.3/@Port.3"
+        dst="//@Block.0/@Block.3/@Block.6/@Port.0"/>
+    <Connection
+        src="//@Block.0/@Block.3/@Port.4"
+        dst="//@Block.0/@Block.5/@Port.0"/>
+    <Connection
+        src="//@Block.0/@Block.1/@Port.0"
+        dst="//@Block.0/@Block.3/@Port.1"/>
+  </Block>
+</simulinksource:Model>

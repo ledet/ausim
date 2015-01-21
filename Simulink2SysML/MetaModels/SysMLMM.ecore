@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sysmlmm" nsURI="http://sysmlmm/1.0" nsPrefix="sysmlmm">
+  <eClassifiers xsi:type="ecore:EClass" name="SysML">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Datatype" upperBound="-1"
+        eType="#//Datatype" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Primitive" upperBound="-1"
+        eType="#//Primitive" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="BDD" lowerBound="1" eType="#//BDD"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="IBD" lowerBound="1" upperBound="-1"
+        eType="#//IBD" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ACT" upperBound="-1" eType="#//ACT"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Datatype">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Primitive">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BDD">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Package" lowerBound="1"
+        eType="#//Package" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IBD">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Part" upperBound="-1" eType="#//Part"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Connection" upperBound="-1"
+        eType="#//Connection" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Block" lowerBound="1" eType="#//Block"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ACT">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Parameters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Outputs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Action" upperBound="-1"
+        eType="#//Action" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Decision" upperBound="-1"
+        eType="#//Decision" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Comment" upperBound="-1"
+        eType="#//Comment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Block" upperBound="-1"
+        eType="#//Block" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Association" upperBound="-1"
+        eType="#//Association" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Comment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Block">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Property" upperBound="-1"
+        eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="FlowPort" upperBound="-1"
+        eType="#//FlowPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Operation" eType="#//Operation"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Association">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ParentMultiplicity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ChildMultiplicity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Parent" lowerBound="1"
+        eType="#//Block"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Child" lowerBound="1" eType="#//Block"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Type" eType="#//Datatype"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowPort">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Direction" eType="#//FlowPortDirection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Type" eType="#//Datatype"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FlowPortDirection">
+    <eLiterals name="in" literal="in"/>
+    <eLiterals name="out" value="1"/>
+    <eLiterals name="inout" value="2" literal="inout"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Part">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Block" eType="#//Block"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Src" lowerBound="1" eType="#//FlowPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Dst" lowerBound="1" eType="#//FlowPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Decision">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Test" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="True" lowerBound="1" eType="#//True"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="False" eType="#//False"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="True">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Action" upperBound="-1"
+        eType="#//Action" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Decision" upperBound="-1"
+        eType="#//Decision" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="False">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Action" upperBound="-1"
+        eType="#//Action" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Decision" upperBound="-1"
+        eType="#//Decision" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Activity" lowerBound="1"
+        eType="#//ACT"/>
+  </eClassifiers>
+</ecore:EPackage>

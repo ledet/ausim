@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sourceatlmm:Model
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:sourceatlmm="http://sourceatlmm/1.0"
+    xsi:schemaLocation="http://sourceatlmm/1.0 ../MetaModels/SourceATLMM.ecore"
+    Name="Team_1_Strategy">
+  <Block Name="Embedded MATLAB"
+      ID="4"
+      Type="SubSystem"
+      SubBlock="//@Block.1 //@Block.2 //@Block.3 //@Block.4 //@Block.5 //@Block.6 //@Block.7 //@Block.8">
+    <Inport
+        PortNum="1"/>
+    <Inport
+        PortNum="2"/>
+    <Inport
+        PortNum="3"/>
+    <Outport
+        PortNum="1"/>
+    <Outport
+        PortNum="2"/>
+    <Property
+        Name="Position"
+        Type="ValueArray"
+        Value="[100, 45, 270, 215]"/>
+  </Block>
+  <Block Name="ball_position"
+      ID="4::1"
+      Type="Inport">
+    <Outport
+        PortNum="1"/>
+    <Property
+        Name="Port"
+        Type="Int"
+        Value="1"/>
+  </Block>
+  <Block Name="power"
+      ID="4::21"
+      Type="Inport">
+    <Outport
+        PortNum="1"/>
+  </Block>
+  <Block Name="robot_position"
+      ID="4::19"
+      Type="Inport">
+    <Outport
+        PortNum="1"/>
+  </Block>
+  <Block Name=" Demux "
+      ID="4::23"
+      Type="Demux">
+    <Inport
+        PortNum="1"/>
+    <Outport
+        PortNum="1"/>
+  </Block>
+  <Block Name=" SFunction "
+      ID="4::22"
+      Type="S-Function">
+    <Inport
+        PortNum="1"/>
+    <Inport
+        PortNum="2"/>
+    <Inport
+        PortNum="3"/>
+    <Outport
+        PortNum="1"/>
+    <Outport
+        PortNum="2"
+        SimulinkName="actuator_force_1"/>
+    <Outport
+        PortNum="3"
+        SimulinkName="actuator_force_2"/>
+    <Property
+        Name="Tag"
+        Type="String"
+        Value="Stateflow S-Function Team_1_Strategy 7"/>
+  </Block>
+  <Block Name=" Terminator "
+      ID="4::25"
+      Type="Terminator">
+    <Inport
+        PortNum="1"/>
+    <Outport
+        PortNum="1"/>
+  </Block>
+  <Block Name="actuator_force_1"
+      ID="4::5"
+      Type="Outport">
+    <Inport
+        PortNum="1"/>
+  </Block>
+  <Block Name="actuator_force_2"
+      ID="4::20"
+      Type="Outport">
+    <Inport
+        PortNum="1"/>
+  </Block>
+  <Block Name="Ball Position"
+      ID="1"
+      Type="Inport">
+    <Outport
+        PortNum="1"/>
+  </Block>
+  <Block Name="Power"
+      ID="2"
+      Type="Inport">
+    <Outport
+        PortNum="1"/>
+  </Block>
+  <Block Name="Robot Position"
+      ID="3"
+      Type="Inport">
+    <Outport
+        PortNum="1"/>
+  </Block>
+  <Block Name="Actuator Force 1"
+      ID="5"
+      Type="Outport">
+    <Inport
+        PortNum="1"/>
+  </Block>
+  <Block Name="Actuator Force 2"
+      ID="6"
+      Type="Outport">
+    <Inport
+        PortNum="1"/>
+  </Block>
+</sourceatlmm:Model>

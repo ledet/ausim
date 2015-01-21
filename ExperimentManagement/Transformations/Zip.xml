@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Zip" default="zip">
+	<property name="rootModelName" value="RoboSoccer" />
+	<property name="modelName" value="Team_1_Strategy" />
+	<property name="modelPath" value="../Models/" />
+	
+	<target name="zip">
+		<zip destfile="${modelPath}/${rootModelName}/${modelName}_zipped.slx" basedir="${modelPath}/${rootModelName}/${modelName}_slx_ecl" />
+	</target>
+
+</project>

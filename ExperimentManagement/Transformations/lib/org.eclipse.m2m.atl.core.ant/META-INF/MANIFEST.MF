@@ -1,0 +1,43 @@
+Manifest-Version: 1.0
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Built-By: hudsonbuild
+Bundle-SymbolicName: org.eclipse.m2m.atl.core.ant;singleton:=true
+Require-Bundle: org.eclipse.core.runtime,org.apache.ant,org.eclipse.m2
+ m.atl.core,org.eclipse.m2m.atl.common
+Export-Package: org.eclipse.m2m.atl.core.ant,org.eclipse.m2m.atl.core.
+ ant.tasks,org.eclipse.m2m.atl.core.ant.tasks.nested
+Bundle-Version: 3.4.0.v201305211502
+Build-Jdk: 1.6.0_21
+Bundle-Vendor: %providerName
+Bundle-Name: %pluginName
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Bundle-ManifestVersion: 2
+
+Name: META-INF/maven/org.eclipse.m2m.atl/org.eclipse.m2m.atl.core.ant/
+ pom.xml
+SHA1-Digest: x2P3e/+0kpnbPe/ivyRQaJ/CZw8=
+
+Name: lib/atlAntTasks.jar
+SHA1-Digest: s4J4pC4esceps9SMaEc7pKOEPlc=
+
+Name: placeholder
+SHA1-Digest: 2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: 09gN05tobgS/MdtqyTNQhOhB73M=
+
+Name: META-INF/maven/org.eclipse.m2m.atl/org.eclipse.m2m.atl.core.ant/
+ pom.properties
+SHA1-Digest: NqYAhAVTEo8C/81oAdsqAAac550=
+
+Name: about.html
+SHA1-Digest: mdjBmCsaFIxZawFBSityXyqdGsI=
+
+Name: plugin.xml
+SHA1-Digest: RjxF0yhckk5C3qnezBiPJ7wF4uI=
+
+Name: plugin.properties
+SHA1-Digest: PYYU0SM3XLjHyH3mYRGwL5QOhvY=
+

@@ -1,0 +1,103 @@
+-- @path Source=/Simulink2SysML/MetaModels/SimulinkSourceMM.ecore
+-- @path Simulink=/Simulink2SysML/MetaModels/SimulinkMM.ecore
+
+module SimulinkModel2SourceDefaults;
+create src : Source from sim : Simulink;
+
+rule ModelInformation2Model {
+	from
+		mi: Simulink!ModelInformation
+	to
+		mdl: Source!Model (
+			Name <- mi.Model.Name + ' Block Parameter Defaults',
+			Block <- mi.Model.BlockParameterDefaults.BlockParams
+		)
+}
+
+rule BlockParams2Block {
+	from
+		bp: Simulink!BlockParams
+	to
+		dst: Source!Block(
+			Type <- bp.BlockType,
+			Property <- bp.Property
+		)
+}
+
+rule SimpleProperty2Property {
+	from
+		sp: Simulink!Property (sp.isSimpleProperty and sp.refImmediateComposite().oclIsTypeOf(Simulink!BlockParams))
+	to
+		p: Source!Property(
+			Name <- sp.Name,
+			Type <- sp.getPropertyType,
+			Value <- sp.Value.Value.toString()
+		)
+}
+
+rule ArrayProperty2Property {
+	from
+		ap: Simulink!Property (not ap.isSimpleProperty and ap.refImmediateComposite().oclIsTypeOf(Simulink!BlockParams))
+	to
+		p: Source!Property(
+			Name <- ap.Name,
+			Type <- 'Array' + ap.Value.getArrayType,
+			Value <- ap.Value.arrayToString
+		)
+}
+
+helper context Simulink!Property def: isSimpleProperty: Boolean =
+	if self.Value.oclIsKindOf(Simulink!ValueArray) then
+		false
+	else
+		true
+	endif;
+
+helper context Simulink!Value def: getArrayType: String =
+	if self.Entry->collect(e | e.Value.oclIsKindOf(Simulink!SimString))->includes(true) then
+		':String'
+	else
+		if self.Entry->collect(e | e.Value.oclIsKindOf(Simulink!SimBool))->includes(true) then
+			':Boolean'
+		else
+			if self.Entry->collect(e | e.Value.oclIsKindOf(Simulink!SimFloat))->includes(true) then
+				':Float'
+			else
+				if self.Entry->collect(e | e.Value.oclIsKindOf(Simulink!SimInt))->includes(true) then
+					':Int'
+				else
+					''
+				endif
+			endif
+		endif
+	endif;
+
+helper context Simulink!Value def: arrayToString: String =
+	'[' + self.Entry->collect(e | e)->
+		iterate(ent; array : String = '' |
+			array +
+				if ent.Index > 0 then
+					', '
+				else
+					''
+				endif
+				+ ent.Value.Value.toString()) + ']';
+
+helper context Simulink!Property def: getPropertyType: String =
+	if self.Value.oclIsKindOf(Simulink!ValueArray) then
+		'Array'
+	else
+		if self.Value.oclIsKindOf(Simulink!SimInt) then
+			'Int'
+		else
+			if self.Value.oclIsKindOf(Simulink!SimFloat) then
+				'Float'
+			else
+				if self.Value.oclIsKindOf(Simulink!SimBool) then
+					'Boolean'
+				else
+					'String'
+				endif
+			endif
+		endif
+	endif;

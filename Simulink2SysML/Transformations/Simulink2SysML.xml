@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Simulink2SysML" default="ATL">
+	<property name="modelName" value="Team_2_Strategy" />
+	<property name="metaModelPath" value="../MetaModels" />
+	<property name="modelPath" value="../Models/" />
+	<property name="transPath" value="../Transformation/ATL" />
+	
+	<target name="ATL">
+    	<atl.loadModel name="Source" metamodel="MOF" path="${metaModelPath}/SimulinkSourceMM.ecore"/>
+    	<atl.loadModel name="Simulink" metamodel="MOF" path="${metaModelPath}/SimulinkMM.ecore"/>
+		<atl.loadModel name="SysML" metamodel="MOF" nsUri="http://www.eclipse.org/papyrus/0.7.0/SysML"/>
+		<atl.loadModel name="SysMLprof" metamodel="MOF" nsUri="http://www.eclipse.org/papyrus/0.7.0/SysML"/>
+		<atl.loadModel name="SysMLnot" metamodel="MOF" nsUri="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
+    	<atl.loadModel name="SysMLProfiles" metamodel="SysMLprof" path="${modelPath}/SimpleSysML.uml"/>
+    	<atl.loadModel name="SysMLNotationDefinitions" metamodel="SysMLnot" path="${modelPath}/SimpleSysML.notation"/>
+    	<atl.loadModel name="simModel" metamodel="Simulink" path="${modelPath}/${modelName}/Simulink_Structural.xmi"/>
+		
+		<atl.launch path="${transPath}/Simulink2SourceDefaults.asm">
+			<inmodel name="sim" model="simModel"/>
+			<outmodel name="src" model="srcDef" metamodel="Source"/>
+		</atl.launch>
+		
+		<atl.launch path="${transPath}/Simulink2Source.asm">
+			<inmodel name="sim" model="simModel"/>
+			<inmodel name="defaults" model="srcDef"/>
+			<outmodel name="src" model="srcModel" metamodel="Source"/>
+		</atl.launch>
+		
+		<atl.launch path="${transPath}/Source2SourceWPorts.asm">
+			<inmodel name="src" model="srcModel"/>
+			<outmodel name="srcwports" model="srcModelWPorts" metamodel="Source"/>
+		</atl.launch>
+
+		<atl.launch path="${transPath}/Source2SourceWConnections.asm">
+			<inmodel name="src" model="srcModelWPorts"/>
+			<inmodel name="simLines" model="simModel"/>
+			<outmodel name="srcwcon" model="srcModelWConnections" metamodel="Source"/>
+		</atl.launch>
+
+		<atl.launch path="${transPath}/Source2SourceCompressed.asm">
+			<inmodel name="src" model="srcModelWConnections"/>
+			<outmodel name="srccomp" model="srcModelCompressed" metamodel="Source"/>
+		</atl.launch>
+
+		<atl.launch path="${transPath}/SourcePropertyTypes2SysMLTypes.asm">
+			<inmodel name="src" model="srcModelCompressed"/>
+			<outmodel name="prop" model="sysMLTypes" metamodel="SysML"/>
+		</atl.launch>
+
+		<atl.launch path="${transPath}/Source2SysML.asm">
+			<option name="allowInterModelReferences" value="true"/>
+			<inmodel name="src" model="srcModelCompressed"/>
+			<inmodel name="prop" model="sysMLTypes"/>
+			<inmodel name="prof" model="SysMLProfiles"/>
+			<inmodel name="notDef" model="SysMLNotationDefinitions"/>
+			<outmodel name="uml" model="SysMLModel" metamodel="SysML"/>
+			<outmodel name="nota" model="SysMLNotation" metamodel="SysMLnot"/>
+		</atl.launch>
+
+		<atl.saveModel model="SysMLModel" path="${modelPath}/${modelName}/${modelName}.uml"/>
+		<atl.saveModel model="SysMLNotation" path="${modelPath}/${modelName}/${modelName}.notation"/>
+
+    </target>
+	
+	<target name="XSLT">
+		<xslt style="${transPath}/XSLT/SimulinkSource_BlocksWPorts.xsl"
+			in="${modelPath}/IntermediateModels/Team_2_Strategy_SimulinkSource_Blocks.xmi"
+			out="${modelPath}/IntermediateModels/Team_2_Strategy_SimulinkSource_Blocks.xmi">
+		</xslt>
+		
+	</target>
+</project>

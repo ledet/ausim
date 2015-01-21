@@ -1,0 +1,68 @@
+-- @nsURI SysML=http://www.eclipse.org/papyrus/0.7.0/SysML
+-- @nsURI Notation=http://www.eclipse.org/gmf/runtime/1.0.2/notation
+
+module GenerateNotation;
+create notation : Notation from uml : SysML;
+
+rule Model2BDD {
+	from
+		mdl: SysML! Model
+	to
+		bdd: Notation!Diagram (
+			type<-'BlockDefinition',
+			name<-'BDD',
+			element<-mdl
+		)
+}
+
+rule DataType2DataType {
+	from
+		dt: SysML!DataType (dt.name.startsWith('Array:'))
+	to
+		child: Notation!Shape(
+			type<-'shape_uml_datatype_as_classifier',
+			fontName<-'Lucida Grande',
+			fontHeight<-11,
+			lineColor<-0,
+			element<-dt,
+			layoutConstraint<-bnds
+		),
+--		ele: SysML!PrimitiveType(
+--		),
+		bnds: Notation!Bounds(
+			x<-0,
+			y<-thisModule.primTypeCnt * 30,
+			width<-70,
+			height<-30
+		)
+	do {
+		thisModule.primTypeCnt <- thisModule.primTypeCnt + 1;
+	}
+}
+
+rule PrimitiveType2PrimitiveType {
+	from
+		pt: SysML!PrimitiveType (not pt.name.startsWith('Array:'))
+	to
+		child: Notation!Shape(
+			type<-'shape_uml_primitivetype_as_classifier',
+			fontName<-'Lucida Grande',
+			fontHeight<-11,
+			lineColor<-0,
+			element<-pt,
+			layoutConstraint<-bnds
+		),
+--		ele: SysML!PrimitiveType(
+--		),
+		bnds: Notation!Bounds(
+			x<-0,
+			y<-thisModule.primTypeCnt * 30,
+			width<-70,
+			height<-30
+		)
+	do {
+		thisModule.primTypeCnt <- thisModule.primTypeCnt + 1;
+	}
+}
+
+helper def: primTypeCnt : Integer = 0;

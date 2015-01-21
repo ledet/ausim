@@ -1,0 +1,60 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest: 6rFnVWrevZm3JgjjteZ6/q7QzZ4=
+Created-By: 1.6.0 (IBM Corporation)
+SHA1-Digest-Manifest-Main-Attributes: GuTym4COq5L90ZLvbDTdZmAQgHc=
+
+Name: org/eclipse/m2m/atl/core/ant/ProjectLogHandler.class
+SHA1-Digest: SJM+0zQwLYz3N/PoXDrM0veGjd0=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: QdryQvJlVywlE0MGLuwYCkmkyWk=
+
+Name: org/eclipse/m2m/atl/core/ant/tasks/nested/Param.class
+SHA1-Digest: kPhqR7UHlzyBbsBGdnww8AvDbac=
+
+Name: org/eclipse/m2m/atl/core/ant/tasks/LoadModelTask.class
+SHA1-Digest: 652uRK6pAnjVEZfJxGE8npQFz/o=
+
+Name: org/eclipse/m2m/atl/core/ant/tasks/nested/Superimpose.class
+SHA1-Digest: Im3Oy1b0cJO3xzeu7BawQkODrB0=
+
+Name: org/eclipse/m2m/atl/core/ant/messages.properties
+SHA1-Digest: mnEt0iLty8rYbQatTH1vL3dqwYs=
+
+Name: org/eclipse/m2m/atl/core/ant/tasks/nested/Injector.class
+SHA1-Digest: FMeTuxwmNur9UcUV2sgXPDurn98=
+
+Name: org/eclipse/m2m/atl/core/ant/tasks/ATLModelTransformationTask.cl
+ ass
+SHA1-Digest: HwVlvet2tJgoAxxijrLyU6OtAkU=
+
+Name: org/eclipse/m2m/atl/core/ant/tasks/SaveModelTask.class
+SHA1-Digest: pDSAX5Miqw+0C1odEXdO3850F/o=
+
+Name: org/eclipse/m2m/atl/core/ant/tasks/nested/Pathelement.class
+SHA1-Digest: lrT0OwasTWNuPMQOJ5MBf180RIc=
+
+Name: org/eclipse/m2m/atl/core/ant/tasks/nested/OutModel.class
+SHA1-Digest: WbxbFodKUh/JnTW+2lkmG0WxQ7I=
+
+Name: org/eclipse/m2m/atl/core/ant/tasks/nested/Library.class
+SHA1-Digest: MVgY0fbfsrvuSIXwgW517gUN7vY=
+
+Name: org/eclipse/m2m/atl/core/ant/tasks/nested/Classpath.class
+SHA1-Digest: kooZgF/z7cu4Y4v6yHfF4HhLztA=
+
+Name: org/eclipse/m2m/atl/core/ant/AtlBuildListener.class
+SHA1-Digest: 5dCaptbl4QCEviUzlc9418UU4Gg=
+
+Name: org/eclipse/m2m/atl/core/ant/tasks/AbstractAtlTask.class
+SHA1-Digest: MK7lZsaWKQkw/fxGH6k4VIcofJs=
+
+Name: org/eclipse/m2m/atl/core/ant/Messages.class
+SHA1-Digest: yyZ+wS40XrWF//g2WkYX5xcbYZY=
+
+Name: org/eclipse/m2m/atl/core/ant/tasks/nested/InModel.class
+SHA1-Digest: V1IiplDjBgmpSfhJK6ThuoLg4Cw=
+
+Name: org/eclipse/m2m/atl/core/ant/tasks/nested/Extractor.class
+SHA1-Digest: XBH4dnKxwlJ8VaK4MNaY3V5pyGE=
+

@@ -1,0 +1,1080 @@
+-- @nsURI SysML=http://www.eclipse.org/papyrus/0.7.0/SysML
+-- @nsURI SysMLnot=http://www.eclipse.org/gmf/runtime/1.0.2/notation
+-- @nsURI SysMLprof=http://www.eclipse.org/papyrus/0.7.0/SysML
+-- @path Source=/Simulink2SysML/MetaModels/SimulinkSourceMM.ecore
+
+--http://www.eclipse.org/papyrus/0.7.0/SysML
+--http://www.eclipse.org/uml2/4.0.0/UML
+
+module Source2SysML;
+create uml : SysML, nota : SysMLnot from src : Source, prop : SysML, prof : SysMLprof, notDef : SysMLnot;
+
+rule DataType2DataType {
+	from
+		dt: SysML!DataType (dt.name.startsWith('Array:'))
+	to
+		sysdt: SysML!DataType (
+			name<-dt.name
+		)
+	do {
+		thisModule.CreateTypeShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_uml_datatype_as_classifier')->first(), sysdt);
+	}
+}
+
+rule PrimitiveType2PrimitiveType {
+	from
+		pt: SysML!PrimitiveType (not pt.name.startsWith('Array:'))
+	to
+		syspt: SysML!PrimitiveType (
+			name<-pt.name
+		)
+	do {
+		thisModule.CreateTypeShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_uml_primitivetype_as_classifier')->first(), syspt);
+	}
+}
+
+rule Port2Port {
+	from
+		srcp: Source!Port (not srcp.refImmediateComposite().isPortBlock) --Assumes Block is parent this is important for Diagram display creation
+	to
+		sysp: SysML!Port (
+			name <- thisModule.delimChar + srcp.Direction + thisModule.delimChar + srcp.Name,
+			type<-SysML!DataType.allInstancesFrom('prop')->any(p | p.name = srcp.Type)
+		)
+	do {
+		if (not thisModule.blockList.includes(srcp.refImmediateComposite().ID)) {
+			thisModule.blockList<-thisModule.blockList.append(srcp.refImmediateComposite().ID);
+			thisModule.blockPropertyCount<-thisModule.blockPropertyCount.append(thisModule.blockPropInitCount);
+			thisModule.blockOperationCount<-thisModule.blockOperationCount.append(thisModule.blockOpInitCount);
+			thisModule.blockHeight<-thisModule.blockHeight.append(thisModule.blockInitHeight);
+			thisModule.inPortBDDListNextY<-thisModule.inPortBDDListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortBDDListNextY<-thisModule.outPortBDDListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDParentListNextY<-thisModule.inPortIBDParentListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDParentListNextY<-thisModule.outPortIBDParentListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDChildListNextY<-thisModule.inPortIBDChildListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDChildListNextY<-thisModule.outPortIBDChildListNextY.append(thisModule.outPortInitY);
+		}
+		if (srcp.refImmediateComposite().oclIsTypeOf(Source!System)) { -- this is a system port so it will need an IBD FlowPort
+			thisModule.CreatePortShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type = thisModule.delimChar + srcp.Direction.toUpper() + thisModule.delimChar + thisModule.IBDID + '(P)' + thisModule.delimChar + 'shape_sysml_flowport_as_affixed')->first(), sysp, srcp.refImmediateComposite().ID, thisModule.IBDID + '(P)');
+		}
+		if (srcp.refImmediateComposite().refImmediateComposite().oclIsTypeOf(Source!System)) { -- parent is child of a system, so will need a FP for its parent IBD
+			thisModule.CreatePortShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type = thisModule.delimChar + srcp.Direction.toUpper() + thisModule.delimChar + thisModule.IBDID + '(C)' + thisModule.delimChar + 'shape_sysml_flowport_as_affixed')->first(), sysp, srcp.refImmediateComposite().ID, thisModule.IBDID + '(C)');
+		}
+		thisModule.CreatePortShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type = thisModule.delimChar + srcp.Direction.toUpper() + thisModule.delimChar + thisModule.BDDID + thisModule.delimChar + 'shape_sysml_flowport_as_affixed')->first(), sysp, srcp.refImmediateComposite().ID, thisModule.BDDID);
+	}
+}
+
+rule PortBlock2Port {
+	from
+		srcp: Source!Block (srcp.isPortBlock)
+	to
+		sysp: SysML!Port (
+			name <- thisModule.delimChar + srcp.Type.substring(1, srcp.Type.indexOf('port')).toLower() + thisModule.delimChar + srcp.Name,
+			type<-SysML!DataType.allInstancesFrom('prop')->any(p | p.name = srcp.getPortType)
+		)
+	do {
+		if (not thisModule.blockList.includes(srcp.refImmediateComposite().ID)) {
+			thisModule.blockList<-thisModule.blockList.append(srcp.refImmediateComposite().ID);
+			thisModule.blockPropertyCount<-thisModule.blockPropertyCount.append(thisModule.blockPropInitCount);
+			thisModule.blockOperationCount<-thisModule.blockOperationCount.append(thisModule.blockOpInitCount);
+			thisModule.blockHeight<-thisModule.blockHeight.append(thisModule.blockInitHeight);
+			thisModule.inPortBDDListNextY<-thisModule.inPortBDDListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortBDDListNextY<-thisModule.outPortBDDListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDParentListNextY<-thisModule.inPortIBDParentListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDParentListNextY<-thisModule.outPortIBDParentListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDChildListNextY<-thisModule.inPortIBDChildListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDChildListNextY<-thisModule.outPortIBDChildListNextY.append(thisModule.outPortInitY);
+		}
+		if (srcp.refImmediateComposite().oclIsTypeOf(Source!System)) { -- this is a system port so it will need an IBD FlowPort
+			thisModule.CreatePortShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type = thisModule.delimChar + srcp.Type.substring(1, srcp.Type.indexOf('port')).toUpper() + thisModule.delimChar + thisModule.IBDID + '(P)' + thisModule.delimChar + 'shape_sysml_flowport_as_affixed')->first(), sysp, srcp.refImmediateComposite().ID, thisModule.IBDID + '(P)');
+		}
+		if (srcp.refImmediateComposite().refImmediateComposite().oclIsTypeOf(Source!System)) { -- parent is child of a system, so will need a FP for its parent IBD
+			thisModule.CreatePortShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type = thisModule.delimChar + srcp.Type.substring(1, srcp.Type.indexOf('port')).toUpper() + thisModule.delimChar + thisModule.IBDID + '(C)' + thisModule.delimChar + 'shape_sysml_flowport_as_affixed')->first(), sysp, srcp.refImmediateComposite().ID, thisModule.IBDID + '(C)');
+		}
+		thisModule.CreatePortShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type = thisModule.delimChar + srcp.Type.substring(1, srcp.Type.indexOf('port')).toUpper() + thisModule.delimChar + thisModule.BDDID + thisModule.delimChar + 'shape_sysml_flowport_as_affixed')->first(), sysp, srcp.refImmediateComposite().ID, thisModule.BDDID);
+	}
+}
+
+rule Property2Property {
+	from
+		srcp: Source!Property (not srcp.refImmediateComposite().isPortBlock)
+	to
+		sysp: SysML!Property (
+			name<-srcp.Name,
+			type<-SysML!DataType.allInstancesFrom('prop')->any(p | p.name = srcp.Type),
+			defaultValue<-dv
+		),
+		dv: SysML!LiteralString (
+			value<-srcp.Value
+		)
+	do {
+		if (not thisModule.blockList.includes(srcp.refImmediateComposite().ID)) {
+			thisModule.blockList<-thisModule.blockList.append(srcp.refImmediateComposite().ID);
+			thisModule.blockPropertyCount<-thisModule.blockPropertyCount.append(thisModule.blockPropInitCount);
+			thisModule.blockOperationCount<-thisModule.blockOperationCount.append(thisModule.blockOpInitCount);
+			thisModule.blockHeight<-thisModule.blockHeight.append(thisModule.blockInitHeight);
+			thisModule.inPortBDDListNextY<-thisModule.inPortBDDListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortBDDListNextY<-thisModule.outPortBDDListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDParentListNextY<-thisModule.inPortIBDParentListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDParentListNextY<-thisModule.outPortIBDParentListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDChildListNextY<-thisModule.inPortIBDChildListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDChildListNextY<-thisModule.outPortIBDChildListNextY.append(thisModule.outPortInitY);
+		}
+		thisModule.CreatePropertyNode(SysMLnot!Node.allInstancesFrom('notDef')->select(s | s.type='shape_uml_property_as_label')->first(), sysp, srcp.refImmediateComposite().ID);
+	}
+}
+
+rule FunctionBlock2Block {
+	from
+		srcb: Source!Block (not srcb.isPortBlock and srcb.isFunction)
+	to
+		sysb: SysML!Class (
+			name <- srcb.Name,
+			ownedAttribute <- srcb.Port
+				->append(thisModule.ChildAssoc(srcb))
+				->union(srcb.Property),
+			ownedBehavior<-act,
+			ownedOperation<-op
+		),
+		bb : SysML!Block (
+			base_Class<-sysb
+		),
+		act: SysML!Activity (
+			name<-'Function',
+			specification<-op
+		),
+		op: SysML!Operation (
+			name<-'Function',
+			method<-act
+		),
+		actd: SysMLnot!Diagram (
+			type<-'PapyrusUMLActivityDiagram',
+			name<-srcb.Name + ' Function'
+		)
+		do {
+			thisModule.CreateBDDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_classifier')->first(), sysb, true, srcb.ID);
+		}
+}
+
+rule System2Block {
+	from
+		srcs: Source!System (not srcs.refImmediateComposite().oclIsTypeOf(Source!System))
+	to
+		sysb: SysML!Class (
+			name <- srcs.Name,
+			ownedAttribute <- srcs.Port->union(srcs.Block->select(p | p.isPortBlock))
+				->union(srcs.Block->select(bnp | not bnp.isPortBlock)->collect(b | thisModule.ParentAssoc(b)))
+				->union(srcs.Property),
+			ownedConnector <- srcs.Connection->collect(con | thisModule.Connection2Connector(con))
+		),
+		bb : SysML!Block (
+			base_Class<-sysb
+		)
+	do {
+		thisModule.CreateBDDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_classifier')->first(), sysb, false, srcs.ID);
+		for (c in srcs.Block) {
+			if (not c.isPortBlock) {
+				thisModule.CreateIBDChildBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_blockproperty_as_composite')->first(), thisModule.resolveTemp(c, 'sysb'), srcs.ID, c.ID);
+			}
+		}
+		thisModule.CreateIBDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_composite')->first(), sysb, srcs.ID);
+		for (con in srcs.Connection) {
+			--thisModule.Connection2Connector(con);
+--			thisModule.resolveTemp(con, 'sysc').name.println();
+		}
+		thisModule.CreateIBDDiag(SysMLnot!Diagram.allInstancesFrom('notDef')->select(s | s.type='InternalBlock')->first(), srcs, srcs.Name);
+	}
+}
+
+lazy rule Connection2Connector {
+	from
+		srcc: Source!Connection
+	to
+		sysc: SysML!Connector(
+			name<-srcc.Name,
+			end<-Sequence{srcEnd, dstEnd}
+		),
+		srcEnd: SysML!ConnectorEnd(
+			role<-thisModule.getSysMLPort(srcc.src)
+		),
+		dstEnd: SysML!ConnectorEnd(
+			--partWithPort<-thisModule.getPropertyFromAssociation(thisModule.getAssociationFromPorts(thisModule.getSysMLPort(srcc.src), thisModule.getSysMLPort(srcc.dst))),
+			role<-thisModule.getSysMLPort(srcc.dst)
+		)
+	do {
+		thisModule.CreateConnectorConnector(SysMLnot!Connector.allInstancesFrom('notDef')->select(s | s.type='link_uml_connector')->first(), sysc, srcc.refImmediateComposite().Name, srcEnd.role, dstEnd.role);
+	}
+}
+
+rule Model2Model {
+	from
+		srcm: Source!Model, prpmdl: SysML!Model, baseProf: SysMLprof!Model
+	to
+		mdl: SysML!Model (
+			name <- 'SysMLmodel',
+			packagedElement <- prpmdl.packagedElement->prepend(pkg)
+				->union(SysML!Association.allInstancesFrom('uml')),
+			profileApplication <- baseProf.profileApplication
+		),
+		pkg: SysML!Package (
+			name <- srcm.Name,
+			packagedElement <- srcm.Block->collect(s | s.getFamily)->flatten()->
+				collect(b | thisModule.resolveTemp(b, 'sysb'))
+		)
+	do {
+		thisModule.CreatePackageShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='2007')->first(), pkg);
+		for(a in SysML!Association.allInstancesFrom('uml')) {
+			thisModule.CreateAssociationConnector(SysMLnot!Connector.allInstancesFrom('notDef')->select(s | s.type='link_sysml_association')->first(), a);
+		}
+		thisModule.CreateBDDDiag(SysMLnot!Diagram.allInstancesFrom('notDef')->select(s | s.type='BlockDefinition')->first(), mdl, srcm.Name);
+		for(c in SysML!Class.allInstancesFrom('uml')) {
+			if (not c.oclIsTypeOf(SysML!Activity)) {
+				thisModule.CreateSysMLBlock(c);
+			}
+		}
+		for(p in SysML!Port.allInstancesFrom('uml')) {
+			thisModule.CreateSysMLPort(p);
+		}
+	}
+}
+
+rule CreateSysMLBlock(cls : SysML!Class) {
+	to
+		blk : SysML!Block (
+			base_Class<-cls
+		)
+}
+
+rule CreateSysMLPort(prt : SysML!Port) {
+	to
+		blk : SysML!FlowPort (
+			base_Port<-prt,
+			direction<-prt.name.substring((prt.name.indexOf(thisModule.delimChar) + 2), prt.name.substring(1, 5).lastIndexOf(thisModule.delimChar))
+		)
+}
+
+rule profApp2profApp {
+	from
+		prof: SysMLprof!ProfileApplication
+	to
+		dst: SysML!ProfileApplication (
+			eAnnotations <- prof.eAnnotations
+		)
+}
+
+rule eAnn2eAnn {
+	from
+		ann: SysMLprof!EAnnotation (ann.refImmediateComposite().oclIsTypeOf(SysMLprof!ProfileApplication))
+	to
+		dst: SysML!EAnnotation (
+			source <- ann.source,
+			references <- ann.references
+		)
+}
+
+rule CreatePropertyNode(src : SysMLnot!Node, ele : SysML!Property, pid : String) {
+	to
+		trg: SysMLnot!Node (
+			type<-src.type,
+			styles<-src.styles->collect(s | thisModule.NodeStyles(s)),
+			element<-ele--,
+		)
+	do {
+		thisModule.blockPropertyCount<-thisModule.incPropertyCount(thisModule.blockList.indexOf(pid));
+	}
+}
+
+rule CreatePortShape(src : SysMLnot!Shape, ele : SysML!Port, pid : String, diagType : String) {
+	to
+		trg: SysMLnot!Shape (
+			type<-src.type,
+			fontName<-src.fontName,
+			fontHeight<-src.fontHeight,
+			lineColor<-src.lineColor,
+			eAnnotations<-src.eAnnotations->collect(e | thisModule.ShapeeAnnotations(e)),
+			children<-src.children->
+				select(d | d.oclIsTypeOf(SysMLnot!DecorationNode) and d.layoutConstraint.oclIsUndefined())->collect(n | thisModule.ShapeDecorationNode(n))->
+				union(src.children->select(d | d.oclIsTypeOf(SysMLnot!DecorationNode) and not d.layoutConstraint.oclIsUndefined())->collect(n | thisModule.ShapeDecorationNodeHasLC(n))),
+			element<-ele,
+			layoutConstraint<-bnds
+		),
+		bnds: SysMLnot!Bounds(
+			x<-src.layoutConstraint.x,
+			y<-src.layoutConstraint.y.max(thisModule.getPortNextY(src.type.split(thisModule.delimChar).at(2), pid, diagType)),
+			width<-src.layoutConstraint.width,
+			height<-src.layoutConstraint.height
+		)
+		do {
+			if (thisModule.portInitHeight <= 0 and bnds.height > 0) {
+				thisModule.portInitHeight <- bnds.height;
+			}
+			if (src.type.split(thisModule.delimChar).at(2) = 'IN') {
+				if (diagType = thisModule.BDDID) {
+					thisModule.inPortBDDListNextY<-thisModule.setInportBDDNextY(thisModule.blockList.indexOf(pid), bnds.y + (bnds.height.max(thisModule.portInitHeight) * 1.1).floor());
+				}
+				else if (diagType = thisModule.IBDID + '(P)') {
+					thisModule.inPortIBDParentListNextY<-thisModule.setInportIBDParentNextY(thisModule.blockList.indexOf(pid), bnds.y + (bnds.height.max(thisModule.portInitHeight) * 1.1).floor());
+				}
+				else {
+					thisModule.inPortIBDChildListNextY<-thisModule.setInportIBDChildNextY(thisModule.blockList.indexOf(pid), bnds.y + (bnds.height.max(thisModule.portInitHeight) * 1.1).floor());
+				}
+			}
+			else {
+				if (diagType = thisModule.BDDID) {
+					thisModule.outPortBDDListNextY<-thisModule.setOutportBDDNextY(thisModule.blockList.indexOf(pid), bnds.y + (bnds.height.max(thisModule.portInitHeight) * 1.1).floor());
+				}
+				else if (diagType = thisModule.IBDID + '(P)') {
+					thisModule.outPortIBDParentListNextY<-thisModule.setOutportIBDParentNextY(thisModule.blockList.indexOf(pid), bnds.y + (bnds.height.max(thisModule.portInitHeight) * 1.1).floor());
+				}
+				else {
+					thisModule.outPortIBDChildListNextY<-thisModule.setOutportIBDChildNextY(thisModule.blockList.indexOf(pid), bnds.y + (bnds.height.max(thisModule.portInitHeight) * 1.1).floor());
+				}
+			}
+			thisModule.blockHeight<-thisModule.setBlockHeight(thisModule.blockList.indexOf(pid), thisModule.blockHeight.at(thisModule.blockList.indexOf(pid)).max(bnds.y + (bnds.height.max(thisModule.portInitHeight) * 1.1).floor()));
+			--('Create ' + src.type.split(thisModule.delimChar).at(2) + 'port for ' + pid).println();
+			--for (b in thisModule.blockList) {
+			--	('Block: ' + b + ' --- ' + thisModule.dispPortInfo(thisModule.blockList.indexOf(b))).println();
+			--}
+		}
+}
+
+helper def : dispPortInfo(id : Integer) : String =
+	'BDD: Inp - ' + thisModule.inPortBDDListNextY.at(id) + ', Outp - ' + thisModule.outPortBDDListNextY.at(id)
+	+ '; IBD(P): Inp - ' + thisModule.inPortIBDParentListNextY.at(id) + ', Outp - ' + thisModule.outPortIBDParentListNextY.at(id)
+	+ '; IBD(P): Inp - ' + thisModule.inPortIBDChildListNextY.at(id) + ', Outp - ' + thisModule.outPortIBDChildListNextY.at(id);
+	
+rule CreateBDDBlockShape(src : SysMLnot!Shape, ele : SysML!Class, hasOp: Boolean, bid : String) {
+	to
+		trg: SysMLnot!Shape (
+			type<-thisModule.delimChar + '7016' + thisModule.delimChar + src.type,
+			fontName<-src.fontName,
+			fontHeight<-src.fontHeight,
+			lineColor<-src.lineColor,
+			eAnnotations<-src.eAnnotations->collect(e | thisModule.ShapeeAnnotations(e)),
+			children<-src.children->
+				select(d | d.oclIsTypeOf(SysMLnot!DecorationNode) and d.layoutConstraint.oclIsUndefined())->collect(n | thisModule.ShapeDecorationNode(n))->
+				union(src.children->select(d | d.oclIsTypeOf(SysMLnot!DecorationNode) and not d.layoutConstraint.oclIsUndefined())->collect(n | thisModule.ShapeDecorationNodeHasLC(n)))->
+				union(src.children->select(l | l.oclIsTypeOf(SysMLnot!ListCompartment))->
+					reject(p | p.type='compartment_sysml_property_as_list')->
+					reject(o | not hasOp and o.type='compartment_uml_operation_as_list')->
+					collect(c | thisModule.ShapeListCompartment(c)))->
+				--union(SysMLnot!Shape.allInstancesFrom('nota')->select(s | s.type.endsWith('shape_sysml_flowport_as_affixed') and s.type.startsWith(thisModule.delimChar + bid + thisModule.delimChar + thisModule.BDDID + thisModule.delimChar)))->
+				union(SysMLnot!Shape.allInstancesFrom('nota')->select(s | s.type.endsWith(thisModule.delimChar + thisModule.BDDID + thisModule.delimChar + 'shape_sysml_flowport_as_affixed'))->select(s2 | s2.isChildShapeOfParent(ele)))->
+				prepend(lcProp),
+			element<-ele,
+			layoutConstraint<-bnds
+		),
+		lcProp: SysMLnot!ListCompartment (
+			type<-'compartment_sysml_property_as_list',
+			showTitle<-true,
+			children<-SysMLnot!Node.allInstancesFrom('nota')->select(s | s.type='shape_uml_property_as_label' and s.isChildNodeOfParent(ele))
+		),
+		bnds: SysMLnot!Bounds(
+			x<-src.layoutConstraint.x,
+			y<-thisModule.getBlockY(src.layoutConstraint.y, bid),
+			width<-src.layoutConstraint.width,
+			height<-thisModule.getBlockHeight(src.layoutConstraint.height, thisModule.blockList.indexOf(bid)).max(thisModule.blockHeight.at(thisModule.blockList.indexOf(bid))) 
+		)
+	do {
+		thisModule.blockNextY <- thisModule.blockNextY.max(bnds.y + bnds.height + thisModule.blockDistY).floor();
+		thisModule.packageHeight <- thisModule.packageHeight.max(bnds.y + bnds.height + 40);
+		thisModule.packageWidth <- thisModule.packageWidth.max(bnds.x + bnds.width + 40 + (ele.longestLabel * 9));
+	}
+}
+
+helper context SysMLnot!Node def : isChildNodeOfParent(parent : SysML!Class) : Boolean =
+	self.element.refImmediateComposite()=parent;
+
+helper context SysMLnot!Shape def : isChildShapeOfParent(parent : SysML!Class) : Boolean =
+	self.element.refImmediateComposite()=parent;
+
+rule CreateIBDBlockShape(src : SysMLnot!Shape, ele : SysML!Class, bid : String) {
+	to
+		trg: SysMLnot!Shape (
+			type<-thisModule.delimChar + thisModule.IBDID + thisModule.delimChar + ele.name + thisModule.delimChar + src.type,
+			fontName<-src.fontName,
+			fontHeight<-src.fontHeight,
+			lineColor<-src.lineColor,
+			eAnnotations<-src.eAnnotations->collect(e | thisModule.ShapeeAnnotations(e)),
+			children<-src.children->
+				select(d | d.oclIsTypeOf(SysMLnot!DecorationNode) and d.layoutConstraint.oclIsUndefined())->collect(n | thisModule.ShapeDecorationNode(n))->
+				union(src.children->select(d | d.oclIsTypeOf(SysMLnot!DecorationNode) and not d.layoutConstraint.oclIsUndefined())->collect(n | thisModule.ShapeDecorationNodeHasLC(n)))->
+				append(bcChild)->
+				union(src.children->select(b | b.oclIsTypeOf(SysMLnot!BasicCompartment) and b.type <> 'compartment_sysml_structure')->collect(bc | thisModule.ShapeBasicCompartment(bc)))->
+				union(SysMLnot!Shape.allInstancesFrom('nota')->select(s | s.type.endsWith(thisModule.delimChar + thisModule.IBDID + '(P)' + thisModule.delimChar + 'shape_sysml_flowport_as_affixed'))->select(s2 | s2.isChildShapeOfParent(ele))),
+				--union(SysMLnot!Shape.allInstancesFrom('nota')->select(s | s.type.endsWith('shape_sysml_flowport_as_affixed') and s.type.startsWith(thisModule.delimChar + bid + thisModule.delimChar + thisModule.IBDID + '(P)' + thisModule.delimChar))),
+			element<-ele,
+			layoutConstraint<-bnds
+		),
+		bcChild: SysMLnot!BasicCompartment (
+			type<-'compartment_sysml_structure',
+			children<-SysMLnot!Shape.allInstancesFrom('nota')->select(s | s.type.endsWith('shape_sysml_blockproperty_as_composite') and s.type.startsWith(thisModule.delimChar + bid + thisModule.delimChar + thisModule.IBDID + '(C)' + thisModule.delimChar))
+		),
+		bnds: SysMLnot!Bounds(
+			x<-src.layoutConstraint.x,
+			y<-src.layoutConstraint.y,
+			width<-src.layoutConstraint.width,
+			height<-src.layoutConstraint.height
+		)
+}
+
+rule CreateIBDChildBlockShape(src : SysMLnot!Shape, ele : SysML!Class, pid : String, bid : String) {
+	to
+		trg: SysMLnot!Shape (
+			type<-thisModule.delimChar + pid + thisModule.delimChar + thisModule.IBDID + '(C)' + thisModule.delimChar + src.type,
+			fontName<-src.fontName,
+			fontHeight<-src.fontHeight,
+			lineColor<-src.lineColor,
+			eAnnotations<-src.eAnnotations->collect(e | thisModule.ShapeeAnnotations(e)),
+			children<-src.children->
+				select(d | d.oclIsTypeOf(SysMLnot!DecorationNode) and d.layoutConstraint.oclIsUndefined())->collect(n | thisModule.ShapeDecorationNode(n))->
+				union(src.children->select(d | d.oclIsTypeOf(SysMLnot!DecorationNode) and not d.layoutConstraint.oclIsUndefined())->collect(n | thisModule.ShapeDecorationNodeHasLC(n)))->
+				union(src.children->select(b | b.oclIsTypeOf(SysMLnot!BasicCompartment))->collect(bc | thisModule.ShapeBasicCompartment(bc)))->
+				union(SysMLnot!Shape.allInstancesFrom('nota')->select(s | s.type.endsWith(thisModule.delimChar + thisModule.IBDID + '(C)' + thisModule.delimChar + 'shape_sysml_flowport_as_affixed'))->select(s2 | s2.isChildShapeOfParent(ele))),
+				--union(SysMLnot!Shape.allInstancesFrom('nota')->select(s | s.type.endsWith('shape_sysml_flowport_as_affixed') and s.type.startsWith(thisModule.delimChar + bid + thisModule.delimChar + thisModule.IBDID + '(C)' + thisModule.delimChar))),
+			element<-thisModule.getPropertyFromChildBlock(ele),
+			layoutConstraint<-bnds
+		),
+		bnds: SysMLnot!Bounds(
+			x<-src.layoutConstraint.x,
+			y<-src.layoutConstraint.y,
+			width<-src.layoutConstraint.width,
+			height<-src.layoutConstraint.height
+		)
+}
+
+rule CreateAssociationConnector(src : SysMLnot!Connector, ele : SysML!Association) {
+	to
+		trg: SysMLnot!Connector (
+			type<-thisModule.delimChar + thisModule.BDDID + thisModule.delimChar + src.type,
+			source<-thisModule.getBlockShape(ele.memberEnd->first(), '7016'),
+			target<-thisModule.getBlockShape(ele.memberEnd->last(), '7016'),
+			lineColor<-src.lineColor,
+			children<-src.children->
+				select(d | d.oclIsTypeOf(SysMLnot!DecorationNode) and not d.layoutConstraint.oclIsUndefined())->collect(n | thisModule.ShapeDecorationNodeHasLC(n)),
+			styles<-Sequence{srcEnd, trgEnd},
+			bendpoints<-src.bendpoints,
+			sourceAnchor<-src.sourceAnchor,
+			targetAnchor<-src.targetAnchor,
+			element<-ele
+		),
+		srcEnd: SysMLnot!EObjectValueStyle (
+			name<-'semantic_source_end',
+			eObjectValue<-ele.memberEnd->first()
+		),
+		trgEnd: SysMLnot!EObjectValueStyle (
+			name<-'semantic_target_end',
+			eObjectValue<-ele.memberEnd->last()
+		)
+}
+
+rule CreateConnectorConnector(src : SysMLnot!Connector, ele : SysML!Connector, pid : String, srcEnd : SysML!Port, trgEnd : SysML!Port) {
+	to
+		trg: SysMLnot!Connector (
+			type<-thisModule.delimChar + thisModule.IBDID + thisModule.delimChar + pid + thisModule.delimChar + src.type,
+			source<-thisModule.getPortShape(srcEnd),
+			target<-thisModule.getPortShape(trgEnd),
+			lineColor<-src.lineColor,
+			children<-src.children->
+				select(d | d.oclIsTypeOf(SysMLnot!DecorationNode) and not d.layoutConstraint.oclIsUndefined())->collect(n | thisModule.ShapeDecorationNodeHasLC(n)),
+			bendpoints<-bEnd,
+			element<-ele
+		),
+		bEnd: SysMLnot!RelativeBendpoints ()
+}
+
+rule CreatePackageShape(src : SysMLnot!Shape, ele : SysML!Package) {
+	to
+		trg: SysMLnot!Shape (
+			type<-thisModule.delimChar + thisModule.BDDID + thisModule.delimChar + src.type,
+			fontName<-src.fontName,
+			fontHeight<-src.fontHeight,
+			lineColor<-src.lineColor,
+			eAnnotations<-src.eAnnotations->collect(e | thisModule.ShapeeAnnotations(e)),
+			children<-src.children->
+				select(d | d.oclIsTypeOf(SysMLnot!DecorationNode) and d.layoutConstraint.oclIsUndefined())->collect(n | thisModule.ShapeDecorationNode(n))->
+				union(src.children->select(d | d.oclIsTypeOf(SysMLnot!DecorationNode) and not d.layoutConstraint.oclIsUndefined())->collect(n | thisModule.ShapeDecorationNodeHasLC(n)))->
+				union(src.children->select(l | l.oclIsTypeOf(SysMLnot!ListCompartment))->collect(c | thisModule.ShapeListCompartment(c))),
+			element<-ele,
+			layoutConstraint<-bnds
+		),
+		bnds: SysMLnot!Bounds(
+			x<-src.layoutConstraint.x,
+			y<-thisModule.packageNextY,
+			width<-thisModule.packageWidth,
+			height<-thisModule.packageHeight
+		)
+	do {
+		thisModule.packageNextY <- thisModule.packageNextY + (src.layoutConstraint.height * 1.1).floor();
+	}
+}
+
+rule CreateTypeShape(src : SysMLnot!Shape, ele : SysML!Object) {
+	to
+		trg: SysMLnot!Shape (
+			type<-thisModule.delimChar + thisModule.BDDID + thisModule.delimChar + src.type,
+			fontName<-src.fontName,
+			fontHeight<-src.fontHeight,
+			lineColor<-src.lineColor,
+			eAnnotations<-src.eAnnotations->collect(e | thisModule.ShapeeAnnotations(e)),
+			children<-src.children->
+				select(d | d.oclIsTypeOf(SysMLnot!DecorationNode) and d.layoutConstraint.oclIsUndefined())->collect(n | thisModule.ShapeDecorationNode(n))->
+				union(src.children->select(d | d.oclIsTypeOf(SysMLnot!DecorationNode) and not d.layoutConstraint.oclIsUndefined())->collect(n | thisModule.ShapeDecorationNodeHasLC(n)))->
+				union(src.children->select(l | l.oclIsTypeOf(SysMLnot!ListCompartment))->collect(c | thisModule.ShapeListCompartment(c))),
+			element<-ele,
+			layoutConstraint<-bnds
+		),
+		bnds: SysMLnot!Bounds(
+			x<-src.layoutConstraint.x,
+			y<-thisModule.getNextY(src.type),
+			width<-src.layoutConstraint.width,
+			height<-src.layoutConstraint.height
+		)
+	do {
+		if (src.type = 'shape_uml_primitivetype_as_classifier') {
+			thisModule.primTypeNextY <- thisModule.primTypeNextY + (src.layoutConstraint.height * 1.1).floor();
+		}
+		else {
+			thisModule.dataTypeNextY <- thisModule.dataTypeNextY + (src.layoutConstraint.height * 1.1).floor();
+		}
+	}
+}
+
+rule CreateBDDDiag(src : SysMLnot!Diagram, obj : SysML!Object, diagName : String) {
+	to
+		bdd: SysMLnot!Diagram (
+			type<-src.type,
+			name<-diagName,
+			measurementUnit<-src.measurementUnit,
+			children<-SysMLnot!Shape.allInstancesFrom('nota')->select(s | s.type.startsWith(thisModule.delimChar + thisModule.BDDID + thisModule.delimChar)),
+			element<-obj,
+			edges<-SysMLnot!Connector.allInstancesFrom('nota')->select(e | e.type.startsWith(thisModule.delimChar + thisModule.BDDID + thisModule.delimChar))
+		)
+}
+
+rule CreateIBDDiag(src : SysMLnot!Diagram, obj : SysML!Object, diagName : String) {
+	to
+		bdd: SysMLnot!Diagram (
+			type<-src.type,
+			name<-diagName,
+			measurementUnit<-src.measurementUnit,
+			children<-SysMLnot!Shape.allInstancesFrom('nota')->select(s | s.type.startsWith(thisModule.delimChar + thisModule.IBDID + thisModule.delimChar + diagName + thisModule.delimChar)),
+			element<-obj,
+			edges<-SysMLnot!Connector.allInstancesFrom('nota')->select(e | e.type.startsWith(thisModule.delimChar + thisModule.IBDID + thisModule.delimChar + diagName + thisModule.delimChar))
+		)
+}
+
+rule ChildSystem2Block {
+	from
+		srcs: Source!System (srcs.refImmediateComposite().oclIsTypeOf(Source!System))
+	to
+		sysb: SysML!Class (
+			name <- srcs.Name,
+			ownedAttribute <- srcs.Port->union(srcs.Block->select(p | p.isPortBlock))
+				->union(srcs.Block->select(bnp | not bnp.isPortBlock)->collect(b | thisModule.ParentAssoc(b)))
+				->append(assoc)
+				->union(srcs.Property)
+		),
+		assoc: SysML!Property (
+			name<-srcs.refImmediateComposite().Name.toLower(),
+			type<-srcs.refImmediateComposite()
+		),
+		bb : SysML!Block (
+			base_Class<-sysb
+		)
+	do {
+		thisModule.CreateIBDDiag(SysMLnot!Diagram.allInstancesFrom('notDef')->select(s | s.type='InternalBlock')->first(), srcs, srcs.Name, thisModule.IBDID);
+	}
+}
+
+rule Block2Block {
+	from
+		srcb: Source!Block (not srcb.isPortBlock and not srcb.isFunction)
+	to
+		sysb: SysML!Class (
+			name <- srcb.Name,
+			ownedAttribute <- srcb.Port
+				->append(assoc)
+				->union(srcb.Property)
+		),
+		assoc: SysML!Property (
+			name<-srcb.refImmediateComposite().Name.toLower(),
+			type<-srcb.refImmediateComposite()
+		),
+		bb : SysML!Block (
+			base_Class<-sysb
+		)		
+}
+
+lazy rule ChildAssoc {
+	from
+		child: Source!Component
+	to
+		prop: SysML!Property (
+			name<-child.refImmediateComposite().Name.toLower(),
+			type<-child.refImmediateComposite(),
+			association<-assoc
+			--SysML!Association.allInstancesFrom('uml')->
+				--any(a | a.name = srcb.refImmediateComposite().Name + ' has a ' + srcb.Name)
+		),
+		assoc: SysML!Association (
+			name<-child.refImmediateComposite().Name + ' has a ' + child.Name
+		)
+}
+
+lazy rule ParentAssoc {
+	from
+		child: Source!Component
+	to
+		prop: SysML!Property (
+			name<-child.Name.toLower(),
+			type<-child,
+			aggregation<-'composite',
+			association<-thisModule.getAssociation(child)
+		)
+}
+
+lazy rule ShapeeAnnotations {
+	from
+		src: SysMLnot!EAnnotation
+	to
+		dst: SysMLnot!EAnnotation (
+			source<-src.source,
+			details<-src.details->collect(d | thisModule.eAnnotationDetails(d))
+		)	
+}
+
+lazy rule NodeStyles {
+	from
+		src: SysMLnot!ShapeStyle
+	to
+		dst: SysMLnot!ShapeStyle (
+			fontName<-src.fontName,
+			fontHeight<-src.fontHeight,
+			fillColor<-src.fillColor,
+			lineColor<-src.lineColor
+		)	
+}
+
+lazy rule NodeLocation {
+	from
+		src: SysMLnot!Location
+	to
+		dst: SysMLnot!Location ()	
+}
+
+lazy rule eAnnotationDetails {
+	from
+		src: SysMLnot!EStringToStringMapEntry
+	to
+		dst: SysMLnot!EStringToStringMapEntry (
+			key<-src.key,
+			value<-src.value
+		)
+}
+
+lazy rule ShapeDecorationNode {
+	from
+		src: SysMLnot!DecorationNode
+	to
+		dst: SysMLnot!DecorationNode (
+			type<-src.type,
+			children<-SysMLnot!Shape.allInstancesFrom('nota')->select(s | s.type.startsWith(thisModule.delimChar + src.type + thisModule.delimChar))
+		)
+}
+
+lazy rule ShapeDecorationNodeHasLC {
+	from
+		src: SysMLnot!DecorationNode
+	to
+		dst: SysMLnot!DecorationNode (
+			type<-src.type,
+			children<-SysMLnot!Shape.allInstancesFrom('nota')->select(s | s.type.startsWith(thisModule.delimChar + src.type + thisModule.delimChar)),
+			layoutConstraint<-thisModule.DecorationLocation(src.layoutConstraint)
+		)
+}
+
+lazy rule ShapeBasicCompartment {
+	from
+		src: SysMLnot!BasicCompartment
+	to
+		dst: SysMLnot!BasicCompartment (
+			visible<-src.visible,
+			type<-src.type,
+			--children<-SysMLnot!Shape.allInstancesFrom('nota')->select(s | s.type.startsWith(thisModule.delimChar + src.type + thisModule.delimChar)),
+			--styles<-src.styles,
+			layoutConstraint<-src.layoutConstraint
+		)
+}
+
+lazy rule DecorationLocation {
+	from
+		src: SysMLnot!Location
+	to
+		bnds: SysMLnot!Location(
+			x<-src.x,
+			y<-src.y
+		)
+}
+
+lazy rule ShapeListCompartment {
+	from
+		src: SysMLnot!ListCompartment
+	to
+		dst: SysMLnot!ListCompartment (
+			type<-src.type,
+			showTitle<-src.showTitle
+		)
+}
+
+helper def: primTypeNextY : Integer = 0;
+helper def: dataTypeNextY : Integer = 0;
+helper def: packageNextY : Integer = 0;
+helper def: packageHeight : Integer = 0;
+helper def: packageWidth : Integer = 0;
+helper def: baseHeightPropOp : Integer = 14;
+helper def: baseHeightCompartment : Integer = 14;
+helper def: blockDistY : Integer = 50;
+helper def: blockNextY : Integer = 0;
+helper def: blockInitHeight : Integer = 0;
+helper def: blockPropInitCount : Integer = 0;
+helper def: blockOpInitCount : Integer = 0;
+helper def: inPortInitY : Integer = 0;
+helper def: outPortInitY : Integer = 0;
+helper def: portInitHeight: Integer = 0;
+helper def: blockList : Sequence(String) = Sequence{};
+helper def: blockHeight : Sequence(Integer) = Sequence{};
+helper def: blockPropertyCount : Sequence(Integer) = Sequence{};
+helper def: blockOperationCount : Sequence(Integer) = Sequence{};
+helper def: inPortBDDListNextY : Sequence(Integer) = Sequence{};
+helper def: outPortBDDListNextY : Sequence(Integer) = Sequence{};
+helper def: inPortIBDParentListNextY : Sequence(Integer) = Sequence{};
+helper def: outPortIBDParentListNextY : Sequence(Integer) = Sequence{};
+helper def: inPortIBDChildListNextY : Sequence(Integer) = Sequence{};
+helper def: outPortIBDChildListNextY : Sequence(Integer) = Sequence{};
+
+helper def: delimChar : String = '#';
+helper def: rootSystemID : String = 'Root';
+helper def: BDDID : String = 'BDD';
+helper def: IBDID : String = 'IBD';
+
+helper context Source!Model def: hasBlock: Boolean =
+	self.Block->exists(b | b.ID = thisModule.rootSystemID);
+
+helper context Source!Component def: isPortBlock: Boolean =
+	if self.oclIsTypeOf(Source!System) then
+		false
+	else
+		self.Type = 'Inport' or self.Type = 'Outport'
+	endif;
+
+helper context Source!Block def: isFunction: Boolean =
+	self.Type = 'Function';
+
+helper context Source!System def: getFamily : Set(Source!Component) =
+	Set{self, self.Block->select(b | not b.isPortBlock and not b.oclIsTypeOf(Source!System))
+		->union(self.Block->select(s | s.oclIsTypeOf(Source!System))->collect(sc | sc.getFamily))};
+
+helper context Source!System def: getSystems : Set(Source!System) =
+	Set{self, self.Block->select(s | s.oclIsTypeOf(Source!System))->collect(sc | sc.getSystems)};
+
+helper def : getSysMLPort(portSrc : SysML!Port) : SysML!Port =
+	if portSrc.refImmediateComposite().isPortBlock then --was a portblock is now a port
+		thisModule.resolveTemp(portSrc.refImmediateComposite(), 'sysp')
+	else
+		thisModule.resolveTemp(portSrc, 'sysp')
+	endif;
+
+helper context Source!Block def : getPortType : String =
+	self.Port->collect(t | t.Type)->first();
+
+helper def : getPropertyFromAssociation(assoc : SysML!Association) : SysML!Property =
+	SysML!Property.allInstancesFrom('uml')->select(p | p = assoc.memberEnd.first() or p = assoc.memberEnd.last())->first();
+
+helper def : getPropertyFromChildBlock(child : SysML!Class) : SysML!Property =
+	SysML!Property.allInstancesFrom('uml')->select(p | p.type = child)->first();
+
+helper def : getAssociationFromPorts(prt1 : SysML!Port, prt2 : SysML!Port) : SysML!Association =
+	SysML!Association.allInstancesFrom('uml')->
+				select(a | (a.memberEnd.first().type = prt1.refImmediateComposite() and a.memberEnd.last().type = prt2.refImmediateComposite())
+					or (a.memberEnd.first().type = prt2.refImmediateComposite() and a.memberEnd.last().type = prt1.refImmediateComposite()))->first();
+
+helper def : getAssociation(child : SysML!Class) : SysML!Association =
+	SysML!Association.allInstancesFrom('uml')->
+				any(a | a.name = child.refImmediateComposite().Name + ' has a ' + child.Name);
+
+helper def : getBlockShape(propRef : SysML!Property, parentType : String) : SysMLnot!Shape =
+	SysMLnot!Shape.allInstancesFrom('nota')->select(s | s.element = propRef.refImmediateComposite() and s.type.split(thisModule.delimChar).at(2) = parentType)->first();
+	
+helper def : getPortShape(portRef : SysML!Port) : SysMLnot!Shape =
+	SysMLnot!Shape.allInstancesFrom('nota')->select(s | s.element = portRef and s.type.split(thisModule.delimChar).at(3).startsWith(thisModule.IBDID))->first();
+	
+helper def : getNextY(srcType : String) : Integer =
+	if srcType = 'shape_uml_primitivetype_as_classifier' then
+		thisModule.primTypeNextY
+	else 
+		thisModule.dataTypeNextY
+	endif;
+
+helper def : getPortNextY(dir : String, pid : String, diagType : String) : Integer =
+	if dir = 'IN' then
+		if diagType = thisModule.BDDID then
+			thisModule.getInportBDDNextY(pid)
+		else
+			if diagType = thisModule.IBDID + '(P)' then
+				thisModule.getInportIBDParentNextY(pid)
+			else
+				thisModule.getInportIBDChildNextY(pid)
+			endif
+		endif
+	else 
+		if diagType = thisModule.BDDID then
+			thisModule.getOutportBDDNextY(pid)
+		else
+			if diagType = thisModule.IBDID + '(P)' then
+				thisModule.getOutportIBDParentNextY(pid)
+			else
+				thisModule.getOutportIBDChildNextY(pid)
+			endif
+		endif
+	endif;
+
+helper def : getInportBDDNextY(pid : String) : Integer =
+	thisModule.inPortBDDListNextY.at(thisModule.blockList.indexOf(pid));
+
+helper def : getOutportBDDNextY(pid : String) : Integer =
+	thisModule.outPortBDDListNextY.at(thisModule.blockList.indexOf(pid));
+
+helper def : getInportIBDParentNextY(pid : String) : Integer =
+	thisModule.inPortIBDParentListNextY.at(thisModule.blockList.indexOf(pid));
+
+helper def : getOutportIBDParentNextY(pid : String) : Integer =
+	thisModule.outPortIBDParentListNextY.at(thisModule.blockList.indexOf(pid));
+
+helper def : getInportIBDChildNextY(pid : String) : Integer =
+	thisModule.inPortIBDChildListNextY.at(thisModule.blockList.indexOf(pid));
+
+helper def : getOutportIBDChildNextY(pid : String) : Integer =
+	thisModule.outPortIBDChildListNextY.at(thisModule.blockList.indexOf(pid));
+
+helper def : incPropertyCount(pind : Integer) : Sequence(Integer) = 
+	if pind = 0 or pind > thisModule.blockList.size() then
+		thisModule.blockPropertyCount
+	else
+		if pind = 1 then
+			if thisModule.blockList.size() = 1 then --only one element in list and this is it
+				Sequence{}.append(thisModule.blockPropertyCount.at(pind) + 1)
+			else -- first element in longer list
+				thisModule.blockPropertyCount.subSequence(pind + 1, thisModule.blockPropertyCount.size()).prepend(thisModule.blockPropertyCount.at(pind) + 1)
+			endif
+		else
+			if pind = thisModule.blockList.size() then -- last element in list
+				thisModule.blockPropertyCount.subSequence(1, pind - 1).append(thisModule.blockPropertyCount.at(pind) + 1)
+			else -- not first or last
+				thisModule.blockPropertyCount.subSequence(1, pind - 1).append(thisModule.blockPropertyCount.at(pind) + 1).
+				 union(thisModule.blockPropertyCount.subSequence(pind + 1, thisModule.blockPropertyCount.size()))
+			endif
+		endif
+	endif;
+
+helper def : incOperationCount(pind : Integer) : Sequence(Integer) = 
+	if pind = 0 or pind > thisModule.blockList.size() then
+		thisModule.blockOperationCount
+	else
+		if pind = 1 then
+			if thisModule.blockList.size() = 1 then --only one element in list and this is it
+				Sequence{}.append(thisModule.blockOperationCount.at(pind) + 1)
+			else -- first element in longer list
+				thisModule.blockOperationCount.subSequence(pind + 1, thisModule.blockOperationCount.size()).prepend(thisModule.blockOperationCount.at(pind) + 1)
+			endif
+		else
+			if pind = thisModule.blockList.size() then -- last element in list
+				thisModule.blockOperationCount.subSequence(1, pind - 1).append(thisModule.blockOperationCount.at(pind) + 1)
+			else -- not first or last
+				thisModule.blockOperationCount.subSequence(1, pind - 1).append(thisModule.blockOperationCount.at(pind) + 1).
+				 union(thisModule.blockOperationCount.subSequence(pind + 1, thisModule.blockOperationCount.size()))
+			endif
+		endif
+	endif;
+
+helper def : getBlockY(baseY : Integer, bid : String) : Integer =
+	if bid = thisModule.rootSystemID then
+		baseY
+	else
+		thisModule.blockNextY.max(thisModule.getBlockHeight(70, thisModule.blockList.indexOf(thisModule.rootSystemID)) + thisModule.blockDistY)
+	endif;
+
+helper def : setBlockHeight(pind : Integer, height : Integer) : Sequence(Integer) = 
+	if pind = 0 or pind > thisModule.blockList.size() then
+		thisModule.blockHeight
+	else
+		if pind = 1 then
+			if thisModule.blockList.size() = 1 then --only one element in list and this is it
+				Sequence{}.append(height)
+			else -- first element in longer list
+				thisModule.blockHeight.subSequence(pind + 1, thisModule.blockHeight.size()).prepend(height)
+			endif
+		else
+			if pind = thisModule.blockList.size() then -- last element in list
+				thisModule.blockHeight.subSequence(1, pind - 1).append(height)
+			else -- not first or last
+				thisModule.blockHeight.subSequence(1, pind - 1).append(height).
+				 union(thisModule.blockHeight.subSequence(pind + 1, thisModule.blockHeight.size()))
+			endif
+		endif
+	endif;
+
+helper def : getBlockHeight(baseHeight : Integer, pind : Integer) : Integer =
+	if thisModule.blockPropertyCount.at(pind) + thisModule.blockOperationCount.at(pind) < 2 then
+		baseHeight
+	else
+		baseHeight - thisModule.baseHeightPropOp - thisModule.baseHeightCompartment + 
+		if thisModule.blockPropertyCount.at(pind) > 0 then
+			thisModule.baseHeightCompartment + thisModule.blockPropertyCount.at(pind) * thisModule.baseHeightPropOp
+		else
+			0
+		endif + 
+		if thisModule.blockOperationCount.at(pind) > 0 then
+			thisModule.baseHeightCompartment + thisModule.blockOperationCount.at(pind) * thisModule.baseHeightPropOp
+		else
+			0
+		endif
+	endif;
+
+helper def : setInportBDDNextY(pind : Integer, y : Integer) : Sequence(Integer) = 
+	if pind = 0 or pind > thisModule.blockList.size() then
+		thisModule.inPortBDDListNextY
+	else
+		if pind = 1 then
+			if thisModule.blockList.size() = 1 then --only one element in list and this is it
+				Sequence{}.append(y)
+			else -- first element in longer list
+				thisModule.inPortBDDListNextY.subSequence(pind + 1, thisModule.inPortBDDListNextY.size()).prepend(y)
+			endif
+		else
+			if pind = thisModule.blockList.size() then -- last element in list
+				thisModule.inPortBDDListNextY.subSequence(1, pind - 1).append(y)
+			else -- not first or last
+				thisModule.inPortBDDListNextY.subSequence(1, pind - 1).append(y).
+				 union(thisModule.inPortBDDListNextY.subSequence(pind + 1, thisModule.inPortBDDListNextY.size()))
+			endif
+		endif
+	endif;
+
+helper def : setOutportBDDNextY(pind : Integer, y : Integer) : Sequence(Integer) = 
+	if pind = 0 or pind > thisModule.blockList.size() then
+		thisModule.outPortBDDListNextY
+	else
+		if pind = 1 then
+			if thisModule.blockList.size() = 1 then --only one element in list and this is it
+				Sequence{}.append(y)
+			else -- first element in longer list
+				thisModule.outPortBDDListNextY.subSequence(pind + 1, thisModule.outPortBDDListNextY.size()).prepend(y)
+			endif
+		else
+			if pind = thisModule.blockList.size() then -- last element in list
+				thisModule.outPortBDDListNextY.subSequence(1, pind - 1).append(y)
+			else -- not first or last
+				thisModule.outPortBDDListNextY.subSequence(1, pind - 1).append(y).
+				 union(thisModule.outPortBDDListNextY.subSequence(pind + 1, thisModule.outPortBDDListNextY.size()))
+			endif
+		endif
+	endif;
+
+helper def : setInportIBDParentNextY(pind : Integer, y : Integer) : Sequence(Integer) = 
+	if pind = 0 or pind > thisModule.blockList.size() then
+		thisModule.inPortIBDParentListNextY
+	else
+		if pind = 1 then
+			if thisModule.blockList.size() = 1 then --only one element in list and this is it
+				Sequence{}.append(y)
+			else -- first element in longer list
+				thisModule.inPortIBDParentListNextY.subSequence(pind + 1, thisModule.inPortIBDParentListNextY.size()).prepend(y)
+			endif
+		else
+			if pind = thisModule.blockList.size() then -- last element in list
+				thisModule.inPortIBDParentListNextY.subSequence(1, pind - 1).append(y)
+			else -- not first or last
+				thisModule.inPortIBDParentListNextY.subSequence(1, pind - 1).append(y).
+				 union(thisModule.inPortIBDParentListNextY.subSequence(pind + 1, thisModule.inPortIBDParentListNextY.size()))
+			endif
+		endif
+	endif;
+
+helper def : setOutportIBDParentNextY(pind : Integer, y : Integer) : Sequence(Integer) = 
+	if pind = 0 or pind > thisModule.blockList.size() then
+		thisModule.outPortIBDParentListNextY
+	else
+		if pind = 1 then
+			if thisModule.blockList.size() = 1 then --only one element in list and this is it
+				Sequence{}.append(y)
+			else -- first element in longer list
+				thisModule.outPortIBDParentListNextY.subSequence(pind + 1, thisModule.outPortIBDParentListNextY.size()).prepend(y)
+			endif
+		else
+			if pind = thisModule.blockList.size() then -- last element in list
+				thisModule.outPortIBDParentListNextY.subSequence(1, pind - 1).append(y)
+			else -- not first or last
+				thisModule.outPortIBDParentListNextY.subSequence(1, pind - 1).append(y).
+				 union(thisModule.outPortIBDParentListNextY.subSequence(pind + 1, thisModule.outPortIBDParentListNextY.size()))
+			endif
+		endif
+	endif;
+
+helper def : setInportIBDChildNextY(pind : Integer, y : Integer) : Sequence(Integer) = 
+	if pind = 0 or pind > thisModule.blockList.size() then
+		thisModule.inPortIBDChildListNextY
+	else
+		if pind = 1 then
+			if thisModule.blockList.size() = 1 then --only one element in list and this is it
+				Sequence{}.append(y)
+			else -- first element in longer list
+				thisModule.inPortIBDChildListNextY.subSequence(pind + 1, thisModule.inPortIBDChildListNextY.size()).prepend(y)
+			endif
+		else
+			if pind = thisModule.blockList.size() then -- last element in list
+				thisModule.inPortIBDChildListNextY.subSequence(1, pind - 1).append(y)
+			else -- not first or last
+				thisModule.inPortIBDChildListNextY.subSequence(1, pind - 1).append(y).
+				 union(thisModule.inPortIBDChildListNextY.subSequence(pind + 1, thisModule.inPortIBDChildListNextY.size()))
+			endif
+		endif
+	endif;
+
+helper def : setOutportIBDChildNextY(pind : Integer, y : Integer) : Sequence(Integer) = 
+	if pind = 0 or pind > thisModule.blockList.size() then
+		thisModule.outPortIBDChildListNextY
+	else
+		if pind = 1 then
+			if thisModule.blockList.size() = 1 then --only one element in list and this is it
+				Sequence{}.append(y)
+			else -- first element in longer list
+				thisModule.outPortIBDChildListNextY.subSequence(pind + 1, thisModule.outPortIBDChildListNextY.size()).prepend(y)
+			endif
+		else
+			if pind = thisModule.blockList.size() then -- last element in list
+				thisModule.outPortIBDChildListNextY.subSequence(1, pind - 1).append(y)
+			else -- not first or last
+				thisModule.outPortIBDChildListNextY.subSequence(1, pind - 1).append(y).
+				 union(thisModule.outPortIBDChildListNextY.subSequence(pind + 1, thisModule.outPortIBDChildListNextY.size()))
+			endif
+		endif
+	endif;
+
+helper context SysML!Class def: longestLabel : Integer =
+	self.ownedAttribute->select(p | p.oclIsTypeOf(SysML!Port))->collect(ns | ns.name.size())->
+		iterate(l; max : Integer = 0 |
+	if l > max then
+		l
+	else
+		max
+	endif);
+	
+--rule ToSysMLComment2Comment {
+--	from
+--		tsml: SourceCmt!ToSysMLComment
+--	to
+--		com: SysML!Comment(
+--			body <- tsml.Body
+--		)
+--}

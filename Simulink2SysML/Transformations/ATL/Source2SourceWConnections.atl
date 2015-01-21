@@ -1,0 +1,92 @@
+-- @path Source=/Simulink2SysML/MetaModels/SimulinkSourceMM.ecore
+-- @path Simulink=/Simulink2SysML/MetaModels/SimulinkMM.ecore
+
+module Source2SourceWConnections;
+create srcwcon : Source from src : Source, simLines : Simulink;
+
+rule Model2Model {
+	from
+		mi: Source!Model
+	to
+		mo: Source!Model (
+			Name <- mi.Name,
+			Block <- mi.Block
+		)
+}
+
+rule System2System {
+	from
+		bi: Source!System
+	to
+		bo: Source!System (
+			Name <- bi.Name,
+			ID <- bi.ID,
+			Property <- bi.Property,
+			Block <- bi.Block,
+			Port <- bi.Port,
+			Connection <- Simulink!Line.allInstancesFrom('simLines')->
+					select(sl | sl.getID = bi.ID)->
+					collect(slp | thisModule.Line2Connection(slp))
+		)
+}
+
+lazy rule Line2Connection {
+	from
+		l: Simulink!Line
+	to
+		c: Source!Connection (
+			Name <- l.Property->select(sl | sl.Name = 'Name')->
+				collect(slv | slv.Value.Value)->any(sls | true),
+			src <- thisModule.findPort(l.Property->select(sl | sl.Name = 'Src')->
+				collect(slv | slv.Value.Value)->any(sls | true)),
+			dst <- thisModule.findPort(l.Property->select(dl | dl.Name = 'Dst')->
+				collect(dlv | dlv.Value.Value)->any(dls | true))
+		)
+}
+
+helper context Simulink!Line def: getID: String =
+	if self.refImmediateComposite().refImmediateComposite().oclIsTypeOf(Simulink!Model) then
+		'Root'
+	else
+		self.refImmediateComposite().refImmediateComposite().SID
+	endif;
+
+helper def: findPort(pName : String): Source!Port =
+	Source!Port.allInstancesFrom('src')->
+	select(p | p.refImmediateComposite().ID + '#' + p.Direction + ':' + p.Num = pName)->any(sp | true);
+
+rule Block2Block {
+	from
+		bi: Source!Block
+	to
+		bo: Source!Block (
+			Name <- bi.Name,
+			ID <- bi.ID,
+			Type <- bi.Type,
+			Property <- bi.Property,
+			Port <- bi.Port
+		)
+}
+
+rule Property2Property {
+	from
+		pi: Source!Property
+	to
+		po: Source!Property (
+			Name <- pi.Name,
+			Type <- pi.Type,
+			Value <- pi.Value
+		)
+}
+
+rule Port2Port {
+	from
+		pi: Source!Port
+	to
+		po: Source!Port (
+			Direction <- pi.Direction,
+			Num <- pi.Num,
+			Name <- pi.Name,
+			Type <- pi.Type
+		)
+}

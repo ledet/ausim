@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulinkmm:ModelInformation xmlns:simulinkmm="http://simulinkmm/1.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xsi:schemaLocation="http://simulinkmm/1.0 ../MetaModels/SimulinkMM.ecore" Version="0.9">
+  <Model Name="Team_1_Strategy">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <BlockParameterDefaults>
+      <BlockParams BlockType="Demux">
+	<Property Name="Outputs">
+<Value xsi:type="simulinkmm:SimInt" Value="4"/>
+</Property>
+	
+	
+      </BlockParams>
+      <BlockParams BlockType="Inport">
+	<Property Name="Port">
+<Value xsi:type="simulinkmm:SimInt" Value="1"/>
+</Property>
+	
+	
+	
+	<Property Name="OutDataTypeStr">
+<Value xsi:type="simulinkmm:SimString" Value="Inherit: auto"/>
+</Property>
+	
+	<Property Name="BusOutputAsStruct">
+<Value xsi:type="simulinkmm:SimBool" Value="false"/>
+</Property>
+	<Property Name="PortDimensions">
+<Value xsi:type="simulinkmm:SimInt" Value="-1"/>
+</Property>
+	
+	
+	
+	
+	
+	
+	
+      </BlockParams>
+      <BlockParams BlockType="Outport">
+	<Property Name="Port">
+<Value xsi:type="simulinkmm:SimInt" Value="1"/>
+</Property>
+	
+	
+	<Property Name="OutDataTypeStr">
+<Value xsi:type="simulinkmm:SimString" Value="Inherit: auto"/>
+</Property>
+	
+	<Property Name="BusOutputAsStruct">
+<Value xsi:type="simulinkmm:SimBool" Value="false"/>
+</Property>
+	<Property Name="PortDimensions">
+<Value xsi:type="simulinkmm:SimInt" Value="-1"/>
+</Property>
+	
+	
+	
+	
+	
+	
+	
+      </BlockParams>
+      <BlockParams BlockType="S-Function">
+	<Property Name="FunctionName">
+<Value xsi:type="simulinkmm:SimString" Value="system"/>
+</Property>
+	
+	<Property Name="PortCounts">
+<Value xsi:type="simulinkmm:ValueArray"/>
+</Property>
+	
+      </BlockParams>
+      <BlockParams BlockType="SubSystem">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+      </BlockParams>
+      <BlockParams BlockType="Terminator">
+      </BlockParams>
+    </BlockParameterDefaults>
+    <System>
+      
+      
+      
+      
+      
+      <Block BlockType="Inport" Name="Ball Position" SID="1">
+	
+	
+	<Property Name="PortDimensions">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="2"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="1"/>
+</Entry>
+</Value>
+</Property>
+      </Block>
+      <Block BlockType="Inport" Name="Power" SID="2">
+	
+	<Property Name="Port">
+<Value xsi:type="simulinkmm:SimInt" Value="2"/>
+</Property>
+	
+	<Property Name="BusOutputAsStruct">
+<Value xsi:type="simulinkmm:SimBool" Value="true"/>
+</Property>
+	<Property Name="PortDimensions">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="4"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="1"/>
+</Entry>
+</Value>
+</Property>
+      </Block>
+      <Block BlockType="Inport" Name="Robot Position" SID="3">
+	
+	<Property Name="Port">
+<Value xsi:type="simulinkmm:SimInt" Value="3"/>
+</Property>
+	
+	<Property Name="BusOutputAsStruct">
+<Value xsi:type="simulinkmm:SimBool" Value="true"/>
+</Property>
+	<Property Name="PortDimensions">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="8"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="1"/>
+</Entry>
+</Value>
+</Property>
+      </Block>
+      <Block BlockType="SubSystem" xsi:type="simulinkmm:SubSystemBlock" Name="Embedded MATLAB" SID="4">
+	<Property Name="Ports">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="3"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="2"/>
+</Entry>
+</Value>
+</Property>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<System>
+	  
+	  
+	  
+	  
+	  
+	  <Block BlockType="Inport" Name="ball_position" SID="4::1">
+	    
+	    
+	  </Block>
+	  <Block BlockType="Inport" Name="power" SID="4::21">
+	    
+	    <Property Name="Port">
+<Value xsi:type="simulinkmm:SimInt" Value="2"/>
+</Property>
+	    
+	  </Block>
+	  <Block BlockType="Inport" Name="robot_position" SID="4::19">
+	    
+	    <Property Name="Port">
+<Value xsi:type="simulinkmm:SimInt" Value="3"/>
+</Property>
+	    
+	  </Block>
+	  <Block BlockType="Demux" Name=" Demux " SID="4::23">
+	    <Property Name="Ports">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="1"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="1"/>
+</Entry>
+</Value>
+</Property>
+	    
+	    
+	    <Property Name="Outputs">
+<Value xsi:type="simulinkmm:SimInt" Value="1"/>
+</Property>
+	  </Block>
+	  <Block BlockType="S-Function" xsi:type="simulinkmm:SFunctionBlock" Name=" SFunction " SID="4::22">
+	    <Property Name="Tag">
+<Value xsi:type="simulinkmm:SimString" Value="Stateflow S-Function Team_1_Strategy 7"/>
+</Property>
+	    <Property Name="Ports">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="3"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="3"/>
+</Entry>
+</Value>
+</Property>
+	    
+	    
+	    <Property Name="FunctionName">
+<Value xsi:type="simulinkmm:SimString" Value="sf_sfun"/>
+</Property>
+	    <Property Name="PortCounts">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="3"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="3"/>
+</Entry>
+</Value>
+</Property>
+	    
+	    <Port PortNumber="2" Name="actuator_force_1" RTWStorageClass="Auto" DataLoggingNameMode="SignalName"/>
+	    <Port PortNumber="3" Name="actuator_force_2" RTWStorageClass="Auto" DataLoggingNameMode="SignalName"/>
+	  </Block>
+	  <Block BlockType="Terminator" Name=" Terminator " SID="4::25">
+	    
+	    
+	  </Block>
+	  <Block BlockType="Outport" Name="actuator_force_1" SID="4::5">
+	    
+	    
+	  </Block>
+	  <Block BlockType="Outport" Name="actuator_force_2" SID="4::20">
+	    
+	    <Property Name="Port">
+<Value xsi:type="simulinkmm:SimInt" Value="2"/>
+</Property>
+	    
+	  </Block>
+	  <Line>
+	    <Property Name="Src">
+<Value xsi:type="simulinkmm:SimString" Value="4::1#out:1"/>
+</Property>
+	    <Property Name="Dst">
+<Value xsi:type="simulinkmm:SimString" Value="4::22#in:1"/>
+</Property>
+	  </Line>
+	  <Line>
+	    <Property Name="Src">
+<Value xsi:type="simulinkmm:SimString" Value="4::21#out:1"/>
+</Property>
+	    <Property Name="Dst">
+<Value xsi:type="simulinkmm:SimString" Value="4::22#in:2"/>
+</Property>
+	  </Line>
+	  <Line>
+	    <Property Name="Src">
+<Value xsi:type="simulinkmm:SimString" Value="4::19#out:1"/>
+</Property>
+	    <Property Name="Dst">
+<Value xsi:type="simulinkmm:SimString" Value="4::22#in:3"/>
+</Property>
+	  </Line>
+	  <Line>
+	    <Property Name="Name">
+<Value xsi:type="simulinkmm:SimString" Value="actuator_force_1"/>
+</Property>
+	    <Property Name="Labels">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="0"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="0"/>
+</Entry>
+</Value>
+</Property>
+	    <Property Name="Src">
+<Value xsi:type="simulinkmm:SimString" Value="4::22#out:2"/>
+</Property>
+	    <Property Name="Dst">
+<Value xsi:type="simulinkmm:SimString" Value="4::5#in:1"/>
+</Property>
+	  </Line>
+	  <Line>
+	    <Property Name="Name">
+<Value xsi:type="simulinkmm:SimString" Value="actuator_force_2"/>
+</Property>
+	    <Property Name="Labels">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="0"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="0"/>
+</Entry>
+</Value>
+</Property>
+	    <Property Name="Src">
+<Value xsi:type="simulinkmm:SimString" Value="4::22#out:3"/>
+</Property>
+	    <Property Name="Dst">
+<Value xsi:type="simulinkmm:SimString" Value="4::20#in:1"/>
+</Property>
+	  </Line>
+	  <Line>
+	    <Property Name="Src">
+<Value xsi:type="simulinkmm:SimString" Value="4::23#out:1"/>
+</Property>
+	    <Property Name="Dst">
+<Value xsi:type="simulinkmm:SimString" Value="4::25#in:1"/>
+</Property>
+	  </Line>
+	  <Line>
+	    <Property Name="Src">
+<Value xsi:type="simulinkmm:SimString" Value="4::22#out:1"/>
+</Property>
+	    <Property Name="Dst">
+<Value xsi:type="simulinkmm:SimString" Value="4::23#in:1"/>
+</Property>
+	  </Line>
+	</System>
+      </Block>
+      <Block BlockType="Outport" Name=" Actuator Force 1" SID="5">
+	
+	
+      </Block>
+      <Block BlockType="Outport" Name="Actuator Force 2" SID="6">
+	
+	<Property Name="Port">
+<Value xsi:type="simulinkmm:SimInt" Value="2"/>
+</Property>
+	
+      </Block>
+      <Line>
+	<Property Name="Src">
+<Value xsi:type="simulinkmm:SimString" Value="1#out:1"/>
+</Property>
+	<Property Name="Dst">
+<Value xsi:type="simulinkmm:SimString" Value="4#in:1"/>
+</Property>
+      </Line>
+      <Line>
+	<Property Name="Labels">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="0"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="0"/>
+</Entry>
+</Value>
+</Property>
+	<Property Name="Src">
+<Value xsi:type="simulinkmm:SimString" Value="3#out:1"/>
+</Property>
+	<Property Name="Dst">
+<Value xsi:type="simulinkmm:SimString" Value="4#in:3"/>
+</Property>
+      </Line>
+      <Line>
+	<Property Name="Src">
+<Value xsi:type="simulinkmm:SimString" Value="4#out:1"/>
+</Property>
+	<Property Name="Dst">
+<Value xsi:type="simulinkmm:SimString" Value="5#in:1"/>
+</Property>
+      </Line>
+      <Line>
+	<Property Name="Src">
+<Value xsi:type="simulinkmm:SimString" Value="4#out:2"/>
+</Property>
+	<Property Name="Dst">
+<Value xsi:type="simulinkmm:SimString" Value="6#in:1"/>
+</Property>
+      </Line>
+      <Line>
+	<Property Name="Src">
+<Value xsi:type="simulinkmm:SimString" Value="2#out:1"/>
+</Property>
+	<Property Name="Dst">
+<Value xsi:type="simulinkmm:SimString" Value="4#in:2"/>
+</Property>
+      </Line>
+    </System>
+  </Model>
+  
+</simulinkmm:ModelInformation>

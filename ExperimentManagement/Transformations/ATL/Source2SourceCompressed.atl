@@ -1,0 +1,186 @@
+-- @path Source=/Simulink2SysML/MetaModels/SimulinkSourceMM.ecore
+
+module Source2SourceCompressed;
+create srccomp : Source from src : Source;
+
+
+rule Model2Model {
+	from
+		smdl: Source!Model
+	to
+		tmdl: Source!Model (
+			Name <- smdl.Name,
+			Block <- smdl.Block
+		)
+		
+}
+
+rule System2System {
+	from
+		ssys: Source!System (not ssys.isFunctionBlock)
+	to
+		tsys: Source!System (
+			Name <- ssys.Name,
+			ID <- ssys.ID,
+			Property <- ssys.Property,
+			Block <- ssys.Block,
+			Port <- ssys.Port,
+			Connection <- ssys.Connection
+		)		
+}
+
+rule System2FunctionBlock {
+	from
+		ssys: Source!System (ssys.isFunctionBlock)
+	to
+		tsys: Source!Block (
+			Name <- ssys.Name.regexReplaceAll('MATLAB', 'Code'),
+			ID <- ssys.ID,
+			Property <- ssys.Property,
+			Type <- 'Function',
+			Port <- ssys.Port
+		)
+}
+
+rule Block2Block {
+	from
+		sblk: Source!Block (not sblk.refImmediateComposite().isFunctionBlock)
+	to
+		tblk: Source!Block (
+			Name <- sblk.Name,
+			ID <- sblk.ID,
+			Type <- sblk.Type,
+			Property <- sblk.Property,
+			Port <- sblk.Port
+		)
+		
+}
+
+rule Property2Property {
+	from
+		sprp: Source!Property (sprp.transProperty)
+	to
+		tprp: Source!Property (
+			Name <- sprp.Name,
+			Type <- sprp.Type,
+			Value <- sprp.Value
+		)
+}
+
+helper context Source!Property def: transProperty: Boolean =
+	if not self.refImmediateComposite().refImmediateComposite().oclIsTypeOf(Source!System) then
+		true
+	else
+		not self.refImmediateComposite().refImmediateComposite().isFunctionBlock
+	endif;
+
+rule Port2Port {
+	from
+		sprt: Source!Port (not sprt.refImmediateComposite().oclIsTypeOf(Source!System) and not sprt.refImmediateComposite().refImmediateComposite().isFunctionBlock)
+	to
+		tprt: Source!Port (
+			Direction <- sprt.Direction,
+			Num <- sprt.Num,
+			Name <- sprt.Name,
+			Type <- sprt.getPortType
+		)
+}
+
+rule SystemPort2Port {
+	from
+		sprt: Source!Port (sprt.refImmediateComposite().oclIsTypeOf(Source!System))
+	to
+		tprt: Source!Port (
+			Direction <- sprt.Direction,
+			Num <- sprt.Num,
+			Name <- sprt.Name + sprt.refImmediateComposite().getPortName(sprt.Direction, sprt.Num),
+			Type <- sprt.getPortType
+		)
+}
+
+helper context Source!Component def: getPortName(dir: String, num: Integer): String =
+	self.Block->
+		select(b | b.Type.toLower() = dir + 'port' 
+			and b.Property->exists(p | p.Name='Port' and p.Value = num.toString())
+			)->
+		collect(bn | bn.Name)->first();
+
+rule Connection2Connection {
+	from
+		scon: Source!Connection (not scon.refImmediateComposite().isFunctionBlock)
+	to
+		tcon: Source!Connection (
+			src <- scon.src,
+			dst <- scon.dst,
+			Name <- scon.Name
+		)
+}
+
+helper context Source!System def: isFunctionBlock: Boolean =
+	self.hasBlockOfType('S-Function') and self.hasBlockOfType('Demux')
+		and self.hasBlockOfType('Terminator')
+		and self.countSFunctionPorts('in') = self.countPortBlocks('In')
+		and self.countSFunctionPorts('out') = self.countPortBlocks('Out') + 1
+		and self.connectionExists('S-Function', 'out', 1, 'Demux', 'in', 1)
+		and self.connectionExists('Demux', 'out', 1, 'Terminator', 'in', 1)
+		and self.countSFunctionPorts('in') = self.countInConnections
+		and self.countPortBlocks('Out') = self.countOutConnections;
+
+helper context Source!System def: hasBlockOfType (BlockType : String): Boolean =
+	self.Block->select(b | b.oclIsTypeOf(Source!Block))->exists(d | d.Type = BlockType);
+
+helper context Source!System def: countSFunctionPorts (dir : String): Integer =
+	self.Block->select(b | b.oclIsTypeOf(Source!Block))->
+		select(sf | sf.Type = 'S-Function')->
+		collect(bp | bp.Port)->flatten()->select(p | p.Direction = dir)->size();
+
+helper context Source!System def: countPortBlocks (dir : String): Integer =
+	self.Block->select(b | b.oclIsTypeOf(Source!Block))->select(p | p.Type = dir + 'port')->size();
+
+helper context Source!System def: countBlocks: Integer =
+	self.Block->select(b | b.oclIsTypeOf(Source!Block))->size();
+
+helper context Source!Port def: getPortType: String =
+	if not self.Type.oclIsUndefined() then
+	--if not self.Type.oclIsUndefined() then
+		self.Type
+	else -- if type is not there, 
+		self.refImmediateComposite().refImmediateComposite().Connection->select(c | c.src = self or c.dst = self)->
+			iterate(p; pt : String = '' | 
+			if pt <> '' then
+				pt
+			else 
+				if not p.src.Type.oclIsUndefined() then
+					p.src.Type
+				else
+					if not p.dst.Type.oclIsUndefined() then
+						p.dst.Type
+					else
+						pt
+					endif
+				endif
+			endif
+		)
+	endif;
+
+helper context Source!System def: connectionExists
+	(srcBlockType : String, srcPortDir : String, srcPortNum : Integer, 
+		dstBlockType : String, dstPortDir : String, dstPortNum : Integer): 
+		Boolean =
+	self.Connection->select(cb | cb.src.refImmediateComposite().oclIsTypeOf(Source!Block) and cb.dst.refImmediateComposite().oclIsTypeOf(Source!Block))->
+		exists(c | c.src.refImmediateComposite().Type = srcBlockType and c.src.Direction = srcPortDir and c.src.Num = srcPortNum
+			and c.dst.refImmediateComposite().Type = dstBlockType and c.dst.Direction = dstPortDir and c.dst.Num = dstPortNum);
+
+helper context Source!System def: countInConnections: Integer =
+-- from InportBlocks to inports of Sfunction
+	self.Connection->select(cb | cb.src.refImmediateComposite().oclIsTypeOf(Source!Block) and cb.dst.refImmediateComposite().oclIsTypeOf(Source!Block))->
+		select(c | c.src.refImmediateComposite().Type = 'Inport' and c.dst.refImmediateComposite().Type = 'S-Function' 
+			and c.src.refImmediateComposite().Property->exists(spn | spn.Name = 'Port' and spn.Value = c.dst.Num.toString() and c.dst.Direction = 'in'))
+		->size();
+
+helper context Source!System def: countOutConnections: Integer =
+-- from outports of Sfunction to OutportBlocks
+	self.Connection->select(cb | cb.src.refImmediateComposite().oclIsTypeOf(Source!Block) and cb.dst.refImmediateComposite().oclIsTypeOf(Source!Block))->
+		select(c | c.dst.refImmediateComposite().Type = 'Outport' and c.src.refImmediateComposite().Type = 'S-Function' 
+			and c.dst.refImmediateComposite().Property->exists(dpn | dpn.Name = 'Port' and dpn.Value = (c.src.Num - 1).toString() and c.src.Direction = 'out'))
+		->size();

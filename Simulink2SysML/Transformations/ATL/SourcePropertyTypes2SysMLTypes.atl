@@ -1,0 +1,88 @@
+-- @nsURI SysML=http://www.eclipse.org/papyrus/0.7.0/SysML
+-- @path Source=/Simulink2SysML/MetaModels/SimulinkSourceMM.ecore
+
+module SourcePropertyTypes2SysMLTypes;
+create prop : SysML from src : Source;
+
+rule Model2Model {
+	from
+		srcm: Source!Model
+	to
+		mdl: SysML!Model (
+			name <- 'Properties',
+			packagedElement <- Source!Property.allInstancesFrom('src')->
+				select(a | a.Type.startsWith('Array:'))->
+				iterate(ap; aps : Set(Source!Property) = Set {} |
+					if aps->collect(apsn | apsn.Type)->includes(ap.Type) then
+						aps
+					else
+						aps->including(ap)
+					endif
+				)->collect(dt | thisModule.PropDataType(dt))->
+				union(Source!Property.allInstancesFrom('src')->
+				select(a | not a.Type.startsWith('Array:'))->
+				iterate(ap; aps : Set(Source!Property) = Set {} |
+					if aps->collect(apsn | apsn.Type)->includes(ap.Type) then
+						aps
+					else
+						aps->including(ap)
+					endif
+				)->collect(dt | thisModule.PropPrimitiveType(dt)))->
+				union(Source!Port.allInstancesFrom('src')->
+				select(nud | not nud.Type.oclIsUndefined())->
+				select(a | a.Type.startsWith('Array:'))->
+				iterate(ap; aps : Set(Source!Port) = Set {} |
+					if aps->collect(apsn | apsn.Type)->includes(ap.Type) then
+						aps
+					else
+						aps->including(ap)
+					endif
+				)->collect(dt | thisModule.PortDataType(dt)))->
+				union(Source!Port.allInstancesFrom('src')->
+				select(nud | not nud.Type.oclIsUndefined())->
+				select(a | not a.Type.startsWith('Array:') and a.Type <> '')->
+				iterate(ap; aps : Set(Source!Port) = Set {} |
+					if aps->collect(apsn | apsn.Type)->includes(ap.Type) then
+						aps
+					else
+						aps->including(ap)
+					endif
+				)->collect(dt | thisModule.PortPrimitiveType(dt)))
+		)
+}
+
+lazy rule PropDataType {
+	from
+		prop : Source!Property
+	to
+		t : SysML!DataType(
+			name <- prop.Type
+		)
+}
+
+lazy rule PropPrimitiveType {
+	from
+		prop : Source!Property
+	to
+		t : SysML!PrimitiveType(
+			name <- prop.Type
+		)
+}
+
+lazy rule PortDataType {
+	from
+		port : Source!Port
+	to
+		t : SysML!DataType(
+			name <- port.Type
+		)
+}
+
+lazy rule PortPrimitiveType {
+	from
+		port : Source!Port
+	to
+		t : SysML!PrimitiveType(
+			name <- port.Type
+		)
+}

@@ -1,0 +1,84 @@
+-- @nsURI SysML=http://www.eclipse.org/papyrus/0.7.0/SysML
+
+module SysML2SysML;
+create dst : SysML from src : SysML;
+
+rule Model2Model {
+	from
+		sm: SysML!Model (sm.name = 'SysMLmodel')
+	to
+		dm: SysML!Model (
+			name<-sm.name,
+			packagedElement<-sm.packagedElement
+		)
+}
+
+rule Package2Package {
+	from
+		sp: SysML!Package (sp.name <> 'SysMLmodel')
+	to
+		dp: SysML!Package (
+			name<-sp.name,
+			packagedElement<-sp.packagedElement
+		)
+}
+
+rule Class2Class {
+	from
+		sc: SysML!Class
+	to
+		dc: SysML!Class (
+			name<-sc.name,
+			ownedAttribute<-sc.ownedAttribute,
+			ownedBehavior<-sc.ownedBehavior,
+			ownedOperation<-sc.ownedOperation
+		)
+}
+
+rule Port2Port {
+	from
+		sp: SysML!Port
+	to
+		dp: SysML!Port (
+			name<-sp.name
+		)
+}
+
+rule Property2Property {
+	from
+		sp: SysML!Property (sp.oclIsTypeOf(SysML!Property))
+	to
+		dp: SysML!Property (
+			name<-sp.name,
+			type<-sp.type,
+			aggregation<-sp.aggregation,
+			defaultValue<-sp.defaultValue
+		)
+}
+
+rule LiteralString2LiteralString {
+	from
+		sl: SysML!LiteralString
+	to
+		dl: SysML!LiteralString (
+			value<-sl.value
+		)
+}
+
+rule DataType2DataType {
+	from
+		sd: SysML!DataType (sd.name.startsWith('Array:'))
+	to
+		dd: SysML!DataType (
+			name<-sd.name
+		)
+}
+
+rule PrimitiveType2PrimitiveType {
+	from
+		sp: SysML!PrimitiveType (not sp.name.startsWith('Array:'))
+	to
+		dp: SysML!PrimitiveType (
+			name<-sp.name
+		)
+}

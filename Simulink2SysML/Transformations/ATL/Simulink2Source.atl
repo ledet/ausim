@@ -1,0 +1,247 @@
+-- @path Simulink=/Simulink2SysML/MetaModels/SimulinkMM.ecore
+-- @path Source=/Simulink2SysML/MetaModels/SimulinkSourceMM.ecore
+
+-- Creates Model without default properties
+
+module Simulink2Source;
+create src : Source from sim : Simulink, defaults : Source;
+
+rule ModelInformation2Model {
+	from
+		mi: Simulink!ModelInformation
+	to
+		mdl: Source!Model (
+			Name <- mi.Model.Name,
+			Block <- b
+		),
+		b: Source!System (
+			Name <- mi.Model.Name,
+			ID <- 'Root',
+			Property <- mi.Model.System.Property,
+			Block <- mi.Model.System.Block
+		)
+}
+
+rule InportBlock2Block {
+	from
+		inp: Simulink!Block (inp.BlockType = 'Inport')
+	to
+		b: Source!Block(
+			Type <- inp.BlockType,
+			Name <- inp.Name,
+			ID <- inp.SID,
+--			Port <- outp,
+			Property <- inp.Property->union(
+			Source!Property.allInstancesFrom('defaults')->
+				select(dp | dp.refImmediateComposite().Type = inp.BlockType
+					and not inp.Property->exists(ip | ip.Name = dp.Name))->
+				collect(bp | thisModule.defaultProperty(bp)))
+--		),
+--		outp: Source!Port(
+--			Direction <- 'out',
+--			Num <- 1,
+--			Name <- inp.SID + '#out:1'
+--			
+		)
+}
+
+rule OutportBlock2Block {
+	from
+		outp: Simulink!Block (outp.BlockType = 'Outport')
+	to
+		b: Source!Block(
+			Type <- outp.BlockType,
+			Name <- outp.Name,
+			ID <- outp.SID,
+--			Port <- inp,
+			Property <- outp.Property->union(
+			Source!Property.allInstancesFrom('defaults')->
+				select(dp | dp.refImmediateComposite().Type = outp.BlockType
+					and not outp.Property->exists(op | op.Name = dp.Name))->
+				collect(bp | thisModule.defaultProperty(bp)))
+		)
+}
+
+rule SubSystemBlock2System {
+	from
+		sub: Simulink!Block (sub.isSubsystemBlock)
+	to
+		b: Source!System(
+			Name <- sub.Name,
+			ID <- sub.SID,
+			Block <- sub.System.Block,
+			Property <- sub.Property->
+				union(sub.System.Property)->
+				union(Source!Property.allInstancesFrom('defaults')->
+					select(dp | dp.refImmediateComposite().Type = sub.BlockType
+						and not sub.Property->exists(sp | sp.Name = dp.Name))->
+					collect(bp | thisModule.defaultProperty(bp))),
+			Block <- sub.System.Block
+		)
+}
+
+rule BlockWithSimPort2Block {
+	from
+		b: Simulink!Block (not b.isSubsystemBlock and b.BlockType <> 'Inport' and b.BlockType <> 'Outport' and b.isPortedBlock)
+	to
+		dst: Source!Block(
+			Type <- b.BlockType,
+			Name <- b.Name,
+			ID <- b.SID,
+			Property <- b.Property->
+				union(Source!Property.allInstancesFrom('defaults')->
+					select(dp | dp.refImmediateComposite().Type = b.BlockType
+						and not b.Property->exists(bp | bp.Name = dp.Name))->
+					collect(blp | thisModule.defaultProperty(blp))),
+			Port <- b.Port
+		)
+}
+
+rule BlockWithoutSimPort2Block {
+	from
+		b: Simulink!Block (not b.isSubsystemBlock and b.BlockType <> 'Inport' and b.BlockType <> 'Outport' and not b.isPortedBlock)
+	to
+		dst: Source!Block(
+			Type <- b.BlockType,
+			Name <- b.Name,
+			ID <- b.SID,
+			Property <- b.Property->
+				union(Source!Property.allInstancesFrom('defaults')->
+					select(dp | dp.refImmediateComposite().Type = b.BlockType
+						and not b.Property->exists(bp | bp.Name = dp.Name))->
+					collect(blp | thisModule.defaultProperty(blp)))
+		)
+}
+
+lazy rule defaultProperty {
+	from
+		dp: Source!Property
+	to
+		p: Source!Property(
+			Name <- dp.Name,
+			Type <- dp.Type,
+			Value <- dp.Value
+		)
+}
+
+rule createProperty(name : String, type : String, value : Integer) {
+	to
+		p: Source!Property(
+			Name <- name,
+			Type <- type,
+			Value <- value.toString()
+		)
+}
+
+rule Port2Port {
+	from
+		simp: Simulink!Port
+	to
+		p: Source!Port(
+			Direction <- 'out',
+			Num <- simp.PortNumber,
+			Name <- simp.Name
+		)
+}
+
+rule SimpleProperty2Property {
+	from
+		simp: Simulink!Property (simp.isSimpleProperty and simp.shouldBeProcessed)
+	to
+		srcp: Source!Property(
+			Name <- simp.getSystemProperty + simp.Name,
+			Type <- simp.getPropertyType,
+			Value <- simp.Value.Value.toString()
+		)
+}
+
+rule ArrayProperty2Property {
+	from
+		p: Simulink!Property (not p.isSimpleProperty and p.shouldBeProcessed)
+	to
+		srcp: Source!Property(
+			Name <- p.getSystemProperty + p.Name,
+			Type <- 'Array' + p.Value.getArrayType,
+			Value <- p.Value.arrayToString
+		)
+}
+
+helper context Simulink!Property def: getSystemProperty: String =
+	if self.refImmediateComposite().oclIsTypeOf(Simulink!System) then
+		'System - '
+	else
+		''
+	endif;
+
+helper context Simulink!Property def: isSimpleProperty: Boolean =
+	not self.Value.oclIsKindOf(Simulink!ValueArray);
+
+helper context Simulink!Property def: shouldBeProcessed: Boolean =
+--	self.BlockParams.oclIsUndefined() and self.Line.oclIsUndefined() and self.Branch.oclIsUndefined();
+	not (self.refImmediateComposite().oclIsTypeOf(Simulink!BlockParams)
+	or self.refImmediateComposite().oclIsTypeOf(Simulink!Line)
+	or self.refImmediateComposite().oclIsTypeOf(Simulink!Branch));
+	
+
+helper context Simulink!Value def: getArrayType: String =
+	if self.Entry->collect(e | e.Value.oclIsKindOf(Simulink!SimString))->includes(true) then
+		':String'
+	else
+		if self.Entry->collect(e | e.Value.oclIsKindOf(Simulink!SimBool))->includes(true) then
+			':Boolean'
+		else
+			if self.Entry->collect(e | e.Value.oclIsKindOf(Simulink!SimFloat))->includes(true) then
+				':Float'
+			else
+				if self.Entry->collect(e | e.Value.oclIsKindOf(Simulink!SimInt))->includes(true) then
+					':Int'
+				else
+					''
+				endif
+			endif
+		endif
+	endif;
+
+helper context Simulink!Value def: arrayToString: String =
+	'[' + self.Entry->collect(e | e)->
+		iterate(ent; array : String = '' |
+			array +
+				if ent.Index > 0 then
+					', '
+				else
+					''
+				endif
+				+ ent.Value.Value.toString()) + ']';
+
+helper context Simulink!Property def: getPropertyType: String =
+	if self.Value.oclIsKindOf(Simulink!ValueArray) then
+		'Array'
+	else
+		if self.Value.oclIsKindOf(Simulink!SimInt) then
+			'Int'
+		else
+			if self.Value.oclIsKindOf(Simulink!SimFloat) then
+				'Float'
+			else
+				if self.Value.oclIsKindOf(Simulink!SimBool) then
+					'Boolean'
+				else
+					'String'
+				endif
+			endif
+		endif
+	endif;
+
+helper context Simulink!Block def: isSubsystemBlock: Boolean =
+	if self.oclIsKindOf(Simulink!SubSystemBlock) then
+		true
+	else
+		false
+	endif;
+
+helper context Simulink!Block def: isPortedBlock: Boolean =
+	if self.oclIsKindOf(Simulink!SFunctionBlock) or self.oclIsKindOf(Simulink!BusSelectorBlock) then
+		true
+	else
+		false
+	endif;
