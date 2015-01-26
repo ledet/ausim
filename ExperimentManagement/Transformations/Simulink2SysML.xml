@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Simulink2SysML" default="Sim2Sys">
-	<property file="Simulink2SysML.properties" />
+	<property name="rootModelName" value="${model}" />
+	<property name="modelName" value="${subModel}" />
 	<property name="metaModelPath" value="../MetaModels" />
 	<property name="modelPath" value="../Models/" />
 	<property name="transPath" value="../Transformations" />
-	<!--property name="atl.launcher" value="Regular VM"/-->
 	
-	<!--path id="libraries">
-	    <fileset dir="lib">
-	    	<include name="*.jar"/>
-	    </fileset>
-	</path-->
-
-
 	<target name="Sim2Sys">
-		<!--taskdef name="atl.loadModel" classname="org.eclipse.m2m.atl.core.ant.tasks.LoadModelTask" classpathref="libraries" />
-	    <taskdef name="atl.launch" classname="org.eclipse.m2m.atl.core.ant.tasks.ATLModelTransformationTask" classpathref="libraries" />
-	    <taskdef name="atl.saveModel" classname="org.eclipse.m2m.atl.core.ant.tasks.SaveModelTask" classpathref="libraries" /-->
 
 		<unzip src="${modelPath}/${rootModelName}/${modelName}.slx" dest="${modelPath}/${rootModelName}/${modelName}_slx" />
 
@@ -46,7 +36,7 @@
 			<inmodel name="sim" model="simModel"/>
 			<outmodel name="src" model="srcDef" metamodel="Source"/>
 		</atl.launch>
-		
+
 		<atl.launch path="${transPath}/ATL/Simulink2Source.asm">
 			<inmodel name="sim" model="simModel"/>
 			<inmodel name="defaults" model="srcDef"/>
@@ -84,8 +74,8 @@
 			<outmodel name="nota" model="SysMLNotation" metamodel="SysMLnot"/>
 		</atl.launch>
 
-		<atl.saveModel model="SysMLModel" path="${modelPath}/${rootModelName}/${modelName}/${modelName}.uml"/>
-		<atl.saveModel model="SysMLNotation" path="${modelPath}/${rootModelName}/${modelName}/${modelName}.notation"/>
+		<atl.saveModel derived="false" model="SysMLModel" path="${modelPath}/${rootModelName}/${modelName}/${modelName}.uml"/>
+		<atl.saveModel derived="false" model="SysMLNotation" path="${modelPath}/${rootModelName}/${modelName}/${modelName}.notation"/>
 
 		<xslt style="${transPath}/XSLT/SysMLFinalizeUML.xsl"
 			in="${modelPath}/${rootModelName}/${modelName}/${modelName}.uml"
