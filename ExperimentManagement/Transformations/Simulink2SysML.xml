@@ -4,7 +4,7 @@
 	<property name="modelName" value="${subModel}" />
 	<property name="metaModelPath" value="../MetaModels" />
 	<property name="modelPath" value="../Models/" />
-	<property name="transPath" value="../Transformations" />
+	<property name="transPath" value="../Transformations/Simulink2SysML" />
 	
 	<target name="Sim2Sys">
 
