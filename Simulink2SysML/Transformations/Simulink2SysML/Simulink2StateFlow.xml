@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Simulink2StateFlow" default="Sim2State">
+	<property name="rootModelName" value="${model}" />
+	<property name="modelName" value="${subModel}" />
+	<property name="metaModelPath" value="../../MetaModels" />
+	<property name="modelPath" value="../../Models/" />
+	<property name="transPath" value="./" />
+	
+	<target name="Sim2State">
+
+		<xslt style="${transPath}/XSLT/Simulink_StateFlow.xsl"
+			in="${modelPath}/${rootModelName}.slx Folder/simulink/blockdiagram.xml"
+			out="${modelPath}/${rootModelName}/${modelName}/Simulink_StateFlow.xmi"
+			force="true">
+		</xslt>
+
+	</target>
+	
+</project>

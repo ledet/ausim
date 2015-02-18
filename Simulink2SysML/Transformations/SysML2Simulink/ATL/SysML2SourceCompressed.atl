@@ -1,0 +1,341 @@
+-- @path Source=/metamodel/SimulinkSourceMM.ecore
+-- @nsURI SysML=http://www.eclipse.org/papyrus/0.7.0/SysML
+-- @nsURI SysMLGUI=http://www.eclipse.org/gmf/runtime/1.0.2/notation
+
+--http://www.eclipse.org/papyrus/0.7.0/SysML
+--http://www.eclipse.org/uml2/4.0.0/UML
+module Papyrus2Simulink;
+create trgt: Source from src: SysML, sysGUI: SysMLGUI;
+
+rule Class2System{
+	from
+		smdl: SysML!Class (smdl.isSystem)
+	using{
+		portList: Sequence(SysML!Port) = smdl.ownedPort;
+		tempBlock: Source!Block = OclUndefined;
+		blkCounter: Integer = 1;
+		portType: String = '';
+
+		funcBlkList: Sequence(SysML!Class) = SysML!Class.allInstances();
+		connectorList: Sequence(SysML!Connector)= smdl.ownedConnector;
+		rolePorts: Sequence(SysML!Port) = Sequence{};
+		blkList: Sequence(Source!Block)=OclUndefined;
+		inPort: Source!Port = OclUndefined;
+		outPort: Source!Port = OclUndefined;
+		tempConn: Source!Connection = OclUndefined;
+		blkPortList: Sequence(Source!Port)=OclUndefined;
+		funcPortList: Sequence(Source!Port)=OclUndefined;
+		funcInBlkCount: Integer = 0;
+		
+		tempProperty: Source!Property = OclUndefined;
+		inportCounter: Integer = 1;
+		outportCounter: Integer = 1;
+		sidHighWaterMarkMax: Integer = 1;
+	}
+	to
+		tmdl: Source!Model (
+			Name <- smdl.name,
+			Block <- system			
+		),
+		system: Source!System(
+			Name <-smdl.name,
+			ID <- 'Root'			
+		)
+		do{	
+			
+			-- Inport Blocks
+			for(it1 in portList){
+				if (it1.isInPort){
+					portType <- 'Inport';
+					tempBlock <- thisModule.ClassPort2Block(it1, blkCounter, portType, inportCounter);   
+                	system.Block <- system.Block.append(tempBlock);
+                	inportCounter <- inportCounter + 1; 
+                	blkCounter <- blkCounter + 1;                	
+				}                
+			}	
+			
+			-- Function Blocks
+			for (it2 in funcBlkList){
+				if(it2.ownedBehavior.size() > 0){
+					tempBlock <- thisModule.Class2FuncBlock(it2, blkCounter);   
+                	system.Block <- system.Block.append(tempBlock);
+                	blkCounter <- blkCounter + 1;
+                	 
+				}
+			}
+			funcInBlkCount <- blkCounter -1;
+			
+			-- Outport Blocks
+			for(it3 in portList){
+				if (not it3.isInPort){
+					portType <- 'Outport';
+				
+					tempBlock <- thisModule.ClassPort2Block(it3, blkCounter, portType, outportCounter);   
+                	system.Block <- system.Block.append(tempBlock);
+                	blkCounter <- blkCounter + 1;
+                	outportCounter <- outportCounter + 1;
+				}
+                
+			}
+			
+			--Connections
+			for (it1 in connectorList){
+			 	rolePorts <- it1.getRoles;
+			 	for(it2 in rolePorts){
+			 		for (it4 in system.Block){
+			 			if(it4.Type ='Function'){
+			 				funcPortList<- it4.Port;
+			 				for(it5 in funcPortList){
+			 					if(it5.Name=it2.name and it5.Direction='in')
+			 						outPort <-it5;			 					
+			 					else if(it5.Name=it2.name and it5.Direction='out')
+			 						inPort <- it5;			 					
+			 				}
+			 			}
+			 			else{
+			 				if(it4.Name=it2.name){
+			 					funcPortList <- it4.Port;
+			 					if(funcPortList.first().Direction='in')
+			 						outPort <- funcPortList.first();
+			 					else
+			 						inPort<- funcPortList.first();
+			 				}
+			 			}
+			 		}			 		
+			 	}
+			 	tempConn <- thisModule.Connection('', inPort, outPort);   
+                system.Connection <- system.Connection.append(tempConn);
+			}
+			
+			blkList <- system.Block;
+			for(it5 in blkList){
+				if (it5.ID.toInteger() > sidHighWaterMarkMax){
+					sidHighWaterMarkMax <- it5.ID.toInteger();
+				}
+			}
+			
+		    --System Properties
+			tempProperty <- thisModule.Property('System - SIDHighWatermark', 'Int',
+		sidHighWaterMarkMax.toString()); 		   
+            system.Property <- system.Property.append(tempProperty);  		
+
+			tempProperty <- thisModule.Property('System - ReportName', 'String',
+		'simulink-default.rpt'); 		   
+            system.Property <- system.Property.append(tempProperty);  
+		}
+}
+
+lazy rule Class2FuncBlock{
+	from
+		sClass: SysML!Class, id: Integer
+	using{
+		tempPort: SysML!Port = OclUndefined;
+		inportCounter: Integer = 1;
+		outportCounter: Integer = 1;
+		portList: Sequence(SysML!Port) = sClass.ownedPort;
+		tempProperty: Source!Property = OclUndefined;
+	}
+	to
+		blk: Source!Block (
+			Name <- sClass.name,
+			ID <- id.toString(),
+			Type <- 'Function'
+		)
+	do{
+		--Ports
+		for(it1 in portList){
+			if (it1.isInPort){
+				tempPort <- thisModule.Port(it1.name, 'in', inportCounter);   
+        		blk.Port <- blk.Port.append(tempPort);
+        		inportCounter <- inportCounter +1;
+			}
+			else{
+				tempPort <- thisModule.Port(it1.name, 'out', outportCounter);   
+        		blk.Port <- blk.Port.append(tempPort);
+        		outportCounter <- outportCounter +1;
+			}
+		}
+		--Properties
+
+        tempProperty <- thisModule.Property('System - Location', 'Array:Int',
+		'[257, 457, 812, 717]'); 		   
+        blk.Property <- blk.Property.append(tempProperty);  
+	}
+}
+
+lazy rule ClassPort2Block{
+	from
+		sPrt: SysML!Port, id: Integer, type: String, counter: Integer
+	using{
+		tempPort: SysML!Port = OclUndefined;
+		portCounter: Integer = 1;
+		tempProperty: Source!Property = OclUndefined;
+		thirdCoord: Integer = 0;
+		fourthCoord: Integer = 0;
+		portDimension: String = '';
+		lowerIndex: Integer = 0;
+		upperIndex: Integer = 0;
+	}
+	to
+		blk: Source!Block (
+			Name <- sPrt.name,
+			ID <- id.toString(),
+			Type <- type.toString()			
+		)
+	do{
+		
+		tempPort <- thisModule.Port('', type.getPortDirection, portCounter);   
+        blk.Port <- blk.Port.append(tempPort);		
+        
+        --Properties
+		tempProperty <- thisModule.Property('Port', 'Int', counter.toString()); 		   
+        blk.Property <- blk.Property.append(tempProperty);  
+
+            
+        if(type='Inport'){
+        	thirdCoord <- sPrt.getXCoordinate+ 30;
+        	fourthCoord <- sPrt.getYCoordinate + 14;
+       		tempProperty <- thisModule.Property('Position', 'Array:Int', '[' + sPrt.getXCoordinate +', '+ sPrt.getYCoordinate +', '  + thirdCoord + ', '+fourthCoord+']'); 		   
+        	blk.Property <- blk.Property.append(tempProperty); 
+        
+        	lowerIndex <- sPrt.getTypeSize.indexOf('(');
+        	upperIndex <- sPrt.getTypeSize.indexOf(')');
+        	portDimension <- sPrt.getTypeSize.substring(lowerIndex + 2, upperIndex);
+       -- 	portDimension <- portDimension.replaceAll(')', '').trim;
+        	if(portDimension.size() > 0){
+            	tempProperty <- thisModule.Property('PortDimensions', 'Array:Int', '[' + portDimension +', '+ '1' +']'); 		   
+        		blk.Property <- blk.Property.append(tempProperty); 
+        	}
+        	else{
+        		tempProperty <- thisModule.Property('PortDimensions', 'Int', '-1'); 		   
+        		blk.Property <- blk.Property.append(tempProperty); 
+        	}
+        	
+        }
+        else if(type='Outport'){
+        	thirdCoord <- sPrt.getXCoordinate+ 30;
+        	fourthCoord <- sPrt.getYCoordinate + 14;       	
+        	tempProperty <- thisModule.Property('Position', 'Array:Int', '[' + sPrt.getXCoordinate +', '+ sPrt.getYCoordinate +', '  + thirdCoord + ', '+fourthCoord+']'); 		   
+        	blk.Property <- blk.Property.append(tempProperty); 
+        
+            tempProperty <- thisModule.Property('PortDimensions', 'Int', '-1'); 		   
+        	blk.Property <- blk.Property.append(tempProperty);  
+        }    
+
+        
+	}
+}
+
+lazy rule Port{
+	from
+		name: String, direction: String, num: Integer
+	to
+		tprt: Source!Port (
+			Direction <- direction,
+			Num <- num,
+			Name <- name
+		)
+}
+
+lazy rule Connection{
+	from
+		name: String, srcPort: Source!Port, dstPort: Source!Port
+	to
+		tprt: Source!Connection (
+			src <- srcPort,
+			dst <- dstPort,
+			Name <- name
+		)
+}
+
+lazy rule Property {
+	from
+		name: String, type: String, value: String
+	to
+		tprp: Source!Property (
+			Name <- name,
+			Type <- type,
+			Value <- value
+		)
+}
+
+helper context SysML!Element def: getXCoordinate: Integer =
+	SysMLGUI!Bounds.allInstances() -> iterate(s; res: Integer = 0 | 
+		if s.refImmediateComposite().element=self
+		then
+			s.refImmediateComposite().layoutConstraint.x
+		else 
+			res
+		endif
+);
+
+helper context SysML!Port def: getTypeSize: String =
+	SysML!DataType.allInstances() -> iterate(s; res: String = '' | 
+		if s=self.type
+		then
+			s.name
+		else 
+			res
+		endif
+);
+	
+
+
+helper context SysML!Element def: getYCoordinate: Integer =
+	SysMLGUI!Bounds.allInstances() -> iterate(s; res: Integer = 0 | 
+		if s.refImmediateComposite().element=self
+		then
+			s.refImmediateComposite().layoutConstraint.y
+		else 
+			res
+		endif
+);
+
+--helper context SysML!Element def: getFontName: String =
+--	SysMLGUI!Bounds.allInstances() -> iterate(s; res: String = 0 | 
+--		if s.refImmediateComposite().element=self
+--		then
+--			s.refImmediateComposite().fontName
+--		else 
+--			res
+--		endif
+--);
+
+helper context String def: getPortDirection: String =
+	if self.toString()='Inport' then
+		'out'
+	else
+		'in'
+	endif;
+
+--
+helper context SysML!Class def: isSystem: Boolean =
+	if self.ownedBehavior.size() = 0 and not self.oclIsTypeOf(SysML!Activity) then
+		true
+	else
+		false
+	endif;
+
+helper context SysML!Port def: isInPort: Boolean =
+	SysML!FlowPort.allInstances() -> iterate(f; res: Boolean = false | if f.
+			direction.toString() = 'in' and self = f.base_Port then
+			true
+		else
+			res
+		endif);
+
+helper context SysML!Connector def: getRoles: Sequence(SysML!Port) =
+	self.end -> iterate(f; res: Sequence(SysML!Port) = Sequence{} | if f.role.oclIsTypeOf(SysML!Port) then
+			res->union(Sequence{f.role})
+		else
+			res
+		endif);
+
+helper context Source!System def: getBlockPort (sysPort: SysML!Port): Source!Port =
+	self.Block -> iterate (f; res: Source!Port = OclUndefined | if f.Name=sysPort.name then
+			res->union(Sequence{f.role})
+		else
+			res
+		endif);
+	
+	

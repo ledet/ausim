@@ -1,0 +1,536 @@
+-- @path Source=/Simulink2SysML/MetaModels/SimulinkSourceMM.ecore
+
+
+module SourceCompressed2Source;
+create src: Source from srccomp: Source;
+
+--Transforms model to model
+rule Model2Model {
+	from
+		smdl: Source!Model
+	to
+		tmdl: Source!Model (
+			Name <- smdl.Name,
+			Block <- smdl.Block
+		)
+}
+
+--Transforms System to System
+rule System2System {
+	from
+		ssys: Source!System
+	to
+		tsys: Source!System (
+			Name <- ssys.Name,
+			ID <- ssys.ID,
+			Property <- ssys.Property,			
+			Block <- ssys.Block,			
+			Connection <- ssys.Connection			
+		)
+}
+
+
+rule Port2Port {
+	from
+		sprt: Source!Port 
+
+	to
+		tprt: Source!Port (
+			Direction <- sprt.Direction,
+			Num <- sprt.Num,
+			Name <- sprt.Name
+		)
+}
+
+--Transforms Property to Property
+rule Property2Property {
+	from
+		sprp: Source!Property
+	to
+		tprp: Source!Property (
+			Name <- sprp.Name,
+			Type <- sprp.Type,
+			Value <- sprp.Value
+		)
+}
+
+--Transforms Block to Block if it is not Function
+rule Block2Block {
+	from
+		sblk: Source!Block (
+			not sblk.isEmbeddedCode
+		)
+	to
+		tblk: Source!Block (
+			Name <- sblk.Name,
+			ID <- sblk.ID,
+			Type <- sblk.Type,
+			Property <- sblk.Property,
+			Port <- sblk.Port
+		)
+}
+
+--Transforms Function Block to System
+rule FunctionBlock2System {
+	from
+		sblk: Source!Block (
+			sblk.isEmbeddedCode
+		)
+	using {
+		portList: Sequence(Source!Port) = sblk.Port;
+		tempPort: Source!Port = OclUndefined;
+		system: Source!System = sblk.refImmediateComposite();
+		blockList: Sequence(Source!Block) = system.Block;
+		sfuncBlkList: Sequence(Source!Block) = OclUndefined;
+		tempBlock: Source!Block = OclUndefined;
+		tempSfuncBlk: Source!Block = OclUndefined;
+		blkPropList: Source!Property = OclUndefined;
+		sfuncBlkPortList: Sequence(Source!Port) = OclUndefined;
+		demuxPortList: Sequence(Source!Port) = OclUndefined;
+		sysPortList: Sequence(Source!Port) = OclUndefined;
+		tempConn: Source!Connection = OclUndefined;
+		demuxBlock: Source!Block = OclUndefined;
+		value: String = OclUndefined;
+		pCounter: Integer = 0;
+		bCounter: Integer=1;
+		tempProperty: Source!Property = OclUndefined;
+
+	}
+	to
+		tblk: Source!System (
+			Name <- sblk.Name.regexReplaceAll('Code', 'MATLAB'),
+			ID <- sblk.ID,
+			Property <- sblk.Property,
+			Port <- sblk.Port
+		)
+	do {
+
+		for(it2 in portList) {
+			for (it3 in blockList){
+				value <-it3.getPortValue;
+                if(it2.oclIsKindOf(Source!Port) and it3.oclIsKindOf(Source!Block) and
+		it2.Num.toString() = value and it3.haveSameDirection(it2) and it2.Direction =
+		'in'){                	
+                    tempBlock <- thisModule.Block2SystemBlock(it2, sblk.ID, bCounter, it3);   
+                    tblk.Block <- tblk.Block.append(tempBlock);
+                    bCounter <- bCounter+1;
+                }
+		}
+		} 
+		
+		tempBlock <- thisModule.DemuxBlock(sblk.ID, bCounter);
+		tblk.Block <- tblk.Block.append(tempBlock);	
+		bCounter <- bCounter+1;
+
+		tempSfuncBlk <- thisModule.SFunctionBlock(sblk.ID, bCounter, sblk);
+		tblk.Block <- tblk.Block.append(tempSfuncBlk);
+		sfuncBlkPortList <- tempSfuncBlk.Port;
+		sfuncBlkList <-tblk.Block;
+		bCounter <- bCounter+1;
+		
+		tempBlock <- thisModule.TerminatorBlock(sblk.ID, bCounter);
+		tblk.Block <- tblk.Block.append(tempBlock);	
+		bCounter <- bCounter+1;
+		
+				
+ 
+		
+		for(it2 in portList) {
+			for (it3 in blockList){
+				value <-it3.getPortValue;
+                if(it2.oclIsKindOf(Source!Port) and it3.oclIsKindOf(Source!Block) and
+		it2.Num.toString() = value and it3.haveSameDirection(it2) and it2.Direction =
+		'out'){                	
+                    tempBlock <- thisModule.Block2SystemBlock(it2, sblk.ID, bCounter, it3);   
+                    tblk.Block <- tblk.Block.append(tempBlock);
+                    bCounter <- bCounter+1;
+                }
+		}
+		} --INPORTS
+		  for(it4 in sfuncBlkList) {		
+			
+			if(it4.Type = 'Inport'){
+			sysPortList <-it4.Port;
+			blkPropList <- it4.Property;
+			
+			for(it7 in blkPropList) {
+				if(it7.oclIsKindOf(Source!Property) and it7.Name = 'Port' ){
+				
+				for(it6 in sysPortList) {
+							for(it5 in sfuncBlkPortList){
+							
+			if(it6.oclIsKindOf(Source!Port) and it6.Direction = 'out' and it5.
+					oclIsKindOf(Source!Port) and it5.Direction = 'in' and it7.Value = it5.
+					Num.toString() ){
+				tempConn <- thisModule.Port2SystemConnection(it6, it5);
+				tblk.Connection <- tblk.Connection.append(tempConn);
+			}
+			}
+						}
+				}
+			}
+			}
+			
+			--DEMUX
+			if(it4.Type = 'Demux'){
+			sysPortList <-it4.Port;			
+					for(it6 in sysPortList) {
+					for(it5 in sfuncBlkPortList){
+							
+			if(it6.oclIsKindOf(Source!Port) and it6.Direction = 'in' and it5.
+					oclIsKindOf(Source!Port) and it5.Direction = 'out' and it5.Num = it6.
+					Num){
+				tempConn <- thisModule.Port2SystemConnection(it5, it6);
+				tblk.Connection <- tblk.Connection.append(tempConn);
+			
+						}
+				}
+				}
+			}
+			
+			--TERMINATOR
+			if(it4.Type = 'Terminator'){
+			sysPortList <-it4.Port;			
+					for(it6 in sysPortList) {
+					for(it7 in sfuncBlkList){
+							if(it7.Type = 'Demux'){
+							demuxPortList <-it7.Port;	
+					for(it5 in demuxPortList){
+							
+			if(it6.oclIsKindOf(Source!Port) and it6.Direction = 'in' and it5.
+					oclIsKindOf(Source!Port) and it5.Direction = 'out' ){
+				tempConn <- thisModule.Port2SystemConnection(it5, it6);
+				tblk.Connection <- tblk.Connection.append(tempConn);
+			
+						}
+				}
+				}
+					}
+				}
+			}
+			
+			--OUTPORTS
+			if(it4.Type = 'Outport'){
+			sysPortList <-it4.Port;
+			blkPropList <- it4.Property;
+			
+			for(it7 in blkPropList) {
+				if(it7.oclIsKindOf(Source!Property) and it7.Name = 'Port' ){
+				
+				for(it6 in sysPortList) {
+							for(it5 in sfuncBlkPortList){
+							
+			if(it6.oclIsKindOf(Source!Port) and it6.Direction = 'in' and it5.
+					oclIsKindOf(Source!Port) and it5.Direction = 'out' and it7.Value =
+					(it5.Num - 1).toString() ){
+				tempConn <- thisModule.Port2SystemConnection(it5, it6);
+				tblk.Connection <- tblk.Connection.append(tempConn);
+			}
+			}
+						}
+				}
+			}
+			}		
+			
+		}
+		
+		tempProperty <- thisModule.Property('System - SIDHighWatermark', 'Int',
+		(bCounter-1).toString()); 		   
+        tblk.Property <- tblk.Property.append(tempProperty); 
+		 
+		 	
+	 }
+}
+
+
+
+lazy rule Port2SystemConnection {
+	from
+		sPrt: Source!Port, dPrt: Source!Port
+	to
+		conn: Source!Connection (
+			src <- sPrt,
+			dst <- dPrt,
+			Name <- sPrt.refImmediateComposite().Name + ' to ' + dPrt.
+					refImmediateComposite().Name
+		)
+}
+
+lazy rule Port2SystemPort {
+	from
+		sprt: Source!Port
+	to
+		tprt: Source!Port (
+			Direction <- sprt.Direction,
+			Num <- sprt.Num,
+			Name <- ''
+		)
+		
+}
+
+unique lazy rule Block2SystemBlock {
+	from
+		sprt: Source!Port, id: Integer, sid: Integer, sblk: Source!Block (not sblk.isEmbeddedCode)
+	using{
+			propertyList: Sequence(Source!Property) = sblk.Property;
+			tempProperty: Source!Property = OclUndefined;
+
+		portList: Sequence(Source!Port) = sblk.Port;
+		tempPort: Source!Port = OclUndefined;
+		}
+	to
+		tprt: Source!Block (
+			Name <- sprt.Name,
+			Type <- sblk.Type,
+			ID <- id + '::' + sid
+			
+		)
+		do {
+		for(it in propertyList){
+			
+				if(it.Name = 'PortDimensions'){
+					tempProperty <- thisModule.Property('PortDimensions', 'Int', '-1');
+					tprt.Property <- tprt.Property.append(tempProperty); 	
+				}			
+                else if((it.Name.toString() = 'OutDataTypeStr') and it.
+		oclIsKindOf(Source!Property) and not it.oclIsUndefined()){
+                	
+                	tempProperty <- thisModule.Property('OutDataTypeStr', 'String',
+		'Inherit:' + ' auto');  		   
+               		tprt.Property <- tprt.Property.append(tempProperty);  
+                }				
+				else{
+                    tempProperty <- thisModule.Property2SystemProperty(it);   		   
+               		tprt.Property <- tprt.Property.append(tempProperty);              
+		 
+                }  				
+
+        }
+	
+		
+		for(it2 in portList){
+                if(it2.oclIsKindOf(Source!Port) and not it2.oclIsUndefined()){
+                    tempPort <- thisModule.Port2SystemPortInside(it2); 		   
+               		tprt.Port <- tprt.Port.append(tempPort);                
+                }
+            }
+		}
+}
+
+unique lazy rule Port2SystemPortInside {
+	from
+		sprt: Source!Port
+	to
+		tprt: Source!Port (
+			Direction <- sprt.Direction,
+			Num <- sprt.Num,
+			Name <- sprt.Name
+		)
+}
+
+unique lazy rule Property2SystemProperty {
+	from
+		sprp: Source!Property 
+	to
+		tprp: Source!Property (
+			Name <- sprp.Name,
+			Type <- sprp.Type,
+			Value <- sprp.Value
+		)
+}
+
+lazy rule Property {
+	from
+		name: String, type: String, value: String
+	to
+		tprp: Source!Property (
+			Name <- name,
+			Type <- type,
+			Value <- value
+		)
+}
+
+unique lazy rule TerminatorBlock {
+	from
+		id: Integer, sid:Integer
+	using{
+			tempProperty: Source!Property = OclUndefined;
+			tempPort: Source!Port = OclUndefined;
+		}
+	to
+		term: Source!Block (
+			Name <- ' Terminator ',
+			ID <- id + '::' +sid,
+			Type <- 'Terminator'
+		)
+			do{
+		tempProperty <- thisModule.Property('Position', 'Array:Int', '[460, 191, 480,' +
+				' 209]');
+		term.Property <- term.Property.append(tempProperty);
+		
+--		tempProperty <- thisModule.Property('ZOrder', 'Int', '4');
+--		term.Property <- term.Property.append(tempProperty);
+		
+		tempPort <- thisModule.Port('', 'in', 1);
+		term.Port  <- term.Port.append(tempPort);	
+			}
+}
+
+
+unique lazy rule SFunctionBlock {
+	from
+		id: Integer, sId:Integer,		sblk: Source!Block (
+			sblk.isEmbeddedCode
+		)
+	using{
+			
+		portList: Sequence(Source!Port) = sblk.Port;
+		tempProperty: Source!Property = OclUndefined;
+		tempPort: Source!Port = OclUndefined;
+		outportCounter: Integer = 0;
+		inportCounter: Integer = 0;
+		}
+	to
+		sfunc: Source!Block (
+			Name <- ' SFunction',
+			ID <- id + '::' + sId,
+			Type <- 'S-Function'
+		)		
+	do{
+		tempProperty <- thisModule.Property('Position', 'Array:Int', '[180, 100, 230,' +
+				' 180]');
+		sfunc.Property <- sfunc.Property.append(tempProperty);
+		
+		
+--		tempProperty <- thisModule.Property('Tag', 'String', 'Stateflow S-Function' + sfunc.getModelName() + '7');
+--		sfunc.Property <- sfunc.Property.append(tempProperty);
+		
+--		tempProperty <- thisModule.Property('ZOrder', 'Int', '1');
+--		sfunc.Property <- sfunc.Property.append(tempProperty);
+--		
+--		tempProperty <- thisModule.Property('FunctionName', 'String', 'sf_sfun');
+--		sfunc.Property <- sfunc.Property.append(tempProperty);
+--		
+--		tempProperty <- thisModule.Property('EnableBusSupport', 'Boolean', 'true');
+--		sfunc.Property <- sfunc.Property.append(tempProperty);
+		
+		for(it in portList){
+                if(it.oclIsKindOf(Source!Port) and not it.oclIsUndefined()){
+                    tempPort <- thisModule.Port2SystemPort(it);                       
+               		sfunc.Port <- sfunc.Port.append(tempPort); 
+               	if(tempPort.Direction = 'out'){
+               		outportCounter <- outportCounter + 1;
+                }               	
+               	else
+               		inportCounter <- inportCounter + 1;
+            }			
+		}
+		outportCounter <- outportCounter + 1;
+		tempPort <- thisModule.Port('', 'out', outportCounter);
+		sfunc.Port <- sfunc.Port.append(tempPort);		 
+		
+		tempProperty <- thisModule.Property('PortCounts', 'Array:Int', '[' + inportCounter + ', ' + outportCounter + ']');
+		sfunc.Property <- sfunc.Property.append(tempProperty);	
+
+	}
+}
+
+unique lazy rule DemuxBlock {
+	from
+		id: Integer, sId:Integer
+	using{
+			tempProperty: Source!Property = OclUndefined;
+			tempPort: Source!Port = OclUndefined;
+		}
+	to
+		demux: Source!Block (
+			Name <- ' Demux',
+			ID <- id + '::' + sId,
+			Type <- 'Demux'
+		)
+	do{
+		tempProperty <- thisModule.Property('Position', 'Array:Int', '[270, 180, 320,' +
+				' 220]');
+		demux.Property <- demux.Property.append(tempProperty);
+		
+		tempProperty <- thisModule.Property('ZOrder', 'Int', '2');
+		demux.Property <- demux.Property.append(tempProperty);
+		
+		tempProperty <- thisModule.Property('Outputs', 'Int', '1');
+		demux.Property <- demux.Property.append(tempProperty);
+		
+		tempPort <- thisModule.Port('', 'in', 1);
+		demux.Port  <- demux.Port.append(tempPort);
+		
+		tempPort <- thisModule.Port('', 'out', 1);
+		demux.Port <- demux.Port.append(tempPort);		
+		}
+}
+
+
+
+lazy rule Port {
+	from
+		name: String, direction: String, num: Integer
+	to
+		tprt: Source!Port (
+			Direction <- direction,
+			Num <- num,
+			Name <- name
+		)
+}
+
+rule Connection2Connection{
+	from
+		sprt: Source!Connection 
+	to
+		tprt: Source!Connection (
+			src <- sprt.src,
+			dst <- sprt.dst,
+			Name <- sprt.Name
+		)
+}
+
+--Returns model name
+helper context Source!Block def: getModelName(): String =
+	Source!Model.allInstances() -> iterate(s; res: String = '' | 
+			s.Name);
+
+--Returns true if a Port belongs to a Function block
+helper context Source!Port def: isInEmbeddedCode: Boolean =
+	Source!Block.allInstances() -> iterate(s; res: Boolean = true | if self.
+			refImmediateComposite().Type = 'Function' then
+			true
+		else
+			false
+		endif);
+
+
+--Returns true if a Block is a Function
+helper context Source!Block def: isEmbeddedCode: Boolean =
+	if self.Type = 'Function' then
+		true
+	else
+		false
+	endif;
+
+--Returns a Block's Port value
+helper context Source!Block def: getPortValue: String =
+	self.Property -> iterate(s; res: String = '' | if s.Name = 'Port' then
+			s.Value
+		else
+			res
+		endif);
+
+
+--Returns true if a Block and Port have the same direction
+helper context Source!Block def: haveSameDirection(port: Source!Port): Boolean =
+	if self.Type = 'Outport' and port.Direction = 'out' then
+		true
+	else
+		if self.Type = 'Inport' and port.Direction = 'in' then
+			true
+		else
+			false
+		endif
+	endif;

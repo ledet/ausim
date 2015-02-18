@@ -1,16 +1,16 @@
 -- @path SimulinkMM=/SysML_2_Simulink/metamodels/SimulinkMM.ecore
--- @path SimulinkSourceMM=/SysML_2_Simulink/metamodels/SimulinkSourceMM.ecore
+-- @path Source=/SysML_2_Simulink/metamodels/SimulinkSourceMM.ecore
 
 
-module simulinkSource_2_simulinkStructural;
-create outputModel: SimulinkMM from inputModel: SimulinkSourceMM;
+module Source2Simulink;
+create outputModel: SimulinkMM from inputModel: Source;
 
 
 helper def: globalModelInformation: SimulinkMM!ModelInformation = OclUndefined;
 
 rule model_2_modelInformation {
 	from
-		model: SimulinkSourceMM!Model
+		model: Source!Model
 		
 	to
 		modelInformation: SimulinkMM!ModelInformation(
@@ -24,7 +24,7 @@ rule model_2_modelInformation {
 
 rule system_2_model {
 	from
-		system: SimulinkSourceMM!System (system.ID = 'Root')
+		system: Source!System (system.ID = 'Root')
 
 	to
 		outputModel: SimulinkMM!Model(
@@ -45,10 +45,10 @@ rule system_2_model {
 		}
 		
 		for (it in system.Block){
-			if(it.oclIsTypeOf(SimulinkSourceMM!System)){
+			if(it.oclIsTypeOf(Source!System)){
 				thisModule.system_2_SubSystem(outputModel.System, it);
 			}
-			else if(it.oclIsTypeOf(SimulinkSourceMM!Block)){
+			else if(it.oclIsTypeOf(Source!Block)){
 				if(it.Type = 'S-Function')
 					thisModule.sFunction_2_sFunction(outputModel.System, it);
 				else
@@ -62,7 +62,7 @@ rule system_2_model {
 	}
 }
 
-rule property_2_property (inputProperty: SimulinkSourceMM!Property){
+rule property_2_property (inputProperty: Source!Property){
 	using{
 		newProperty		: SimulinkMM!Property	= OclUndefined;
 		newValue		: SimulinkMM!Value		= OclUndefined;
@@ -135,7 +135,7 @@ rule property_2_property (inputProperty: SimulinkSourceMM!Property){
 	
 }
 
-rule block_2_block (parent: SimulinkMM!System, inputBlock: SimulinkSourceMM!Block){
+rule block_2_block (parent: SimulinkMM!System, inputBlock: Source!Block){
 	using{
 		iterationIndex : Integer = 0;
 	}
@@ -158,7 +158,7 @@ rule block_2_block (parent: SimulinkMM!System, inputBlock: SimulinkSourceMM!Bloc
 	}
 }
 
-rule sFunction_2_sFunction (parent: SimulinkMM!System, inputBlock: SimulinkSourceMM!Block){
+rule sFunction_2_sFunction (parent: SimulinkMM!System, inputBlock: Source!Block){
 	using{
 		iterationIndex : Integer = 0;
 		tempPort: SimulinkMM!Port = OclUndefined;
@@ -193,7 +193,7 @@ rule sFunction_2_sFunction (parent: SimulinkMM!System, inputBlock: SimulinkSourc
 	}
 }
 
-rule system_2_SubSystem (parentSystem: SimulinkMM!System, inputBlock: SimulinkSourceMM!Block){
+rule system_2_SubSystem (parentSystem: SimulinkMM!System, inputBlock: Source!Block){
 	using{
 		iterationIndex : Integer = 0;
 		newBlock: SimulinkMM!Block = OclUndefined;
@@ -236,7 +236,7 @@ rule system_2_SubSystem (parentSystem: SimulinkMM!System, inputBlock: SimulinkSo
 }
 
 -- For creating "Ports" property in a subsystem
-rule portsPropertyAdder(inputBlock: SimulinkSourceMM!Block, outputBlock: SimulinkMM!Block){
+rule portsPropertyAdder(inputBlock: Source!Block, outputBlock: SimulinkMM!Block){
 	using{
 		inputPortCounter: Integer = 0;
 		outputPortCounter: Integer = 0;
@@ -277,7 +277,7 @@ rule portsPropertyAdder(inputBlock: SimulinkSourceMM!Block, outputBlock: Simulin
 	}
 }
 
-rule connection_2_Line(parentSystem: SimulinkMM!System, inputConnection: SimulinkSourceMM!Connection){
+rule connection_2_Line(parentSystem: SimulinkMM!System, inputConnection: Source!Connection){
 	using{
 		tempProperty: SimulinkMM!Property = OclUndefined;
 		tempValue: SimulinkMM!Value = OclUndefined;

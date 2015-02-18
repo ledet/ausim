@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Simulink2SysML" default="Sim2Sys">
+	<property name="rootModelName" value="${model}" />
+	<property name="modelName" value="${subModel}" />
+	<property name="metaModelPath" value="../../MetaModels" />
+	<property name="modelPath" value="../../Models/" />
+	<property name="transPath" value="./" />
+	
+	<target name="Sim2Sys">
+
+		<unzip src="${modelPath}/${modelName}.slx" dest="${modelPath}/${rootModelName}/${modelName}_slx" />
+
+		<xslt style="${transPath}/XSLT/Simulink_Settings.xsl"
+			in="${modelPath}/${rootModelName}/${modelName}_slx/simulink/blockdiagram.xml"
+			out="${modelPath}/${rootModelName}/${modelName}/Simulink_Settings.xmi"
+			force="true">
+		</xslt>
+
+		<xslt style="${transPath}/XSLT/BlockDiagram2SimulinkStructural.xsl"
+			in="${modelPath}/${rootModelName}/${modelName}_slx/simulink/blockdiagram.xml"
+			out="${modelPath}/${rootModelName}/${modelName}/Simulink_Structural.xmi"
+			force="true">
+			<param name="ModelName" expression="${modelName}"/>
+		</xslt>
+
+		<atl.loadModel name="Source" metamodel="MOF" path="${metaModelPath}/SimulinkSourceMM.ecore"/>
+    	<atl.loadModel name="Simulink" metamodel="MOF" path="${metaModelPath}/SimulinkMM.ecore"/>
+		<atl.loadModel name="SysML" metamodel="MOF" nsUri="http://www.eclipse.org/papyrus/0.7.0/SysML"/>
+		<atl.loadModel name="SysMLprof" metamodel="MOF" nsUri="http://www.eclipse.org/papyrus/0.7.0/SysML"/>
+		<atl.loadModel name="SysMLnot" metamodel="MOF" nsUri="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
+    	<atl.loadModel name="SysMLProfiles" metamodel="SysMLprof" path="${modelPath}/SimpleSysML.uml"/>
+    	<atl.loadModel name="SysMLNotationDefinitions" metamodel="SysMLnot" path="${modelPath}/SimpleSysML.notation"/>
+    	<atl.loadModel name="simModel" metamodel="Simulink" path="${modelPath}/${rootModelName}/${modelName}/Simulink_Structural.xmi"/>
+		
+		<atl.launch path="${transPath}/ATL/Simulink2SourceDefaults.asm">
+			<inmodel name="sim" model="simModel"/>
+			<outmodel name="src" model="srcDef" metamodel="Source"/>
+		</atl.launch>
+
+		<atl.launch path="${transPath}/ATL/Simulink2Source.asm">
+			<inmodel name="sim" model="simModel"/>
+			<inmodel name="defaults" model="srcDef"/>
+			<outmodel name="src" model="srcModel" metamodel="Source"/>
+		</atl.launch>
+		
+		<atl.launch path="${transPath}/ATL/Source2SourceWPorts.asm">
+			<inmodel name="src" model="srcModel"/>
+			<outmodel name="srcwports" model="srcModelWPorts" metamodel="Source"/>
+		</atl.launch>
+
+		<atl.launch path="${transPath}/ATL/Source2SourceWConnections.asm">
+			<inmodel name="src" model="srcModelWPorts"/>
+			<inmodel name="simLines" model="simModel"/>
+			<outmodel name="srcwcon" model="srcModelWConnections" metamodel="Source"/>
+		</atl.launch>
+
+		<atl.launch path="${transPath}/ATL/Source2SourceCompressed.asm">
+			<inmodel name="src" model="srcModelWConnections"/>
+			<outmodel name="srccomp" model="srcModelCompressed" metamodel="Source"/>
+		</atl.launch>
+
+		<atl.launch path="${transPath}/ATL/SourcePropertyTypes2SysMLTypes.asm">
+			<inmodel name="src" model="srcModelCompressed"/>
+			<outmodel name="prop" model="sysMLTypes" metamodel="SysML"/>
+		</atl.launch>
+
+		<atl.launch path="${transPath}/ATL/Source2SysML.asm">
+			<option name="allowInterModelReferences" value="true"/>
+			<inmodel name="src" model="srcModelCompressed"/>
+			<inmodel name="prop" model="sysMLTypes"/>
+			<inmodel name="prof" model="SysMLProfiles"/>
+			<inmodel name="notDef" model="SysMLNotationDefinitions"/>
+			<outmodel name="uml" model="SysMLModel" metamodel="SysML"/>
+			<outmodel name="nota" model="SysMLNotation" metamodel="SysMLnot"/>
+		</atl.launch>
+
+		<atl.saveModel derived="false" model="SysMLModel" path="${modelPath}/${rootModelName}/${modelName}/${modelName}.uml"/>
+		<atl.saveModel derived="false" model="SysMLNotation" path="${modelPath}/${rootModelName}/${modelName}/${modelName}.notation"/>
+
+		<xslt style="${transPath}/XSLT/SysMLFinalizeUML.xsl"
+			in="${modelPath}/${rootModelName}/${modelName}/${modelName}.uml"
+			out="${modelPath}/${rootModelName}/SysML/${modelName}.uml"
+			force="true">
+		</xslt>
+
+		<xslt style="${transPath}/XSLT/SysMLFinalizeNotation.xsl"
+			in="${modelPath}/${rootModelName}/${modelName}/${modelName}.notation"
+			out="${modelPath}/${rootModelName}/SysML/${modelName}.notation"
+			force="true">
+		</xslt>
+
+		<xslt style="${transPath}/XSLT/SysMLFinalizeDI.xsl"
+			in="${modelPath}/${rootModelName}/SysML/${modelName}.notation"
+			out="${modelPath}/${rootModelName}/SysML/${modelName}.di"
+			force="true">
+			<param name="ModelName" expression="${modelName}"/>
+		</xslt>
+
+		<delete file="${modelPath}/${rootModelName}/${modelName}_slx/simulink/blockdiagram.xml" />
+		<delete file="${modelPath}/${rootModelName}/${modelName}/Simulink_Structural.xmi" />
+		<delete file="${modelPath}/${rootModelName}/${modelName}/${modelName}.notation" />
+		<delete file="${modelPath}/${rootModelName}/${modelName}/${modelName}.uml" />
+	</target>
+	
+</project>
