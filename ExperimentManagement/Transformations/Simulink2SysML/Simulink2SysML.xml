@@ -2,9 +2,9 @@
 <project name="Simulink2SysML" default="Sim2Sys">
 	<property name="rootModelName" value="${model}" />
 	<property name="modelName" value="${subModel}" />
-	<property name="metaModelPath" value="../MetaModels" />
-	<property name="modelPath" value="../Models/" />
-	<property name="transPath" value="../Transformations/Simulink2SysML" />
+	<property name="metaModelPath" value="../../MetaModels" />
+	<property name="modelPath" value="../../Models/" />
+	<property name="transPath" value="./" />
 	
 	<target name="Sim2Sys">
 
@@ -16,7 +16,7 @@
 			force="true">
 		</xslt>
 
-		<xslt style="${transPath}/XSLT/Simulink_Structural.xsl"
+		<xslt style="${transPath}/XSLT/BlockDiagram2SimulinkStructural.xsl"
 			in="${modelPath}/${rootModelName}/${modelName}_slx/simulink/blockdiagram.xml"
 			out="${modelPath}/${rootModelName}/${modelName}/Simulink_Structural.xmi"
 			force="true">
@@ -96,7 +96,7 @@
 			<param name="ModelName" expression="${modelName}"/>
 		</xslt>
 
-		<delete dir="${modelPath}/${rootModelName}/${modelName}_slx" />
+		<delete file="${modelPath}/${rootModelName}/${modelName}_slx/simulink/blockdiagram.xml" />
 		<delete file="${modelPath}/${rootModelName}/${modelName}/Simulink_Structural.xmi" />
 		<delete file="${modelPath}/${rootModelName}/${modelName}/${modelName}.notation" />
 		<delete file="${modelPath}/${rootModelName}/${modelName}/${modelName}.uml" />
