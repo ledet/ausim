@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xsi:schemaLocation="http://www.omg.org/XMI" xmlns:xalan="http://xml.apache.org/xalan" xmlns:simulinkmm="http://simulinkmm/1.0">
 
-<xsl:param name="settingsModel" select="document(settingsFileName)/ModelInformation/Model" />
+<xsl:param name="settingsFileName" select="settingsFileName" />
+
+<xsl:param name="settingsModel" select="document($settingsFileName)/ModelInformation" />
 
 <xsl:template name="Property_2_P" match="Property">
 	<xsl:element name="P">
@@ -120,7 +122,13 @@
 
 
 <xsl:template name="System_2_System" match="System">
+	<xsl:param name="isSubSystem" select="."/>
 	<xsl:element name="System">
+		<xsl:if test="$isSubSystem = 'true' ">
+			<xsl:text>&#xa;</xsl:text>
+			<xsl:copy-of select="$settingsModel/Model/System/P" />
+		</xsl:if>
+		
 		<xsl:for-each select="Property">
 			<xsl:text>&#xa;</xsl:text>
 			<xsl:call-template name="Property_2_P" />
@@ -152,60 +160,66 @@
 			<xsl:text>&#xa;</xsl:text>
 			<xsl:element name="Model">
 				<xsl:text>&#xa;</xsl:text>
-				<xsl:copy-of select="$settingsModel/GraphicalInterface" />
+				<xsl:copy-of select="$settingsModel/Model/GraphicalInterface" />
 				
-				<xsl:for-each select="$settingsModel/P">
+				<xsl:for-each select="$settingsModel/Model/P">
 					<xsl:text>&#xa;</xsl:text>
 					<xsl:copy-of select="." />
 				</xsl:for-each>
 				
 				<xsl:text>&#xa;</xsl:text>
-				<xsl:copy-of select="$settingsModel/ConfigManagerSettings" />
+				<xsl:copy-of select="$settingsModel/Model/ConfigManagerSettings" />
 				
 				<xsl:text>&#xa;</xsl:text>
-				<xsl:copy-of select="$settingsModel/EditorSettings" />
+				<xsl:copy-of select="$settingsModel/Model/EditorSettings" />
 				
 				<xsl:text>&#xa;</xsl:text>
-				<xsl:copy-of select="$settingsModel/SimulationSettings" />
+				<xsl:copy-of select="$settingsModel/Model/SimulationSettings" />
 				
 				<xsl:text>&#xa;</xsl:text>
-				<xsl:copy-of select="$settingsModel/Verification" />
+				<xsl:copy-of select="$settingsModel/Model/Verification" />
 				
 				<xsl:text>&#xa;</xsl:text>
-				<xsl:copy-of select="$settingsModel/ExternalMode" />
+				<xsl:copy-of select="$settingsModel/Model/ExternalMode" />
 				
 				<xsl:text>&#xa;</xsl:text>
-				<xsl:copy-of select="$settingsModel/EngineSettings" />
+				<xsl:copy-of select="$settingsModel/Model/EngineSettings" />
 				
 				<xsl:text>&#xa;</xsl:text>
-				<xsl:copy-of select="$settingsModel/ModelReferenceSettings" />
+				<xsl:copy-of select="$settingsModel/Model/ModelReferenceSettings" />
 				
 				<xsl:text>&#xa;</xsl:text>
-				<xsl:copy-of select="$settingsModel/ConfigurationSet" />
+				<xsl:copy-of select="$settingsModel/Model/ConfigurationSet" />
 				
 				<xsl:text>&#xa;</xsl:text>
-				<xsl:copy-of select="$settingsModel/ConcurrentExecutionSettings" />
+				<xsl:copy-of select="$settingsModel/Model/ConcurrentExecutionSettings" />
 				
 				<xsl:text>&#xa;</xsl:text>
-				<xsl:copy-of select="$settingsModel/SystemDefaults" />
+				<xsl:copy-of select="$settingsModel/Model/SystemDefaults" />
 				
 				<xsl:text>&#xa;</xsl:text>
-				<xsl:copy-of select="$settingsModel/BlockDefaults" />
+				<xsl:copy-of select="$settingsModel/Model/BlockDefaults" />
 				
 				<xsl:text>&#xa;</xsl:text>
-				<xsl:copy-of select="$settingsModel/AnnotationDefaults" />
+				<xsl:copy-of select="$settingsModel/Model/AnnotationDefaults" />
 				
 				<xsl:text>&#xa;</xsl:text>
-				<xsl:copy-of select="$settingsModel/LineDefaults" />
+				<xsl:copy-of select="$settingsModel/Model/LineDefaults" />
 
 				<xsl:for-each select="System">
 					<xsl:text>&#xa;</xsl:text>
-					<xsl:call-template name="System_2_System" />
+					<xsl:call-template name="System_2_System">
+						<xsl:with-param name="isSubSystem" select=" 'true' " />
+					</xsl:call-template>
 				</xsl:for-each>
 				<xsl:text>&#xa;</xsl:text>
 			</xsl:element>
 		</xsl:for-each>
 		<xsl:text>&#xa;</xsl:text>
+
+		<xsl:copy-of select="$settingsModel/Stateflow" />
+		<xsl:text>&#xa;</xsl:text>
+
 	</xsl:element>
 </xsl:template>
 

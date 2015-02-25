@@ -4,13 +4,22 @@
 module SimulinkModel2SourceDefaults;
 create src : Source from sim : Simulink;
 
-rule ModelInformation2Model {
+rule ModelInformationWithBlockParams2Model {
 	from
-		mi: Simulink!ModelInformation
+		mi: Simulink!ModelInformation (not mi.Model.BlockParameterDefaults.oclIsUndefined())
 	to
 		mdl: Source!Model (
 			Name <- mi.Model.Name + ' Block Parameter Defaults',
 			Block <- mi.Model.BlockParameterDefaults.BlockParams
+		)
+}
+
+rule ModelInformationWithoutBlockParams2Model {
+	from
+		mi: Simulink!ModelInformation (mi.Model.BlockParameterDefaults.oclIsUndefined())
+	to
+		mdl: Source!Model (
+			Name <- mi.Model.Name + ' Block Parameter Defaults'
 		)
 }
 

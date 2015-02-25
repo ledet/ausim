@@ -234,6 +234,20 @@ rule Model2Model {
 		}
 		for(p in SysML!Port.allInstancesFrom('uml')) {
 			thisModule.CreateSysMLPort(p);
+			p.name <- p.name.substring(p.name.substring(1, 5).lastIndexOf(thisModule.delimChar) + 2, p.name.size());
+			
+		}
+		for(s in SysMLnot!Shape.allInstancesFrom('nota')) {
+			s.type <- s.type.substringAfter(thisModule.delimChar + thisModule.BDDID + thisModule.delimChar);
+			s.type <- s.type.substringAfter(thisModule.delimChar + '7016' + thisModule.delimChar);
+			s.type <- s.type.containsReplace('shape_uml_property_as_label');
+			s.type <- s.type.containsReplace('shape_sysml_flowport_as_affixed');
+			s.type <- s.type.containsReplace('shape_sysml_block_as_composite');
+			s.type <- s.type.containsReplace('shape_sysml_blockproperty_as_composite');
+		}
+		for(c in SysMLnot!Connector.allInstancesFrom('nota')) {
+			c.type <- c.type.substringAfter(thisModule.delimChar + thisModule.BDDID + thisModule.delimChar);
+			c.type <- c.type.containsReplace('link_uml_connector');
 		}
 	}
 }
@@ -1069,6 +1083,20 @@ helper context SysML!Class def: longestLabel : Integer =
 	else
 		max
 	endif);
+
+helper context String def: substringAfter(begText : String) : String =
+	if self.startsWith(begText) then
+		self.substring(begText.size() + 1, self.size())
+	else
+		self
+	endif;
+	
+helper context String def: containsReplace(checkText : String) : String =
+	if self.indexOf(checkText) > 0 then
+		checkText
+	else
+		self
+	endif;
 	
 --rule ToSysMLComment2Comment {
 --	from
