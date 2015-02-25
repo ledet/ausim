@@ -1,41 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?><ModelInformation Version="0.9">
-  <Model>
-    <GraphicalInterface>
+<Model>
+<GraphicalInterface>
+      
+      
+      
+      
+      
       
       
       <P Name="ParameterArgumentNames"/>
-      <P Name="ComputedModelVersion">1.588</P>
-      
-      
+      <P Name="ComputedModelVersion">1.31</P>
       
       
     </GraphicalInterface>
-    <P Name="SavedCharacterEncoding">ISO-8859-1</P>
-    <P Name="PreLoadFcn">load busobjects.mat;</P>
-    <P Name="SaveDefaultBlockParams">on</P>
-    <P Name="ScopeRefreshTime">0.035000</P>
-    <P Name="OverrideScopeRefreshTime">on</P>
-    <P Name="DisableAllScopes">off</P>
-    <P Name="DataTypeOverride">UseLocalSettings</P>
-    <P Name="DataTypeOverrideAppliesTo">AllNumericTypes</P>
-    <P Name="MinMaxOverflowLogging">UseLocalSettings</P>
-    <P Name="MinMaxOverflowArchiveMode">Overwrite</P>
-    <P Name="FPTRunName">Run 1</P>
-    <P Name="MaxMDLFileLineLength">120</P>
-    <ConfigManagerSettings>
+<P Name="SavedCharacterEncoding">ISO-8859-1</P>
+<P Name="SaveDefaultBlockParams">on</P>
+<P Name="ScopeRefreshTime">0.035000</P>
+<P Name="OverrideScopeRefreshTime">on</P>
+<P Name="DisableAllScopes">off</P>
+<P Name="DataTypeOverride">UseLocalSettings</P>
+<P Name="DataTypeOverrideAppliesTo">AllNumericTypes</P>
+<P Name="MinMaxOverflowLogging">UseLocalSettings</P>
+<P Name="MinMaxOverflowArchiveMode">Overwrite</P>
+<P Name="FPTRunName">Run 1</P>
+<P Name="MaxMDLFileLineLength">120</P>
+<ConfigManagerSettings>
       <P Name="UpdateHistory">UpdateHistoryNever</P>
       <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
       <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
-      <P Name="RTWModifiedTimeStamp">339434179</P>
-      <P Name="ModelVersionFormat">1.%&lt;AutoIncrement:588&gt;</P>
+      <P Name="RTWModifiedTimeStamp">346438472</P>
+      <P Name="ModelVersionFormat">1.%&lt;AutoIncrement:31&gt;</P>
       <P Name="ConfigurationManager">None</P>
     </ConfigManagerSettings>
-    <EditorSettings>
+<EditorSettings>
       <P Name="SampleTimeColors">off</P>
       <P Name="SampleTimeAnnotations">off</P>
       <P Name="LibraryLinkDisplay">none</P>
       <P Name="WideLines">off</P>
-      <P Name="ShowLineDimensions">on</P>
+      <P Name="ShowLineDimensions">off</P>
       <P Name="ShowPortDataTypes">off</P>
       <P Name="ShowDesignRanges">off</P>
       <P Name="ShowLoopsOnError">on</P>
@@ -55,7 +57,7 @@
       <P Name="BrowserShowLibraryLinks">off</P>
       <P Name="BrowserLookUnderMasks">off</P>
     </EditorSettings>
-    <SimulationSettings>
+<SimulationSettings>
       <P Name="SimulationMode">normal</P>
       <P Name="LinearizationMsg">none</P>
       <P Name="Profile">off</P>
@@ -65,7 +67,7 @@
       <P Name="AccelMakeCommand">make_rtw</P>
       <P Name="TryForcingSFcnDF">off</P>
     </SimulationSettings>
-    <Verification>
+<Verification>
       <P Name="RecordCoverage">off</P>
       <P Name="CovPath">/</P>
       <P Name="CovSaveName">covdata</P>
@@ -81,7 +83,7 @@
       <P Name="CovModelRefEnable">Off</P>
       <P Name="CovExternalEMLEnable">off</P>
     </Verification>
-    <ExternalMode>
+<ExternalMode>
       <P Name="ExtModeBatchMode">off</P>
       <P Name="ExtModeEnableFloating">on</P>
       <P Name="ExtModeTrigType">manual</P>
@@ -104,20 +106,20 @@
       <P Name="ExtModeLogAll">on</P>
       <P Name="ExtModeAutoUpdateStatusClock">on</P>
     </ExternalMode>
-    <EngineSettings>
+<EngineSettings>
       <P Name="BufferReuse">on</P>
     </EngineSettings>
-    <ModelReferenceSettings>
+<ModelReferenceSettings>
       <P Name="ShowModelReferenceBlockVersion">off</P>
       <P Name="ShowModelReferenceBlockIO">off</P>
     </ModelReferenceSettings>
-    <ConfigurationSet>
+<ConfigurationSet>
       <Array PropName="ConfigurationSets" Type="Handle" Dimension="1*1">
 	<Object ObjectID="1" Version="1.12.0" ClassName="Simulink.ConfigSet">
 	  <Array PropName="Components" Type="Handle" Dimension="1*9">
 	    <Object ObjectID="2" Version="1.12.0" ClassName="Simulink.SolverCC">
 	      <P Name="StartTime">0.0</P>
-	      <P Name="StopTime">inf</P>
+	      <P Name="StopTime">10.0</P>
 	      <P Name="AbsTol">auto</P>
 	      <P Name="FixedStep">auto</P>
 	      <P Name="InitialStep">auto</P>
@@ -135,8 +137,8 @@
 	      <P Name="SolverMode">Auto</P>
 	      <P Name="EnableConcurrentExecution">off</P>
 	      <P Name="ConcurrentTasks">off</P>
-	      <P Name="Solver">ode15s</P>
-	      <P Name="SolverName">ode15s</P>
+	      <P Name="Solver">ode45</P>
+	      <P Name="SolverName">ode45</P>
 	      <P Name="SolverJacobianMethodControl">auto</P>
 	      <P Name="ShapePreserveControl">DisableAll</P>
 	      <P Name="ZeroCrossControl">DisableAll</P>
@@ -560,16 +562,16 @@
 	  </Array>
 	  <P Name="Name">Configuration</P>
 	  <P Name="CurrentDlgPage">Solver</P>
-	  <P Name="ConfigPrmDlgPosition"> [ 167, 98, 857, 644 ] </P>
+	  <P Name="ConfigPrmDlgPosition"> [ 165, 92, 1045, 722 ] </P>
 	</Object>
       </Array>
       <Object Reference="true" PropName="ActiveConfigurationSet" ObjectID="1" ClassName="Simulink.ConfigSet">
       </Object>
     </ConfigurationSet>
-    <ConcurrentExecutionSettings>
+<ConcurrentExecutionSettings>
       <P Name="ExplicitPartitioning">off</P>
     </ConcurrentExecutionSettings>
-    <SystemDefaults>
+<SystemDefaults>
       <P Name="PaperOrientation">landscape</P>
       <P Name="PaperPositionMode">auto</P>
       <P Name="PaperType">usletter</P>
@@ -581,7 +583,7 @@
       <P Name="ModelBrowserWidth">200</P>
       <P Name="ScreenColor">white</P>
     </SystemDefaults>
-    <BlockDefaults>
+<BlockDefaults>
       <P Name="ForegroundColor">black</P>
       <P Name="BackgroundColor">white</P>
       <P Name="DropShadow">off</P>
@@ -594,7 +596,7 @@
       <P Name="BlockRotation">0</P>
       <P Name="BlockMirror">off</P>
     </BlockDefaults>
-    <AnnotationDefaults>
+<AnnotationDefaults>
       <P Name="HorizontalAlignment">center</P>
       <P Name="VerticalAlignment">middle</P>
       <P Name="ForegroundColor">black</P>
@@ -606,70 +608,201 @@
       <P Name="FontAngle">normal</P>
       <P Name="UseDisplayTextAsClickCallback">off</P>
     </AnnotationDefaults>
-    <LineDefaults>
+<LineDefaults>
       <P Name="FontName">Helvetica</P>
       <P Name="FontSize">9</P>
       <P Name="FontWeight">normal</P>
       <P Name="FontAngle">normal</P>
     </LineDefaults>
-    
-    <System>
-      <P Name="Location">[1353, 50, 2633, 777]</P>
+<System>
+<P Name="Location">[587, 331, 962, 600]</P>
       <P Name="Open">on</P>
-      <P Name="ZoomFactor">103</P>
+      <P Name="ZoomFactor">100</P>
       <P Name="ReportName">simulink-default.rpt</P>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    </System>
-  </Model>
-  
+
+<P Name="ReportName">simulink-default.rpt</P>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</System>
+</Model>
+<Stateflow>
+    <machine id="10">
+      <P Name="created">12-Jul-2010 13:46:11</P>
+      <P Name="isLibrary">0</P>
+      <P Name="sfVersion">76014001.00040001</P>
+      <Children>
+	<target id="21" name="sfun">
+	  <P Name="description">Default Simulink S-Function Target.</P>
+	</target>
+	<target id="22" name="rtw">
+	</target>
+	<chart id="11">
+	  <P Name="name">Embedded MATLAB</P>
+	  <P Name="windowPosition">[208.4 328.65 200.25 189.75]</P>
+	  <P Name="viewLimits">[0 156.75 0 153.75]</P>
+	  <P Name="screen">[1 1 1024 768 1.333333333333333]</P>
+	  <P Name="viewObj">11</P>
+	  <P Name="ssIdHighWaterMark">9</P>
+	  <P Name="decomposition">CLUSTER_CHART</P>
+	  <P Name="type">EML_CHART</P>
+	  <P Name="chartFileNumber">7</P>
+	  <P Name="disableImplicitCasting">1</P>
+	  <eml>
+	    <P Name="name">fcn</P>
+	  </eml>
+	  <Children>
+	    <state SSID="1">
+	      <P Name="labelString">eML_blk_kernel()</P>
+	      <P Name="position">[18 64.5 118 66]</P>
+	      <P Name="fontSize">12</P>
+	      <P Name="superState">SUBCHART</P>
+	      <P Name="subviewer">11</P>
+	      <P Name="type">FUNC_STATE</P>
+	      <P Name="decomposition">CLUSTER_STATE</P>
+	      <eml>
+		<P Name="isEML">1</P>
+		<P Name="script">function [actuator_force_1, actuator_force_2] = fcn(ball_position, power,  robot_position)
+%#eml
+
+d1=(robot_position(1:2,1)-ball_position);
+d2=(robot_position(3:4,1)-ball_position);
+if dot(d1,d1)&gt;5
+   actuator_force_1=-20*d1;
+else
+   r1=(ball_position- [200;50]);
+   actuator_force_1=-11*r1;
+end
+if dot(d2,d2)&gt;5
+   actuator_force_2=-25*d2;
+else
+   r2=(ball_position-[200;50]);
+   actuator_force_2=-15*r2;
+end</P>
+		<P Name="editorLayout" Class="double">Matrix(4,1)
+[[10.0]; [5.0]; [700.0]; [500.0]]</P>
+	      </eml>
+	    </state>
+	    <data SSID="4" name="ball_position">
+	      <P Name="scope">INPUT_DATA</P>
+	      <props>
+		<array>
+		  <P Name="size">-1</P>
+		</array>
+		<type>
+		  <P Name="method">SF_INHERITED_TYPE</P>
+		  <P Name="primitive">SF_DOUBLE_TYPE</P>
+		</type>
+		<P Name="complexity">SF_COMPLEX_INHERITED</P>
+	      </props>
+	      <P Name="dataType">Inherit: Same as Simulink</P>
+	    </data>
+	    <data SSID="9" name="power">
+	      <P Name="scope">INPUT_DATA</P>
+	      <props>
+		<array>
+		  <P Name="size">-1</P>
+		</array>
+		<type>
+		  <P Name="method">SF_INHERITED_TYPE</P>
+		  <P Name="primitive">SF_DOUBLE_TYPE</P>
+		  <P Name="isSigned">1</P>
+		  <P Name="wordLength">16</P>
+		</type>
+		<P Name="complexity">SF_COMPLEX_INHERITED</P>
+		<P Name="frame">SF_FRAME_INHERITED</P>
+	      </props>
+	      <P Name="dataType">Inherit: Same as Simulink</P>
+	    </data>
+	    <data SSID="5" name="actuator_force_1">
+	      <P Name="scope">OUTPUT_DATA</P>
+	      <props>
+		<array>
+		  <P Name="size">-1</P>
+		</array>
+		<type>
+		  <P Name="method">SF_INHERITED_TYPE</P>
+		  <P Name="primitive">SF_DOUBLE_TYPE</P>
+		</type>
+		<P Name="complexity">SF_COMPLEX_INHERITED</P>
+		<P Name="frame">SF_FRAME_NO</P>
+	      </props>
+	      <P Name="dataType">Inherit: Same as Simulink</P>
+	    </data>
+	    <data SSID="7" name="robot_position">
+	      <P Name="scope">INPUT_DATA</P>
+	      <props>
+		<array>
+		  <P Name="size">-1</P>
+		</array>
+		<type>
+		  <P Name="method">SF_INHERITED_TYPE</P>
+		  <P Name="primitive">SF_DOUBLE_TYPE</P>
+		  <P Name="isSigned">1</P>
+		  <P Name="wordLength">16</P>
+		</type>
+		<P Name="complexity">SF_COMPLEX_INHERITED</P>
+		<P Name="frame">SF_FRAME_INHERITED</P>
+	      </props>
+	      <P Name="dataType">Inherit: Same as Simulink</P>
+	    </data>
+	    <data SSID="8" name="actuator_force_2">
+	      <P Name="scope">OUTPUT_DATA</P>
+	      <props>
+		<array>
+		  <P Name="size">-1</P>
+		</array>
+		<type>
+		  <P Name="method">SF_INHERITED_TYPE</P>
+		  <P Name="primitive">SF_DOUBLE_TYPE</P>
+		  <P Name="isSigned">1</P>
+		  <P Name="wordLength">16</P>
+		</type>
+		<P Name="complexity">SF_COMPLEX_INHERITED</P>
+		<P Name="frame">SF_FRAME_NO</P>
+	      </props>
+	      <P Name="dataType">Inherit: Same as Simulink</P>
+	    </data>
+	    <transition SSID="2">
+	      <P Name="labelString">{eML_blk_kernel();}</P>
+	      <P Name="labelPosition">[32.125 19.875 102.544 14.964]</P>
+	      <P Name="fontSize">12</P>
+	      <src>
+		<P Name="intersection">[0 0 1 0 23.5747 14.625 0 0]</P>
+	      </src>
+	      <dst>
+		<P Name="SSID">3</P>
+		<P Name="intersection">[7 0 -1 -1 23.5747 42.5747 0 0]</P>
+	      </dst>
+	      <P Name="midPoint">[23.5747 24.9468]</P>
+	      <P Name="dataLimits">[23.575 23.575 14.625 34.575]</P>
+	      <P Name="subviewer">11</P>
+	      <P Name="drawStyle">SMART</P>
+	      <P Name="executionOrder">1</P>
+	    </transition>
+	    <junction SSID="3">
+	      <P Name="position">[23.5747 49.5747 7]</P>
+	      <P Name="subviewer">11</P>
+	      <P Name="type">CONNECTIVE_JUNCTION</P>
+	    </junction>
+	  </Children>
+	</chart>
+      </Children>
+    </machine>
+    <instance id="20">
+      <P Name="name">Embedded MATLAB</P>
+      <P Name="machine">10</P>
+      <P Name="chart">11</P>
+    </instance>
+  </Stateflow>
 </ModelInformation>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Types  xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
-  <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
-  <Default Extension="mat" ContentType="application/vnd.mathworks.matlab.mat+binary"/>
-  <Override PartName="/simulink/blockdiagram.xml" ContentType="application/vnd.mathworks.simulink.mdl+xml"/>
-  <Override PartName="/metadata/coreproperties.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/>
-</Types>
