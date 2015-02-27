@@ -37,9 +37,9 @@ lazy rule Line2Connection {
 		c: Source!Connection (
 			Name <- l.Property->select(sl | sl.Name = 'Name')->
 				collect(slv | slv.Value.Value)->any(sls | true),
-			src <- thisModule.findPort(l.Property->select(sl | sl.Name = 'Src')->
+			src <- thisModule.findPort(l.Property->select(sl | sl.Name.toLower() = 'src')->
 				collect(slv | slv.Value.Value)->any(sls | true)),
-			dst <- thisModule.findPort(l.Property->select(dl | dl.Name = 'Dst')->
+			dst <- thisModule.findPort(l.Property->select(dl | dl.Name.toLower() = 'dst')->
 				collect(dlv | dlv.Value.Value)->any(dls | true))
 		)
 }
