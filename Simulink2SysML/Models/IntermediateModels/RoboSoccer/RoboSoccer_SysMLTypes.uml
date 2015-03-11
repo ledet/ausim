@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_W-ynIMcpEeS_OpIbfnwLPg" name="Properties">
+  <packagedElement xmi:type="uml:DataType" xmi:id="_W-ynIccpEeS_OpIbfnwLPg" name="Array:Float"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_W-ynIscpEeS_OpIbfnwLPg" name="Array:Int"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_W-ynI8cpEeS_OpIbfnwLPg" name="Int"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_W-ynJMcpEeS_OpIbfnwLPg" name="Boolean"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_W-ynJccpEeS_OpIbfnwLPg" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_W-ynJscpEeS_OpIbfnwLPg" name="Float"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_W-ynJ8cpEeS_OpIbfnwLPg" name="Array:Float (2)"/>
+</uml:Model>

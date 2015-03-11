@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<simulinksourcemm:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simulinksourcemm="http://simulinksourcemm/1.0" Name="RoboSoccer">
+  <Block xsi:type="simulinksourcemm:System" Name="RoboSoccer" ID="Root">
+    <Block xsi:type="simulinksourcemm:System" Name="2D Visualization" ID="549">
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Block xsi:type="simulinksourcemm:Block" Name="In1" ID="569" Type="Inport">
+        <Property Name="Port" Type="Int" Value="1"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Property Name="PortDimensions" Type="Int" Value="-1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="To Workspace" ID="639" Type="ToWorkspace">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+      </Block>
+      <Connection src="//@Block.0/@Block.0/@Block.0/@Port.0" dst="//@Block.0/@Block.0/@Block.1/@Port.0"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:System" Name="Ball Dynamics" ID="16">
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Port Direction="out" Name="" Type="" Num="1"/>
+      <Port Direction="out" Name="" Type="" Num="2"/>
+      <Port Direction="out" Name="" Type="" Num="3"/>
+      <Block xsi:type="simulinksourcemm:Block" Name="Robot Position" ID="17" Type="Inport">
+        <Property Name="Port" Type="Int" Value="1"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Property Name="PortDimensions" Type="Int" Value="-1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="1/mass" ID="297" Type="Gain">
+        <Property Name="Gain" Type="String" Value="1/0.01"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:System" Name="Collision Modeling" ID="44">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="in" Name="" Type="" Num="2"/>
+        <Port Direction="in" Name="" Type="" Num="3"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="2"/>
+        <Block xsi:type="simulinksourcemm:Block" Name="ball_velocity" ID="44::22" Type="Inport">
+          <Property Name="Port" Type="Int" Value="1"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+          <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+          <Property Name="PortDimensions" Type="Int" Value="-1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name="robot_position" ID="44::1" Type="Inport">
+          <Property Name="Port" Type="Int" Value="2"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+          <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+          <Property Name="PortDimensions" Type="Int" Value="-1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name="ball_position" ID="44::18" Type="Inport">
+          <Property Name="Port" Type="Int" Value="3"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+          <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+          <Property Name="PortDimensions" Type="Int" Value="-1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name=" Demux " ID="44::24" Type="Demux">
+          <Port Direction="in" Name="" Type="" Num="1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name=" SFunction " ID="44::23" Type="S-Function">
+          <Property Name="Tag" Type="String" Value="Stateflow S-Function RoboSoccer 2"/>
+          <Property Name="FunctionName" Type="String" Value="sf_sfun"/>
+          <Port Direction="in" Name="" Type="" Num="1"/>
+          <Port Direction="in" Name="" Type="" Num="2"/>
+          <Port Direction="in" Name="" Type="" Num="3"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+          <Port Direction="out" Name="force" Type="" Num="2"/>
+          <Port Direction="out" Name="goal" Type="" Num="3"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name=" Terminator " ID="44::26" Type="Terminator">
+          <Port Direction="in" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name="force" ID="44::5" Type="Outport">
+          <Property Name="Port" Type="Int" Value="1"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+          <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+          <Property Name="PortDimensions" Type="Int" Value="-1"/>
+          <Port Direction="in" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name="goal" ID="44::19" Type="Outport">
+          <Property Name="Port" Type="Int" Value="2"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+          <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+          <Property Name="PortDimensions" Type="Int" Value="-1"/>
+          <Port Direction="in" Name="" Type="" Num="1"/>
+        </Block>
+        <Connection src="//@Block.0/@Block.1/@Block.2/@Block.0/@Port.0" dst="//@Block.0/@Block.1/@Block.2/@Block.4/@Port.0"/>
+        <Connection src="//@Block.0/@Block.1/@Block.2/@Block.1/@Port.0" dst="//@Block.0/@Block.1/@Block.2/@Block.4/@Port.1"/>
+        <Connection src="//@Block.0/@Block.1/@Block.2/@Block.2/@Port.0" dst="//@Block.0/@Block.1/@Block.2/@Block.4/@Port.2"/>
+        <Connection src="//@Block.0/@Block.1/@Block.2/@Block.4/@Port.4" dst="//@Block.0/@Block.1/@Block.2/@Block.6/@Port.0" Name="force"/>
+        <Connection src="//@Block.0/@Block.1/@Block.2/@Block.4/@Port.5" dst="//@Block.0/@Block.1/@Block.2/@Block.7/@Port.0" Name="goal"/>
+        <Connection src="//@Block.0/@Block.1/@Block.2/@Block.3/@Port.1" dst="//@Block.0/@Block.1/@Block.2/@Block.5/@Port.0"/>
+        <Connection src="//@Block.0/@Block.1/@Block.2/@Block.4/@Port.3" dst="//@Block.0/@Block.1/@Block.2/@Block.3/@Port.0"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Position" ID="187" Type="Integrator">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:System" Name="TEXT_GOAL" ID="560">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+        <Block xsi:type="simulinksourcemm:Block" Name="In1" ID="561" Type="Inport">
+          <Property Name="Port" Type="Int" Value="1"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+          <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+          <Property Name="PortDimensions" Type="Int" Value="-1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name="Constant" ID="562" Type="Constant">
+          <Property Name="Value" Type="Array:Float" Value="[45, 40, 1.9]"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit from 'Constant value'"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name="Constant1" ID="563" Type="Constant">
+          <Property Name="Value" Type="Array:Float" Value="[45, 40, -1.9]"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit from 'Constant value'"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name="Switch" ID="564" Type="Switch">
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+          <Port Direction="in" Name="" Type="" Num="1"/>
+          <Port Direction="in" Name="" Type="" Num="2"/>
+          <Port Direction="in" Name="" Type="" Num="3"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name="Out1" ID="565" Type="Outport">
+          <Property Name="Port" Type="Int" Value="1"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+          <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+          <Property Name="PortDimensions" Type="Int" Value="-1"/>
+          <Port Direction="in" Name="" Type="" Num="1"/>
+        </Block>
+        <Connection src="//@Block.0/@Block.1/@Block.4/@Block.0/@Port.0" dst="//@Block.0/@Block.1/@Block.4/@Block.3/@Port.1"/>
+        <Connection src="//@Block.0/@Block.1/@Block.4/@Block.3/@Port.3" dst="//@Block.0/@Block.1/@Block.4/@Block.4/@Port.0"/>
+        <Connection src="//@Block.0/@Block.1/@Block.4/@Block.1/@Port.0" dst="//@Block.0/@Block.1/@Block.4/@Block.3/@Port.0"/>
+        <Connection src="//@Block.0/@Block.1/@Block.4/@Block.2/@Port.0" dst="//@Block.0/@Block.1/@Block.4/@Block.3/@Port.2"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Unit Delay" ID="544" Type="UnitDelay">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Velocity" ID="188" Type="Integrator">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Ball Position" ID="18" Type="Outport">
+        <Property Name="Port" Type="Int" Value="1"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Property Name="PortDimensions" Type="Int" Value="-1"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Text_Goal" ID="567" Type="Outport">
+        <Property Name="Port" Type="Int" Value="2"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Property Name="PortDimensions" Type="Int" Value="-1"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="GOAL" ID="55" Type="Outport">
+        <Property Name="Port" Type="Int" Value="3"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Property Name="PortDimensions" Type="Int" Value="-1"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+      </Block>
+      <Connection src="//@Block.0/@Block.1/@Block.0/@Port.0" dst="//@Block.0/@Block.1/@Block.2/@Port.1"/>
+      <Connection src="//@Block.0/@Block.1/@Block.6/@Port.1"/>
+      <Connection src="//@Block.0/@Block.1/@Block.3/@Port.1"/>
+      <Connection src="//@Block.0/@Block.1/@Block.2/@Port.3" dst="//@Block.0/@Block.1/@Block.1/@Port.0"/>
+      <Connection src="//@Block.0/@Block.1/@Block.1/@Port.1" dst="//@Block.0/@Block.1/@Block.6/@Port.0"/>
+      <Connection src="//@Block.0/@Block.1/@Block.2/@Port.4"/>
+      <Connection src="//@Block.0/@Block.1/@Block.5/@Port.1" dst="//@Block.0/@Block.1/@Block.9/@Port.0"/>
+      <Connection src="//@Block.0/@Block.1/@Block.4/@Port.1" dst="//@Block.0/@Block.1/@Block.8/@Port.0"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus&#xA;Creator1" ID="48" Type="BusCreator">
+      <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Port Direction="in" Name="" Type="" Num="2"/>
+      <Port Direction="in" Name="" Type="" Num="3"/>
+      <Port Direction="in" Name="" Type="" Num="4"/>
+      <Port Direction="out" Name="" Type="" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus&#xA;Creator2" ID="49" Type="BusCreator">
+      <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Port Direction="in" Name="" Type="" Num="2"/>
+      <Port Direction="out" Name="" Type="" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus&#xA;Creator3" ID="50" Type="BusCreator">
+      <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Port Direction="in" Name="" Type="" Num="2"/>
+      <Port Direction="out" Name="" Type="" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus&#xA;Creator4" ID="51" Type="BusCreator">
+      <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Port Direction="in" Name="" Type="" Num="2"/>
+      <Port Direction="out" Name="" Type="" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus&#xA;Creator5" ID="52" Type="BusCreator">
+      <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Port Direction="in" Name="" Type="" Num="2"/>
+      <Port Direction="out" Name="" Type="" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus&#xA;Creator6" ID="290" Type="BusCreator">
+      <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Port Direction="in" Name="" Type="" Num="2"/>
+      <Port Direction="in" Name="" Type="" Num="3"/>
+      <Port Direction="out" Name="" Type="" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus&#xA;Selector" ID="53" Type="BusSelector">
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Port Direction="out" Name="&lt;signal1>" Type="" Num="1"/>
+      <Port Direction="out" Name="&lt;signal2>" Type="" Num="2"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus&#xA;Selector1" ID="54" Type="BusSelector">
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Port Direction="out" Name="&lt;signal1>" Type="" Num="1"/>
+      <Port Direction="out" Name="&lt;signal2>" Type="" Num="2"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="CLICK TO READ ME" ID="594" Type="Reference"/>
+    <Block xsi:type="simulinksourcemm:System" Name="Robot 1 Dynamics" ID="67">
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Port Direction="out" Name="" Type="" Num="1"/>
+      <Port Direction="out" Name="" Type="" Num="2"/>
+      <Block xsi:type="simulinksourcemm:Block" Name="Actuator Force" ID="103" Type="Inport">
+        <Property Name="Port" Type="Int" Value="1"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Property Name="PortDimensions" Type="Int" Value="-1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Abs" ID="456" Type="Abs">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Acceleration" ID="69" Type="Gain">
+        <Property Name="Gain" Type="String" Value="1/(10*P+1)"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="B" ID="545" Type="Gain">
+        <Property Name="Gain" Type="Int" Value="-2"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:System" Name="Boundary Collisons" ID="108">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+        <Block xsi:type="simulinksourcemm:Block" Name="robot_position" ID="108::1" Type="Inport">
+          <Property Name="Port" Type="Int" Value="1"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+          <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+          <Property Name="PortDimensions" Type="Int" Value="-1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name=" Demux " ID="108::19" Type="Demux">
+          <Port Direction="in" Name="" Type="" Num="1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name=" SFunction " ID="108::18" Type="S-Function">
+          <Property Name="Tag" Type="String" Value="Stateflow S-Function RoboSoccer 3"/>
+          <Property Name="FunctionName" Type="String" Value="sf_sfun"/>
+          <Port Direction="in" Name="" Type="" Num="1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+          <Port Direction="out" Name="collision_force" Type="" Num="2"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name=" Terminator " ID="108::21" Type="Terminator">
+          <Port Direction="in" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name="collision_force" ID="108::5" Type="Outport">
+          <Property Name="Port" Type="Int" Value="1"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+          <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+          <Property Name="PortDimensions" Type="Int" Value="-1"/>
+          <Port Direction="in" Name="" Type="" Num="1"/>
+        </Block>
+        <Connection src="//@Block.0/@Block.11/@Block.4/@Block.0/@Port.0" dst="//@Block.0/@Block.11/@Block.4/@Block.2/@Port.0"/>
+        <Connection src="//@Block.0/@Block.11/@Block.4/@Block.2/@Port.2" dst="//@Block.0/@Block.11/@Block.4/@Block.4/@Port.0" Name="collision_force"/>
+        <Connection src="//@Block.0/@Block.11/@Block.4/@Block.1/@Port.1" dst="//@Block.0/@Block.11/@Block.4/@Block.3/@Port.0"/>
+        <Connection src="//@Block.0/@Block.11/@Block.4/@Block.2/@Port.1" dst="//@Block.0/@Block.11/@Block.4/@Block.1/@Port.0"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Compare&#xA;To Constant" ID="457" Type="Reference">
+        <Property Name="relop" Type="String" Value=">"/>
+        <Property Name="const" Type="Array:Int" Value="[0, 0]"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="uint8"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Energy Loss Calculation" ID="100" Type="Integrator">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Position" ID="71" Type="Integrator">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Product" ID="458" Type="Product">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="in" Name="" Type="" Num="2"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Rate of Discharge" ID="102" Type="Gain">
+        <Property Name="Gain" Type="Float" Value="-0.01"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Saturation" ID="104" Type="Saturate">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Sum" ID="107" Type="Sum">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="in" Name="" Type="" Num="2"/>
+        <Port Direction="in" Name="" Type="" Num="3"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Velocity" ID="70" Type="Integrator">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Robot Position" ID="73" Type="Outport">
+        <Property Name="PortDimensions" Type="Array:Int" Value="[2, 1]"/>
+        <Property Name="Port" Type="Int" Value="1"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Port Direction="in" Name="" Type="Array:Float (2)" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Energy" ID="74" Type="Outport">
+        <Property Name="Port" Type="Int" Value="2"/>
+        <Property Name="PortDimensions" Type="Array:Int" Value="[2, 1]"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Port Direction="in" Name="" Type="Array:Float (2)" Num="1"/>
+      </Block>
+      <Connection src="//@Block.0/@Block.11/@Block.2/@Port.1" dst="//@Block.0/@Block.11/@Block.12/@Port.0"/>
+      <Connection src="//@Block.0/@Block.11/@Block.12/@Port.1"/>
+      <Connection src="//@Block.0/@Block.11/@Block.7/@Port.1"/>
+      <Connection src="//@Block.0/@Block.11/@Block.6/@Port.1"/>
+      <Connection src="//@Block.0/@Block.11/@Block.9/@Port.1" dst="//@Block.0/@Block.11/@Block.6/@Port.0"/>
+      <Connection src="//@Block.0/@Block.11/@Block.10/@Port.1"/>
+      <Connection src="//@Block.0/@Block.11/@Block.1/@Port.1" dst="//@Block.0/@Block.11/@Block.9/@Port.0"/>
+      <Connection src="//@Block.0/@Block.11/@Block.0/@Port.0" dst="//@Block.0/@Block.11/@Block.8/@Port.0"/>
+      <Connection src="//@Block.0/@Block.11/@Block.8/@Port.2" dst="//@Block.0/@Block.11/@Block.10/@Port.0"/>
+      <Connection src="//@Block.0/@Block.11/@Block.5/@Port.1" dst="//@Block.0/@Block.11/@Block.8/@Port.1"/>
+      <Connection src="//@Block.0/@Block.11/@Block.4/@Port.1" dst="//@Block.0/@Block.11/@Block.11/@Port.1"/>
+      <Connection src="//@Block.0/@Block.11/@Block.11/@Port.3" dst="//@Block.0/@Block.11/@Block.2/@Port.0"/>
+      <Connection src="//@Block.0/@Block.11/@Block.3/@Port.1" dst="//@Block.0/@Block.11/@Block.11/@Port.0"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:System" Name="Robot 2 Dynamics" ID="459">
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Port Direction="out" Name="" Type="" Num="1"/>
+      <Port Direction="out" Name="" Type="" Num="2"/>
+      <Block xsi:type="simulinksourcemm:Block" Name="Actuator Force" ID="460" Type="Inport">
+        <Property Name="Port" Type="Int" Value="1"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Property Name="PortDimensions" Type="Int" Value="-1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Abs" ID="461" Type="Abs">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Acceleration" ID="462" Type="Gain">
+        <Property Name="Gain" Type="String" Value="1/(10*P+0.1)"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="B" ID="546" Type="Gain">
+        <Property Name="Gain" Type="Int" Value="-2"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:System" Name="Boundary Collisons" ID="463">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+        <Block xsi:type="simulinksourcemm:Block" Name="robot_position" ID="463::1" Type="Inport">
+          <Property Name="Port" Type="Int" Value="1"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+          <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+          <Property Name="PortDimensions" Type="Int" Value="-1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name=" Demux " ID="463::19" Type="Demux">
+          <Port Direction="in" Name="" Type="" Num="1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name=" SFunction " ID="463::18" Type="S-Function">
+          <Property Name="Tag" Type="String" Value="Stateflow S-Function RoboSoccer 6"/>
+          <Property Name="FunctionName" Type="String" Value="sf_sfun"/>
+          <Port Direction="in" Name="" Type="" Num="1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+          <Port Direction="out" Name="collision_force" Type="" Num="2"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name=" Terminator " ID="463::21" Type="Terminator">
+          <Port Direction="in" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name="collision_force" ID="463::5" Type="Outport">
+          <Property Name="Port" Type="Int" Value="1"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+          <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+          <Property Name="PortDimensions" Type="Int" Value="-1"/>
+          <Port Direction="in" Name="" Type="" Num="1"/>
+        </Block>
+        <Connection src="//@Block.0/@Block.12/@Block.4/@Block.0/@Port.0" dst="//@Block.0/@Block.12/@Block.4/@Block.2/@Port.0"/>
+        <Connection src="//@Block.0/@Block.12/@Block.4/@Block.2/@Port.2" dst="//@Block.0/@Block.12/@Block.4/@Block.4/@Port.0" Name="collision_force"/>
+        <Connection src="//@Block.0/@Block.12/@Block.4/@Block.1/@Port.1" dst="//@Block.0/@Block.12/@Block.4/@Block.3/@Port.0"/>
+        <Connection src="//@Block.0/@Block.12/@Block.4/@Block.2/@Port.1" dst="//@Block.0/@Block.12/@Block.4/@Block.1/@Port.0"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Compare&#xA;To Constant" ID="464" Type="Reference">
+        <Property Name="relop" Type="String" Value=">"/>
+        <Property Name="const" Type="Array:Int" Value="[0, 0]"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="uint8"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Energy Loss Calculation" ID="465" Type="Integrator">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Position" ID="466" Type="Integrator">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Product" ID="467" Type="Product">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="in" Name="" Type="" Num="2"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Rate of Discharge" ID="468" Type="Gain">
+        <Property Name="Gain" Type="Float" Value="-0.01"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Saturation" ID="469" Type="Saturate">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Sum" ID="470" Type="Sum">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="in" Name="" Type="" Num="2"/>
+        <Port Direction="in" Name="" Type="" Num="3"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Velocity" ID="471" Type="Integrator">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Robot Position" ID="472" Type="Outport">
+        <Property Name="PortDimensions" Type="Array:Int" Value="[2, 1]"/>
+        <Property Name="Port" Type="Int" Value="1"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Port Direction="in" Name="" Type="Array:Float (2)" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Energy" ID="473" Type="Outport">
+        <Property Name="Port" Type="Int" Value="2"/>
+        <Property Name="PortDimensions" Type="Array:Int" Value="[2, 1]"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Port Direction="in" Name="" Type="Array:Float (2)" Num="1"/>
+      </Block>
+      <Connection src="//@Block.0/@Block.12/@Block.5/@Port.1" dst="//@Block.0/@Block.12/@Block.8/@Port.1"/>
+      <Connection src="//@Block.0/@Block.12/@Block.8/@Port.2" dst="//@Block.0/@Block.12/@Block.10/@Port.0"/>
+      <Connection src="//@Block.0/@Block.12/@Block.0/@Port.0" dst="//@Block.0/@Block.12/@Block.8/@Port.0"/>
+      <Connection src="//@Block.0/@Block.12/@Block.1/@Port.1" dst="//@Block.0/@Block.12/@Block.9/@Port.0"/>
+      <Connection src="//@Block.0/@Block.12/@Block.10/@Port.1"/>
+      <Connection src="//@Block.0/@Block.12/@Block.9/@Port.1" dst="//@Block.0/@Block.12/@Block.6/@Port.0"/>
+      <Connection src="//@Block.0/@Block.12/@Block.6/@Port.1"/>
+      <Connection src="//@Block.0/@Block.12/@Block.7/@Port.1"/>
+      <Connection src="//@Block.0/@Block.12/@Block.12/@Port.1"/>
+      <Connection src="//@Block.0/@Block.12/@Block.2/@Port.1" dst="//@Block.0/@Block.12/@Block.12/@Port.0"/>
+      <Connection src="//@Block.0/@Block.12/@Block.11/@Port.3" dst="//@Block.0/@Block.12/@Block.2/@Port.0"/>
+      <Connection src="//@Block.0/@Block.12/@Block.4/@Port.1" dst="//@Block.0/@Block.12/@Block.11/@Port.1"/>
+      <Connection src="//@Block.0/@Block.12/@Block.3/@Port.1" dst="//@Block.0/@Block.12/@Block.11/@Port.0"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:System" Name="Robot 3 Dynamics" ID="488">
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Port Direction="out" Name="" Type="" Num="1"/>
+      <Port Direction="out" Name="" Type="" Num="2"/>
+      <Block xsi:type="simulinksourcemm:Block" Name="Actuator Force" ID="489" Type="Inport">
+        <Property Name="Port" Type="Int" Value="1"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Property Name="PortDimensions" Type="Int" Value="-1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Abs" ID="490" Type="Abs">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Acceleration" ID="491" Type="Gain">
+        <Property Name="Gain" Type="String" Value="1/(10*P+1)"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="B" ID="547" Type="Gain">
+        <Property Name="Gain" Type="Int" Value="-2"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:System" Name="Boundary Collisons" ID="492">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+        <Block xsi:type="simulinksourcemm:Block" Name="robot_position" ID="492::1" Type="Inport">
+          <Property Name="Port" Type="Int" Value="1"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+          <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+          <Property Name="PortDimensions" Type="Int" Value="-1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name=" Demux " ID="492::19" Type="Demux">
+          <Port Direction="in" Name="" Type="" Num="1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name=" SFunction " ID="492::18" Type="S-Function">
+          <Property Name="Tag" Type="String" Value="Stateflow S-Function RoboSoccer 5"/>
+          <Property Name="FunctionName" Type="String" Value="sf_sfun"/>
+          <Port Direction="in" Name="" Type="" Num="1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+          <Port Direction="out" Name="collision_force" Type="" Num="2"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name=" Terminator " ID="492::21" Type="Terminator">
+          <Port Direction="in" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name="collision_force" ID="492::5" Type="Outport">
+          <Property Name="Port" Type="Int" Value="1"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+          <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+          <Property Name="PortDimensions" Type="Int" Value="-1"/>
+          <Port Direction="in" Name="" Type="" Num="1"/>
+        </Block>
+        <Connection src="//@Block.0/@Block.13/@Block.4/@Block.0/@Port.0" dst="//@Block.0/@Block.13/@Block.4/@Block.2/@Port.0"/>
+        <Connection src="//@Block.0/@Block.13/@Block.4/@Block.2/@Port.2" dst="//@Block.0/@Block.13/@Block.4/@Block.4/@Port.0" Name="collision_force"/>
+        <Connection src="//@Block.0/@Block.13/@Block.4/@Block.1/@Port.1" dst="//@Block.0/@Block.13/@Block.4/@Block.3/@Port.0"/>
+        <Connection src="//@Block.0/@Block.13/@Block.4/@Block.2/@Port.1" dst="//@Block.0/@Block.13/@Block.4/@Block.1/@Port.0"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Compare&#xA;To Constant" ID="493" Type="Reference">
+        <Property Name="relop" Type="String" Value=">"/>
+        <Property Name="const" Type="Array:Int" Value="[0, 0]"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="uint8"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Energy Loss Calculation" ID="494" Type="Integrator">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Position" ID="495" Type="Integrator">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Product" ID="496" Type="Product">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="in" Name="" Type="" Num="2"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Rate of Discharge" ID="497" Type="Gain">
+        <Property Name="Gain" Type="Float" Value="-0.01"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Saturation" ID="498" Type="Saturate">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Sum" ID="499" Type="Sum">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="in" Name="" Type="" Num="2"/>
+        <Port Direction="in" Name="" Type="" Num="3"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Velocity" ID="500" Type="Integrator">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Robot Position" ID="501" Type="Outport">
+        <Property Name="PortDimensions" Type="Array:Int" Value="[2, 1]"/>
+        <Property Name="Port" Type="Int" Value="1"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Port Direction="in" Name="" Type="Array:Float (2)" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Energy" ID="502" Type="Outport">
+        <Property Name="Port" Type="Int" Value="2"/>
+        <Property Name="PortDimensions" Type="Array:Int" Value="[2, 1]"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Port Direction="in" Name="" Type="Array:Float (2)" Num="1"/>
+      </Block>
+      <Connection src="//@Block.0/@Block.13/@Block.5/@Port.1" dst="//@Block.0/@Block.13/@Block.8/@Port.1"/>
+      <Connection src="//@Block.0/@Block.13/@Block.8/@Port.2" dst="//@Block.0/@Block.13/@Block.10/@Port.0"/>
+      <Connection src="//@Block.0/@Block.13/@Block.0/@Port.0" dst="//@Block.0/@Block.13/@Block.8/@Port.0"/>
+      <Connection src="//@Block.0/@Block.13/@Block.1/@Port.1" dst="//@Block.0/@Block.13/@Block.9/@Port.0"/>
+      <Connection src="//@Block.0/@Block.13/@Block.10/@Port.1"/>
+      <Connection src="//@Block.0/@Block.13/@Block.9/@Port.1" dst="//@Block.0/@Block.13/@Block.6/@Port.0"/>
+      <Connection src="//@Block.0/@Block.13/@Block.6/@Port.1"/>
+      <Connection src="//@Block.0/@Block.13/@Block.7/@Port.1"/>
+      <Connection src="//@Block.0/@Block.13/@Block.12/@Port.1"/>
+      <Connection src="//@Block.0/@Block.13/@Block.2/@Port.1" dst="//@Block.0/@Block.13/@Block.12/@Port.0"/>
+      <Connection src="//@Block.0/@Block.13/@Block.11/@Port.3" dst="//@Block.0/@Block.13/@Block.2/@Port.0"/>
+      <Connection src="//@Block.0/@Block.13/@Block.4/@Port.1" dst="//@Block.0/@Block.13/@Block.11/@Port.1"/>
+      <Connection src="//@Block.0/@Block.13/@Block.3/@Port.1" dst="//@Block.0/@Block.13/@Block.11/@Port.0"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:System" Name="Robot 4 Dynamics" ID="503">
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Port Direction="out" Name="" Type="" Num="1"/>
+      <Port Direction="out" Name="" Type="" Num="2"/>
+      <Block xsi:type="simulinksourcemm:Block" Name="Actuator Force" ID="504" Type="Inport">
+        <Property Name="Port" Type="Int" Value="1"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Property Name="PortDimensions" Type="Int" Value="-1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Abs" ID="505" Type="Abs">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Acceleration" ID="506" Type="Gain">
+        <Property Name="Gain" Type="String" Value="1/(10*P+1)"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="B" ID="548" Type="Gain">
+        <Property Name="Gain" Type="Int" Value="-2"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:System" Name="Boundary Collisons" ID="507">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+        <Block xsi:type="simulinksourcemm:Block" Name="robot_position" ID="507::1" Type="Inport">
+          <Property Name="Port" Type="Int" Value="1"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+          <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+          <Property Name="PortDimensions" Type="Int" Value="-1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name=" Demux " ID="507::19" Type="Demux">
+          <Port Direction="in" Name="" Type="" Num="1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name=" SFunction " ID="507::18" Type="S-Function">
+          <Property Name="Tag" Type="String" Value="Stateflow S-Function RoboSoccer 4"/>
+          <Property Name="FunctionName" Type="String" Value="sf_sfun"/>
+          <Port Direction="in" Name="" Type="" Num="1"/>
+          <Port Direction="out" Name="" Type="" Num="1"/>
+          <Port Direction="out" Name="collision_force" Type="" Num="2"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name=" Terminator " ID="507::21" Type="Terminator">
+          <Port Direction="in" Name="" Type="" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name="collision_force" ID="507::5" Type="Outport">
+          <Property Name="Port" Type="Int" Value="1"/>
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+          <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+          <Property Name="PortDimensions" Type="Int" Value="-1"/>
+          <Port Direction="in" Name="" Type="" Num="1"/>
+        </Block>
+        <Connection src="//@Block.0/@Block.14/@Block.4/@Block.0/@Port.0" dst="//@Block.0/@Block.14/@Block.4/@Block.2/@Port.0"/>
+        <Connection src="//@Block.0/@Block.14/@Block.4/@Block.2/@Port.2" dst="//@Block.0/@Block.14/@Block.4/@Block.4/@Port.0" Name="collision_force"/>
+        <Connection src="//@Block.0/@Block.14/@Block.4/@Block.1/@Port.1" dst="//@Block.0/@Block.14/@Block.4/@Block.3/@Port.0"/>
+        <Connection src="//@Block.0/@Block.14/@Block.4/@Block.2/@Port.1" dst="//@Block.0/@Block.14/@Block.4/@Block.1/@Port.0"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Compare&#xA;To Constant" ID="508" Type="Reference">
+        <Property Name="relop" Type="String" Value=">"/>
+        <Property Name="const" Type="Array:Int" Value="[0, 0]"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="uint8"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Energy Loss Calculation" ID="509" Type="Integrator">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Position" ID="510" Type="Integrator">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Product" ID="511" Type="Product">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="in" Name="" Type="" Num="2"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Rate of Discharge" ID="512" Type="Gain">
+        <Property Name="Gain" Type="Float" Value="-0.01"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Saturation" ID="513" Type="Saturate">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Sum" ID="514" Type="Sum">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="in" Name="" Type="" Num="2"/>
+        <Port Direction="in" Name="" Type="" Num="3"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Velocity" ID="515" Type="Integrator">
+        <Port Direction="in" Name="" Type="" Num="1"/>
+        <Port Direction="out" Name="" Type="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Robot Position" ID="516" Type="Outport">
+        <Property Name="PortDimensions" Type="Array:Int" Value="[2, 1]"/>
+        <Property Name="Port" Type="Int" Value="1"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Port Direction="in" Name="" Type="Array:Float (2)" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Energy" ID="517" Type="Outport">
+        <Property Name="Port" Type="Int" Value="2"/>
+        <Property Name="PortDimensions" Type="Array:Int" Value="[2, 1]"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+        <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+        <Port Direction="in" Name="" Type="Array:Float (2)" Num="1"/>
+      </Block>
+      <Connection src="//@Block.0/@Block.14/@Block.11/@Port.3" dst="//@Block.0/@Block.14/@Block.2/@Port.0"/>
+      <Connection src="//@Block.0/@Block.14/@Block.2/@Port.1" dst="//@Block.0/@Block.14/@Block.12/@Port.0"/>
+      <Connection src="//@Block.0/@Block.14/@Block.12/@Port.1"/>
+      <Connection src="//@Block.0/@Block.14/@Block.7/@Port.1"/>
+      <Connection src="//@Block.0/@Block.14/@Block.6/@Port.1"/>
+      <Connection src="//@Block.0/@Block.14/@Block.9/@Port.1" dst="//@Block.0/@Block.14/@Block.6/@Port.0"/>
+      <Connection src="//@Block.0/@Block.14/@Block.10/@Port.1"/>
+      <Connection src="//@Block.0/@Block.14/@Block.1/@Port.1" dst="//@Block.0/@Block.14/@Block.9/@Port.0"/>
+      <Connection src="//@Block.0/@Block.14/@Block.0/@Port.0" dst="//@Block.0/@Block.14/@Block.8/@Port.0"/>
+      <Connection src="//@Block.0/@Block.14/@Block.8/@Port.2" dst="//@Block.0/@Block.14/@Block.10/@Port.0"/>
+      <Connection src="//@Block.0/@Block.14/@Block.5/@Port.1" dst="//@Block.0/@Block.14/@Block.8/@Port.1"/>
+      <Connection src="//@Block.0/@Block.14/@Block.4/@Port.1" dst="//@Block.0/@Block.14/@Block.11/@Port.1"/>
+      <Connection src="//@Block.0/@Block.14/@Block.3/@Port.1" dst="//@Block.0/@Block.14/@Block.11/@Port.0"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Stop Simulation" ID="40" Type="Stop">
+      <Port Direction="in" Name="" Type="" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Team_1_Strategy" ID="583" Type="ModelReference">
+      <Port Direction="in" Name="Ball Position" Type="" Num="1"/>
+      <Port Direction="in" Name="Power" Type="" Num="2"/>
+      <Port Direction="in" Name="Robot Position" Type="" Num="3"/>
+      <Port Direction="out" Name=" Actuator Force 1" Type="" Num="1"/>
+      <Port Direction="out" Name="Actuator Force 2" Type="" Num="2"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Team_1_Strategy2" ID="593" Type="ModelReference">
+      <Port Direction="in" Name="Ball Position" Type="" Num="1"/>
+      <Port Direction="in" Name="Power" Type="" Num="2"/>
+      <Port Direction="in" Name="Robot Position" Type="" Num="3"/>
+      <Port Direction="out" Name="Actuator Force 3" Type="" Num="1"/>
+      <Port Direction="out" Name="Actuator Force 4" Type="" Num="2"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Unit Delay" ID="630" Type="UnitDelay">
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Port Direction="out" Name="" Type="" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Unit Delay1" ID="631" Type="UnitDelay">
+      <Port Direction="in" Name="" Type="" Num="1"/>
+      <Port Direction="out" Name="" Type="" Num="1"/>
+    </Block>
+    <Connection src="//@Block.0/@Block.11/@Port.1" dst="//@Block.0/@Block.2/@Port.0"/>
+    <Connection src="//@Block.0/@Block.12/@Port.1" dst="//@Block.0/@Block.2/@Port.1"/>
+    <Connection src="//@Block.0/@Block.13/@Port.1" dst="//@Block.0/@Block.2/@Port.2"/>
+    <Connection src="//@Block.0/@Block.14/@Port.1" dst="//@Block.0/@Block.2/@Port.3"/>
+    <Connection src="//@Block.0/@Block.2/@Port.4"/>
+    <Connection src="//@Block.0/@Block.13/@Port.2" dst="//@Block.0/@Block.3/@Port.0"/>
+    <Connection src="//@Block.0/@Block.14/@Port.2" dst="//@Block.0/@Block.3/@Port.1"/>
+    <Connection src="//@Block.0/@Block.3/@Port.2" dst="//@Block.0/@Block.17/@Port.1"/>
+    <Connection src="//@Block.0/@Block.17/@Port.3" dst="//@Block.0/@Block.6/@Port.0"/>
+    <Connection src="//@Block.0/@Block.17/@Port.4" dst="//@Block.0/@Block.6/@Port.1"/>
+    <Connection src="//@Block.0/@Block.6/@Port.2" dst="//@Block.0/@Block.9/@Port.0"/>
+    <Connection src="//@Block.0/@Block.16/@Port.3" dst="//@Block.0/@Block.5/@Port.0"/>
+    <Connection src="//@Block.0/@Block.16/@Port.4" dst="//@Block.0/@Block.5/@Port.1"/>
+    <Connection src="//@Block.0/@Block.5/@Port.2" dst="//@Block.0/@Block.8/@Port.0"/>
+    <Connection src="//@Block.0/@Block.8/@Port.1" dst="//@Block.0/@Block.11/@Port.0" Name="&lt;signal1>"/>
+    <Connection src="//@Block.0/@Block.8/@Port.2" dst="//@Block.0/@Block.12/@Port.0" Name="&lt;signal2>"/>
+    <Connection src="//@Block.0/@Block.9/@Port.1" dst="//@Block.0/@Block.13/@Port.0" Name="&lt;signal1>"/>
+    <Connection src="//@Block.0/@Block.9/@Port.2" dst="//@Block.0/@Block.14/@Port.0" Name="&lt;signal2>"/>
+    <Connection src="//@Block.0/@Block.1/@Port.3" dst="//@Block.0/@Block.19/@Port.0"/>
+    <Connection src="//@Block.0/@Block.1/@Port.1"/>
+    <Connection src="//@Block.0/@Block.7/@Port.3" dst="//@Block.0/@Block.0/@Port.0"/>
+    <Connection src="//@Block.0/@Block.1/@Port.2" dst="//@Block.0/@Block.7/@Port.2"/>
+    <Connection src="//@Block.0/@Block.4/@Port.2" dst="//@Block.0/@Block.16/@Port.1"/>
+    <Connection src="//@Block.0/@Block.12/@Port.2" dst="//@Block.0/@Block.4/@Port.1"/>
+    <Connection src="//@Block.0/@Block.11/@Port.2" dst="//@Block.0/@Block.4/@Port.0"/>
+    <Connection src="//@Block.0/@Block.18/@Port.1" dst="//@Block.0/@Block.15/@Port.0"/>
+    <Connection src="//@Block.0/@Block.19/@Port.1" dst="//@Block.0/@Block.18/@Port.0"/>
+  </Block>
+</simulinksourcemm:Model>

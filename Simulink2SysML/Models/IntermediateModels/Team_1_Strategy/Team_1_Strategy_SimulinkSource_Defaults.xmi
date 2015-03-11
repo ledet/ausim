@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<simulinksourcemm:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simulinksourcemm="http://simulinksourcemm/1.0" Name="Team_1_Strategy Block Parameter Defaults">
+  <Block xsi:type="simulinksourcemm:Block" Type="Demux">
+    <Property Name="Outputs" Type="Int" Value="4"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="Inport">
+    <Property Name="Port" Type="Int" Value="1"/>
+    <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+    <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+    <Property Name="PortDimensions" Type="Int" Value="-1"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="Outport">
+    <Property Name="Port" Type="Int" Value="1"/>
+    <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+    <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+    <Property Name="PortDimensions" Type="Int" Value="-1"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="S-Function">
+    <Property Name="FunctionName" Type="String" Value="system"/>
+    <Property Name="PortCounts" Type="Array" Value="[]"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="SubSystem"/>
+  <Block xsi:type="simulinksourcemm:Block" Type="Terminator"/>
+</simulinksourcemm:Model>

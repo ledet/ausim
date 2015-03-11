@@ -8,7 +8,7 @@
 	
 	<target name="Sim2Sys">
 
-		<unzip src="${modelPath}/Simulink/${rootModelName}/${modelName}.slx" dest="${modelPath}/PIM/${rootModelName}/${modelName}_slx" />
+		<unzip src="${modelPath}/${modelName}.slx" dest="${modelPath}/PIM/${rootModelName}/${modelName}_slx" />
 
 		<xslt style="${transPath}/XSLT/Simulink_Settings.xsl"
 			in="${modelPath}/PIM/${rootModelName}/${modelName}_slx/simulink/blockdiagram.xml"
@@ -28,8 +28,8 @@
 		<atl.loadModel name="SysML" metamodel="MOF" nsUri="http://www.eclipse.org/papyrus/0.7.0/SysML"/>
 		<atl.loadModel name="SysMLprof" metamodel="MOF" nsUri="http://www.eclipse.org/papyrus/0.7.0/SysML"/>
 		<atl.loadModel name="SysMLnot" metamodel="MOF" nsUri="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
-    	<atl.loadModel name="SysMLProfiles" metamodel="SysMLprof" path="${modelPath}/SysMLCoreInformation/SimpleSysML.uml"/>
-    	<atl.loadModel name="SysMLNotationDefinitions" metamodel="SysMLnot" path="${modelPath}/SysMLCoreInformation/SimpleSysML.notation"/>
+    	<atl.loadModel name="SysMLProfiles" metamodel="SysMLprof" path="${modelPath}/SimpleSysML.uml"/>
+    	<atl.loadModel name="SysMLNotationDefinitions" metamodel="SysMLnot" path="${modelPath}/SimpleSysML.notation"/>
     	<atl.loadModel name="simModel" metamodel="Simulink" path="${modelPath}/PIM/${rootModelName}/${modelName}/Simulink_Structural.xmi"/>
 		
 		<atl.launch path="${transPath}/ATL/Simulink2SourceDefaults.asm">

@@ -99,7 +99,7 @@ rule SystemPort2Port {
 }
 
 helper context Source!Component def: getPortName(dir: String, num: Integer): String =
-	self.Block->
+	self.Block->select(bb | bb.oclIsTypeOf(Source!Block))->
 		select(b | b.Type.toLower() = dir + 'port' 
 			and b.Property->exists(p | p.Name='Port' and p.Value = num.toString())
 			)->
@@ -117,14 +117,17 @@ rule Connection2Connection {
 }
 
 helper context Source!System def: isFunctionBlock: Boolean =
-	self.hasBlockOfType('S-Function') and self.hasBlockOfType('Demux')
-		and self.hasBlockOfType('Terminator')
-		and self.countSFunctionPorts('in') = self.countPortBlocks('In')
+	if self.hasBlockOfType('S-Function') and self.hasBlockOfType('Demux')
+		and self.hasBlockOfType('Terminator') then
+		self.countSFunctionPorts('in') = self.countPortBlocks('In')
 		and self.countSFunctionPorts('out') = self.countPortBlocks('Out') + 1
 		and self.connectionExists('S-Function', 'out', 1, 'Demux', 'in', 1)
 		and self.connectionExists('Demux', 'out', 1, 'Terminator', 'in', 1)
 		and self.countSFunctionPorts('in') = self.countInConnections
-		and self.countPortBlocks('Out') = self.countOutConnections;
+		and self.countPortBlocks('Out') = self.countOutConnections
+	else
+		false
+	endif;
 
 helper context Source!System def: hasBlockOfType (BlockType : String): Boolean =
 	self.Block->select(b | b.oclIsTypeOf(Source!Block))->exists(d | d.Type = BlockType);

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Unzip" default="unzip">
 	<property name="rootModelName" value="RoboSoccer" />
-	<property name="modelName" value="Team_1_Strategy" />
+	<property name="modelName" value="RoboSoccer" />
 	<property name="modelPath" value="../Models/" />
 	
 	<target name="unzip">
-		<unzip src="${modelPath}/${rootModelName}/${modelName}.slx" dest="${modelPath}/${rootModelName}/${modelName}_slx_ecl" />
+		<unzip src="${modelPath}/${rootModelName}/${modelName}.slx" dest="${modelPath}/${rootModelName}/${modelName}_slx" />
 	</target>
 
 </project>

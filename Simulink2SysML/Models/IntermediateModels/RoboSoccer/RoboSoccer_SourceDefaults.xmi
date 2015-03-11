@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<simulinksourcemm:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simulinksourcemm="http://simulinksourcemm/1.0" Name="RoboSoccer Block Parameter Defaults">
+  <Block xsi:type="simulinksourcemm:Block" Type="Abs">
+    <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="BusCreator">
+    <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="BusSelector"/>
+  <Block xsi:type="simulinksourcemm:Block" Type="Constant">
+    <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit from 'Constant value'"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="Demux">
+    <Property Name="Outputs" Type="Int" Value="4"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="Gain">
+    <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="Inport">
+    <Property Name="Port" Type="Int" Value="1"/>
+    <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+    <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+    <Property Name="PortDimensions" Type="Int" Value="-1"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="Integrator"/>
+  <Block xsi:type="simulinksourcemm:Block" Type="ModelReference"/>
+  <Block xsi:type="simulinksourcemm:Block" Type="Outport">
+    <Property Name="Port" Type="Int" Value="1"/>
+    <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+    <Property Name="BusOutputAsStruct" Type="Boolean" Value="false"/>
+    <Property Name="PortDimensions" Type="Int" Value="-1"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="Product">
+    <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as first input"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="S-Function">
+    <Property Name="FunctionName" Type="String" Value="system"/>
+    <Property Name="PortCounts" Type="Array" Value="[]"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="Saturate">
+    <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="Stop"/>
+  <Block xsi:type="simulinksourcemm:Block" Type="SubSystem"/>
+  <Block xsi:type="simulinksourcemm:Block" Type="Sum">
+    <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as first input"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="Switch">
+    <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+  </Block>
+  <Block xsi:type="simulinksourcemm:Block" Type="Terminator"/>
+  <Block xsi:type="simulinksourcemm:Block" Type="ToWorkspace"/>
+  <Block xsi:type="simulinksourcemm:Block" Type="UnitDelay"/>
+</simulinksourcemm:Model>

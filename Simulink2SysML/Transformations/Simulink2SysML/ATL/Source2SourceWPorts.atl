@@ -13,9 +13,24 @@ rule Model2Model {
 		)
 }
 
-rule System2SystemWPorts {
+--rule System2SystemWPorts {
+--	from
+--		bi: Source!System (bi.hasPortsProperty)
+--	to
+--		bo: Source!System (
+--			Name <- bi.Name,
+--			ID <- bi.ID,
+--			Property <- bi.Property,
+--			Port <- thisModule.generateSequence(bi.getInportCount)->collect(i | thisModule.createInPort(i.toString() + thisModule.nameDelim + bi.getPortName(i, 'in') + thisModule.typeDelim))->
+--				union(thisModule.generateSequence(bi.getOutportCount)->collect(o | thisModule.createOutPort(o.toString() + thisModule.nameDelim + bi.getPortName(o, 'out') + thisModule.typeDelim))),
+--			Block <- bi.Block
+--		)
+--}
+
+rule System2System {
 	from
-		bi: Source!System (bi.hasPortsProperty)
+		bi: Source!System
+		--bi: Source!System (not bi.hasPortsProperty)
 	to
 		bo: Source!System (
 			Name <- bi.Name,
@@ -27,81 +42,74 @@ rule System2SystemWPorts {
 		)
 }
 
-rule System2System {
-	from
-		bi: Source!System (not bi.hasPortsProperty)
-	to
-		bo: Source!System (
-			Name <- bi.Name,
-			ID <- bi.ID,
-			Property <- bi.Property,
-			Block <- bi.Block
-		)
-}
+--rule Block2BlockWInport {
+--	from
+--		bi: Source!Block (bi.needsInport and not bi.needsOutport)
+--	to
+--		bo: Source!Block (
+--			Name <- bi.Name,
+--			ID <- bi.ID,
+--			Type <- bi.Type,
+--			Property <- bi.Property,
+--			Port <- thisModule.generateSequence(bi.getInportCount)->collect(i | thisModule.createInPort(i.toString() + thisModule.nameDelim + bi.getPortName(i, 'in') + thisModule.typeDelim))->
+--				union(thisModule.generateSequence(bi.getOutportCount)->collect(o | thisModule.createOutPort(o.toString() + thisModule.nameDelim + bi.getPortName(o, 'out') + thisModule.typeDelim)))
+--		)
+--}
+--
+--rule Block2BlockWOutport {
+--	from
+--		bi: Source!Block (not bi.needsInport and bi.needsOutport)
+--	to
+--		bo: Source!Block (
+--			Name <- bi.Name,
+--			ID <- bi.ID,
+--			Type <- bi.Type,
+--			Property <- bi.Property,
+--			Port <- thisModule.generateSequence(bi.getInportCount)->collect(i | thisModule.createInPort(i.toString() + thisModule.nameDelim + bi.getPortName(i, 'in') + thisModule.typeDelim))->
+--				union(thisModule.generateSequence(bi.getOutportCount)->collect(o | thisModule.createOutPort(o.toString() + thisModule.nameDelim + bi.getPortName(o, 'out') + thisModule.typeDelim)))
+--		)
+--}
+--
+--rule Block2BlockWInOutport {
+--	from
+--		bi: Source!Block (bi.needsInport or bi.needsOutport)
+--	to
+--		bo: Source!Block (
+--			Name <- bi.Name,
+--			ID <- bi.ID,
+--			Type <- bi.Type,
+--			Property <- bi.Property,
+--			Port <- thisModule.generateSequence(bi.getInportCount)->collect(i | thisModule.createInPort(i.toString() + thisModule.nameDelim + bi.getPortName(i, 'in') + thisModule.typeDelim))->
+--				union(thisModule.generateSequence(bi.getOutportCount)->collect(o | thisModule.createOutPort(o.toString() + thisModule.nameDelim + bi.getPortName(o, 'out') + thisModule.typeDelim)))
+--		)
+--}
 
-rule Block2BlockWInport {
-	from
-		bi: Source!Block(bi.needsInport and not bi.needsOutport)
-	to
-		bo: Source!Block (
-			Name <- bi.Name,
-			ID <- bi.ID,
-			Type <- bi.Type,
-			Property <- bi.Property,
-			Port <- thisModule.createInPort('1' + thisModule.nameDelim + thisModule.typeDelim)
-		)
-}
-
-rule Block2BlockWOutport {
-	from
-		bi: Source!Block (not bi.needsInport and bi.needsOutport)
-	to
-		bo: Source!Block (
-			Name <- bi.Name,
-			ID <- bi.ID,
-			Type <- bi.Type,
-			Property <- bi.Property,
-			Port <- thisModule.createOutPort('1' + thisModule.nameDelim + thisModule.typeDelim + bi.getPortType)
-		)
-}
-
-rule Block2BlockWInOutport {
-	from
-		bi: Source!Block (bi.needsInport and bi.needsOutport)
-	to
-		bo: Source!Block (
-			Name <- bi.Name,
-			ID <- bi.ID,
-			Type <- bi.Type,
-			Property <- bi.Property,
-			Port <- Sequence{thisModule.createInPort('1' + thisModule.nameDelim + thisModule.typeDelim)}
-				->append(thisModule.createOutPort('1' + thisModule.nameDelim + thisModule.typeDelim))
-		)
-}
-
-rule Block2BlockWPorts {
-	from
-		bi: Source!Block (not bi.needsInport and not bi.needsOutport and bi.hasPortsProperty)
-	to
-		bo: Source!Block (
-			Name <- bi.Name,
-			ID <- bi.ID,
-			Type <- bi.Type,
-			Property <- bi.Property,
-			Port <- thisModule.generateSequence(bi.getInportCount)->collect(i | thisModule.createInPort(i.toString() + thisModule.nameDelim + bi.getPortName(i, 'in') + thisModule.typeDelim))->
-				union(thisModule.generateSequence(bi.getOutportCount)->collect(o | thisModule.createOutPort(o.toString() + thisModule.nameDelim + bi.getPortName(o, 'out') + thisModule.typeDelim)))
-		)
-}
+--rule Block2BlockWPorts {
+--	from
+--		bi: Source!Block (bi.needsInport or bi.needsOutport or bi.hasPortsProperty)
+--	to
+--		bo: Source!Block (
+--			Name <- bi.Name,
+--			ID <- bi.ID,
+--			Type <- bi.Type,
+--			Property <- bi.Property,
+--			Port <- thisModule.generateSequence(bi.getInportCount)->collect(i | thisModule.createInPort(i.toString() + thisModule.nameDelim + bi.getPortName(i, 'in') + thisModule.typeDelim))->
+--				union(thisModule.generateSequence(bi.getOutportCount)->collect(o | thisModule.createOutPort(o.toString() + thisModule.nameDelim + bi.getPortName(o, 'out') + thisModule.typeDelim)))
+--		)
+--}
 
 rule Block2Block {
 	from
-		bi: Source!Block (not bi.needsInport and not bi.needsOutport and not bi.hasPortsProperty)
+		bi: Source!Block
+	--	bi: Source!Block (not bi.needsInport and not bi.needsOutport and not bi.hasPortsProperty)
 	to
 		bo: Source!Block (
 			Name <- bi.Name,
 			ID <- bi.ID,
 			Type <- bi.Type,
-			Property <- bi.Property
+			Property <- bi.Property,
+			Port <- thisModule.generateSequence(bi.getInportCount)->collect(i | thisModule.createInPort(i.toString() + thisModule.nameDelim + bi.getPortName(i, 'in') + thisModule.typeDelim + bi.getPortType))->
+				union(thisModule.generateSequence(bi.getOutportCount)->collect(o | thisModule.createOutPort(o.toString() + thisModule.nameDelim + bi.getPortName(o, 'out') + thisModule.typeDelim + bi.getPortType)))
 		)
 }
 
@@ -143,54 +151,79 @@ lazy rule createOutPort {
 helper def: nameDelim : String = '#n#';
 helper def: typeDelim : String = '#t#';
 
-helper def: InOutportBlockTypeList : String = '|';
-helper def: InOutportKeywordList : String = '|Ports|PortCounts|'; -- we assume this results in [i, o] format, and that if both occur, they will be same value
-helper def: InportBlockTypeList : String = '|Terminator|Outport|';
-helper def: InportKeywordList : String = '|Inputs|'; -- we assume a single integer
-helper def: OutportBlockTypeList : String = '|Inport|';
-helper def: OutportKeywordList : String = '|Outputs|'; -- we assume a singler integer
+--helper def: InOutportBlockTypeList : Sequence(String) = Sequence{}; -- we assume this results in [i, o] format, and that if both occur, they will be same value
+--helper def: InOutportBlockTypeList : String = '|';
+helper def: InOutportKeywordList : Sequence(String) = Sequence{'Ports', 'PortCounts'}; -- we assume this results in [i, o] or [i] format, and that if both occur, they will be same value
+--helper def: InOutportKeywordList : String = '|Ports|PortCounts|'; -- we assume this results in [i, o] format, and that if both occur, they will be same value
+helper def: InportBlockTypeList : Sequence(String) = Sequence{'Terminator', 'Outport', 'Gain', 'Switch', 'Abs', 'Stop', 'UnitDelay'};
+helper def: InportBlockCountList : Sequence(String) = Sequence{1, 1, 1, 3, 1, 1, 1};
+helper def: InportKeywordList : Sequence(String) = Sequence{'Inputs'}; -- we assume a single integer
+helper def: OutportBlockTypeList : Sequence(String) = Sequence{'Inport', 'Constant', 'Gain', 'Switch', 'Abs', 'UnitDelay'};
+helper def: OutportBlockCountList : Sequence(String) = Sequence{1, 1, 1, 1, 1, 1};
+helper def: OutportKeywordList : Sequence(String) = Sequence{'Outputs'}; -- we assume a single integer
+--helper def: InportBlockTypeList : String = '|Terminator|Outport|Gain|Switch|Abs|Stop|UnitDelay|';
+--helper def: InportKeywordList : String = '|Inputs|'; -- we assume a single integer
+--helper def: OutportBlockTypeList : String = '|Inport|Constant|Gain|Switch|Abs|UnitDelay|';
+--helper def: OutportKeywordList : String = '|Outputs|'; -- we assume a single integer
 
 helper context Source!Component def: hasPortsProperty: Boolean =
 	self.Property->exists(p | p.isPortsProperty);
 
 helper context Source!Property def: isPortsProperty: Boolean =
-	thisModule.InOutportKeywordList.indexOf('|' + self.Name + '|') > -1
-		or thisModule.InportKeywordList.indexOf('|' + self.Name + '|') > -1
-		or thisModule.OutportKeywordList.indexOf('|' + self.Name + '|') > -1;
+	thisModule.InOutportKeywordList.includes(self.Name)
+		or thisModule.InportKeywordList.includes(self.Name)
+		or thisModule.OutportKeywordList.includes(self.Name);
 
 helper context Source!Component def: needsInport: Boolean =
-	thisModule.InportBlockTypeList.indexOf('|' + self.Type + '|') > -1;
+	thisModule.InportBlockTypeList.includes(self.Type);
 
 helper context Source!Component def: needsOutport: Boolean =
-	thisModule.OutportBlockTypeList.indexOf('|' + self.Type + '|') > -1;
+	thisModule.OutportBlockTypeList.includes(self.Type);
 
 helper context Source!Component def: getInportCount: Integer =
-	if self.Property->exists(p | thisModule.InOutportKeywordList.indexOf('|' + p.Name + '|') > -1) then
-		self.Property->select(i | thisModule.InOutportKeywordList.indexOf('|' + i.Name + '|') > -1)->first().Value.getFirstFrom2Array
+	if self.Property->exists(p | thisModule.InOutportKeywordList.includes(p.Name)) then
+		self.Property->select(i | thisModule.InOutportKeywordList.includes(i.Name))->first().Value.getNFromArray(1)
 	else
-		if self.Property->exists(p | thisModule.InportKeywordList.indexOf('|' + p.Name + '|') > -1) then
-			self.Property->select(i | thisModule.InportKeywordList.indexOf('|' + i.Name + '|') > -1)->first().Value.toInteger()
+		if self.Property->exists(p | thisModule.InportKeywordList.includes(p.Name)) then
+			self.Property->select(i | thisModule.InportKeywordList.includes(i.Name))->first().Value.toInteger()
 		else
-			0
+			if self.oclIsKindOf(Source!Block) then
+				if thisModule.InportBlockTypeList.includes(self.Type) then
+					thisModule.InportBlockCountList.at(thisModule.InportBlockTypeList.indexOf(self.Type))
+				else
+					0
+				endif
+			else
+				0
+			endif
 		endif
 	endif;
 
 helper context Source!Component def: getOutportCount: Integer =
-	if self.Property->exists(p | thisModule.InOutportKeywordList.indexOf('|' + p.Name + '|') > -1) then
-		self.Property->select(o | thisModule.InOutportKeywordList.indexOf('|' + o.Name + '|') > -1)->first().Value.getSecondFrom2Array
+	if self.Property->exists(p | thisModule.InOutportKeywordList.includes(p.Name)) then
+		self.Property->select(o | thisModule.InOutportKeywordList.includes(o.Name))->first().Value.getNFromArray(2)
 	else
-		if self.Property->exists(p | thisModule.OutportKeywordList.indexOf('|' + p.Name + '|') > -1) then
-			self.Property->select(o | thisModule.OutportKeywordList.indexOf('|' + o.Name + '|') > -1)->first().Value.toInteger()
+		if self.Property->exists(p | thisModule.OutportKeywordList.includes(p.Name)) then
+			self.Property->select(o | thisModule.OutportKeywordList.includes(o.Name))->first().Value.toInteger()
 		else
-			0
+			if self.oclIsKindOf(Source!Block) then
+				if thisModule.OutportBlockTypeList.includes(self.Type) then
+					thisModule.OutportBlockCountList.at(thisModule.OutportBlockTypeList.indexOf(self.Type))
+				else
+					0
+				endif
+			else
+				0
+			endif
 		endif
 	endif;
 
-helper context String def: getFirstFrom2Array: Integer =
-	self.substring(self.indexOf('[') + 2, self.indexOf(',')).toInteger();
-
-helper context String def: getSecondFrom2Array: Integer =
-	self.substring(self.indexOf(',') + 3, self.indexOf(']')).toInteger();
+helper context String def: getNFromArray(n : Integer): Integer =
+	if self.split(',').size() >= n and self <> '[]' then
+		self.substring(self.indexOf('[') + 2, self.indexOf(']')).split(',').at(n).trim().toInteger()
+	else
+		0
+	endif;
 
 helper context Source!Component def: getPortName(num : Integer, dir : String): String = 
 	self.Port->iterate(port; name : String = '' |
@@ -204,7 +237,7 @@ helper context Source!Component def: getPortType: String =
 	self.Property->iterate(prop; type : String = '' |
 		if prop.Name = 'PortDimensions' then
 			if prop.Type = 'Array:Int' then
-				'Array:Float (' + prop.Value.getFirstFrom2Array + ')'
+				'Array:Float (' + prop.Value.getNFromArray(1) + ')'
 			else
 				if prop.Type = 'Int' and prop.Value <> '-1' then
 					prop.Value

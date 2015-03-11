@@ -1,8 +1,6 @@
 -- @path Simulink=/Simulink2SysML/MetaModels/SimulinkMM.ecore
 -- @path Source=/Simulink2SysML/MetaModels/SimulinkSourceMM.ecore
 
--- Creates Model without default properties
-
 module Simulink2Source;
 create src : Source from sim : Simulink, defaults : Source;
 
@@ -19,46 +17,6 @@ rule ModelInformation2Model {
 			ID <- 'Root',
 			Property <- mi.Model.System.Property,
 			Block <- mi.Model.System.Block
-		)
-}
-
-rule InportBlock2Block {
-	from
-		inp: Simulink!Block (inp.BlockType = 'Inport')
-	to
-		b: Source!Block(
-			Type <- inp.BlockType,
-			Name <- inp.Name,
-			ID <- inp.SID,
---			Port <- outp,
-			Property <- inp.Property->union(
-			Source!Property.allInstancesFrom('defaults')->
-				select(dp | dp.refImmediateComposite().Type = inp.BlockType
-					and not inp.Property->exists(ip | ip.Name = dp.Name))->
-				collect(bp | thisModule.defaultProperty(bp)))
---		),
---		outp: Source!Port(
---			Direction <- 'out',
---			Num <- 1,
---			Name <- inp.SID + '#out:1'
---			
-		)
-}
-
-rule OutportBlock2Block {
-	from
-		outp: Simulink!Block (outp.BlockType = 'Outport')
-	to
-		b: Source!Block(
-			Type <- outp.BlockType,
-			Name <- outp.Name,
-			ID <- outp.SID,
---			Port <- inp,
-			Property <- outp.Property->union(
-			Source!Property.allInstancesFrom('defaults')->
-				select(dp | dp.refImmediateComposite().Type = outp.BlockType
-					and not outp.Property->exists(op | op.Name = dp.Name))->
-				collect(bp | thisModule.defaultProperty(bp)))
 		)
 }
 
@@ -82,7 +40,7 @@ rule SubSystemBlock2System {
 
 rule BlockWithSimPort2Block {
 	from
-		b: Simulink!Block (not b.isSubsystemBlock and b.BlockType <> 'Inport' and b.BlockType <> 'Outport' and b.isPortedBlock)
+		b: Simulink!Block (not b.isSubsystemBlock and b.isPortedBlock)
 	to
 		dst: Source!Block(
 			Type <- b.BlockType,
@@ -97,9 +55,27 @@ rule BlockWithSimPort2Block {
 		)
 }
 
-rule BlockWithoutSimPort2Block {
+rule BlockWithListPort2Block {
 	from
-		b: Simulink!Block (not b.isSubsystemBlock and b.BlockType <> 'Inport' and b.BlockType <> 'Outport' and not b.isPortedBlock)
+		b: Simulink!Block (not b.isSubsystemBlock and b.isListBlock)
+	to
+		dst: Source!Block(
+			Type <- b.BlockType,
+			Name <- b.Name,
+			ID <- b.SID,
+			Property <- b.Property->
+				union(Source!Property.allInstancesFrom('defaults')->
+					select(dp | dp.refImmediateComposite().Type = b.BlockType
+						and not b.Property->exists(bp | bp.Name = dp.Name))->
+					collect(blp | thisModule.defaultProperty(blp))),
+			Port <- b.List->select(lp | lp.ListType.endsWith('putPortNames'))
+					->collect(l | l.Property)
+		)
+}
+
+rule BlockWithoutSimListPort2Block {
+	from
+		b: Simulink!Block (not (b.isSubsystemBlock or b.isPortedBlock or b.isListBlock))
 	to
 		dst: Source!Block(
 			Type <- b.BlockType,
@@ -144,6 +120,17 @@ rule Port2Port {
 		)
 }
 
+rule ListPort2Port {
+	from
+		lp: Simulink!Property (lp.isListProperty)
+	to
+		p: Source!Port (
+			Direction <- lp.refImmediateComposite().getListPortType,
+			Num <- lp.Name.getPortNum,
+			Name <- lp.Value.Value
+		)
+}
+
 rule SimpleProperty2Property {
 	from
 		simp: Simulink!Property (simp.isSimpleProperty and simp.shouldBeProcessed)
@@ -177,11 +164,33 @@ helper context Simulink!Property def: isSimpleProperty: Boolean =
 	not self.Value.oclIsKindOf(Simulink!ValueArray);
 
 helper context Simulink!Property def: shouldBeProcessed: Boolean =
---	self.BlockParams.oclIsUndefined() and self.Line.oclIsUndefined() and self.Branch.oclIsUndefined();
 	not (self.refImmediateComposite().oclIsTypeOf(Simulink!BlockParams)
 	or self.refImmediateComposite().oclIsTypeOf(Simulink!Line)
-	or self.refImmediateComposite().oclIsTypeOf(Simulink!Branch));
+	or self.refImmediateComposite().oclIsTypeOf(Simulink!Branch)
+	or self.refImmediateComposite().oclIsTypeOf(Simulink!List)
+	or self.refImmediateComposite().oclIsTypeOf(Simulink!Annotation)
+	);
 	
+helper context Simulink!Property def: isListProperty: Boolean =
+	if self.refImmediateComposite().oclIsTypeOf(Simulink!List) then
+		self.refImmediateComposite().ListType.endsWith('putPortNames')
+	else
+		false
+	endif;
+
+helper context String def: getPortNum: Integer =
+	if self.startsWith('port') then
+		self.substring(5, self.size()).toInteger() + 1
+	else
+		0
+	endif;
+	
+helper context Simulink!List def: getListPortType: String =
+	if self.ListType.endsWith('putPortNames') then
+		self.ListType.substring(1, self.ListType.indexOf('putPortNames')).toLower()
+	else
+		''
+	endif;
 
 helper context Simulink!Value def: getArrayType: String =
 	if self.Entry->collect(e | e.Value.oclIsKindOf(Simulink!SimString))->includes(true) then
@@ -241,6 +250,13 @@ helper context Simulink!Block def: isSubsystemBlock: Boolean =
 
 helper context Simulink!Block def: isPortedBlock: Boolean =
 	if self.oclIsKindOf(Simulink!SFunctionBlock) or self.oclIsKindOf(Simulink!BusSelectorBlock) then
+		true
+	else
+		false
+	endif;
+
+helper context Simulink!Block def: isListBlock: Boolean =
+	if self.oclIsKindOf(Simulink!ModelReferenceBlock) then
 		true
 	else
 		false

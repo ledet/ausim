@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Unzip" default="atl">
+	<property name="rootModelName" value="RoboSoccer" />
+	<property name="modelName" value="RoboSoccer" />
+	<property name="modelPath" value="../Models/" />
+	<property name="metaModelPath" value="../MetaModels/" />
+	<property name="transPath" value="Simulink2SysML" />
+
+	<target name="atl">
+
+		<atl.loadModel name="Source" metamodel="MOF" path="${metaModelPath}/SimulinkSourceMM.ecore"/>
+    	<atl.loadModel name="Simulink" metamodel="MOF" path="${metaModelPath}/SimulinkMM.ecore"/>
+		<atl.loadModel name="SysML" metamodel="MOF" nsUri="http://www.eclipse.org/papyrus/0.7.0/SysML"/>
+		<atl.loadModel name="SysMLprof" metamodel="MOF" nsUri="http://www.eclipse.org/papyrus/0.7.0/SysML"/>
+		<atl.loadModel name="SysMLnot" metamodel="MOF" nsUri="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
+    	<atl.loadModel name="SysMLProfiles" metamodel="SysMLprof" path="${modelPath}/SimpleSysML.uml"/>
+    	<atl.loadModel name="SysMLNotationDefinitions" metamodel="SysMLnot" path="${modelPath}/SimpleSysML.notation"/>
+    	<atl.loadModel name="simModel" metamodel="Simulink" path="${modelPath}/${rootModelName}/${modelName}/Simulink_Structural.xmi"/>
+
+		<atl.launch path="${transPath}/ATL/Simulink2SourceDefaults.asm">
+			<inmodel name="sim" model="simModel"/>
+			<outmodel name="src" model="srcDef" metamodel="Source"/>
+		</atl.launch>
+		
+		<atl.launch path="${transPath}/ATL/Simulink2Source.asm">
+			<inmodel name="sim" model="simModel"/>
+			<inmodel name="defaults" model="srcDef"/>
+			<outmodel name="src" model="srcModel" metamodel="Source"/>
+		</atl.launch>
+
+		<atl.saveModel derived="false" model="srcModel" path="${modelPath}/IntermediateModels/${rootModelName}/${modelName}_SourceBlocks.xmi"/>
+
+	</target>
+
+</project>

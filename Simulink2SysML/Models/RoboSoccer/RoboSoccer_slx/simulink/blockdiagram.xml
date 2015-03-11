@@ -5,7 +5,7 @@
       <P Name="NumRootInports">0</P>
       <P Name="NumRootOutports">0</P>
       <P Name="ParameterArgumentNames"></P>
-      <P Name="ComputedModelVersion">1.587</P>
+      <P Name="ComputedModelVersion">1.589</P>
       <P Name="NumModelReferences">2</P>
       <ModelReference>
 	<P Name="ModelRefBlockPath">RoboSoccer/Team_1_Strategy|Team_1_Strategy</P>
@@ -31,8 +31,8 @@
       <P Name="UpdateHistory">UpdateHistoryNever</P>
       <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
       <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
-      <P Name="RTWModifiedTimeStamp">325439832</P>
-      <P Name="ModelVersionFormat">1.%&lt;AutoIncrement:587&gt;</P>
+      <P Name="RTWModifiedTimeStamp">346786088</P>
+      <P Name="ModelVersionFormat">1.%&lt;AutoIncrement:589&gt;</P>
       <P Name="ConfigurationManager">None</P>
     </ConfigManagerSettings>
     <EditorSettings>
@@ -829,7 +829,7 @@
       </Block>
     </BlockParameterDefaults>
     <System>
-      <P Name="Location">[-2, 52, 1278, 802]</P>
+      <P Name="Location">[31, 50, 1311, 777]</P>
       <P Name="Open">on</P>
       <P Name="ZoomFactor">103</P>
       <P Name="ReportName">simulink-default.rpt</P>
@@ -1183,7 +1183,6 @@
 	<P Name="ShowName">off</P>
 	<P Name="Inputs">2</P>
 	<P Name="DisplayOption">bar</P>
-	<P Name="OutDataTypeStr">Bus: Bus_Power</P>
       </Block>
       <Block BlockType="BusCreator" Name="Bus&#xA;Creator3" SID="50">
 	<P Name="Ports">[2, 1]</P>
@@ -1191,7 +1190,6 @@
 	<P Name="ShowName">off</P>
 	<P Name="Inputs">2</P>
 	<P Name="DisplayOption">bar</P>
-	<P Name="OutDataTypeStr">Bus: Bus_Power</P>
       </Block>
       <Block BlockType="BusCreator" Name="Bus&#xA;Creator4" SID="51">
 	<P Name="Ports">[2, 1]</P>
@@ -2588,7 +2586,7 @@ To Constant</P>
 	<P Name="FontSize">28</P>
 	<P Name="ModelNameDialog">Team_1_Strategy</P>
 	<P Name="SimulationMode">Normal</P>
-	<P Name="ModelReferenceVersion">1.30</P>
+	<P Name="ModelReferenceVersion">1.32</P>
 	<List ListType="InputPortNames">
 	  <P Name="port0">Ball Position</P>
 	  <P Name="port1">Power</P>
