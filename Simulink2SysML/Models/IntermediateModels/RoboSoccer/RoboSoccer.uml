@@ -1,0 +1,2225 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Blocks="http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks" xmlns:PortAndFlows="http://www.eclipse.org/papyrus/0.7.0/SysML/PortAndFlows" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks http://www.eclipse.org/papyrus/0.7.0/SysML/PortAndFlows http://www.eclipse.org/papyrus/0.7.0/SysML#//portandflows">
+  <uml:Model xmi:id="_N7yfAMi9EeSfLK3AfaKYVg" name="SysMLmodel">
+    <packagedElement xmi:type="uml:Package" xmi:id="_N7yfAci9EeSfLK3AfaKYVg" name="RoboSoccer">
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7yfAsi9EeSfLK3AfaKYVg" name="RoboSoccer">
+        <ownedAttribute xmi:id="_N7yfA8i9EeSfLK3AfaKYVg" name="2d visualization" type="_N7zG-8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvT8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfBMi9EeSfLK3AfaKYVg" name="ball dynamics" type="_N7zHCMi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvUMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfBci9EeSfLK3AfaKYVg" name="bus&#xA;creator1" type="_N7zGLsi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvEMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfBsi9EeSfLK3AfaKYVg" name="bus&#xA;creator2" type="_N7zGP8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvEci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfB8i9EeSfLK3AfaKYVg" name="bus&#xA;creator3" type="_N7zGTsi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvEsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfCMi9EeSfLK3AfaKYVg" name="bus&#xA;creator4" type="_N7zGXci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvE8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfCci9EeSfLK3AfaKYVg" name="bus&#xA;creator5" type="_N7zGbMi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvFMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfCsi9EeSfLK3AfaKYVg" name="bus&#xA;creator6" type="_N7zGe8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvFci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfC8i9EeSfLK3AfaKYVg" name="bus&#xA;selector" type="_N7zGi8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvFsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfDMi9EeSfLK3AfaKYVg" name="bus&#xA;selector1" type="_N7zGmMi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvF8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfDci9EeSfLK3AfaKYVg" name="click to read me" type="_N7zGpci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvGMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfDsi9EeSfLK3AfaKYVg" name="robot 1 dynamics" type="_N7zIU8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvUsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfD8i9EeSfLK3AfaKYVg" name="robot 2 dynamics" type="_N7ztT8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvU8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfEMi9EeSfLK3AfaKYVg" name="robot 3 dynamics" type="_N7zuGsi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvVMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfEci9EeSfLK3AfaKYVg" name="robot 4 dynamics" type="_N7zu5ci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvVci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfEsi9EeSfLK3AfaKYVg" name="stop simulation" type="_N7zGr8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvRci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfE8i9EeSfLK3AfaKYVg" name="team_1_strategy" type="_N7zGusi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvRsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfFMi9EeSfLK3AfaKYVg" name="team_1_strategy2" type="_N7zGyci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvR8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfFci9EeSfLK3AfaKYVg" name="unit delay" type="_N7zG2Mi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvSMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7yfFsi9EeSfLK3AfaKYVg" name="unit delay1" type="_N7zG5Mi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvSci9EeSfLK3AfaKYVg"/>
+        <ownedConnector xmi:id="_N7yfF8i9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfGMi9EeSfLK3AfaKYVg" role="_N7zIVci9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfGci9EeSfLK3AfaKYVg" role="_N7zGL8i9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfGsi9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfG8i9EeSfLK3AfaKYVg" role="_N7ztUci9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfHMi9EeSfLK3AfaKYVg" role="_N7zGMMi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfHci9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfHsi9EeSfLK3AfaKYVg" role="_N7zuHMi9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfH8i9EeSfLK3AfaKYVg" role="_N7zGMci9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfIMi9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfIci9EeSfLK3AfaKYVg" role="_N7zu58i9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfIsi9EeSfLK3AfaKYVg" role="_N7zGMsi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfI8i9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfJMi9EeSfLK3AfaKYVg" role="_N7zuHci9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfJci9EeSfLK3AfaKYVg" role="_N7zGQMi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfJsi9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfJ8i9EeSfLK3AfaKYVg" role="_N7zu6Mi9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfKMi9EeSfLK3AfaKYVg" role="_N7zGQci9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfKci9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfKsi9EeSfLK3AfaKYVg" role="_N7zGQsi9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfK8i9EeSfLK3AfaKYVg" role="_N7zGy8i9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfLMi9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfLci9EeSfLK3AfaKYVg" role="_N7zGzci9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfLsi9EeSfLK3AfaKYVg" role="_N7zGbci9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfL8i9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfMMi9EeSfLK3AfaKYVg" role="_N7zGzsi9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfMci9EeSfLK3AfaKYVg" role="_N7zGbsi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfMsi9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfM8i9EeSfLK3AfaKYVg" role="_N7zGb8i9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfNMi9EeSfLK3AfaKYVg" role="_N7zGmci9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfNci9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfNsi9EeSfLK3AfaKYVg" role="_N7zGvsi9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfN8i9EeSfLK3AfaKYVg" role="_N7zGXsi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfOMi9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfOci9EeSfLK3AfaKYVg" role="_N7zGv8i9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfOsi9EeSfLK3AfaKYVg" role="_N7zGX8i9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfO8i9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfPMi9EeSfLK3AfaKYVg" role="_N7zGYMi9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfPci9EeSfLK3AfaKYVg" role="_N7zGjMi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfPsi9EeSfLK3AfaKYVg" name="&lt;signal1>">
+          <end xmi:id="_N7yfP8i9EeSfLK3AfaKYVg" role="_N7zGjci9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfQMi9EeSfLK3AfaKYVg" role="_N7zIVMi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfQci9EeSfLK3AfaKYVg" name="&lt;signal2>">
+          <end xmi:id="_N7yfQsi9EeSfLK3AfaKYVg" role="_N7zGjsi9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfQ8i9EeSfLK3AfaKYVg" role="_N7ztUMi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfRMi9EeSfLK3AfaKYVg" name="&lt;signal1>">
+          <end xmi:id="_N7yfRci9EeSfLK3AfaKYVg" role="_N7zGmsi9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfRsi9EeSfLK3AfaKYVg" role="_N7zuG8i9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfR8i9EeSfLK3AfaKYVg" name="&lt;signal2>">
+          <end xmi:id="_N7yfSMi9EeSfLK3AfaKYVg" role="_N7zGm8i9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfSci9EeSfLK3AfaKYVg" role="_N7zu5si9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfSsi9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfS8i9EeSfLK3AfaKYVg" role="_N7zHDMi9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfTMi9EeSfLK3AfaKYVg" role="_N7zG5ci9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfTci9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfTsi9EeSfLK3AfaKYVg" role="_N7zGf8i9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfT8i9EeSfLK3AfaKYVg" role="_N7zG_Mi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfUMi9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfUci9EeSfLK3AfaKYVg" role="_N7zHC8i9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfUsi9EeSfLK3AfaKYVg" role="_N7zGfsi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfU8i9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfVMi9EeSfLK3AfaKYVg" role="_N7zGUci9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfVci9EeSfLK3AfaKYVg" role="_N7zGvMi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7yfVsi9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7yfV8i9EeSfLK3AfaKYVg" role="_N7ztUsi9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7yfWMi9EeSfLK3AfaKYVg" role="_N7zGUMi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7zGEMi9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7zGEci9EeSfLK3AfaKYVg" role="_N7zIVsi9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7zGEsi9EeSfLK3AfaKYVg" role="_N7zGT8i9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7zGE8i9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7zGFMi9EeSfLK3AfaKYVg" role="_N7zG2si9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7zGFci9EeSfLK3AfaKYVg" role="_N7zGsMi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7zGFsi9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7zGF8i9EeSfLK3AfaKYVg" role="_N7zG5si9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7zGGMi9EeSfLK3AfaKYVg" role="_N7zG2ci9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7zGGci9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7zGGsi9EeSfLK3AfaKYVg" role="_N7zGM8i9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7zGG8i9EeSfLK3AfaKYVg" role="_N7zHCci9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7zGHMi9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7zGHci9EeSfLK3AfaKYVg" role="_N7zGM8i9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7zGHsi9EeSfLK3AfaKYVg" role="_N7zGfci9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7zGH8i9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7zGIMi9EeSfLK3AfaKYVg" role="_N7zGM8i9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7zGIci9EeSfLK3AfaKYVg" role="_N7zGvci9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7zGIsi9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7zGI8i9EeSfLK3AfaKYVg" role="_N7zGM8i9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7zGJMi9EeSfLK3AfaKYVg" role="_N7zGzMi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7zGJci9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7zGJsi9EeSfLK3AfaKYVg" role="_N7zHCsi9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7zGJ8i9EeSfLK3AfaKYVg" role="_N7zGfMi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7zGKMi9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7zGKci9EeSfLK3AfaKYVg" role="_N7zHCsi9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7zGKsi9EeSfLK3AfaKYVg" role="_N7zGu8i9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_N7zGK8i9EeSfLK3AfaKYVg">
+          <end xmi:id="_N7zGLMi9EeSfLK3AfaKYVg" role="_N7zHCsi9EeSfLK3AfaKYVg"/>
+          <end xmi:id="_N7zGLci9EeSfLK3AfaKYVg" role="_N7zGysi9EeSfLK3AfaKYVg"/>
+        </ownedConnector>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zGLsi9EeSfLK3AfaKYVg" name="Bus&#xA;Creator1">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGL8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGMMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGMci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGMsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGM8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zGNMi9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvEMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zGNci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGNsi9EeSfLK3AfaKYVg" value="665"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGN8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGOMi9EeSfLK3AfaKYVg" value="409"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGOci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGOsi9EeSfLK3AfaKYVg" value="15"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGO8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGPMi9EeSfLK3AfaKYVg" value="162"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGPci9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGPsi9EeSfLK3AfaKYVg" value="Inherit: auto"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zGP8i9EeSfLK3AfaKYVg" name="Bus&#xA;Creator2">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGQMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGQci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGQsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zGQ8i9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvEci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zGRMi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGRci9EeSfLK3AfaKYVg" value="670"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGRsi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGR8i9EeSfLK3AfaKYVg" value="714"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGSMi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGSci9EeSfLK3AfaKYVg" value="15"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGSsi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGS8i9EeSfLK3AfaKYVg" value="162"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGTMi9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGTci9EeSfLK3AfaKYVg" value="Inherit: auto"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zGTsi9EeSfLK3AfaKYVg" name="Bus&#xA;Creator3">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGT8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGUMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGUci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zGUsi9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvEsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zGU8i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGVMi9EeSfLK3AfaKYVg" value="665"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGVci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGVsi9EeSfLK3AfaKYVg" value="94"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGV8i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGWMi9EeSfLK3AfaKYVg" value="15"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGWci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGWsi9EeSfLK3AfaKYVg" value="162"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGW8i9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGXMi9EeSfLK3AfaKYVg" value="Inherit: auto"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zGXci9EeSfLK3AfaKYVg" name="Bus&#xA;Creator4">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGXsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGX8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGYMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zGYci9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvE8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zGYsi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGY8i9EeSfLK3AfaKYVg" value="1050"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGZMi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGZci9EeSfLK3AfaKYVg" value="91"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGZsi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGZ8i9EeSfLK3AfaKYVg" value="15"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGaMi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGaci9EeSfLK3AfaKYVg" value="173"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGasi9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGa8i9EeSfLK3AfaKYVg" value="Inherit: auto"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zGbMi9EeSfLK3AfaKYVg" name="Bus&#xA;Creator5">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGbci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGbsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGb8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zGcMi9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvFMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zGcci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGcsi9EeSfLK3AfaKYVg" value="1050"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGc8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGdMi9EeSfLK3AfaKYVg" value="706"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGdci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGdsi9EeSfLK3AfaKYVg" value="15"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGd8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGeMi9EeSfLK3AfaKYVg" value="178"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGeci9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGesi9EeSfLK3AfaKYVg" value="Inherit: auto"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zGe8i9EeSfLK3AfaKYVg" name="Bus&#xA;Creator6">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGfMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGfci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGfsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGf8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zGgMi9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvFci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zGgci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGgsi9EeSfLK3AfaKYVg" value="1075"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGg8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGhMi9EeSfLK3AfaKYVg" value="296"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGhci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGhsi9EeSfLK3AfaKYVg" value="10"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGh8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGiMi9EeSfLK3AfaKYVg" value="188"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGici9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGisi9EeSfLK3AfaKYVg" value="Inherit: auto"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zGi8i9EeSfLK3AfaKYVg" name="Bus&#xA;Selector">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGjMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGjci9EeSfLK3AfaKYVg" name="&lt;signal1> "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGjsi9EeSfLK3AfaKYVg" name="&lt;signal2> "/>
+        <ownedAttribute xmi:id="_N7zGj8i9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvFsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zGkMi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGkci9EeSfLK3AfaKYVg" value="90"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGksi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGk8i9EeSfLK3AfaKYVg" value="139"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGlMi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGlci9EeSfLK3AfaKYVg" value="15"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGlsi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGl8i9EeSfLK3AfaKYVg" value="122"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zGmMi9EeSfLK3AfaKYVg" name="Bus&#xA;Selector1">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGmci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGmsi9EeSfLK3AfaKYVg" name="&lt;signal1> "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGm8i9EeSfLK3AfaKYVg" name="&lt;signal2> "/>
+        <ownedAttribute xmi:id="_N7zGnMi9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvF8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zGnci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGnsi9EeSfLK3AfaKYVg" value="110"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGn8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGoMi9EeSfLK3AfaKYVg" value="739"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGoci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGosi9EeSfLK3AfaKYVg" value="15"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGo8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGpMi9EeSfLK3AfaKYVg" value="122"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zGpci9EeSfLK3AfaKYVg" name="CLICK TO READ ME">
+        <ownedAttribute xmi:id="_N7zGpsi9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvGMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zGp8i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGqMi9EeSfLK3AfaKYVg" value="1236"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGqci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGqsi9EeSfLK3AfaKYVg" value="810"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGq8i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGrMi9EeSfLK3AfaKYVg" value="144"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGrci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGrsi9EeSfLK3AfaKYVg" value="105"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zGr8i9EeSfLK3AfaKYVg" name="Stop Simulation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGsMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zGsci9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvRci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zGssi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGs8i9EeSfLK3AfaKYVg" value="1255"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGtMi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGtci9EeSfLK3AfaKYVg" value="633"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGtsi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGt8i9EeSfLK3AfaKYVg" value="125"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGuMi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGuci9EeSfLK3AfaKYVg" value="124"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zGusi9EeSfLK3AfaKYVg" name="Team_1_Strategy">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGu8i9EeSfLK3AfaKYVg" name="Ball Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGvMi9EeSfLK3AfaKYVg" name="Power "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGvci9EeSfLK3AfaKYVg" name="Robot Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGvsi9EeSfLK3AfaKYVg" name=" Actuator Force 1 "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGv8i9EeSfLK3AfaKYVg" name="Actuator Force 2 "/>
+        <ownedAttribute xmi:id="_N7zGwMi9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvRsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zGwci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGwsi9EeSfLK3AfaKYVg" value="825"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGw8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGxMi9EeSfLK3AfaKYVg" value="89"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGxci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGxsi9EeSfLK3AfaKYVg" value="175"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zGx8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zGyMi9EeSfLK3AfaKYVg" value="172"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zGyci9EeSfLK3AfaKYVg" name="Team_1_Strategy2">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGysi9EeSfLK3AfaKYVg" name="Ball Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGy8i9EeSfLK3AfaKYVg" name="Power "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGzMi9EeSfLK3AfaKYVg" name="Robot Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGzci9EeSfLK3AfaKYVg" name="Actuator Force 3 "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zGzsi9EeSfLK3AfaKYVg" name="Actuator Force 4 "/>
+        <ownedAttribute xmi:id="_N7zGz8i9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvR8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zG0Mi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG0ci9EeSfLK3AfaKYVg" value="820"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zG0si9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG08i9EeSfLK3AfaKYVg" value="705"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zG1Mi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG1ci9EeSfLK3AfaKYVg" value="175"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zG1si9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG18i9EeSfLK3AfaKYVg" value="180"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zG2Mi9EeSfLK3AfaKYVg" name="Unit Delay">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zG2ci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zG2si9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zG28i9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvSMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zG3Mi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG3ci9EeSfLK3AfaKYVg" value="1170"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zG3si9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG38i9EeSfLK3AfaKYVg" value="678"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zG4Mi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG4ci9EeSfLK3AfaKYVg" value="35"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zG4si9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG48i9EeSfLK3AfaKYVg" value="34"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zG5Mi9EeSfLK3AfaKYVg" name="Unit Delay1">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zG5ci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zG5si9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zG58i9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvSci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zG6Mi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG6ci9EeSfLK3AfaKYVg" value="1110"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zG6si9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG68i9EeSfLK3AfaKYVg" value="678"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zG7Mi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG7ci9EeSfLK3AfaKYVg" value="35"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zG7si9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG78i9EeSfLK3AfaKYVg" value="34"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zG8Mi9EeSfLK3AfaKYVg" name="To Workspace">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zG8ci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zG8si9EeSfLK3AfaKYVg" name="2d visualization" type="_N7zG-8i9EeSfLK3AfaKYVg" association="_N7zvCMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zG88i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG9Mi9EeSfLK3AfaKYVg" value="125"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zG9ci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG9si9EeSfLK3AfaKYVg" value="245"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zG98i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG-Mi9EeSfLK3AfaKYVg" value="60"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zG-ci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zG-si9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zG-8i9EeSfLK3AfaKYVg" name="2D Visualization">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zG_Mi9EeSfLK3AfaKYVg" name="In1 "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zG_ci9EeSfLK3AfaKYVg" name="In1"/>
+        <ownedAttribute xmi:id="_N7zG_si9EeSfLK3AfaKYVg" name="to workspace" type="_N7zG8Mi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvCMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zG_8i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHAMi9EeSfLK3AfaKYVg" value="1170"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHAci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHAsi9EeSfLK3AfaKYVg" value="319"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHA8i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHBMi9EeSfLK3AfaKYVg" value="200"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHBci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHBsi9EeSfLK3AfaKYVg" value="142"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHB8i9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvT8i9EeSfLK3AfaKYVg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zHCMi9EeSfLK3AfaKYVg" name="Ball Dynamics">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHCci9EeSfLK3AfaKYVg" name="Robot Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHCsi9EeSfLK3AfaKYVg" name="Ball Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHC8i9EeSfLK3AfaKYVg" name="Text_Goal "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHDMi9EeSfLK3AfaKYVg" name="GOAL "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHDci9EeSfLK3AfaKYVg" name="Robot Position"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHDsi9EeSfLK3AfaKYVg" name="Ball Position"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHD8i9EeSfLK3AfaKYVg" name="Text_Goal"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHEMi9EeSfLK3AfaKYVg" name="GOAL"/>
+        <ownedAttribute xmi:id="_N7zHEci9EeSfLK3AfaKYVg" name="1/mass" type="_N7zHIMi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvCci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHEsi9EeSfLK3AfaKYVg" name="collision modeling" type="_N7zHMMi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvSsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHE8i9EeSfLK3AfaKYVg" name="position" type="_N7zHQci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvCsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHFMi9EeSfLK3AfaKYVg" name="text_goal" type="_N7zHZci9EeSfLK3AfaKYVg" aggregation="composite"/>
+        <ownedAttribute xmi:id="_N7zHFci9EeSfLK3AfaKYVg" name="unit delay" type="_N7zHTci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvDsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHFsi9EeSfLK3AfaKYVg" name="velocity" type="_N7zHWci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvD8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHF8i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHGMi9EeSfLK3AfaKYVg" value="835"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHGci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHGsi9EeSfLK3AfaKYVg" value="427"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHG8i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHHMi9EeSfLK3AfaKYVg" value="150"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHHci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHHsi9EeSfLK3AfaKYVg" value="126"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHH8i9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvUMi9EeSfLK3AfaKYVg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zHIMi9EeSfLK3AfaKYVg" name="1/mass">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHIci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHIsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zHI8i9EeSfLK3AfaKYVg" name="ball dynamics" type="_N7zHCMi9EeSfLK3AfaKYVg" association="_N7zvCci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHJMi9EeSfLK3AfaKYVg" name="Gain" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHJci9EeSfLK3AfaKYVg" value="1/0.01"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHJsi9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHJ8i9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHKMi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHKci9EeSfLK3AfaKYVg" value="355"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHKsi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHK8i9EeSfLK3AfaKYVg" value="65"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHLMi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHLci9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHLsi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHL8i9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zHMMi9EeSfLK3AfaKYVg" name="Collision Modeling">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHMci9EeSfLK3AfaKYVg" name="ball_velocity "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHMsi9EeSfLK3AfaKYVg" name="robot_position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHM8i9EeSfLK3AfaKYVg" name="ball_position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHNMi9EeSfLK3AfaKYVg" name="force "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHNci9EeSfLK3AfaKYVg" name="goal "/>
+        <ownedAttribute xmi:id="_N7zHNsi9EeSfLK3AfaKYVg" name="ball dynamics" type="_N7zHCMi9EeSfLK3AfaKYVg" association="_N7zvSsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHN8i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHOMi9EeSfLK3AfaKYVg" value="105"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHOci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHOsi9EeSfLK3AfaKYVg" value="44"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHO8i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHPMi9EeSfLK3AfaKYVg" value="165"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHPci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHPsi9EeSfLK3AfaKYVg" value="132"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_N7zHP8i9EeSfLK3AfaKYVg" name="Function" specification="_N7zHQMi9EeSfLK3AfaKYVg"/>
+        <ownedOperation xmi:id="_N7zHQMi9EeSfLK3AfaKYVg" name="Function" method="_N7zHP8i9EeSfLK3AfaKYVg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zHQci9EeSfLK3AfaKYVg" name="Position">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHQsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHQ8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zHRMi9EeSfLK3AfaKYVg" name="ball dynamics" type="_N7zHCMi9EeSfLK3AfaKYVg" association="_N7zvCsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHRci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHRsi9EeSfLK3AfaKYVg" value="535"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHR8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHSMi9EeSfLK3AfaKYVg" value="65"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHSci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHSsi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHS8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHTMi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zHTci9EeSfLK3AfaKYVg" name="Unit Delay">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHTsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHT8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zHUMi9EeSfLK3AfaKYVg" name="ball dynamics" type="_N7zHCMi9EeSfLK3AfaKYVg" association="_N7zvDsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHUci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHUsi9EeSfLK3AfaKYVg" value="390"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHU8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHVMi9EeSfLK3AfaKYVg" value="128"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHVci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHVsi9EeSfLK3AfaKYVg" value="35"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHV8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHWMi9EeSfLK3AfaKYVg" value="34"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zHWci9EeSfLK3AfaKYVg" name="Velocity">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHWsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHW8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zHXMi9EeSfLK3AfaKYVg" name="ball dynamics" type="_N7zHCMi9EeSfLK3AfaKYVg" association="_N7zvD8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHXci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHXsi9EeSfLK3AfaKYVg" value="450"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHX8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHYMi9EeSfLK3AfaKYVg" value="65"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHYci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHYsi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHY8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHZMi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zHZci9EeSfLK3AfaKYVg" name="TEXT_GOAL">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHZsi9EeSfLK3AfaKYVg" name="In1 "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHZ8i9EeSfLK3AfaKYVg" name="Out1 "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHaMi9EeSfLK3AfaKYVg" name="In1"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHaci9EeSfLK3AfaKYVg" name="Out1"/>
+        <ownedAttribute xmi:id="_N7zHasi9EeSfLK3AfaKYVg" name="constant" type="_N7zHdsi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvC8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHa8i9EeSfLK3AfaKYVg" name="constant1" type="_N7zHhci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvDMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHbMi9EeSfLK3AfaKYVg" name="switch" type="_N7zHlMi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvDci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHbci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHbsi9EeSfLK3AfaKYVg" value="390"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHb8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHcMi9EeSfLK3AfaKYVg" value="228"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHcci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHcsi9EeSfLK3AfaKYVg" value="80"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHc8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHdMi9EeSfLK3AfaKYVg" value="34"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHdci9EeSfLK3AfaKYVg" name="ball dynamics" type="_N7zHCMi9EeSfLK3AfaKYVg" association="_N7zvUci9EeSfLK3AfaKYVg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zHdsi9EeSfLK3AfaKYVg" name="Constant">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHd8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zHeMi9EeSfLK3AfaKYVg" name="text_goal" type="_N7zHZci9EeSfLK3AfaKYVg" association="_N7zvC8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHeci9EeSfLK3AfaKYVg" name="Value" type="_N7zvAci9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHesi9EeSfLK3AfaKYVg" value="[45, 40, 1.9]"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHe8i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHfMi9EeSfLK3AfaKYVg" value="20"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHfci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHfsi9EeSfLK3AfaKYVg" value="13"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHf8i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHgMi9EeSfLK3AfaKYVg" value="35"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHgci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHgsi9EeSfLK3AfaKYVg" value="74"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHg8i9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHhMi9EeSfLK3AfaKYVg" value="Inherit: Inherit from 'Constant value'"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zHhci9EeSfLK3AfaKYVg" name="Constant1">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHhsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zHh8i9EeSfLK3AfaKYVg" name="text_goal" type="_N7zHZci9EeSfLK3AfaKYVg" association="_N7zvDMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHiMi9EeSfLK3AfaKYVg" name="Value" type="_N7zvAci9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHici9EeSfLK3AfaKYVg" value="[45, 40, -1.9]"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHisi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHi8i9EeSfLK3AfaKYVg" value="25"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHjMi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHjci9EeSfLK3AfaKYVg" value="123"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHjsi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHj8i9EeSfLK3AfaKYVg" value="35"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHkMi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHkci9EeSfLK3AfaKYVg" value="74"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHksi9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHk8i9EeSfLK3AfaKYVg" value="Inherit: Inherit from 'Constant value'"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zHlMi9EeSfLK3AfaKYVg" name="Switch">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHlci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHlsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHl8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHmMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zHmci9EeSfLK3AfaKYVg" name="text_goal" type="_N7zHZci9EeSfLK3AfaKYVg" association="_N7zvDci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHmsi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHm8i9EeSfLK3AfaKYVg" value="125"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHnMi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHnci9EeSfLK3AfaKYVg" value="73"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHnsi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHn8i9EeSfLK3AfaKYVg" value="50"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHoMi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHoci9EeSfLK3AfaKYVg" value="54"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHosi9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHo8i9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zHpMi9EeSfLK3AfaKYVg" name="Abs">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHpci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHpsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zHp8i9EeSfLK3AfaKYVg" name="robot 1 dynamics" type="_N7zIU8i9EeSfLK3AfaKYVg" association="_N7zvGci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHqMi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHqci9EeSfLK3AfaKYVg" value="240"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHqsi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHq8i9EeSfLK3AfaKYVg" value="160"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHrMi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHrci9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHrsi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHr8i9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHsMi9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHsci9EeSfLK3AfaKYVg" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zHssi9EeSfLK3AfaKYVg" name="Acceleration">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHs8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHtMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zHtci9EeSfLK3AfaKYVg" name="robot 1 dynamics" type="_N7zIU8i9EeSfLK3AfaKYVg" association="_N7zvGsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHtsi9EeSfLK3AfaKYVg" name="Gain" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHt8i9EeSfLK3AfaKYVg" value="1/(10*P+1)"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHuMi9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHuci9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHusi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHu8i9EeSfLK3AfaKYVg" value="235"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHvMi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHvci9EeSfLK3AfaKYVg" value="42"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHvsi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHv8i9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHwMi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHwci9EeSfLK3AfaKYVg" value="46"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zHwsi9EeSfLK3AfaKYVg" name="B">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHw8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zHxMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zHxci9EeSfLK3AfaKYVg" name="robot 1 dynamics" type="_N7zIU8i9EeSfLK3AfaKYVg" association="_N7zvG8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zHxsi9EeSfLK3AfaKYVg" name="Gain" type="_N7zvA8i9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHx8i9EeSfLK3AfaKYVg" value="-2"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHyMi9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHyci9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHysi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHy8i9EeSfLK3AfaKYVg" value="235"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHzMi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHzci9EeSfLK3AfaKYVg" value="16"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zHzsi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zHz8i9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zH0Mi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH0ci9EeSfLK3AfaKYVg" value="28"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zH0si9EeSfLK3AfaKYVg" name="Boundary Collisons">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zH08i9EeSfLK3AfaKYVg" name="robot_position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zH1Mi9EeSfLK3AfaKYVg" name="collision_force "/>
+        <ownedAttribute xmi:id="_N7zH1ci9EeSfLK3AfaKYVg" name="robot 1 dynamics" type="_N7zIU8i9EeSfLK3AfaKYVg" association="_N7zvS8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zH1si9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH18i9EeSfLK3AfaKYVg" value="50"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zH2Mi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH2ci9EeSfLK3AfaKYVg" value="48"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zH2si9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH28i9EeSfLK3AfaKYVg" value="125"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zH3Mi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH3ci9EeSfLK3AfaKYVg" value="34"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_N7zH3si9EeSfLK3AfaKYVg" name="Function" specification="_N7zH38i9EeSfLK3AfaKYVg"/>
+        <ownedOperation xmi:id="_N7zH38i9EeSfLK3AfaKYVg" name="Function" method="_N7zH3si9EeSfLK3AfaKYVg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zH4Mi9EeSfLK3AfaKYVg" name="Compare&#xA;To Constant">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zH4ci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zH4si9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zH48i9EeSfLK3AfaKYVg" name="robot 1 dynamics" type="_N7zIU8i9EeSfLK3AfaKYVg" association="_N7zvHMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zH5Mi9EeSfLK3AfaKYVg" name="relop" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH5ci9EeSfLK3AfaKYVg" value=">"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zH5si9EeSfLK3AfaKYVg" name="const" type="_N7zvAsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH58i9EeSfLK3AfaKYVg" value="[0, 0]"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zH6Mi9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH6ci9EeSfLK3AfaKYVg" value="uint8"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zH6si9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH68i9EeSfLK3AfaKYVg" value="200"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zH7Mi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH7ci9EeSfLK3AfaKYVg" value="222"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zH7si9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH78i9EeSfLK3AfaKYVg" value="35"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zH8Mi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH8ci9EeSfLK3AfaKYVg" value="36"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zH8si9EeSfLK3AfaKYVg" name="Energy Loss Calculation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zH88i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zH9Mi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zH9ci9EeSfLK3AfaKYVg" name="robot 1 dynamics" type="_N7zIU8i9EeSfLK3AfaKYVg" association="_N7zvHci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zH9si9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH98i9EeSfLK3AfaKYVg" value="390"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zH-Mi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH-ci9EeSfLK3AfaKYVg" value="160"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zH-si9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH-8i9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zH_Mi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zH_ci9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zH_si9EeSfLK3AfaKYVg" name="Position">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zH_8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIAMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zIAci9EeSfLK3AfaKYVg" name="robot 1 dynamics" type="_N7zIU8i9EeSfLK3AfaKYVg" association="_N7zvHsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIAsi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIA8i9EeSfLK3AfaKYVg" value="390"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIBMi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIBci9EeSfLK3AfaKYVg" value="50"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIBsi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIB8i9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zICMi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zICci9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zICsi9EeSfLK3AfaKYVg" name="Product">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIC8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIDMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIDci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zIDsi9EeSfLK3AfaKYVg" name="robot 1 dynamics" type="_N7zIU8i9EeSfLK3AfaKYVg" association="_N7zvH8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zID8i9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIEMi9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIEci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIEsi9EeSfLK3AfaKYVg" value="95"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIE8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIFMi9EeSfLK3AfaKYVg" value="157"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIFci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIFsi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIF8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIGMi9EeSfLK3AfaKYVg" value="31"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zIGci9EeSfLK3AfaKYVg" name="Rate of Discharge">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIGsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIG8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zIHMi9EeSfLK3AfaKYVg" name="robot 1 dynamics" type="_N7zIU8i9EeSfLK3AfaKYVg" association="_N7zvIMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIHci9EeSfLK3AfaKYVg" name="Gain" type="_N7zvBci9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIHsi9EeSfLK3AfaKYVg" value="-0.01"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIH8i9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIIMi9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIIci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIIsi9EeSfLK3AfaKYVg" value="305"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zII8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIJMi9EeSfLK3AfaKYVg" value="152"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIJci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIJsi9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIJ8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIKMi9EeSfLK3AfaKYVg" value="46"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zIKci9EeSfLK3AfaKYVg" name="Saturation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIKsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIK8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zILMi9EeSfLK3AfaKYVg" name="robot 1 dynamics" type="_N7zIU8i9EeSfLK3AfaKYVg" association="_N7zvIci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zILci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zILsi9EeSfLK3AfaKYVg" value="150"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIL8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIMMi9EeSfLK3AfaKYVg" value="160"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIMci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIMsi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIM8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zINMi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zINci9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zINsi9EeSfLK3AfaKYVg" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zIN8i9EeSfLK3AfaKYVg" name="Sum">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIOMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIOci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIOsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIO8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zIPMi9EeSfLK3AfaKYVg" name="robot 1 dynamics" type="_N7zIU8i9EeSfLK3AfaKYVg" association="_N7zvIsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIPci9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIPsi9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIP8i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIQMi9EeSfLK3AfaKYVg" value="195"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIQci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIQsi9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIQ8i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIRMi9EeSfLK3AfaKYVg" value="20"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIRci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIRsi9EeSfLK3AfaKYVg" value="20"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zIR8i9EeSfLK3AfaKYVg" name="Velocity">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zISMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zISci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zISsi9EeSfLK3AfaKYVg" name="robot 1 dynamics" type="_N7zIU8i9EeSfLK3AfaKYVg" association="_N7zvI8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIS8i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zITMi9EeSfLK3AfaKYVg" value="320"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zITci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zITsi9EeSfLK3AfaKYVg" value="50"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIT8i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIUMi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIUci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIUsi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zIU8i9EeSfLK3AfaKYVg" name="Robot 1 Dynamics">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIVMi9EeSfLK3AfaKYVg" name="Actuator Force "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIVci9EeSfLK3AfaKYVg" name="Robot Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIVsi9EeSfLK3AfaKYVg" name="Energy "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIV8i9EeSfLK3AfaKYVg" name="Actuator Force"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIWMi9EeSfLK3AfaKYVg" name="Robot Position" type="_N7zvB8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIWci9EeSfLK3AfaKYVg" name="Energy" type="_N7zvB8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIWsi9EeSfLK3AfaKYVg" name="abs" type="_N7zHpMi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvGci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIW8i9EeSfLK3AfaKYVg" name="acceleration" type="_N7zHssi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvGsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIXMi9EeSfLK3AfaKYVg" name="b" type="_N7zHwsi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvG8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIXci9EeSfLK3AfaKYVg" name="boundary collisons" type="_N7zH0si9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvS8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIXsi9EeSfLK3AfaKYVg" name="compare&#xA;to constant" type="_N7zH4Mi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvHMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIX8i9EeSfLK3AfaKYVg" name="energy loss calculation" type="_N7zH8si9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvHci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIYMi9EeSfLK3AfaKYVg" name="position" type="_N7zH_si9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvHsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIYci9EeSfLK3AfaKYVg" name="product" type="_N7zICsi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvH8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIYsi9EeSfLK3AfaKYVg" name="rate of discharge" type="_N7zIGci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvIMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIY8i9EeSfLK3AfaKYVg" name="saturation" type="_N7zIKci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvIci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIZMi9EeSfLK3AfaKYVg" name="sum" type="_N7zIN8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvIsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIZci9EeSfLK3AfaKYVg" name="velocity" type="_N7zIR8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvI8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIZsi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIZ8i9EeSfLK3AfaKYVg" value="230"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIaMi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIaci9EeSfLK3AfaKYVg" value="39"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIasi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIa8i9EeSfLK3AfaKYVg" value="205"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIbMi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIbci9EeSfLK3AfaKYVg" value="127"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIbsi9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvUsi9EeSfLK3AfaKYVg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zIb8i9EeSfLK3AfaKYVg" name="Abs">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIcMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIcci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zIcsi9EeSfLK3AfaKYVg" name="robot 2 dynamics" type="_N7ztT8i9EeSfLK3AfaKYVg" association="_N7zvJMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIc8i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIdMi9EeSfLK3AfaKYVg" value="240"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIdci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIdsi9EeSfLK3AfaKYVg" value="175"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zId8i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIeMi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIeci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIesi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIe8i9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIfMi9EeSfLK3AfaKYVg" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zIfci9EeSfLK3AfaKYVg" name="Acceleration">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIfsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIf8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zIgMi9EeSfLK3AfaKYVg" name="robot 2 dynamics" type="_N7ztT8i9EeSfLK3AfaKYVg" association="_N7zvJci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIgci9EeSfLK3AfaKYVg" name="Gain" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIgsi9EeSfLK3AfaKYVg" value="1/(10*P+0.1)"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIg8i9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIhMi9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIhci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIhsi9EeSfLK3AfaKYVg" value="235"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIh8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIiMi9EeSfLK3AfaKYVg" value="57"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIici9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIisi9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIi8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIjMi9EeSfLK3AfaKYVg" value="46"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zIjci9EeSfLK3AfaKYVg" name="B">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIjsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIj8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zIkMi9EeSfLK3AfaKYVg" name="robot 2 dynamics" type="_N7ztT8i9EeSfLK3AfaKYVg" association="_N7zvJsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIkci9EeSfLK3AfaKYVg" name="Gain" type="_N7zvA8i9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIksi9EeSfLK3AfaKYVg" value="-2"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIk8i9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIlMi9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIlci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIlsi9EeSfLK3AfaKYVg" value="235"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIl8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zImMi9EeSfLK3AfaKYVg" value="21"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zImci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zImsi9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIm8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zInMi9EeSfLK3AfaKYVg" value="28"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zInci9EeSfLK3AfaKYVg" name="Boundary Collisons">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zInsi9EeSfLK3AfaKYVg" name="robot_position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIn8i9EeSfLK3AfaKYVg" name="collision_force "/>
+        <ownedAttribute xmi:id="_N7zIoMi9EeSfLK3AfaKYVg" name="robot 2 dynamics" type="_N7ztT8i9EeSfLK3AfaKYVg" association="_N7zvTMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIoci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIosi9EeSfLK3AfaKYVg" value="50"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIo8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIpMi9EeSfLK3AfaKYVg" value="63"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIpci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIpsi9EeSfLK3AfaKYVg" value="125"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIp8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIqMi9EeSfLK3AfaKYVg" value="34"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_N7zIqci9EeSfLK3AfaKYVg" name="Function" specification="_N7zIqsi9EeSfLK3AfaKYVg"/>
+        <ownedOperation xmi:id="_N7zIqsi9EeSfLK3AfaKYVg" name="Function" method="_N7zIqci9EeSfLK3AfaKYVg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zIq8i9EeSfLK3AfaKYVg" name="Compare&#xA;To Constant">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIrMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIrci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zIrsi9EeSfLK3AfaKYVg" name="robot 2 dynamics" type="_N7ztT8i9EeSfLK3AfaKYVg" association="_N7zvJ8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIr8i9EeSfLK3AfaKYVg" name="relop" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIsMi9EeSfLK3AfaKYVg" value=">"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIsci9EeSfLK3AfaKYVg" name="const" type="_N7zvAsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIssi9EeSfLK3AfaKYVg" value="[0, 0]"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIs8i9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zItMi9EeSfLK3AfaKYVg" value="uint8"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zItci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zItsi9EeSfLK3AfaKYVg" value="200"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIt8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIuMi9EeSfLK3AfaKYVg" value="240"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIuci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIusi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIu8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIvMi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zIvci9EeSfLK3AfaKYVg" name="Energy Loss Calculation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIvsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIv8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zIwMi9EeSfLK3AfaKYVg" name="robot 2 dynamics" type="_N7ztT8i9EeSfLK3AfaKYVg" association="_N7zvKMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIwci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIwsi9EeSfLK3AfaKYVg" value="410"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIw8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIxMi9EeSfLK3AfaKYVg" value="175"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIxci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIxsi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIx8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIyMi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zIyci9EeSfLK3AfaKYVg" name="Position">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIysi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zIy8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zIzMi9EeSfLK3AfaKYVg" name="robot 2 dynamics" type="_N7ztT8i9EeSfLK3AfaKYVg" association="_N7zvKci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zIzci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zIzsi9EeSfLK3AfaKYVg" value="390"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zIz8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zI0Mi9EeSfLK3AfaKYVg" value="65"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zI0ci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zI0si9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zI08i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zI1Mi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zI1ci9EeSfLK3AfaKYVg" name="Product">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zI1si9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zI18i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zI2Mi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zI2ci9EeSfLK3AfaKYVg" name="robot 2 dynamics" type="_N7ztT8i9EeSfLK3AfaKYVg" association="_N7zvKsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zI2si9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zI28i9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zI3Mi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zI3ci9EeSfLK3AfaKYVg" value="95"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zI3si9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zI38i9EeSfLK3AfaKYVg" value="172"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zI4Mi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zI4ci9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zI4si9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zI48i9EeSfLK3AfaKYVg" value="31"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zI5Mi9EeSfLK3AfaKYVg" name="Rate of Discharge">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zI5ci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zI5si9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zI58i9EeSfLK3AfaKYVg" name="robot 2 dynamics" type="_N7ztT8i9EeSfLK3AfaKYVg" association="_N7zvK8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zI6Mi9EeSfLK3AfaKYVg" name="Gain" type="_N7zvBci9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zI6ci9EeSfLK3AfaKYVg" value="-0.01"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zI6si9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zI68i9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zI7Mi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zI7ci9EeSfLK3AfaKYVg" value="305"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zI7si9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztIMi9EeSfLK3AfaKYVg" value="167"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztIci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztIsi9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztI8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztJMi9EeSfLK3AfaKYVg" value="46"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7ztJci9EeSfLK3AfaKYVg" name="Saturation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztJsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztJ8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7ztKMi9EeSfLK3AfaKYVg" name="robot 2 dynamics" type="_N7ztT8i9EeSfLK3AfaKYVg" association="_N7zvLMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztKci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztKsi9EeSfLK3AfaKYVg" value="150"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztK8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztLMi9EeSfLK3AfaKYVg" value="175"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztLci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztLsi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztL8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztMMi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztMci9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztMsi9EeSfLK3AfaKYVg" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7ztM8i9EeSfLK3AfaKYVg" name="Sum">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztNMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztNci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztNsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztN8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7ztOMi9EeSfLK3AfaKYVg" name="robot 2 dynamics" type="_N7ztT8i9EeSfLK3AfaKYVg" association="_N7zvLci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztOci9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztOsi9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztO8i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztPMi9EeSfLK3AfaKYVg" value="190"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztPci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztPsi9EeSfLK3AfaKYVg" value="70"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztP8i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztQMi9EeSfLK3AfaKYVg" value="20"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztQci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztQsi9EeSfLK3AfaKYVg" value="20"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7ztQ8i9EeSfLK3AfaKYVg" name="Velocity">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztRMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztRci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7ztRsi9EeSfLK3AfaKYVg" name="robot 2 dynamics" type="_N7ztT8i9EeSfLK3AfaKYVg" association="_N7zvLsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztR8i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztSMi9EeSfLK3AfaKYVg" value="320"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztSci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztSsi9EeSfLK3AfaKYVg" value="65"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztS8i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztTMi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztTci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztTsi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7ztT8i9EeSfLK3AfaKYVg" name="Robot 2 Dynamics">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztUMi9EeSfLK3AfaKYVg" name="Actuator Force "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztUci9EeSfLK3AfaKYVg" name="Robot Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztUsi9EeSfLK3AfaKYVg" name="Energy "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztU8i9EeSfLK3AfaKYVg" name="Actuator Force"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztVMi9EeSfLK3AfaKYVg" name="Robot Position" type="_N7zvB8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztVci9EeSfLK3AfaKYVg" name="Energy" type="_N7zvB8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztVsi9EeSfLK3AfaKYVg" name="abs" type="_N7zIb8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvJMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztV8i9EeSfLK3AfaKYVg" name="acceleration" type="_N7zIfci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvJci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztWMi9EeSfLK3AfaKYVg" name="b" type="_N7zIjci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvJsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztWci9EeSfLK3AfaKYVg" name="boundary collisons" type="_N7zInci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvTMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztWsi9EeSfLK3AfaKYVg" name="compare&#xA;to constant" type="_N7zIq8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvJ8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztW8i9EeSfLK3AfaKYVg" name="energy loss calculation" type="_N7zIvci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvKMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztXMi9EeSfLK3AfaKYVg" name="position" type="_N7zIyci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvKci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztXci9EeSfLK3AfaKYVg" name="product" type="_N7zI1ci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvKsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztXsi9EeSfLK3AfaKYVg" name="rate of discharge" type="_N7zI5Mi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvK8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztX8i9EeSfLK3AfaKYVg" name="saturation" type="_N7ztJci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvLMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztYMi9EeSfLK3AfaKYVg" name="sum" type="_N7ztM8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvLci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztYci9EeSfLK3AfaKYVg" name="velocity" type="_N7ztQ8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvLsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztYsi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztY8i9EeSfLK3AfaKYVg" value="230"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztZMi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztZci9EeSfLK3AfaKYVg" value="209"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztZsi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztZ8i9EeSfLK3AfaKYVg" value="205"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztaMi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztaci9EeSfLK3AfaKYVg" value="127"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztasi9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvU8i9EeSfLK3AfaKYVg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zta8i9EeSfLK3AfaKYVg" name="Abs">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztbMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztbci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7ztbsi9EeSfLK3AfaKYVg" name="robot 3 dynamics" type="_N7zuGsi9EeSfLK3AfaKYVg" association="_N7zvL8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztb8i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztcMi9EeSfLK3AfaKYVg" value="260"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztcci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztcsi9EeSfLK3AfaKYVg" value="165"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztc8i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztdMi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztdci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztdsi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztd8i9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zteMi9EeSfLK3AfaKYVg" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zteci9EeSfLK3AfaKYVg" name="Acceleration">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztesi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zte8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7ztfMi9EeSfLK3AfaKYVg" name="robot 3 dynamics" type="_N7zuGsi9EeSfLK3AfaKYVg" association="_N7zvMMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztfci9EeSfLK3AfaKYVg" name="Gain" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztfsi9EeSfLK3AfaKYVg" value="1/(10*P+1)"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztf8i9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztgMi9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztgci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztgsi9EeSfLK3AfaKYVg" value="255"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztg8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zthMi9EeSfLK3AfaKYVg" value="47"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zthci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zthsi9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zth8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztiMi9EeSfLK3AfaKYVg" value="46"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7ztici9EeSfLK3AfaKYVg" name="B">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztisi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zti8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7ztjMi9EeSfLK3AfaKYVg" name="robot 3 dynamics" type="_N7zuGsi9EeSfLK3AfaKYVg" association="_N7zvMci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztjci9EeSfLK3AfaKYVg" name="Gain" type="_N7zvA8i9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztjsi9EeSfLK3AfaKYVg" value="-2"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztj8i9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztkMi9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztkci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztksi9EeSfLK3AfaKYVg" value="250"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztk8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztlMi9EeSfLK3AfaKYVg" value="16"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztlci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztlsi9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztl8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztmMi9EeSfLK3AfaKYVg" value="28"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7ztmci9EeSfLK3AfaKYVg" name="Boundary Collisons">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztmsi9EeSfLK3AfaKYVg" name="robot_position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztm8i9EeSfLK3AfaKYVg" name="collision_force "/>
+        <ownedAttribute xmi:id="_N7ztnMi9EeSfLK3AfaKYVg" name="robot 3 dynamics" type="_N7zuGsi9EeSfLK3AfaKYVg" association="_N7zvTci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztnci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztnsi9EeSfLK3AfaKYVg" value="70"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztn8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztoMi9EeSfLK3AfaKYVg" value="53"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztoci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztosi9EeSfLK3AfaKYVg" value="125"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zto8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztpMi9EeSfLK3AfaKYVg" value="34"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_N7ztpci9EeSfLK3AfaKYVg" name="Function" specification="_N7ztpsi9EeSfLK3AfaKYVg"/>
+        <ownedOperation xmi:id="_N7ztpsi9EeSfLK3AfaKYVg" name="Function" method="_N7ztpci9EeSfLK3AfaKYVg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7ztp8i9EeSfLK3AfaKYVg" name="Compare&#xA;To Constant">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztqMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztqci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7ztqsi9EeSfLK3AfaKYVg" name="robot 3 dynamics" type="_N7zuGsi9EeSfLK3AfaKYVg" association="_N7zvMsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztq8i9EeSfLK3AfaKYVg" name="relop" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztrMi9EeSfLK3AfaKYVg" value=">"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztrci9EeSfLK3AfaKYVg" name="const" type="_N7zvAsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztrsi9EeSfLK3AfaKYVg" value="[0, 0]"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztr8i9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztsMi9EeSfLK3AfaKYVg" value="uint8"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztsci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztssi9EeSfLK3AfaKYVg" value="220"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zts8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zttMi9EeSfLK3AfaKYVg" value="230"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zttci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zttsi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztt8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztuMi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7ztuci9EeSfLK3AfaKYVg" name="Energy Loss Calculation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztusi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztu8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7ztvMi9EeSfLK3AfaKYVg" name="robot 3 dynamics" type="_N7zuGsi9EeSfLK3AfaKYVg" association="_N7zvM8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztvci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztvsi9EeSfLK3AfaKYVg" value="430"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztv8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztwMi9EeSfLK3AfaKYVg" value="165"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztwci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztwsi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztw8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztxMi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7ztxci9EeSfLK3AfaKYVg" name="Position">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztxsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7ztx8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7ztyMi9EeSfLK3AfaKYVg" name="robot 3 dynamics" type="_N7zuGsi9EeSfLK3AfaKYVg" association="_N7zvNMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7ztyci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztysi9EeSfLK3AfaKYVg" value="410"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zty8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztzMi9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztzci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7ztzsi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7ztz8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt0Mi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zt0ci9EeSfLK3AfaKYVg" name="Product">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zt0si9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zt08i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zt1Mi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zt1ci9EeSfLK3AfaKYVg" name="robot 3 dynamics" type="_N7zuGsi9EeSfLK3AfaKYVg" association="_N7zvNci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zt1si9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt18i9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zt2Mi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt2ci9EeSfLK3AfaKYVg" value="115"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zt2si9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt28i9EeSfLK3AfaKYVg" value="162"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zt3Mi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt3ci9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zt3si9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt38i9EeSfLK3AfaKYVg" value="31"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zt4Mi9EeSfLK3AfaKYVg" name="Rate of Discharge">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zt4ci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zt4si9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zt48i9EeSfLK3AfaKYVg" name="robot 3 dynamics" type="_N7zuGsi9EeSfLK3AfaKYVg" association="_N7zvNsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zt5Mi9EeSfLK3AfaKYVg" name="Gain" type="_N7zvBci9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt5ci9EeSfLK3AfaKYVg" value="-0.01"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zt5si9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt58i9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zt6Mi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt6ci9EeSfLK3AfaKYVg" value="325"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zt6si9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt68i9EeSfLK3AfaKYVg" value="157"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zt7Mi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt7ci9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zt7si9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt78i9EeSfLK3AfaKYVg" value="46"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zt8Mi9EeSfLK3AfaKYVg" name="Saturation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zt8ci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zt8si9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zt88i9EeSfLK3AfaKYVg" name="robot 3 dynamics" type="_N7zuGsi9EeSfLK3AfaKYVg" association="_N7zvN8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zt9Mi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt9ci9EeSfLK3AfaKYVg" value="170"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zt9si9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt98i9EeSfLK3AfaKYVg" value="165"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zt-Mi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt-ci9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zt-si9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt-8i9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zt_Mi9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zt_ci9EeSfLK3AfaKYVg" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zt_si9EeSfLK3AfaKYVg" name="Sum">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zt_8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuAMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuAci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuAsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zuA8i9EeSfLK3AfaKYVg" name="robot 3 dynamics" type="_N7zuGsi9EeSfLK3AfaKYVg" association="_N7zvOMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuBMi9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuBci9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuBsi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuB8i9EeSfLK3AfaKYVg" value="210"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuCMi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuCci9EeSfLK3AfaKYVg" value="60"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuCsi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuC8i9EeSfLK3AfaKYVg" value="20"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuDMi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuDci9EeSfLK3AfaKYVg" value="20"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zuDsi9EeSfLK3AfaKYVg" name="Velocity">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuD8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuEMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zuEci9EeSfLK3AfaKYVg" name="robot 3 dynamics" type="_N7zuGsi9EeSfLK3AfaKYVg" association="_N7zvOci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuEsi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuE8i9EeSfLK3AfaKYVg" value="340"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuFMi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuFci9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuFsi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuF8i9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuGMi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuGci9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zuGsi9EeSfLK3AfaKYVg" name="Robot 3 Dynamics">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuG8i9EeSfLK3AfaKYVg" name="Actuator Force "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuHMi9EeSfLK3AfaKYVg" name="Robot Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuHci9EeSfLK3AfaKYVg" name="Energy "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuHsi9EeSfLK3AfaKYVg" name="Actuator Force"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuH8i9EeSfLK3AfaKYVg" name="Robot Position" type="_N7zvB8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuIMi9EeSfLK3AfaKYVg" name="Energy" type="_N7zvB8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuIci9EeSfLK3AfaKYVg" name="abs" type="_N7zta8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvL8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuIsi9EeSfLK3AfaKYVg" name="acceleration" type="_N7zteci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvMMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuI8i9EeSfLK3AfaKYVg" name="b" type="_N7ztici9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvMci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuJMi9EeSfLK3AfaKYVg" name="boundary collisons" type="_N7ztmci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvTci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuJci9EeSfLK3AfaKYVg" name="compare&#xA;to constant" type="_N7ztp8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvMsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuJsi9EeSfLK3AfaKYVg" name="energy loss calculation" type="_N7ztuci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvM8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuJ8i9EeSfLK3AfaKYVg" name="position" type="_N7ztxci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvNMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuKMi9EeSfLK3AfaKYVg" name="product" type="_N7zt0ci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvNci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuKci9EeSfLK3AfaKYVg" name="rate of discharge" type="_N7zt4Mi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvNsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuKsi9EeSfLK3AfaKYVg" name="saturation" type="_N7zt8Mi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvN8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuK8i9EeSfLK3AfaKYVg" name="sum" type="_N7zt_si9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvOMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuLMi9EeSfLK3AfaKYVg" name="velocity" type="_N7zuDsi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvOci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuLci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuLsi9EeSfLK3AfaKYVg" value="230"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuL8i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuMMi9EeSfLK3AfaKYVg" value="659"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuMci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuMsi9EeSfLK3AfaKYVg" value="205"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuM8i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuNMi9EeSfLK3AfaKYVg" value="127"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuNci9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvVMi9EeSfLK3AfaKYVg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zuNsi9EeSfLK3AfaKYVg" name="Abs">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuN8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuOMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zuOci9EeSfLK3AfaKYVg" name="robot 4 dynamics" type="_N7zu5ci9EeSfLK3AfaKYVg" association="_N7zvOsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuOsi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuO8i9EeSfLK3AfaKYVg" value="245"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuPMi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuPci9EeSfLK3AfaKYVg" value="170"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuPsi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuP8i9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuQMi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuQci9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuQsi9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuQ8i9EeSfLK3AfaKYVg" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zuRMi9EeSfLK3AfaKYVg" name="Acceleration">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuRci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuRsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zuR8i9EeSfLK3AfaKYVg" name="robot 4 dynamics" type="_N7zu5ci9EeSfLK3AfaKYVg" association="_N7zvO8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuSMi9EeSfLK3AfaKYVg" name="Gain" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuSci9EeSfLK3AfaKYVg" value="1/(10*P+1)"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuSsi9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuS8i9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuTMi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuTci9EeSfLK3AfaKYVg" value="240"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuTsi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuT8i9EeSfLK3AfaKYVg" value="52"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuUMi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuUci9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuUsi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuU8i9EeSfLK3AfaKYVg" value="46"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zuVMi9EeSfLK3AfaKYVg" name="B">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuVci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuVsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zuV8i9EeSfLK3AfaKYVg" name="robot 4 dynamics" type="_N7zu5ci9EeSfLK3AfaKYVg" association="_N7zvPMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuWMi9EeSfLK3AfaKYVg" name="Gain" type="_N7zvA8i9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuWci9EeSfLK3AfaKYVg" value="-2"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuWsi9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuW8i9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuXMi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuXci9EeSfLK3AfaKYVg" value="250"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuXsi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuX8i9EeSfLK3AfaKYVg" value="21"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuYMi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuYci9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuYsi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuY8i9EeSfLK3AfaKYVg" value="28"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zuZMi9EeSfLK3AfaKYVg" name="Boundary Collisons">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuZci9EeSfLK3AfaKYVg" name="robot_position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuZsi9EeSfLK3AfaKYVg" name="collision_force "/>
+        <ownedAttribute xmi:id="_N7zuZ8i9EeSfLK3AfaKYVg" name="robot 4 dynamics" type="_N7zu5ci9EeSfLK3AfaKYVg" association="_N7zvTsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuaMi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuaci9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuasi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zua8i9EeSfLK3AfaKYVg" value="58"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zubMi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zubci9EeSfLK3AfaKYVg" value="125"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zubsi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zub8i9EeSfLK3AfaKYVg" value="34"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_N7zucMi9EeSfLK3AfaKYVg" name="Function" specification="_N7zucci9EeSfLK3AfaKYVg"/>
+        <ownedOperation xmi:id="_N7zucci9EeSfLK3AfaKYVg" name="Function" method="_N7zucMi9EeSfLK3AfaKYVg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zucsi9EeSfLK3AfaKYVg" name="Compare&#xA;To Constant">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuc8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zudMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zudci9EeSfLK3AfaKYVg" name="robot 4 dynamics" type="_N7zu5ci9EeSfLK3AfaKYVg" association="_N7zvPci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zudsi9EeSfLK3AfaKYVg" name="relop" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zud8i9EeSfLK3AfaKYVg" value=">"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zueMi9EeSfLK3AfaKYVg" name="const" type="_N7zvAsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zueci9EeSfLK3AfaKYVg" value="[0, 0]"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuesi9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zue8i9EeSfLK3AfaKYVg" value="uint8"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zufMi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zufci9EeSfLK3AfaKYVg" value="205"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zufsi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuf8i9EeSfLK3AfaKYVg" value="235"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zugMi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zugci9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zugsi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zug8i9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zuhMi9EeSfLK3AfaKYVg" name="Energy Loss Calculation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuhci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuhsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zuh8i9EeSfLK3AfaKYVg" name="robot 4 dynamics" type="_N7zu5ci9EeSfLK3AfaKYVg" association="_N7zvPsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuiMi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuici9EeSfLK3AfaKYVg" value="415"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuisi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zui8i9EeSfLK3AfaKYVg" value="170"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zujMi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zujci9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zujsi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuj8i9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zukMi9EeSfLK3AfaKYVg" name="Position">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zukci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuksi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zuk8i9EeSfLK3AfaKYVg" name="robot 4 dynamics" type="_N7zu5ci9EeSfLK3AfaKYVg" association="_N7zvP8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zulMi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zulci9EeSfLK3AfaKYVg" value="395"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zulsi9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zul8i9EeSfLK3AfaKYVg" value="60"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zumMi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zumci9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zumsi9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zum8i9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zunMi9EeSfLK3AfaKYVg" name="Product">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zunci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zunsi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zun8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zuoMi9EeSfLK3AfaKYVg" name="robot 4 dynamics" type="_N7zu5ci9EeSfLK3AfaKYVg" association="_N7zvQMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuoci9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuosi9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuo8i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zupMi9EeSfLK3AfaKYVg" value="100"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zupci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zupsi9EeSfLK3AfaKYVg" value="167"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zup8i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuqMi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuqci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuqsi9EeSfLK3AfaKYVg" value="31"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zuq8i9EeSfLK3AfaKYVg" name="Rate of Discharge">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zurMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zurci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zursi9EeSfLK3AfaKYVg" name="robot 4 dynamics" type="_N7zu5ci9EeSfLK3AfaKYVg" association="_N7zvQci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zur8i9EeSfLK3AfaKYVg" name="Gain" type="_N7zvBci9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zusMi9EeSfLK3AfaKYVg" value="-0.01"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zusci9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zussi9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zus8i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zutMi9EeSfLK3AfaKYVg" value="310"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zutci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zutsi9EeSfLK3AfaKYVg" value="162"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zut8i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuuMi9EeSfLK3AfaKYVg" value="55"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuuci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuusi9EeSfLK3AfaKYVg" value="46"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zuu8i9EeSfLK3AfaKYVg" name="Saturation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuvMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuvci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zuvsi9EeSfLK3AfaKYVg" name="robot 4 dynamics" type="_N7zu5ci9EeSfLK3AfaKYVg" association="_N7zvQsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuv8i9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuwMi9EeSfLK3AfaKYVg" value="155"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuwci9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuwsi9EeSfLK3AfaKYVg" value="170"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuw8i9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuxMi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zuxci9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuxsi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zux8i9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zuyMi9EeSfLK3AfaKYVg" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zuyci9EeSfLK3AfaKYVg" name="Sum">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuysi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuy8i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuzMi9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zuzci9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zuzsi9EeSfLK3AfaKYVg" name="robot 4 dynamics" type="_N7zu5ci9EeSfLK3AfaKYVg" association="_N7zvQ8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zuz8i9EeSfLK3AfaKYVg" name="OutDataTypeStr" type="_N7zvBsi9EeSfLK3AfaKYVg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zu0Mi9EeSfLK3AfaKYVg" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zu0ci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zu0si9EeSfLK3AfaKYVg" value="195"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zu08i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zu1Mi9EeSfLK3AfaKYVg" value="65"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zu1ci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zu1si9EeSfLK3AfaKYVg" value="20"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zu18i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zu2Mi9EeSfLK3AfaKYVg" value="20"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zu2ci9EeSfLK3AfaKYVg" name="Velocity">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zu2si9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zu28i9EeSfLK3AfaKYVg" name=" "/>
+        <ownedAttribute xmi:id="_N7zu3Mi9EeSfLK3AfaKYVg" name="robot 4 dynamics" type="_N7zu5ci9EeSfLK3AfaKYVg" association="_N7zvRMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zu3ci9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zu3si9EeSfLK3AfaKYVg" value="325"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zu38i9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zu4Mi9EeSfLK3AfaKYVg" value="60"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zu4ci9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zu4si9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zu48i9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zu5Mi9EeSfLK3AfaKYVg" value="30"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_N7zu5ci9EeSfLK3AfaKYVg" name="Robot 4 Dynamics">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zu5si9EeSfLK3AfaKYVg" name="Actuator Force "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zu58i9EeSfLK3AfaKYVg" name="Robot Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zu6Mi9EeSfLK3AfaKYVg" name="Energy "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zu6ci9EeSfLK3AfaKYVg" name="Actuator Force"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zu6si9EeSfLK3AfaKYVg" name="Robot Position" type="_N7zvB8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_N7zu68i9EeSfLK3AfaKYVg" name="Energy" type="_N7zvB8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zu7Mi9EeSfLK3AfaKYVg" name="abs" type="_N7zuNsi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvOsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zu7ci9EeSfLK3AfaKYVg" name="acceleration" type="_N7zuRMi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvO8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zu7si9EeSfLK3AfaKYVg" name="b" type="_N7zuVMi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvPMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zu78i9EeSfLK3AfaKYVg" name="boundary collisons" type="_N7zuZMi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvTsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zu8Mi9EeSfLK3AfaKYVg" name="compare&#xA;to constant" type="_N7zucsi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvPci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zu8ci9EeSfLK3AfaKYVg" name="energy loss calculation" type="_N7zuhMi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvPsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zu8si9EeSfLK3AfaKYVg" name="position" type="_N7zukMi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvP8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zu88i9EeSfLK3AfaKYVg" name="product" type="_N7zunMi9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvQMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zu9Mi9EeSfLK3AfaKYVg" name="rate of discharge" type="_N7zuq8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvQci9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zu9ci9EeSfLK3AfaKYVg" name="saturation" type="_N7zuu8i9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvQsi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zu9si9EeSfLK3AfaKYVg" name="sum" type="_N7zuyci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvQ8i9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zu98i9EeSfLK3AfaKYVg" name="velocity" type="_N7zu2ci9EeSfLK3AfaKYVg" aggregation="composite" association="_N7zvRMi9EeSfLK3AfaKYVg"/>
+        <ownedAttribute xmi:id="_N7zu-Mi9EeSfLK3AfaKYVg" name="Position-x">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zu-ci9EeSfLK3AfaKYVg" value="230"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zu-si9EeSfLK3AfaKYVg" name="Position-y">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zu-8i9EeSfLK3AfaKYVg" value="819"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zu_Mi9EeSfLK3AfaKYVg" name="Position-width">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zu_ci9EeSfLK3AfaKYVg" value="205"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zu_si9EeSfLK3AfaKYVg" name="Position-height">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_N7zu_8i9EeSfLK3AfaKYVg" value="127"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_N7zvAMi9EeSfLK3AfaKYVg" name="robosoccer" type="_N7yfAsi9EeSfLK3AfaKYVg" association="_N7zvVci9EeSfLK3AfaKYVg"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_N7zvAci9EeSfLK3AfaKYVg" name="Array:Float"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_N7zvAsi9EeSfLK3AfaKYVg" name="Array:Int"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N7zvA8i9EeSfLK3AfaKYVg" name="Int"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N7zvBMi9EeSfLK3AfaKYVg" name="Boolean"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N7zvBci9EeSfLK3AfaKYVg" name="Float"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N7zvBsi9EeSfLK3AfaKYVg" name="String"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_N7zvB8i9EeSfLK3AfaKYVg" name="Array:Float (2)"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvCMi9EeSfLK3AfaKYVg" name="2D Visualization has a To Workspace" memberEnd="_N7zG8si9EeSfLK3AfaKYVg _N7zG_si9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvCci9EeSfLK3AfaKYVg" name="Ball Dynamics has a 1/mass" memberEnd="_N7zHI8i9EeSfLK3AfaKYVg _N7zHEci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvCsi9EeSfLK3AfaKYVg" name="Ball Dynamics has a Position" memberEnd="_N7zHRMi9EeSfLK3AfaKYVg _N7zHE8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvC8i9EeSfLK3AfaKYVg" name="TEXT_GOAL has a Constant" memberEnd="_N7zHeMi9EeSfLK3AfaKYVg _N7zHasi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvDMi9EeSfLK3AfaKYVg" name="TEXT_GOAL has a Constant1" memberEnd="_N7zHh8i9EeSfLK3AfaKYVg _N7zHa8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvDci9EeSfLK3AfaKYVg" name="TEXT_GOAL has a Switch" memberEnd="_N7zHmci9EeSfLK3AfaKYVg _N7zHbMi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvDsi9EeSfLK3AfaKYVg" name="Ball Dynamics has a Unit Delay" memberEnd="_N7zHUMi9EeSfLK3AfaKYVg _N7zHFci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvD8i9EeSfLK3AfaKYVg" name="Ball Dynamics has a Velocity" memberEnd="_N7zHXMi9EeSfLK3AfaKYVg _N7zHFsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvEMi9EeSfLK3AfaKYVg" name="RoboSoccer has a Bus&#xA;Creator1" memberEnd="_N7zGNMi9EeSfLK3AfaKYVg _N7yfBci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvEci9EeSfLK3AfaKYVg" name="RoboSoccer has a Bus&#xA;Creator2" memberEnd="_N7zGQ8i9EeSfLK3AfaKYVg _N7yfBsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvEsi9EeSfLK3AfaKYVg" name="RoboSoccer has a Bus&#xA;Creator3" memberEnd="_N7zGUsi9EeSfLK3AfaKYVg _N7yfB8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvE8i9EeSfLK3AfaKYVg" name="RoboSoccer has a Bus&#xA;Creator4" memberEnd="_N7zGYci9EeSfLK3AfaKYVg _N7yfCMi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvFMi9EeSfLK3AfaKYVg" name="RoboSoccer has a Bus&#xA;Creator5" memberEnd="_N7zGcMi9EeSfLK3AfaKYVg _N7yfCci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvFci9EeSfLK3AfaKYVg" name="RoboSoccer has a Bus&#xA;Creator6" memberEnd="_N7zGgMi9EeSfLK3AfaKYVg _N7yfCsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvFsi9EeSfLK3AfaKYVg" name="RoboSoccer has a Bus&#xA;Selector" memberEnd="_N7zGj8i9EeSfLK3AfaKYVg _N7yfC8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvF8i9EeSfLK3AfaKYVg" name="RoboSoccer has a Bus&#xA;Selector1" memberEnd="_N7zGnMi9EeSfLK3AfaKYVg _N7yfDMi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvGMi9EeSfLK3AfaKYVg" name="RoboSoccer has a CLICK TO READ ME" memberEnd="_N7zGpsi9EeSfLK3AfaKYVg _N7yfDci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvGci9EeSfLK3AfaKYVg" name="Robot 1 Dynamics has a Abs" memberEnd="_N7zHp8i9EeSfLK3AfaKYVg _N7zIWsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvGsi9EeSfLK3AfaKYVg" name="Robot 1 Dynamics has a Acceleration" memberEnd="_N7zHtci9EeSfLK3AfaKYVg _N7zIW8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvG8i9EeSfLK3AfaKYVg" name="Robot 1 Dynamics has a B" memberEnd="_N7zHxci9EeSfLK3AfaKYVg _N7zIXMi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvHMi9EeSfLK3AfaKYVg" name="Robot 1 Dynamics has a Compare&#xA;To Constant" memberEnd="_N7zH48i9EeSfLK3AfaKYVg _N7zIXsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvHci9EeSfLK3AfaKYVg" name="Robot 1 Dynamics has a Energy Loss Calculation" memberEnd="_N7zH9ci9EeSfLK3AfaKYVg _N7zIX8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvHsi9EeSfLK3AfaKYVg" name="Robot 1 Dynamics has a Position" memberEnd="_N7zIAci9EeSfLK3AfaKYVg _N7zIYMi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvH8i9EeSfLK3AfaKYVg" name="Robot 1 Dynamics has a Product" memberEnd="_N7zIDsi9EeSfLK3AfaKYVg _N7zIYci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvIMi9EeSfLK3AfaKYVg" name="Robot 1 Dynamics has a Rate of Discharge" memberEnd="_N7zIHMi9EeSfLK3AfaKYVg _N7zIYsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvIci9EeSfLK3AfaKYVg" name="Robot 1 Dynamics has a Saturation" memberEnd="_N7zILMi9EeSfLK3AfaKYVg _N7zIY8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvIsi9EeSfLK3AfaKYVg" name="Robot 1 Dynamics has a Sum" memberEnd="_N7zIPMi9EeSfLK3AfaKYVg _N7zIZMi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvI8i9EeSfLK3AfaKYVg" name="Robot 1 Dynamics has a Velocity" memberEnd="_N7zISsi9EeSfLK3AfaKYVg _N7zIZci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvJMi9EeSfLK3AfaKYVg" name="Robot 2 Dynamics has a Abs" memberEnd="_N7zIcsi9EeSfLK3AfaKYVg _N7ztVsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvJci9EeSfLK3AfaKYVg" name="Robot 2 Dynamics has a Acceleration" memberEnd="_N7zIgMi9EeSfLK3AfaKYVg _N7ztV8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvJsi9EeSfLK3AfaKYVg" name="Robot 2 Dynamics has a B" memberEnd="_N7zIkMi9EeSfLK3AfaKYVg _N7ztWMi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvJ8i9EeSfLK3AfaKYVg" name="Robot 2 Dynamics has a Compare&#xA;To Constant" memberEnd="_N7zIrsi9EeSfLK3AfaKYVg _N7ztWsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvKMi9EeSfLK3AfaKYVg" name="Robot 2 Dynamics has a Energy Loss Calculation" memberEnd="_N7zIwMi9EeSfLK3AfaKYVg _N7ztW8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvKci9EeSfLK3AfaKYVg" name="Robot 2 Dynamics has a Position" memberEnd="_N7zIzMi9EeSfLK3AfaKYVg _N7ztXMi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvKsi9EeSfLK3AfaKYVg" name="Robot 2 Dynamics has a Product" memberEnd="_N7zI2ci9EeSfLK3AfaKYVg _N7ztXci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvK8i9EeSfLK3AfaKYVg" name="Robot 2 Dynamics has a Rate of Discharge" memberEnd="_N7zI58i9EeSfLK3AfaKYVg _N7ztXsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvLMi9EeSfLK3AfaKYVg" name="Robot 2 Dynamics has a Saturation" memberEnd="_N7ztKMi9EeSfLK3AfaKYVg _N7ztX8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvLci9EeSfLK3AfaKYVg" name="Robot 2 Dynamics has a Sum" memberEnd="_N7ztOMi9EeSfLK3AfaKYVg _N7ztYMi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvLsi9EeSfLK3AfaKYVg" name="Robot 2 Dynamics has a Velocity" memberEnd="_N7ztRsi9EeSfLK3AfaKYVg _N7ztYci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvL8i9EeSfLK3AfaKYVg" name="Robot 3 Dynamics has a Abs" memberEnd="_N7ztbsi9EeSfLK3AfaKYVg _N7zuIci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvMMi9EeSfLK3AfaKYVg" name="Robot 3 Dynamics has a Acceleration" memberEnd="_N7ztfMi9EeSfLK3AfaKYVg _N7zuIsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvMci9EeSfLK3AfaKYVg" name="Robot 3 Dynamics has a B" memberEnd="_N7ztjMi9EeSfLK3AfaKYVg _N7zuI8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvMsi9EeSfLK3AfaKYVg" name="Robot 3 Dynamics has a Compare&#xA;To Constant" memberEnd="_N7ztqsi9EeSfLK3AfaKYVg _N7zuJci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvM8i9EeSfLK3AfaKYVg" name="Robot 3 Dynamics has a Energy Loss Calculation" memberEnd="_N7ztvMi9EeSfLK3AfaKYVg _N7zuJsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvNMi9EeSfLK3AfaKYVg" name="Robot 3 Dynamics has a Position" memberEnd="_N7ztyMi9EeSfLK3AfaKYVg _N7zuJ8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvNci9EeSfLK3AfaKYVg" name="Robot 3 Dynamics has a Product" memberEnd="_N7zt1ci9EeSfLK3AfaKYVg _N7zuKMi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvNsi9EeSfLK3AfaKYVg" name="Robot 3 Dynamics has a Rate of Discharge" memberEnd="_N7zt48i9EeSfLK3AfaKYVg _N7zuKci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvN8i9EeSfLK3AfaKYVg" name="Robot 3 Dynamics has a Saturation" memberEnd="_N7zt88i9EeSfLK3AfaKYVg _N7zuKsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvOMi9EeSfLK3AfaKYVg" name="Robot 3 Dynamics has a Sum" memberEnd="_N7zuA8i9EeSfLK3AfaKYVg _N7zuK8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvOci9EeSfLK3AfaKYVg" name="Robot 3 Dynamics has a Velocity" memberEnd="_N7zuEci9EeSfLK3AfaKYVg _N7zuLMi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvOsi9EeSfLK3AfaKYVg" name="Robot 4 Dynamics has a Abs" memberEnd="_N7zuOci9EeSfLK3AfaKYVg _N7zu7Mi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvO8i9EeSfLK3AfaKYVg" name="Robot 4 Dynamics has a Acceleration" memberEnd="_N7zuR8i9EeSfLK3AfaKYVg _N7zu7ci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvPMi9EeSfLK3AfaKYVg" name="Robot 4 Dynamics has a B" memberEnd="_N7zuV8i9EeSfLK3AfaKYVg _N7zu7si9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvPci9EeSfLK3AfaKYVg" name="Robot 4 Dynamics has a Compare&#xA;To Constant" memberEnd="_N7zudci9EeSfLK3AfaKYVg _N7zu8Mi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvPsi9EeSfLK3AfaKYVg" name="Robot 4 Dynamics has a Energy Loss Calculation" memberEnd="_N7zuh8i9EeSfLK3AfaKYVg _N7zu8ci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvP8i9EeSfLK3AfaKYVg" name="Robot 4 Dynamics has a Position" memberEnd="_N7zuk8i9EeSfLK3AfaKYVg _N7zu8si9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvQMi9EeSfLK3AfaKYVg" name="Robot 4 Dynamics has a Product" memberEnd="_N7zuoMi9EeSfLK3AfaKYVg _N7zu88i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvQci9EeSfLK3AfaKYVg" name="Robot 4 Dynamics has a Rate of Discharge" memberEnd="_N7zursi9EeSfLK3AfaKYVg _N7zu9Mi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvQsi9EeSfLK3AfaKYVg" name="Robot 4 Dynamics has a Saturation" memberEnd="_N7zuvsi9EeSfLK3AfaKYVg _N7zu9ci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvQ8i9EeSfLK3AfaKYVg" name="Robot 4 Dynamics has a Sum" memberEnd="_N7zuzsi9EeSfLK3AfaKYVg _N7zu9si9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvRMi9EeSfLK3AfaKYVg" name="Robot 4 Dynamics has a Velocity" memberEnd="_N7zu3Mi9EeSfLK3AfaKYVg _N7zu98i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvRci9EeSfLK3AfaKYVg" name="RoboSoccer has a Stop Simulation" memberEnd="_N7zGsci9EeSfLK3AfaKYVg _N7yfEsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvRsi9EeSfLK3AfaKYVg" name="RoboSoccer has a Team_1_Strategy" memberEnd="_N7zGwMi9EeSfLK3AfaKYVg _N7yfE8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvR8i9EeSfLK3AfaKYVg" name="RoboSoccer has a Team_1_Strategy2" memberEnd="_N7zGz8i9EeSfLK3AfaKYVg _N7yfFMi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvSMi9EeSfLK3AfaKYVg" name="RoboSoccer has a Unit Delay" memberEnd="_N7zG28i9EeSfLK3AfaKYVg _N7yfFci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvSci9EeSfLK3AfaKYVg" name="RoboSoccer has a Unit Delay1" memberEnd="_N7zG58i9EeSfLK3AfaKYVg _N7yfFsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvSsi9EeSfLK3AfaKYVg" name="Ball Dynamics has a Collision Modeling" memberEnd="_N7zHNsi9EeSfLK3AfaKYVg _N7zHEsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvS8i9EeSfLK3AfaKYVg" name="Robot 1 Dynamics has a Boundary Collisons" memberEnd="_N7zH1ci9EeSfLK3AfaKYVg _N7zIXci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvTMi9EeSfLK3AfaKYVg" name="Robot 2 Dynamics has a Boundary Collisons" memberEnd="_N7zIoMi9EeSfLK3AfaKYVg _N7ztWci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvTci9EeSfLK3AfaKYVg" name="Robot 3 Dynamics has a Boundary Collisons" memberEnd="_N7ztnMi9EeSfLK3AfaKYVg _N7zuJMi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvTsi9EeSfLK3AfaKYVg" name="Robot 4 Dynamics has a Boundary Collisons" memberEnd="_N7zuZ8i9EeSfLK3AfaKYVg _N7zu78i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvT8i9EeSfLK3AfaKYVg" name="RoboSoccer has a 2D Visualization" memberEnd="_N7zHB8i9EeSfLK3AfaKYVg _N7yfA8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvUMi9EeSfLK3AfaKYVg" name="RoboSoccer has a Ball Dynamics" memberEnd="_N7zHH8i9EeSfLK3AfaKYVg _N7yfBMi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvUci9EeSfLK3AfaKYVg" name="Ball Dynamics has a TEXT_GOAL" memberEnd="_N7zHdci9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvUsi9EeSfLK3AfaKYVg" name="RoboSoccer has a Robot 1 Dynamics" memberEnd="_N7zIbsi9EeSfLK3AfaKYVg _N7yfDsi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvU8i9EeSfLK3AfaKYVg" name="RoboSoccer has a Robot 2 Dynamics" memberEnd="_N7ztasi9EeSfLK3AfaKYVg _N7yfD8i9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvVMi9EeSfLK3AfaKYVg" name="RoboSoccer has a Robot 3 Dynamics" memberEnd="_N7zuNci9EeSfLK3AfaKYVg _N7yfEMi9EeSfLK3AfaKYVg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_N7zvVci9EeSfLK3AfaKYVg" name="RoboSoccer has a Robot 4 Dynamics" memberEnd="_N7zvAMi9EeSfLK3AfaKYVg _N7yfEci9EeSfLK3AfaKYVg"/>
+    <profileApplication xmi:id="_N7zvVsi9EeSfLK3AfaKYVg">
+      <eAnnotations xmi:id="_N7zvV8i9EeSfLK3AfaKYVg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#/"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_N7zvWMi9EeSfLK3AfaKYVg">
+      <eAnnotations xmi:id="_N7zvWci9EeSfLK3AfaKYVg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//modelelements"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_N7zvWsi9EeSfLK3AfaKYVg">
+      <eAnnotations xmi:id="_N7zvW8i9EeSfLK3AfaKYVg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_N7zvXMi9EeSfLK3AfaKYVg">
+      <eAnnotations xmi:id="_N7zvXci9EeSfLK3AfaKYVg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//portandflows"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_N7zvXsi9EeSfLK3AfaKYVg">
+      <eAnnotations xmi:id="_N7zvX8i9EeSfLK3AfaKYVg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//constraints"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_N7zvYMi9EeSfLK3AfaKYVg">
+      <eAnnotations xmi:id="_N7zvYci9EeSfLK3AfaKYVg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//activities"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_N7zvYsi9EeSfLK3AfaKYVg">
+      <eAnnotations xmi:id="_N7zvY8i9EeSfLK3AfaKYVg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//allocations"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_N7zvZMi9EeSfLK3AfaKYVg">
+      <eAnnotations xmi:id="_N7zvZci9EeSfLK3AfaKYVg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_N7zvZsi9EeSfLK3AfaKYVg">
+      <eAnnotations xmi:id="_N7zvZ8i9EeSfLK3AfaKYVg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//interactions"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_N7zvaMi9EeSfLK3AfaKYVg">
+      <eAnnotations xmi:id="_N7zvaci9EeSfLK3AfaKYVg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//statemachines"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_N7zvasi9EeSfLK3AfaKYVg">
+      <eAnnotations xmi:id="_N7zva8i9EeSfLK3AfaKYVg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//usecases"/>
+      </eAnnotations>
+    </profileApplication>
+  </uml:Model>
+  <Blocks:Block xmi:id="_N7zvbMi9EeSfLK3AfaKYVg" base_Class="_N7zG8Mi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvbci9EeSfLK3AfaKYVg" base_Class="_N7zHIMi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvbsi9EeSfLK3AfaKYVg" base_Class="_N7zHQci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvb8i9EeSfLK3AfaKYVg" base_Class="_N7zHdsi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvcMi9EeSfLK3AfaKYVg" base_Class="_N7zHhci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvcci9EeSfLK3AfaKYVg" base_Class="_N7zHlMi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvcsi9EeSfLK3AfaKYVg" base_Class="_N7zHTci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvc8i9EeSfLK3AfaKYVg" base_Class="_N7zHWci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvdMi9EeSfLK3AfaKYVg" base_Class="_N7zGLsi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvdci9EeSfLK3AfaKYVg" base_Class="_N7zGP8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvdsi9EeSfLK3AfaKYVg" base_Class="_N7zGTsi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvd8i9EeSfLK3AfaKYVg" base_Class="_N7zGXci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zveMi9EeSfLK3AfaKYVg" base_Class="_N7zGbMi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zveci9EeSfLK3AfaKYVg" base_Class="_N7zGe8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvesi9EeSfLK3AfaKYVg" base_Class="_N7zGi8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zve8i9EeSfLK3AfaKYVg" base_Class="_N7zGmMi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvfMi9EeSfLK3AfaKYVg" base_Class="_N7zGpci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvfci9EeSfLK3AfaKYVg" base_Class="_N7zHpMi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvfsi9EeSfLK3AfaKYVg" base_Class="_N7zHssi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvf8i9EeSfLK3AfaKYVg" base_Class="_N7zHwsi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvgMi9EeSfLK3AfaKYVg" base_Class="_N7zH4Mi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvgci9EeSfLK3AfaKYVg" base_Class="_N7zH8si9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvgsi9EeSfLK3AfaKYVg" base_Class="_N7zH_si9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvg8i9EeSfLK3AfaKYVg" base_Class="_N7zICsi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvhMi9EeSfLK3AfaKYVg" base_Class="_N7zIGci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvhci9EeSfLK3AfaKYVg" base_Class="_N7zIKci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvhsi9EeSfLK3AfaKYVg" base_Class="_N7zIN8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvh8i9EeSfLK3AfaKYVg" base_Class="_N7zIR8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zviMi9EeSfLK3AfaKYVg" base_Class="_N7zIb8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvici9EeSfLK3AfaKYVg" base_Class="_N7zIfci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvisi9EeSfLK3AfaKYVg" base_Class="_N7zIjci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvi8i9EeSfLK3AfaKYVg" base_Class="_N7zIq8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvjMi9EeSfLK3AfaKYVg" base_Class="_N7zIvci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvjci9EeSfLK3AfaKYVg" base_Class="_N7zIyci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvjsi9EeSfLK3AfaKYVg" base_Class="_N7zI1ci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvj8i9EeSfLK3AfaKYVg" base_Class="_N7zI5Mi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N7zvkMi9EeSfLK3AfaKYVg" base_Class="_N7ztJci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UMMi9EeSfLK3AfaKYVg" base_Class="_N7ztM8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UMci9EeSfLK3AfaKYVg" base_Class="_N7ztQ8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UMsi9EeSfLK3AfaKYVg" base_Class="_N7zta8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UM8i9EeSfLK3AfaKYVg" base_Class="_N7zteci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UNMi9EeSfLK3AfaKYVg" base_Class="_N7ztici9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UNci9EeSfLK3AfaKYVg" base_Class="_N7ztp8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UNsi9EeSfLK3AfaKYVg" base_Class="_N7ztuci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UN8i9EeSfLK3AfaKYVg" base_Class="_N7ztxci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UOMi9EeSfLK3AfaKYVg" base_Class="_N7zt0ci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UOci9EeSfLK3AfaKYVg" base_Class="_N7zt4Mi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UOsi9EeSfLK3AfaKYVg" base_Class="_N7zt8Mi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UO8i9EeSfLK3AfaKYVg" base_Class="_N7zt_si9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UPMi9EeSfLK3AfaKYVg" base_Class="_N7zuDsi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UPci9EeSfLK3AfaKYVg" base_Class="_N7zuNsi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UPsi9EeSfLK3AfaKYVg" base_Class="_N7zuRMi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UP8i9EeSfLK3AfaKYVg" base_Class="_N7zuVMi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UQMi9EeSfLK3AfaKYVg" base_Class="_N7zucsi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UQci9EeSfLK3AfaKYVg" base_Class="_N7zuhMi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UQsi9EeSfLK3AfaKYVg" base_Class="_N7zukMi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UQ8i9EeSfLK3AfaKYVg" base_Class="_N7zunMi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70URMi9EeSfLK3AfaKYVg" base_Class="_N7zuq8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70URci9EeSfLK3AfaKYVg" base_Class="_N7zuu8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70URsi9EeSfLK3AfaKYVg" base_Class="_N7zuyci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UR8i9EeSfLK3AfaKYVg" base_Class="_N7zu2ci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70USMi9EeSfLK3AfaKYVg" base_Class="_N7zGr8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70USci9EeSfLK3AfaKYVg" base_Class="_N7zGusi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70USsi9EeSfLK3AfaKYVg" base_Class="_N7zGyci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70US8i9EeSfLK3AfaKYVg" base_Class="_N7zG2Mi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UTMi9EeSfLK3AfaKYVg" base_Class="_N7zG5Mi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UTci9EeSfLK3AfaKYVg" base_Class="_N7zHMMi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UTsi9EeSfLK3AfaKYVg" base_Class="_N7zH0si9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UT8i9EeSfLK3AfaKYVg" base_Class="_N7zInci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UUMi9EeSfLK3AfaKYVg" base_Class="_N7ztmci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UUci9EeSfLK3AfaKYVg" base_Class="_N7zuZMi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UUsi9EeSfLK3AfaKYVg" base_Class="_N7zG-8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UU8i9EeSfLK3AfaKYVg" base_Class="_N7zHCMi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UVMi9EeSfLK3AfaKYVg" base_Class="_N7zHZci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UVci9EeSfLK3AfaKYVg" base_Class="_N7zIU8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UVsi9EeSfLK3AfaKYVg" base_Class="_N7ztT8i9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UV8i9EeSfLK3AfaKYVg" base_Class="_N7zuGsi9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UWMi9EeSfLK3AfaKYVg" base_Class="_N7zu5ci9EeSfLK3AfaKYVg"/>
+  <Blocks:Block xmi:id="_N70UWci9EeSfLK3AfaKYVg" base_Class="_N7yfAsi9EeSfLK3AfaKYVg"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UWsi9EeSfLK3AfaKYVg" base_Port="_N7zG_Mi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UW8i9EeSfLK3AfaKYVg" base_Port="_N7zG8ci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UXMi9EeSfLK3AfaKYVg" base_Port="_N7zHCci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UXci9EeSfLK3AfaKYVg" base_Port="_N7zHCsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UXsi9EeSfLK3AfaKYVg" base_Port="_N7zHC8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UX8i9EeSfLK3AfaKYVg" base_Port="_N7zHDMi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UYMi9EeSfLK3AfaKYVg" base_Port="_N7zHIci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UYci9EeSfLK3AfaKYVg" base_Port="_N7zHIsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UYsi9EeSfLK3AfaKYVg" base_Port="_N7zHMci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UY8i9EeSfLK3AfaKYVg" base_Port="_N7zHMsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UZMi9EeSfLK3AfaKYVg" base_Port="_N7zHM8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UZci9EeSfLK3AfaKYVg" base_Port="_N7zHNMi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UZsi9EeSfLK3AfaKYVg" base_Port="_N7zHNci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UZ8i9EeSfLK3AfaKYVg" base_Port="_N7zHQsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UaMi9EeSfLK3AfaKYVg" base_Port="_N7zHQ8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Uaci9EeSfLK3AfaKYVg" base_Port="_N7zHZsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Uasi9EeSfLK3AfaKYVg" base_Port="_N7zHZ8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ua8i9EeSfLK3AfaKYVg" base_Port="_N7zHd8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UbMi9EeSfLK3AfaKYVg" base_Port="_N7zHhsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ubci9EeSfLK3AfaKYVg" base_Port="_N7zHlci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ubsi9EeSfLK3AfaKYVg" base_Port="_N7zHlsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ub8i9EeSfLK3AfaKYVg" base_Port="_N7zHl8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UcMi9EeSfLK3AfaKYVg" base_Port="_N7zHmMi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ucci9EeSfLK3AfaKYVg" base_Port="_N7zHTsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ucsi9EeSfLK3AfaKYVg" base_Port="_N7zHT8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Uc8i9EeSfLK3AfaKYVg" base_Port="_N7zHWsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UdMi9EeSfLK3AfaKYVg" base_Port="_N7zHW8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Udci9EeSfLK3AfaKYVg" base_Port="_N7zGL8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Udsi9EeSfLK3AfaKYVg" base_Port="_N7zGMMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ud8i9EeSfLK3AfaKYVg" base_Port="_N7zGMci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UeMi9EeSfLK3AfaKYVg" base_Port="_N7zGMsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ueci9EeSfLK3AfaKYVg" base_Port="_N7zGM8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Uesi9EeSfLK3AfaKYVg" base_Port="_N7zGQMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ue8i9EeSfLK3AfaKYVg" base_Port="_N7zGQci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UfMi9EeSfLK3AfaKYVg" base_Port="_N7zGQsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ufci9EeSfLK3AfaKYVg" base_Port="_N7zGT8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ufsi9EeSfLK3AfaKYVg" base_Port="_N7zGUMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Uf8i9EeSfLK3AfaKYVg" base_Port="_N7zGUci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UgMi9EeSfLK3AfaKYVg" base_Port="_N7zGXsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ugci9EeSfLK3AfaKYVg" base_Port="_N7zGX8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ugsi9EeSfLK3AfaKYVg" base_Port="_N7zGYMi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ug8i9EeSfLK3AfaKYVg" base_Port="_N7zGbci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UhMi9EeSfLK3AfaKYVg" base_Port="_N7zGbsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Uhci9EeSfLK3AfaKYVg" base_Port="_N7zGb8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Uhsi9EeSfLK3AfaKYVg" base_Port="_N7zGfMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Uh8i9EeSfLK3AfaKYVg" base_Port="_N7zGfci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UiMi9EeSfLK3AfaKYVg" base_Port="_N7zGfsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Uici9EeSfLK3AfaKYVg" base_Port="_N7zGf8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Uisi9EeSfLK3AfaKYVg" base_Port="_N7zGjMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ui8i9EeSfLK3AfaKYVg" base_Port="_N7zGjci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UjMi9EeSfLK3AfaKYVg" base_Port="_N7zGjsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ujci9EeSfLK3AfaKYVg" base_Port="_N7zGmci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ujsi9EeSfLK3AfaKYVg" base_Port="_N7zGmsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Uj8i9EeSfLK3AfaKYVg" base_Port="_N7zGm8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N70UkMi9EeSfLK3AfaKYVg" base_Port="_N7zIVMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N70Ukci9EeSfLK3AfaKYVg" base_Port="_N7zIVci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707QMi9EeSfLK3AfaKYVg" base_Port="_N7zIVsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Qci9EeSfLK3AfaKYVg" base_Port="_N7zHpci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Qsi9EeSfLK3AfaKYVg" base_Port="_N7zHpsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Q8i9EeSfLK3AfaKYVg" base_Port="_N7zHs8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707RMi9EeSfLK3AfaKYVg" base_Port="_N7zHtMi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Rci9EeSfLK3AfaKYVg" base_Port="_N7zHw8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Rsi9EeSfLK3AfaKYVg" base_Port="_N7zHxMi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707R8i9EeSfLK3AfaKYVg" base_Port="_N7zH08i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707SMi9EeSfLK3AfaKYVg" base_Port="_N7zH1Mi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Sci9EeSfLK3AfaKYVg" base_Port="_N7zH4ci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Ssi9EeSfLK3AfaKYVg" base_Port="_N7zH4si9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707S8i9EeSfLK3AfaKYVg" base_Port="_N7zH88i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707TMi9EeSfLK3AfaKYVg" base_Port="_N7zH9Mi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Tci9EeSfLK3AfaKYVg" base_Port="_N7zH_8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Tsi9EeSfLK3AfaKYVg" base_Port="_N7zIAMi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707T8i9EeSfLK3AfaKYVg" base_Port="_N7zIC8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707UMi9EeSfLK3AfaKYVg" base_Port="_N7zIDMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Uci9EeSfLK3AfaKYVg" base_Port="_N7zIDci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Usi9EeSfLK3AfaKYVg" base_Port="_N7zIGsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707U8i9EeSfLK3AfaKYVg" base_Port="_N7zIG8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707VMi9EeSfLK3AfaKYVg" base_Port="_N7zIKsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Vci9EeSfLK3AfaKYVg" base_Port="_N7zIK8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Vsi9EeSfLK3AfaKYVg" base_Port="_N7zIOMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707V8i9EeSfLK3AfaKYVg" base_Port="_N7zIOci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707WMi9EeSfLK3AfaKYVg" base_Port="_N7zIOsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Wci9EeSfLK3AfaKYVg" base_Port="_N7zIO8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Wsi9EeSfLK3AfaKYVg" base_Port="_N7zISMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707W8i9EeSfLK3AfaKYVg" base_Port="_N7zISci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707XMi9EeSfLK3AfaKYVg" base_Port="_N7ztUMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Xci9EeSfLK3AfaKYVg" base_Port="_N7ztUci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Xsi9EeSfLK3AfaKYVg" base_Port="_N7ztUsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707X8i9EeSfLK3AfaKYVg" base_Port="_N7zIcMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707YMi9EeSfLK3AfaKYVg" base_Port="_N7zIcci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Yci9EeSfLK3AfaKYVg" base_Port="_N7zIfsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Ysi9EeSfLK3AfaKYVg" base_Port="_N7zIf8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Y8i9EeSfLK3AfaKYVg" base_Port="_N7zIjsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707ZMi9EeSfLK3AfaKYVg" base_Port="_N7zIj8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Zci9EeSfLK3AfaKYVg" base_Port="_N7zInsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Zsi9EeSfLK3AfaKYVg" base_Port="_N7zIn8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707Z8i9EeSfLK3AfaKYVg" base_Port="_N7zIrMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707aMi9EeSfLK3AfaKYVg" base_Port="_N7zIrci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707aci9EeSfLK3AfaKYVg" base_Port="_N7zIvsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707asi9EeSfLK3AfaKYVg" base_Port="_N7zIv8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707a8i9EeSfLK3AfaKYVg" base_Port="_N7zIysi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707bMi9EeSfLK3AfaKYVg" base_Port="_N7zIy8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707bci9EeSfLK3AfaKYVg" base_Port="_N7zI1si9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707bsi9EeSfLK3AfaKYVg" base_Port="_N7zI18i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707b8i9EeSfLK3AfaKYVg" base_Port="_N7zI2Mi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707cMi9EeSfLK3AfaKYVg" base_Port="_N7zI5ci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707cci9EeSfLK3AfaKYVg" base_Port="_N7zI5si9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707csi9EeSfLK3AfaKYVg" base_Port="_N7ztJsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707c8i9EeSfLK3AfaKYVg" base_Port="_N7ztJ8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707dMi9EeSfLK3AfaKYVg" base_Port="_N7ztNMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707dci9EeSfLK3AfaKYVg" base_Port="_N7ztNci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707dsi9EeSfLK3AfaKYVg" base_Port="_N7ztNsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707d8i9EeSfLK3AfaKYVg" base_Port="_N7ztN8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707eMi9EeSfLK3AfaKYVg" base_Port="_N7ztRMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707eci9EeSfLK3AfaKYVg" base_Port="_N7ztRci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707esi9EeSfLK3AfaKYVg" base_Port="_N7zuG8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707e8i9EeSfLK3AfaKYVg" base_Port="_N7zuHMi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707fMi9EeSfLK3AfaKYVg" base_Port="_N7zuHci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707fci9EeSfLK3AfaKYVg" base_Port="_N7ztbMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707fsi9EeSfLK3AfaKYVg" base_Port="_N7ztbci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707f8i9EeSfLK3AfaKYVg" base_Port="_N7ztesi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707gMi9EeSfLK3AfaKYVg" base_Port="_N7zte8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707gci9EeSfLK3AfaKYVg" base_Port="_N7ztisi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707gsi9EeSfLK3AfaKYVg" base_Port="_N7zti8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707g8i9EeSfLK3AfaKYVg" base_Port="_N7ztmsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707hMi9EeSfLK3AfaKYVg" base_Port="_N7ztm8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707hci9EeSfLK3AfaKYVg" base_Port="_N7ztqMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707hsi9EeSfLK3AfaKYVg" base_Port="_N7ztqci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707h8i9EeSfLK3AfaKYVg" base_Port="_N7ztusi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707iMi9EeSfLK3AfaKYVg" base_Port="_N7ztu8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N707ici9EeSfLK3AfaKYVg" base_Port="_N7ztxsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N707isi9EeSfLK3AfaKYVg" base_Port="_N7ztx8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iUMi9EeSfLK3AfaKYVg" base_Port="_N7zt0si9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iUci9EeSfLK3AfaKYVg" base_Port="_N7zt08i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iUsi9EeSfLK3AfaKYVg" base_Port="_N7zt1Mi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iU8i9EeSfLK3AfaKYVg" base_Port="_N7zt4ci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iVMi9EeSfLK3AfaKYVg" base_Port="_N7zt4si9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iVci9EeSfLK3AfaKYVg" base_Port="_N7zt8ci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iVsi9EeSfLK3AfaKYVg" base_Port="_N7zt8si9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iV8i9EeSfLK3AfaKYVg" base_Port="_N7zt_8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iWMi9EeSfLK3AfaKYVg" base_Port="_N7zuAMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iWci9EeSfLK3AfaKYVg" base_Port="_N7zuAci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iWsi9EeSfLK3AfaKYVg" base_Port="_N7zuAsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iW8i9EeSfLK3AfaKYVg" base_Port="_N7zuD8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iXMi9EeSfLK3AfaKYVg" base_Port="_N7zuEMi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iXci9EeSfLK3AfaKYVg" base_Port="_N7zu5si9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iXsi9EeSfLK3AfaKYVg" base_Port="_N7zu58i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iX8i9EeSfLK3AfaKYVg" base_Port="_N7zu6Mi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iYMi9EeSfLK3AfaKYVg" base_Port="_N7zuN8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iYci9EeSfLK3AfaKYVg" base_Port="_N7zuOMi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iYsi9EeSfLK3AfaKYVg" base_Port="_N7zuRci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iY8i9EeSfLK3AfaKYVg" base_Port="_N7zuRsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iZMi9EeSfLK3AfaKYVg" base_Port="_N7zuVci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iZci9EeSfLK3AfaKYVg" base_Port="_N7zuVsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iZsi9EeSfLK3AfaKYVg" base_Port="_N7zuZci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iZ8i9EeSfLK3AfaKYVg" base_Port="_N7zuZsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iaMi9EeSfLK3AfaKYVg" base_Port="_N7zuc8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iaci9EeSfLK3AfaKYVg" base_Port="_N7zudMi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iasi9EeSfLK3AfaKYVg" base_Port="_N7zuhci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ia8i9EeSfLK3AfaKYVg" base_Port="_N7zuhsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ibMi9EeSfLK3AfaKYVg" base_Port="_N7zukci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ibci9EeSfLK3AfaKYVg" base_Port="_N7zuksi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ibsi9EeSfLK3AfaKYVg" base_Port="_N7zunci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ib8i9EeSfLK3AfaKYVg" base_Port="_N7zunsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71icMi9EeSfLK3AfaKYVg" base_Port="_N7zun8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71icci9EeSfLK3AfaKYVg" base_Port="_N7zurMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71icsi9EeSfLK3AfaKYVg" base_Port="_N7zurci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ic8i9EeSfLK3AfaKYVg" base_Port="_N7zuvMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71idMi9EeSfLK3AfaKYVg" base_Port="_N7zuvci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71idci9EeSfLK3AfaKYVg" base_Port="_N7zuysi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71idsi9EeSfLK3AfaKYVg" base_Port="_N7zuy8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71id8i9EeSfLK3AfaKYVg" base_Port="_N7zuzMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ieMi9EeSfLK3AfaKYVg" base_Port="_N7zuzci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ieci9EeSfLK3AfaKYVg" base_Port="_N7zu2si9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iesi9EeSfLK3AfaKYVg" base_Port="_N7zu28i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ie8i9EeSfLK3AfaKYVg" base_Port="_N7zGsMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ifMi9EeSfLK3AfaKYVg" base_Port="_N7zGu8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ifci9EeSfLK3AfaKYVg" base_Port="_N7zGvMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ifsi9EeSfLK3AfaKYVg" base_Port="_N7zGvci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71if8i9EeSfLK3AfaKYVg" base_Port="_N7zGvsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71igMi9EeSfLK3AfaKYVg" base_Port="_N7zGv8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71igci9EeSfLK3AfaKYVg" base_Port="_N7zGysi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71igsi9EeSfLK3AfaKYVg" base_Port="_N7zGy8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ig8i9EeSfLK3AfaKYVg" base_Port="_N7zGzMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ihMi9EeSfLK3AfaKYVg" base_Port="_N7zGzci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ihci9EeSfLK3AfaKYVg" base_Port="_N7zGzsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ihsi9EeSfLK3AfaKYVg" base_Port="_N7zG2ci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ih8i9EeSfLK3AfaKYVg" base_Port="_N7zG2si9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iiMi9EeSfLK3AfaKYVg" base_Port="_N7zG5ci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iici9EeSfLK3AfaKYVg" base_Port="_N7zG5si9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71iisi9EeSfLK3AfaKYVg" base_Port="_N7zG_ci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ii8i9EeSfLK3AfaKYVg" base_Port="_N7zHDci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ijMi9EeSfLK3AfaKYVg" base_Port="_N7zHaMi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ijci9EeSfLK3AfaKYVg" base_Port="_N7zHaci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ijsi9EeSfLK3AfaKYVg" base_Port="_N7zHDsi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ij8i9EeSfLK3AfaKYVg" base_Port="_N7zHD8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N71ikMi9EeSfLK3AfaKYVg" base_Port="_N7zHEMi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N72JYMi9EeSfLK3AfaKYVg" base_Port="_N7zIV8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N72JYci9EeSfLK3AfaKYVg" base_Port="_N7zIWMi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N72JYsi9EeSfLK3AfaKYVg" base_Port="_N7zIWci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N72JY8i9EeSfLK3AfaKYVg" base_Port="_N7ztU8i9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N72JZMi9EeSfLK3AfaKYVg" base_Port="_N7ztVMi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N72JZci9EeSfLK3AfaKYVg" base_Port="_N7ztVci9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N72JZsi9EeSfLK3AfaKYVg" base_Port="_N7zuHsi9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N72JZ8i9EeSfLK3AfaKYVg" base_Port="_N7zuH8i9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N72JaMi9EeSfLK3AfaKYVg" base_Port="_N7zuIMi9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N72Jaci9EeSfLK3AfaKYVg" base_Port="_N7zu6ci9EeSfLK3AfaKYVg" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_N72Jasi9EeSfLK3AfaKYVg" base_Port="_N7zu6si9EeSfLK3AfaKYVg" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_N72Ja8i9EeSfLK3AfaKYVg" base_Port="_N7zu68i9EeSfLK3AfaKYVg" direction="out"/>
+</xmi:XMI>

@@ -293,7 +293,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="1170"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="319"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="1370"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="461"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	
@@ -314,7 +329,22 @@
 	  
 	  
 	  <Block BlockType="Inport" Name="In1" SID="569">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="15"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="253"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="45"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="267"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="ToWorkspace" Name="To Workspace" SID="639">
@@ -325,7 +355,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="125"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="245"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="185"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="275"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -352,7 +397,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="835"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="427"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="985"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="553"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	
@@ -375,12 +435,42 @@
 	  
 	  
 	  <Block BlockType="Inport" Name="Robot Position" SID="17">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="25"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="103"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="55"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="117"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	  </Block>
 	  <Block BlockType="Gain" Name="1/mass" SID="297">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="355"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="65"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="385"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="95"/>
+</Entry>
+</Value>
+</Property>
 	    <Property Name="Gain">
 <Value xsi:type="simulinkmm:SimString" Value="1/0.01"/>
 </Property>
@@ -401,7 +491,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="105"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="44"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="270"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="176"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -430,18 +535,63 @@
 	      
 	      
 	      <Block BlockType="Inport" Name="ball_velocity" SID="44::22">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="20"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="101"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="40"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="119"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Block BlockType="Inport" Name="robot_position" SID="44::1">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="20"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="136"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="40"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="154"/>
+</Entry>
+</Value>
+</Property>
 		<Property Name="Port">
 <Value xsi:type="simulinkmm:SimInt" Value="2"/>
 </Property>
 		
 	      </Block>
 	      <Block BlockType="Inport" Name="ball_position" SID="44::18">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="20"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="171"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="40"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="189"/>
+</Entry>
+</Value>
+</Property>
 		<Property Name="Port">
 <Value xsi:type="simulinkmm:SimInt" Value="3"/>
 </Property>
@@ -458,7 +608,22 @@
 </Entry>
 </Value>
 </Property>
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="270"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="180"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="320"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="220"/>
+</Entry>
+</Value>
+</Property>
 		
 		<Property Name="Outputs">
 <Value xsi:type="simulinkmm:SimInt" Value="1"/>
@@ -478,7 +643,22 @@
 </Entry>
 </Value>
 </Property>
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="180"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="100"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="230"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="180"/>
+</Entry>
+</Value>
+</Property>
 		
 		<Property Name="FunctionName">
 <Value xsi:type="simulinkmm:SimString" Value="sf_sfun"/>
@@ -498,15 +678,60 @@
 		<Port PortNumber="3" Name="goal" RTWStorageClass="Auto" DataLoggingNameMode="SignalName"/>
 	      </Block>
 	      <Block BlockType="Terminator" Name=" Terminator " SID="44::26">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="460"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="191"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="480"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="209"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Block BlockType="Outport" Name="force" SID="44::5">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="460"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="101"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="480"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="119"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Block BlockType="Outport" Name="goal" SID="44::19">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="460"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="136"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="480"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="154"/>
+</Entry>
+</Value>
+</Property>
 		<Property Name="Port">
 <Value xsi:type="simulinkmm:SimInt" Value="2"/>
 </Property>
@@ -607,7 +832,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="535"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="65"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="565"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="95"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="SubSystem" xsi:type="simulinkmm:SubSystemBlock" Name="TEXT_GOAL" SID="560">
@@ -621,7 +861,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="390"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="228"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="470"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="262"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -635,11 +890,41 @@
 	      
 	      
 	      <Block BlockType="Inport" Name="In1" SID="561">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="20"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="93"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="50"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="107"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Block BlockType="Constant" Name="Constant" SID="562">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="20"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="13"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="55"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="87"/>
+</Entry>
+</Value>
+</Property>
 		
 		<Property Name="Value">
 <Value xsi:type="simulinkmm:ValueArray">
@@ -656,7 +941,22 @@
 </Property>
 	      </Block>
 	      <Block BlockType="Constant" Name="Constant1" SID="563">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="25"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="123"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="60"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="197"/>
+</Entry>
+</Value>
+</Property>
 		<Property Name="Value">
 <Value xsi:type="simulinkmm:ValueArray">
 <Entry Index="0">
@@ -672,14 +972,44 @@
 </Property>
 	      </Block>
 	      <Block BlockType="Switch" Name="Switch" SID="564">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="125"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="73"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="175"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="127"/>
+</Entry>
+</Value>
+</Property>
 		
 		
 		
 		
 	      </Block>
 	      <Block BlockType="Outport" Name="Out1" SID="565">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="200"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="93"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="230"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="107"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Line>
@@ -749,7 +1079,22 @@
 	    </System>
 	  </Block>
 	  <Block BlockType="UnitDelay" Name="Unit Delay" SID="544">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="390"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="128"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="425"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="162"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Integrator" Name="Velocity" SID="188">
@@ -763,22 +1108,82 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="450"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="65"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="480"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="95"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Outport" Name="Ball Position" SID="18">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="655"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="73"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="685"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="87"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Outport" Name="Text_Goal" SID="567">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="655"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="238"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="685"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="252"/>
+</Entry>
+</Value>
+</Property>
 	    <Property Name="Port">
 <Value xsi:type="simulinkmm:SimInt" Value="2"/>
 </Property>
 	    
 	  </Block>
 	  <Block BlockType="Outport" Name="GOAL" SID="55">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="470"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="138"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="500"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="152"/>
+</Entry>
+</Value>
+</Property>
 	    <Property Name="Port">
 <Value xsi:type="simulinkmm:SimInt" Value="3"/>
 </Property>
@@ -976,7 +1381,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="665"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="409"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="680"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="571"/>
+</Entry>
+</Value>
+</Property>
 	
 	
       </Block>
@@ -991,7 +1411,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="670"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="714"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="685"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="876"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	
@@ -1007,7 +1442,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="665"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="94"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="680"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="256"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	
@@ -1023,7 +1473,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="1050"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="91"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="1065"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="264"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	
@@ -1039,7 +1504,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="1050"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="706"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="1065"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="884"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	
@@ -1055,7 +1535,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="1075"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="296"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="1085"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="484"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	
@@ -1071,7 +1566,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="90"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="139"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="105"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="261"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	<Port PortNumber="1" Name="&lt;signal1&gt;" RTWStorageClass="Auto" DataLoggingNameMode="SignalName"/>
@@ -1088,7 +1598,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="110"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="739"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="125"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="861"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	<Port PortNumber="1" Name="&lt;signal1&gt;" RTWStorageClass="Auto" DataLoggingNameMode="SignalName"/>
@@ -1098,7 +1623,22 @@
 	<Property Name="Ports">
 <Value xsi:type="simulinkmm:ValueArray"/>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="1236"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="810"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="1380"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="915"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	
@@ -1121,7 +1661,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="230"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="39"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="435"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="166"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	
@@ -1156,16 +1711,61 @@
 	  
 	  
 	  <Block BlockType="Inport" Name="Actuator Force" SID="103">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="25"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="158"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="55"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="172"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	  </Block>
 	  <Block BlockType="Abs" Name="Abs" SID="456">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="240"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="160"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="270"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="190"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Gain" Name="Acceleration" SID="69">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="235"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="42"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="290"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="88"/>
+</Entry>
+</Value>
+</Property>
 	    <Property Name="Gain">
 <Value xsi:type="simulinkmm:SimString" Value="1/(10*P+1)"/>
 </Property>
@@ -1176,7 +1776,22 @@
 	    
 	  </Block>
 	  <Block BlockType="Gain" Name="B" SID="545">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="235"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="16"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="290"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="44"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    <Property Name="Gain">
@@ -1199,7 +1814,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="50"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="48"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="175"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="82"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -1230,7 +1860,22 @@
 	      
 	      
 	      <Block BlockType="Inport" Name="robot_position" SID="108::1">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="20"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="101"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="40"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="119"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Block BlockType="Demux" Name=" Demux " SID="108::19">
@@ -1244,7 +1889,22 @@
 </Entry>
 </Value>
 </Property>
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="270"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="160"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="320"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="200"/>
+</Entry>
+</Value>
+</Property>
 		
 		<Property Name="Outputs">
 <Value xsi:type="simulinkmm:SimInt" Value="1"/>
@@ -1264,7 +1924,22 @@
 </Entry>
 </Value>
 </Property>
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="180"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="100"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="230"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="160"/>
+</Entry>
+</Value>
+</Property>
 		
 		<Property Name="FunctionName">
 <Value xsi:type="simulinkmm:SimString" Value="sf_sfun"/>
@@ -1283,11 +1958,41 @@
 		<Port PortNumber="2" Name="collision_force" RTWStorageClass="Auto" DataLoggingNameMode="SignalName"/>
 	      </Block>
 	      <Block BlockType="Terminator" Name=" Terminator " SID="108::21">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="460"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="171"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="480"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="189"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Block BlockType="Outport" Name="collision_force" SID="108::5">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="460"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="101"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="480"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="119"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Line>
@@ -1348,7 +2053,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="200"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="222"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="235"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="258"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -1382,7 +2102,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="390"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="160"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="420"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="190"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Integrator" Name="Position" SID="71">
@@ -1396,7 +2131,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="390"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="50"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="420"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="80"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Product" Name="Product" SID="458">
@@ -1410,7 +2160,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="95"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="157"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="125"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="188"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    <Property Name="OutDataTypeStr">
 <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
@@ -1418,7 +2183,22 @@
 	    
 	  </Block>
 	  <Block BlockType="Gain" Name="Rate of Discharge" SID="102">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="305"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="152"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="360"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="198"/>
+</Entry>
+</Value>
+</Property>
 	    <Property Name="Gain">
 <Value xsi:type="simulinkmm:SimFloat" Value="-0.01"/>
 </Property>
@@ -1439,7 +2219,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="150"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="160"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="180"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="190"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -1455,7 +2250,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="195"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="55"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="215"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="75"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -1476,11 +2286,41 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="320"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="50"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="350"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="80"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Outport" Name="Robot Position" SID="73">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="525"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="58"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="555"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="72"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    <Property Name="PortDimensions">
 <Value xsi:type="simulinkmm:ValueArray">
@@ -1494,7 +2334,22 @@
 </Property>
 	  </Block>
 	  <Block BlockType="Outport" Name="Energy" SID="74">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="525"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="168"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="555"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="182"/>
+</Entry>
+</Value>
+</Property>
 	    <Property Name="Port">
 <Value xsi:type="simulinkmm:SimInt" Value="2"/>
 </Property>
@@ -1769,7 +2624,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="230"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="209"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="435"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="336"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	
@@ -1804,16 +2674,61 @@
 	  
 	  
 	  <Block BlockType="Inport" Name="Actuator Force" SID="460">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="15"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="173"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="45"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="187"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	  </Block>
 	  <Block BlockType="Abs" Name="Abs" SID="461">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="240"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="175"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="270"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="205"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Gain" Name="Acceleration" SID="462">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="235"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="57"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="290"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="103"/>
+</Entry>
+</Value>
+</Property>
 	    <Property Name="Gain">
 <Value xsi:type="simulinkmm:SimString" Value="1/(10*P+0.1)"/>
 </Property>
@@ -1824,7 +2739,22 @@
 	    
 	  </Block>
 	  <Block BlockType="Gain" Name="B" SID="546">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="235"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="21"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="290"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="49"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    <Property Name="Gain">
@@ -1847,7 +2777,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="50"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="63"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="175"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="97"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -1877,7 +2822,22 @@
 	      
 	      
 	      <Block BlockType="Inport" Name="robot_position" SID="463::1">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="20"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="101"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="40"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="119"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Block BlockType="Demux" Name=" Demux " SID="463::19">
@@ -1891,7 +2851,22 @@
 </Entry>
 </Value>
 </Property>
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="270"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="160"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="320"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="200"/>
+</Entry>
+</Value>
+</Property>
 		
 		<Property Name="Outputs">
 <Value xsi:type="simulinkmm:SimInt" Value="1"/>
@@ -1911,7 +2886,22 @@
 </Entry>
 </Value>
 </Property>
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="180"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="100"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="230"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="160"/>
+</Entry>
+</Value>
+</Property>
 		
 		<Property Name="FunctionName">
 <Value xsi:type="simulinkmm:SimString" Value="sf_sfun"/>
@@ -1930,11 +2920,41 @@
 		<Port PortNumber="2" Name="collision_force" RTWStorageClass="Auto" DataLoggingNameMode="SignalName"/>
 	      </Block>
 	      <Block BlockType="Terminator" Name=" Terminator " SID="463::21">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="460"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="171"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="480"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="189"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Block BlockType="Outport" Name="collision_force" SID="463::5">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="460"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="101"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="480"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="119"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Line>
@@ -1995,7 +3015,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="200"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="240"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="230"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="270"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -2029,7 +3064,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="410"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="175"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="440"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="205"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Integrator" Name="Position" SID="466">
@@ -2043,7 +3093,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="390"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="65"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="420"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="95"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Product" Name="Product" SID="467">
@@ -2057,7 +3122,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="95"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="172"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="125"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="203"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    <Property Name="OutDataTypeStr">
 <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
@@ -2065,7 +3145,22 @@
 	    
 	  </Block>
 	  <Block BlockType="Gain" Name="Rate of Discharge" SID="468">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="305"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="167"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="360"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="213"/>
+</Entry>
+</Value>
+</Property>
 	    <Property Name="Gain">
 <Value xsi:type="simulinkmm:SimFloat" Value="-0.01"/>
 </Property>
@@ -2086,7 +3181,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="150"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="175"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="180"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="205"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -2102,7 +3212,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="190"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="70"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="210"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="90"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -2123,11 +3248,41 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="320"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="65"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="350"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="95"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Outport" Name="Robot Position" SID="472">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="525"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="73"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="555"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="87"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    <Property Name="PortDimensions">
 <Value xsi:type="simulinkmm:ValueArray">
@@ -2141,7 +3296,22 @@
 </Property>
 	  </Block>
 	  <Block BlockType="Outport" Name="Energy" SID="473">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="525"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="183"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="555"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="197"/>
+</Entry>
+</Value>
+</Property>
 	    <Property Name="Port">
 <Value xsi:type="simulinkmm:SimInt" Value="2"/>
 </Property>
@@ -2416,7 +3586,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="230"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="659"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="435"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="786"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	
@@ -2451,15 +3636,60 @@
 	  
 	  
 	  <Block BlockType="Inport" Name="Actuator Force" SID="489">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="35"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="163"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="65"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="177"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Abs" Name="Abs" SID="490">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="260"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="165"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="290"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="195"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Gain" Name="Acceleration" SID="491">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="255"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="47"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="310"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="93"/>
+</Entry>
+</Value>
+</Property>
 	    <Property Name="Gain">
 <Value xsi:type="simulinkmm:SimString" Value="1/(10*P+1)"/>
 </Property>
@@ -2470,7 +3700,22 @@
 	    
 	  </Block>
 	  <Block BlockType="Gain" Name="B" SID="547">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="250"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="16"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="305"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="44"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    <Property Name="Gain">
@@ -2493,7 +3738,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="70"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="53"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="195"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="87"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -2523,7 +3783,22 @@
 	      
 	      
 	      <Block BlockType="Inport" Name="robot_position" SID="492::1">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="20"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="101"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="40"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="119"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Block BlockType="Demux" Name=" Demux " SID="492::19">
@@ -2537,7 +3812,22 @@
 </Entry>
 </Value>
 </Property>
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="270"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="160"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="320"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="200"/>
+</Entry>
+</Value>
+</Property>
 		
 		<Property Name="Outputs">
 <Value xsi:type="simulinkmm:SimInt" Value="1"/>
@@ -2557,7 +3847,22 @@
 </Entry>
 </Value>
 </Property>
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="180"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="100"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="230"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="160"/>
+</Entry>
+</Value>
+</Property>
 		
 		<Property Name="FunctionName">
 <Value xsi:type="simulinkmm:SimString" Value="sf_sfun"/>
@@ -2576,11 +3881,41 @@
 		<Port PortNumber="2" Name="collision_force" RTWStorageClass="Auto" DataLoggingNameMode="SignalName"/>
 	      </Block>
 	      <Block BlockType="Terminator" Name=" Terminator " SID="492::21">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="460"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="171"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="480"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="189"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Block BlockType="Outport" Name="collision_force" SID="492::5">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="460"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="101"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="480"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="119"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Line>
@@ -2641,7 +3976,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="220"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="230"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="250"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="260"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -2675,7 +4025,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="430"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="165"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="460"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="195"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Integrator" Name="Position" SID="495">
@@ -2689,7 +4054,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="410"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="55"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="440"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="85"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Product" Name="Product" SID="496">
@@ -2703,7 +4083,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="115"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="162"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="145"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="193"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    <Property Name="OutDataTypeStr">
 <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
@@ -2711,7 +4106,22 @@
 	    
 	  </Block>
 	  <Block BlockType="Gain" Name="Rate of Discharge" SID="497">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="325"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="157"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="380"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="203"/>
+</Entry>
+</Value>
+</Property>
 	    <Property Name="Gain">
 <Value xsi:type="simulinkmm:SimFloat" Value="-0.01"/>
 </Property>
@@ -2732,7 +4142,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="170"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="165"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="200"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="195"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -2748,7 +4173,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="210"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="60"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="230"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="80"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -2769,11 +4209,41 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="340"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="55"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="370"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="85"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Outport" Name="Robot Position" SID="501">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="545"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="63"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="575"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="77"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    <Property Name="PortDimensions">
 <Value xsi:type="simulinkmm:ValueArray">
@@ -2787,7 +4257,22 @@
 </Property>
 	  </Block>
 	  <Block BlockType="Outport" Name="Energy" SID="502">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="545"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="173"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="575"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="187"/>
+</Entry>
+</Value>
+</Property>
 	    <Property Name="Port">
 <Value xsi:type="simulinkmm:SimInt" Value="2"/>
 </Property>
@@ -3062,7 +4547,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="230"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="819"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="435"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="946"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	
@@ -3097,15 +4597,60 @@
 	  
 	  
 	  <Block BlockType="Inport" Name="Actuator Force" SID="504">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="20"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="168"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="50"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="182"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Abs" Name="Abs" SID="505">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="245"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="170"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="275"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="200"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Gain" Name="Acceleration" SID="506">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="240"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="52"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="295"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="98"/>
+</Entry>
+</Value>
+</Property>
 	    <Property Name="Gain">
 <Value xsi:type="simulinkmm:SimString" Value="1/(10*P+1)"/>
 </Property>
@@ -3116,7 +4661,22 @@
 	    
 	  </Block>
 	  <Block BlockType="Gain" Name="B" SID="548">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="250"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="21"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="305"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="49"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    <Property Name="Gain">
@@ -3139,7 +4699,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="55"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="58"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="180"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="92"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -3169,7 +4744,22 @@
 	      
 	      
 	      <Block BlockType="Inport" Name="robot_position" SID="507::1">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="20"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="101"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="40"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="119"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Block BlockType="Demux" Name=" Demux " SID="507::19">
@@ -3183,7 +4773,22 @@
 </Entry>
 </Value>
 </Property>
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="270"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="160"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="320"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="200"/>
+</Entry>
+</Value>
+</Property>
 		
 		<Property Name="Outputs">
 <Value xsi:type="simulinkmm:SimInt" Value="1"/>
@@ -3203,7 +4808,22 @@
 </Entry>
 </Value>
 </Property>
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="180"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="100"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="230"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="160"/>
+</Entry>
+</Value>
+</Property>
 		
 		<Property Name="FunctionName">
 <Value xsi:type="simulinkmm:SimString" Value="sf_sfun"/>
@@ -3222,11 +4842,41 @@
 		<Port PortNumber="2" Name="collision_force" RTWStorageClass="Auto" DataLoggingNameMode="SignalName"/>
 	      </Block>
 	      <Block BlockType="Terminator" Name=" Terminator " SID="507::21">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="460"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="171"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="480"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="189"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Block BlockType="Outport" Name="collision_force" SID="507::5">
-		
+		<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="460"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="101"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="480"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="119"/>
+</Entry>
+</Value>
+</Property>
 		
 	      </Block>
 	      <Line>
@@ -3287,7 +4937,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="205"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="235"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="235"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="265"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -3321,7 +4986,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="415"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="170"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="445"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="200"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Integrator" Name="Position" SID="510">
@@ -3335,7 +5015,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="395"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="60"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="425"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="90"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Product" Name="Product" SID="511">
@@ -3349,7 +5044,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="100"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="167"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="130"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="198"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    <Property Name="OutDataTypeStr">
 <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
@@ -3357,7 +5067,22 @@
 	    
 	  </Block>
 	  <Block BlockType="Gain" Name="Rate of Discharge" SID="512">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="310"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="162"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="365"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="208"/>
+</Entry>
+</Value>
+</Property>
 	    <Property Name="Gain">
 <Value xsi:type="simulinkmm:SimFloat" Value="-0.01"/>
 </Property>
@@ -3378,7 +5103,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="155"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="170"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="185"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="200"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -3394,7 +5134,22 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="195"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="65"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="215"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="85"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    
 	    
@@ -3415,11 +5170,41 @@
 </Entry>
 </Value>
 </Property>
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="325"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="60"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="355"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="90"/>
+</Entry>
+</Value>
+</Property>
 	    
 	  </Block>
 	  <Block BlockType="Outport" Name="Robot Position" SID="516">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="530"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="68"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="560"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="82"/>
+</Entry>
+</Value>
+</Property>
 	    
 	    <Property Name="PortDimensions">
 <Value xsi:type="simulinkmm:ValueArray">
@@ -3433,7 +5218,22 @@
 </Property>
 	  </Block>
 	  <Block BlockType="Outport" Name="Energy" SID="517">
-	    
+	    <Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="530"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="178"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="560"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="192"/>
+</Entry>
+</Value>
+</Property>
 	    <Property Name="Port">
 <Value xsi:type="simulinkmm:SimInt" Value="2"/>
 </Property>
@@ -3698,7 +5498,22 @@
 	</System>
       </Block>
       <Block BlockType="Stop" Name="Stop Simulation" SID="40">
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="1255"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="633"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="1380"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="757"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	
@@ -3716,7 +5531,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="825"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="89"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="1000"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="261"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	
@@ -3772,7 +5602,22 @@
 </Entry>
 </Value>
 </Property>
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="820"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="705"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="995"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="885"/>
+</Entry>
+</Value>
+</Property>
 	
 	
 	
@@ -3818,11 +5663,41 @@
 	
       </Block>
       <Block BlockType="UnitDelay" Name="Unit Delay" SID="630">
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="1170"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="678"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="1205"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="712"/>
+</Entry>
+</Value>
+</Property>
 	
       </Block>
       <Block BlockType="UnitDelay" Name="Unit Delay1" SID="631">
-	
+	<Property Name="Position">
+<Value xsi:type="simulinkmm:ValueArray">
+<Entry Index="0">
+<Value xsi:type="simulinkmm:SimInt" Value="1110"/>
+</Entry>
+<Entry Index="1">
+<Value xsi:type="simulinkmm:SimInt" Value="678"/>
+</Entry>
+<Entry Index="2">
+<Value xsi:type="simulinkmm:SimInt" Value="1145"/>
+</Entry>
+<Entry Index="3">
+<Value xsi:type="simulinkmm:SimInt" Value="712"/>
+</Entry>
+</Value>
+</Property>
 	
       </Block>
       <Line>

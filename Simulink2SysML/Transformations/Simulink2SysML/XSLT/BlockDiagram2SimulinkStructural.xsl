@@ -7,7 +7,7 @@
   <xsl:variable name="ChildBlockTypeList" select="'|SubSystem|S-Function|BusSelector|ModelReference|'"/>
   <xsl:variable name="SkippedElementList" select="'|GraphicalInterface|ConfigManagerSettings|EditorSettings|SimulationSettings|Verification|ExternalMode|EngineSettings|ModelReferenceSettings|ConfigurationSet|ConcurrentExecutionSettings|SystemDefaults|BlockDefaults|AnnotationDefaults|LineDefaults|Stateflow|'"/><!-- Items being listed here that may need to be unskipped later SystemDefaults|BlockDefaults|AnnotationDefaults|LineDefaults -->
   <xsl:variable name="DefaultBlockPropertyList" select="'|Outputs|Port|PortDimensions|OutDataTypeStr|BusOutputAsStruct|FunctionName|PortCounts|'"/><!-- May need to add to this list as more block types are researched -->
-  <xsl:variable name="BlockPropertyList" select="'|Outputs|Port|PortDimensions|OutDataTypeStr|BusOutputAsStruct|FunctionName|PortCounts|Ports|Tag|Value|relop|const|Gain|'"/><!-- May need to add to this list as more block types are researched -->
+  <xsl:variable name="BlockPropertyList" select="'|Outputs|Port|PortDimensions|OutDataTypeStr|BusOutputAsStruct|FunctionName|PortCounts|Ports|Tag|Value|relop|const|Gain|Position|'"/><!-- May need to add to this list as more block types are researched -->
   <xsl:variable name="SystemPropertyList" select="'||'"/><!-- May need to add to this list as more block types are researched -->
 
   <xsl:template name="ProcessPrimitiveType">

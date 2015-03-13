@@ -7,7 +7,7 @@
   <xsl:variable name="ChildBlockTypeList" select="'|SubSystem|S-Function|BusSelector|ModelReference|'"/>
   <xsl:variable name="SkippedElementList" select="'|GraphicalInterface|ConfigManagerSettings|EditorSettings|SimulationSettings|Verification|ExternalMode|EngineSettings|ModelReferenceSettings|ConfigurationSet|ConcurrentExecutionSettings|SystemDefaults|BlockDefaults|AnnotationDefaults|LineDefaults|Stateflow|'"/><!-- Items being listed here that may need to be unskipped later SystemDefaults|BlockDefaults|AnnotationDefaults|LineDefaults -->
   <xsl:variable name="DefaultBlockPropertyList" select="'|Outputs|Port|PortDimensions|OutDataTypeStr|BusOutputAsStruct|FunctionName|PortCounts|'"/><!-- May need to add to this list as more block types are researched -->
-  <xsl:variable name="BlockPropertyList" select="'|Ports|Tag|'"/><!-- May need to add to this list as more block types are researched -->
+  <xsl:variable name="BlockPropertyList" select="'|Outputs|Port|PortDimensions|OutDataTypeStr|BusOutputAsStruct|FunctionName|PortCounts|Ports|Tag|Value|relop|const|Gain|Position|'"/><!-- May need to add to this list as more block types are researched -->
   <xsl:variable name="SystemPropertyList" select="'||'"/><!-- May need to add to this list as more block types are researched -->
 
   <xsl:template name="ProcessPrimitiveType">
@@ -204,8 +204,8 @@
   <xsl:template match="P">
     <xsl:variable name="name" select="@Name"/>
     <xsl:choose>
-      <xsl:when test="not(contains($DefaultBlockPropertyList, concat('|', $name, '|'))) and local-name(../parent::*)='BlockParameterDefaults' or local-name(./parent::*)='Model'"></xsl:when>
-      <xsl:when test="not(contains(concat($BlockPropertyList, $DefaultBlockPropertyList), concat('|', $name, '|'))) and local-name(./parent::*)='Block'"></xsl:when>
+      <xsl:when test="not(contains($BlockPropertyList, concat('|', $name, '|'))) and local-name(../parent::*)='BlockParameterDefaults' or local-name(./parent::*)='Model'"></xsl:when>
+      <xsl:when test="not(contains($BlockPropertyList, concat('|', $name, '|'))) and local-name(./parent::*)='Block'"></xsl:when>
       <xsl:when test="not(contains($SystemPropertyList, concat('|', $name, '|'))) and local-name(./parent::*)='System'"></xsl:when>
       <xsl:otherwise>
         <xsl:element name="Property">

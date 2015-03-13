@@ -29,6 +29,7 @@ rule SubSystemBlock2System {
 			ID <- sub.SID,
 			Block <- sub.System.Block,
 			Property <- sub.Property->
+				union(sub.Property->select(pos | pos.isFormattedPositionProperty)->collect(e | e.Value.Entry))->
 				union(sub.System.Property)->
 				union(Source!Property.allInstancesFrom('defaults')->
 					select(dp | dp.refImmediateComposite().Type = sub.BlockType
@@ -47,6 +48,7 @@ rule BlockWithSimPort2Block {
 			Name <- b.Name,
 			ID <- b.SID,
 			Property <- b.Property->
+				union(b.Property->select(pos | pos.isFormattedPositionProperty)->collect(e | e.Value.Entry))->
 				union(Source!Property.allInstancesFrom('defaults')->
 					select(dp | dp.refImmediateComposite().Type = b.BlockType
 						and not b.Property->exists(bp | bp.Name = dp.Name))->
@@ -64,6 +66,7 @@ rule BlockWithListPort2Block {
 			Name <- b.Name,
 			ID <- b.SID,
 			Property <- b.Property->
+				union(b.Property->select(pos | pos.isFormattedPositionProperty)->collect(e | e.Value.Entry))->
 				union(Source!Property.allInstancesFrom('defaults')->
 					select(dp | dp.refImmediateComposite().Type = b.BlockType
 						and not b.Property->exists(bp | bp.Name = dp.Name))->
@@ -82,6 +85,7 @@ rule BlockWithoutSimListPort2Block {
 			Name <- b.Name,
 			ID <- b.SID,
 			Property <- b.Property->
+				union(b.Property->select(pos | pos.isFormattedPositionProperty)->collect(e | e.Value.Entry))->
 				union(Source!Property.allInstancesFrom('defaults')->
 					select(dp | dp.refImmediateComposite().Type = b.BlockType
 						and not b.Property->exists(bp | bp.Name = dp.Name))->
@@ -144,14 +148,27 @@ rule SimpleProperty2Property {
 
 rule ArrayProperty2Property {
 	from
-		p: Simulink!Property (not p.isSimpleProperty and p.shouldBeProcessed)
+		p: Simulink!Property (not p.isSimpleProperty and p.shouldBeProcessed and not p.isFormattedPositionProperty)
 	to
 		srcp: Source!Property(
 			Name <- p.getSystemProperty + p.Name,
-			Type <- 'Array' + p.Value.getArrayType,
+			Type <- 'Array:' + p.Value.getArrayType,
 			Value <- p.Value.arrayToString
 		)
 }
+
+rule PositionEntry2Property {
+	from
+		e: Simulink!Entry (e.refImmediateComposite().refImmediateComposite().isFormattedPositionProperty)
+	to
+		p: Source!Property(
+			Name <- 'Position-' + thisModule.positionNameList.at(e.Index + 1),
+			Type <- e.refImmediateComposite().getArrayType,
+			Value <- e.refImmediateComposite().getPositionValue(e.Index).toString()
+		)
+}
+
+helper def: positionNameList : Sequence(String) = Sequence{'x', 'y', 'width', 'height'};
 
 helper context Simulink!Property def: getSystemProperty: String =
 	if self.refImmediateComposite().oclIsTypeOf(Simulink!System) then
@@ -162,6 +179,13 @@ helper context Simulink!Property def: getSystemProperty: String =
 
 helper context Simulink!Property def: isSimpleProperty: Boolean =
 	not self.Value.oclIsKindOf(Simulink!ValueArray);
+
+helper context Simulink!Property def: isFormattedPositionProperty: Boolean =
+	if self.Name = 'Position' then
+		self.Value.Entry->size() = thisModule.positionNameList.size()
+	else
+		false
+	endif;
 
 helper context Simulink!Property def: shouldBeProcessed: Boolean =
 	not (self.refImmediateComposite().oclIsTypeOf(Simulink!BlockParams)
@@ -194,16 +218,16 @@ helper context Simulink!List def: getListPortType: String =
 
 helper context Simulink!Value def: getArrayType: String =
 	if self.Entry->collect(e | e.Value.oclIsKindOf(Simulink!SimString))->includes(true) then
-		':String'
+		'String'
 	else
 		if self.Entry->collect(e | e.Value.oclIsKindOf(Simulink!SimBool))->includes(true) then
-			':Boolean'
+			'Boolean'
 		else
 			if self.Entry->collect(e | e.Value.oclIsKindOf(Simulink!SimFloat))->includes(true) then
-				':Float'
+				'Float'
 			else
 				if self.Entry->collect(e | e.Value.oclIsKindOf(Simulink!SimInt))->includes(true) then
-					':Int'
+					'Int'
 				else
 					''
 				endif
@@ -221,6 +245,26 @@ helper context Simulink!Value def: arrayToString: String =
 					''
 				endif
 				+ ent.Value.Value.toString()) + ']';
+
+helper context Simulink!Value def: getPositionValue(i : Integer): Integer =
+	if i <= 1 then
+		self.getEntryValue(i)
+	else
+		self.getEntryValue(i) - self.getEntryValue(i - 2)
+	endif;
+
+helper context Simulink!Value def: getEntryValue(i : Integer): Integer =
+	self.Entry->iterate(ent; val : Integer = 0 |
+		if ent.Index = i then
+			ent.Value.Value
+		else
+			val
+		endif);
+--	if self.Index <= 1 then
+--		self.Value.Value.toString();
+--	else
+--		(self.Value.Value - self.refImmediateComposite()
+--	endif;
 
 helper context Simulink!Property def: getPropertyType: String =
 	if self.Value.oclIsKindOf(Simulink!ValueArray) then

@@ -38,7 +38,7 @@ rule Port2Port {
 		srcp: Source!Port (not srcp.refImmediateComposite().isPortBlock) --Assumes Block is parent this is important for Diagram display creation
 	to
 		sysp: SysML!Port (
-			name <- thisModule.delimChar + srcp.Direction + thisModule.delimChar + srcp.Name,
+			name <- thisModule.delimChar + srcp.Direction + thisModule.delimChar + srcp.Name + ' ',
 			type<-SysML!DataType.allInstancesFrom('prop')->any(p | p.name = srcp.Type)
 		)
 	do {
@@ -124,6 +124,49 @@ rule Property2Property {
 	}
 }
 
+rule Block2Block {
+	from
+		srcb: Source!Block (not srcb.isPortBlock and not srcb.isFunction)
+	to
+		sysb: SysML!Class (
+			name <- srcb.Name,
+			ownedAttribute <- srcb.Port
+				->append(thisModule.ChildAssoc(srcb))
+				->union(srcb.Property)
+		),
+		bb : SysML!Block (
+			base_Class<-sysb
+		)		
+	do {
+		thisModule.newBlock(srcb);
+		if (not thisModule.blockList.includes(srcb.refImmediateComposite().ID)) {
+			thisModule.blockList<-thisModule.blockList.append(srcb.refImmediateComposite().ID);
+			thisModule.blockPropertyCount<-thisModule.blockPropertyCount.append(thisModule.blockPropInitCount);
+			thisModule.blockOperationCount<-thisModule.blockOperationCount.append(thisModule.blockOpInitCount);
+			thisModule.blockHeight<-thisModule.blockHeight.append(thisModule.blockInitHeight);
+			thisModule.inPortBDDListNextY<-thisModule.inPortBDDListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortBDDListNextY<-thisModule.outPortBDDListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDParentListNextY<-thisModule.inPortIBDParentListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDParentListNextY<-thisModule.outPortIBDParentListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDChildListNextY<-thisModule.inPortIBDChildListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDChildListNextY<-thisModule.outPortIBDChildListNextY.append(thisModule.outPortInitY);
+		}
+		if (not thisModule.blockList.includes(srcb.ID)) {
+			thisModule.blockList<-thisModule.blockList.append(srcb.ID);
+			thisModule.blockPropertyCount<-thisModule.blockPropertyCount.append(thisModule.blockPropInitCount);
+			thisModule.blockOperationCount<-thisModule.blockOperationCount.append(thisModule.blockOpInitCount);
+			thisModule.blockHeight<-thisModule.blockHeight.append(thisModule.blockInitHeight);
+			thisModule.inPortBDDListNextY<-thisModule.inPortBDDListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortBDDListNextY<-thisModule.outPortBDDListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDParentListNextY<-thisModule.inPortIBDParentListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDParentListNextY<-thisModule.outPortIBDParentListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDChildListNextY<-thisModule.inPortIBDChildListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDChildListNextY<-thisModule.outPortIBDChildListNextY.append(thisModule.outPortInitY);
+		}
+		thisModule.CreateBDDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_classifier')->first(), sysb, true, srcb.ID);
+	}
+}
+
 rule FunctionBlock2Block {
 	from
 		srcb: Source!Block (not srcb.isPortBlock and srcb.isFunction)
@@ -151,9 +194,93 @@ rule FunctionBlock2Block {
 			type<-'PapyrusUMLActivityDiagram',
 			name<-srcb.Name + ' Function'
 		)
-		do {
-			thisModule.CreateBDDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_classifier')->first(), sysb, true, srcb.ID);
+	do {
+		if (not thisModule.blockList.includes(srcb.refImmediateComposite().ID)) {
+			thisModule.blockList<-thisModule.blockList.append(srcb.refImmediateComposite().ID);
+			thisModule.blockPropertyCount<-thisModule.blockPropertyCount.append(thisModule.blockPropInitCount);
+			thisModule.blockOperationCount<-thisModule.blockOperationCount.append(thisModule.blockOpInitCount);
+			thisModule.blockHeight<-thisModule.blockHeight.append(thisModule.blockInitHeight);
+			thisModule.inPortBDDListNextY<-thisModule.inPortBDDListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortBDDListNextY<-thisModule.outPortBDDListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDParentListNextY<-thisModule.inPortIBDParentListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDParentListNextY<-thisModule.outPortIBDParentListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDChildListNextY<-thisModule.inPortIBDChildListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDChildListNextY<-thisModule.outPortIBDChildListNextY.append(thisModule.outPortInitY);
 		}
+		if (not thisModule.blockList.includes(srcb.ID)) {
+			thisModule.blockList<-thisModule.blockList.append(srcb.ID);
+			thisModule.blockPropertyCount<-thisModule.blockPropertyCount.append(thisModule.blockPropInitCount);
+			thisModule.blockOperationCount<-thisModule.blockOperationCount.append(thisModule.blockOpInitCount);
+			thisModule.blockHeight<-thisModule.blockHeight.append(thisModule.blockInitHeight);
+			thisModule.inPortBDDListNextY<-thisModule.inPortBDDListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortBDDListNextY<-thisModule.outPortBDDListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDParentListNextY<-thisModule.inPortIBDParentListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDParentListNextY<-thisModule.outPortIBDParentListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDChildListNextY<-thisModule.inPortIBDChildListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDChildListNextY<-thisModule.outPortIBDChildListNextY.append(thisModule.outPortInitY);
+		}
+		thisModule.CreateBDDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_classifier')->first(), sysb, true, srcb.ID);
+	}
+}
+
+rule ChildSystem2Block {
+	from
+		srcs: Source!System (srcs.refImmediateComposite().oclIsTypeOf(Source!System))
+	to
+		sysb: SysML!Class (
+			name <- srcs.Name,
+			ownedAttribute <- srcs.Port->union(srcs.Block->select(p | p.isPortBlock))
+				->union(srcs.Block->select(bnp | not bnp.isPortBlock)->collect(b | thisModule.ParentAssoc(b)))
+				->union(srcs.Property)
+				->append(thisModule.ChildAssoc(srcs))
+--			ownedAttribute <- srcs.Port
+--				->append(thisModule.ChildAssoc(srcs))
+--				->union(srcs.Block->select(p | p.isPortBlock))
+--				->union(srcs.Block->select(bnp | not bnp.isPortBlock)->collect(b | thisModule.ParentAssoc(b)))
+--				->union(srcs.Property)
+		),
+		bb : SysML!Block (
+			base_Class<-sysb
+		)
+	do {
+		if (not thisModule.blockList.includes(srcs.refImmediateComposite().ID)) {
+			thisModule.blockList<-thisModule.blockList.append(srcs.refImmediateComposite().ID);
+			thisModule.blockPropertyCount<-thisModule.blockPropertyCount.append(thisModule.blockPropInitCount);
+			thisModule.blockOperationCount<-thisModule.blockOperationCount.append(thisModule.blockOpInitCount);
+			thisModule.blockHeight<-thisModule.blockHeight.append(thisModule.blockInitHeight);
+			thisModule.inPortBDDListNextY<-thisModule.inPortBDDListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortBDDListNextY<-thisModule.outPortBDDListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDParentListNextY<-thisModule.inPortIBDParentListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDParentListNextY<-thisModule.outPortIBDParentListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDChildListNextY<-thisModule.inPortIBDChildListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDChildListNextY<-thisModule.outPortIBDChildListNextY.append(thisModule.outPortInitY);
+		}
+		if (not thisModule.blockList.includes(srcs.ID)) {
+			thisModule.blockList<-thisModule.blockList.append(srcs.ID);
+			thisModule.blockPropertyCount<-thisModule.blockPropertyCount.append(thisModule.blockPropInitCount);
+			thisModule.blockOperationCount<-thisModule.blockOperationCount.append(thisModule.blockOpInitCount);
+			thisModule.blockHeight<-thisModule.blockHeight.append(thisModule.blockInitHeight);
+			thisModule.inPortBDDListNextY<-thisModule.inPortBDDListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortBDDListNextY<-thisModule.outPortBDDListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDParentListNextY<-thisModule.inPortIBDParentListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDParentListNextY<-thisModule.outPortIBDParentListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDChildListNextY<-thisModule.inPortIBDChildListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDChildListNextY<-thisModule.outPortIBDChildListNextY.append(thisModule.outPortInitY);
+		}
+		thisModule.CreateBDDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_classifier')->first(), sysb, false, srcs.ID);
+		thisModule.CreateBDDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_classifier')->first(), sysb, true, srcs.ID);
+		for (c in srcs.Block) {
+			if (not c.isPortBlock) {
+				thisModule.CreateIBDChildBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_blockproperty_as_composite')->first(), thisModule.resolveTemp(c, 'sysb'), srcs.ID, c);
+			}
+		}
+		thisModule.CreateIBDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_composite')->first(), sysb, srcs.ID);
+--		for (con in srcs.Connection) {
+			--thisModule.Connection2Connector(con);
+--			thisModule.resolveTemp(con, 'sysc').name.println();
+--		}
+		thisModule.CreateIBDDiag(SysMLnot!Diagram.allInstancesFrom('notDef')->select(s | s.type='InternalBlock')->first(), srcs, srcs.Name);
+	}
 }
 
 rule System2Block {
@@ -171,18 +298,50 @@ rule System2Block {
 			base_Class<-sysb
 		)
 	do {
+--		if (not thisModule.blockList.includes(srcs.ID)) {
+--			thisModule.blockList<-thisModule.blockList.append(srcs.ID);
+--			thisModule.blockPropertyCount<-thisModule.blockPropertyCount.append(thisModule.blockPropInitCount);
+--			thisModule.blockOperationCount<-thisModule.blockOperationCount.append(thisModule.blockOpInitCount);
+--			thisModule.blockHeight<-thisModule.blockHeight.append(thisModule.blockInitHeight);
+--			thisModule.inPortBDDListNextY<-thisModule.inPortBDDListNextY.append(thisModule.inPortInitY);
+--			thisModule.outPortBDDListNextY<-thisModule.outPortBDDListNextY.append(thisModule.outPortInitY);
+--			thisModule.inPortIBDParentListNextY<-thisModule.inPortIBDParentListNextY.append(thisModule.inPortInitY);
+--			thisModule.outPortIBDParentListNextY<-thisModule.outPortIBDParentListNextY.append(thisModule.outPortInitY);
+--			thisModule.inPortIBDChildListNextY<-thisModule.inPortIBDChildListNextY.append(thisModule.inPortInitY);
+--			thisModule.outPortIBDChildListNextY<-thisModule.outPortIBDChildListNextY.append(thisModule.outPortInitY);
+--		}
 		thisModule.CreateBDDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_classifier')->first(), sysb, false, srcs.ID);
 		for (c in srcs.Block) {
 			if (not c.isPortBlock) {
-				thisModule.CreateIBDChildBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_blockproperty_as_composite')->first(), thisModule.resolveTemp(c, 'sysb'), srcs.ID, c.ID);
+				thisModule.CreateIBDChildBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_blockproperty_as_composite')->first(), thisModule.resolveTemp(c, 'sysb'), srcs.ID, c);
 			}
 		}
 		thisModule.CreateIBDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_composite')->first(), sysb, srcs.ID);
-		for (con in srcs.Connection) {
+		--for (con in srcs.Connection) {
 			--thisModule.Connection2Connector(con);
 --			thisModule.resolveTemp(con, 'sysc').name.println();
-		}
+		--}
 		thisModule.CreateIBDDiag(SysMLnot!Diagram.allInstancesFrom('notDef')->select(s | s.type='InternalBlock')->first(), srcs, srcs.Name);
+	}
+}
+
+rule newBlock (i : Source!Component) {
+	do {
+		if (i.refImmediateComposite().oclIsKindOf(Source!Component)) {
+			thisModule.newBlock(i.refImmediateComposite());
+		}
+		if (not thisModule.blockList.includes(i.ID)) {
+			thisModule.blockList<-thisModule.blockList.append(i.ID);
+			thisModule.blockPropertyCount<-thisModule.blockPropertyCount.append(thisModule.blockPropInitCount);
+			thisModule.blockOperationCount<-thisModule.blockOperationCount.append(thisModule.blockOpInitCount);
+			thisModule.blockHeight<-thisModule.blockHeight.append(thisModule.blockInitHeight);
+			thisModule.inPortBDDListNextY<-thisModule.inPortBDDListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortBDDListNextY<-thisModule.outPortBDDListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDParentListNextY<-thisModule.inPortIBDParentListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDParentListNextY<-thisModule.outPortIBDParentListNextY.append(thisModule.outPortInitY);
+			thisModule.inPortIBDChildListNextY<-thisModule.inPortIBDChildListNextY.append(thisModule.inPortInitY);
+			thisModule.outPortIBDChildListNextY<-thisModule.outPortIBDChildListNextY.append(thisModule.outPortInitY);
+		}
 	}
 }
 
@@ -432,7 +591,7 @@ rule CreateIBDBlockShape(src : SysMLnot!Shape, ele : SysML!Class, bid : String) 
 		)
 }
 
-rule CreateIBDChildBlockShape(src : SysMLnot!Shape, ele : SysML!Class, pid : String, bid : String) {
+rule CreateIBDChildBlockShape(src : SysMLnot!Shape, ele : SysML!Class, pid : String, b : Source!Block) {
 	to
 		trg: SysMLnot!Shape (
 			type<-thisModule.delimChar + pid + thisModule.delimChar + thisModule.IBDID + '(C)' + thisModule.delimChar + src.type,
@@ -450,10 +609,10 @@ rule CreateIBDChildBlockShape(src : SysMLnot!Shape, ele : SysML!Class, pid : Str
 			layoutConstraint<-bnds
 		),
 		bnds: SysMLnot!Bounds(
-			x<-src.layoutConstraint.x,
-			y<-src.layoutConstraint.y,
-			width<-src.layoutConstraint.width,
-			height<-src.layoutConstraint.height
+			x<-b.getPositionValue('x'),
+			y<-b.getPositionValue('y'),
+			width<-b.getPositionValue('width'),
+			height<-b.getPositionValue('height')
 		)
 }
 
@@ -576,48 +735,6 @@ rule CreateIBDDiag(src : SysMLnot!Diagram, obj : SysML!Object, diagName : String
 			element<-obj,
 			edges<-SysMLnot!Connector.allInstancesFrom('nota')->select(e | e.type.startsWith(thisModule.delimChar + thisModule.IBDID + thisModule.delimChar + diagName + thisModule.delimChar))
 		)
-}
-
-rule ChildSystem2Block {
-	from
-		srcs: Source!System (srcs.refImmediateComposite().oclIsTypeOf(Source!System))
-	to
-		sysb: SysML!Class (
-			name <- srcs.Name,
-			ownedAttribute <- srcs.Port->union(srcs.Block->select(p | p.isPortBlock))
-				->union(srcs.Block->select(bnp | not bnp.isPortBlock)->collect(b | thisModule.ParentAssoc(b)))
-				->append(assoc)
-				->union(srcs.Property)
-		),
-		assoc: SysML!Property (
-			name<-srcs.refImmediateComposite().Name.toLower(),
-			type<-srcs.refImmediateComposite()
-		),
-		bb : SysML!Block (
-			base_Class<-sysb
-		)
-	do {
-		thisModule.CreateIBDDiag(SysMLnot!Diagram.allInstancesFrom('notDef')->select(s | s.type='InternalBlock')->first(), srcs, srcs.Name, thisModule.IBDID);
-	}
-}
-
-rule Block2Block {
-	from
-		srcb: Source!Block (not srcb.isPortBlock and not srcb.isFunction)
-	to
-		sysb: SysML!Class (
-			name <- srcb.Name,
-			ownedAttribute <- srcb.Port
-				->append(assoc)
-				->union(srcb.Property)
-		),
-		assoc: SysML!Property (
-			name<-srcb.refImmediateComposite().Name.toLower(),
-			type<-srcb.refImmediateComposite()
-		),
-		bb : SysML!Block (
-			base_Class<-sysb
-		)		
 }
 
 lazy rule ChildAssoc {
@@ -782,6 +899,9 @@ helper context Source!Component def: isPortBlock: Boolean =
 		self.Type = 'Inport' or self.Type = 'Outport'
 	endif;
 
+helper context Source!Component def: getPositionValue(sel : String) : Integer =
+	self.Property->select(p | p.Name = 'Position-' + sel)->collect(v | v.Value)->first().toInteger();
+
 helper context Source!Block def: isFunction: Boolean =
 	self.Type = 'Function';
 
@@ -792,7 +912,7 @@ helper context Source!System def: getFamily : Set(Source!Component) =
 helper context Source!System def: getSystems : Set(Source!System) =
 	Set{self, self.Block->select(s | s.oclIsTypeOf(Source!System))->collect(sc | sc.getSystems)};
 
-helper def : getSysMLPort(portSrc : SysML!Port) : SysML!Port =
+helper def : getSysMLPort(portSrc : Source!Port) : SysML!Port =
 	if portSrc.refImmediateComposite().isPortBlock then --was a portblock is now a port
 		thisModule.resolveTemp(portSrc.refImmediateComposite(), 'sysp')
 	else

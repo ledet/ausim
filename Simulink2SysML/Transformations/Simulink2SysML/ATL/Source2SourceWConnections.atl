@@ -25,8 +25,24 @@ rule System2System {
 			Block <- bi.Block,
 			Port <- bi.Port,
 			Connection <- Simulink!Line.allInstancesFrom('simLines')->
-					select(sl | sl.getID = bi.ID)->
-					collect(slp | thisModule.Line2Connection(slp))
+					select(sl | sl.getIDLine = bi.ID and sl.Branch->size() = 0)->
+					collect(slp | thisModule.Line2Connection(slp))->
+					union(Simulink!Branch.allInstancesFrom('simLines')->
+					select(sb | sb.getIDBranch = bi.ID and sb.Branch->size() = 0)->
+					collect(sbp | thisModule.Branch2Connection(sbp)))
+		)
+}
+
+lazy rule Branch2Connection {
+	from
+		b: Simulink!Branch
+	to
+		c: Source!Connection (
+			Name <- b.Property->select(sb | sb.Name = 'Name')->
+				collect(sbv | sbv.Value.Value)->any(sbs | true),
+			src <- thisModule.findPort(b.getSrc),
+			dst <- thisModule.findPort(b.Property->select(db | db.Name.toLower() = 'dst')->
+				collect(dbv | dbv.Value.Value)->any(dbs | true))
 		)
 }
 
@@ -44,11 +60,26 @@ lazy rule Line2Connection {
 		)
 }
 
-helper context Simulink!Line def: getID: String =
+helper context Simulink!Line def: getIDLine: String =
 	if self.refImmediateComposite().refImmediateComposite().oclIsTypeOf(Simulink!Model) then
 		'Root'
 	else
 		self.refImmediateComposite().refImmediateComposite().SID
+	endif;
+
+helper context Simulink!Branch def: getIDBranch: String =
+	if self.refImmediateComposite().oclIsTypeOf(Simulink!Line) then
+		self.refImmediateComposite().getIDLine
+	else
+		self.refImmediateComposite().getIDBranch
+	endif;
+
+helper context Simulink!Branch def: getSrc: String =
+	if self.refImmediateComposite().oclIsTypeOf(Simulink!Line) then
+		self.refImmediateComposite().Property->select(sl | sl.Name.toLower() = 'src')->
+				collect(slv | slv.Value.Value)->any(sls | true)
+	else
+		self.refImmediateComposite().getSrc
 	endif;
 
 helper def: findPort(pName : String): Source!Port =
