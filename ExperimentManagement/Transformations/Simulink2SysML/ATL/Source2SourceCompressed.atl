@@ -44,7 +44,7 @@ rule System2FunctionBlock {
 
 rule Block2Block {
 	from
-		sblk: Source!Block (not sblk.refImmediateComposite().isFunctionBlock)
+		sblk: Source!Block (not sblk.refImmediateComposite().isFunctionBlock and not sblk.isPortBlock)
 	to
 		tblk: Source!Block (
 			Name <- sblk.Name,
@@ -53,7 +53,6 @@ rule Block2Block {
 			Property <- sblk.Property,
 			Port <- sblk.Port
 		)
-		
 }
 
 rule Property2Property {
@@ -71,20 +70,27 @@ helper context Source!Property def: transProperty: Boolean =
 	if not self.refImmediateComposite().refImmediateComposite().oclIsTypeOf(Source!System) then
 		true
 	else
-		not self.refImmediateComposite().refImmediateComposite().isFunctionBlock
+		not self.refImmediateComposite().refImmediateComposite().isFunctionBlock and not self.refImmediateComposite().isPortBlock
 	endif;
 
 rule Port2Port {
 	from
-		sprt: Source!Port (not sprt.refImmediateComposite().oclIsTypeOf(Source!System) and not sprt.refImmediateComposite().refImmediateComposite().isFunctionBlock)
+		sprt: Source!Port (not sprt.refImmediateComposite().oclIsTypeOf(Source!System) and not sprt.isPartOfFunction and not sprt.refImmediateComposite().isPortBlock)
 	to
 		tprt: Source!Port (
 			Direction <- sprt.Direction,
 			Num <- sprt.Num,
 			Name <- sprt.Name,
-			Type <- sprt.getPortType
+			Type <- sprt.Type
 		)
 }
+
+helper context Source!Port def: isPartOfFunction: Boolean = 
+	if self.refImmediateComposite().refImmediateComposite().oclIsTypeOf(Source!System) then 
+		self.refImmediateComposite().refImmediateComposite().isFunctionBlock
+	else
+		false
+	endif;
 
 rule SystemPort2Port {
 	from
@@ -93,28 +99,49 @@ rule SystemPort2Port {
 		tprt: Source!Port (
 			Direction <- sprt.Direction,
 			Num <- sprt.Num,
-			Name <- sprt.Name + sprt.refImmediateComposite().getPortName(sprt.Direction, sprt.Num),
-			Type <- sprt.getPortType
+			--Name <- sprt.Name + sprt.refImmediateComposite().getPortName(sprt.Direction, sprt.Num),
+			Name <- sprt.getPortName,
+			Type <- sprt.refImmediateComposite().getPortType(sprt.Direction, sprt.Num)
 		)
 }
 
-helper context Source!Component def: getPortName(dir: String, num: Integer): String =
+helper context Source!Port def: getPortName: String =
+	if self.Name.oclIsUndefined() or self.Name = '' then
+		self.refImmediateComposite().Block->select(bb | bb.oclIsTypeOf(Source!Block))->
+		select(b | b.Type.toLower() = self.Direction + 'port' 
+			and b.Property->exists(p | p.Name='Port' and p.Value = self.Num.toString())
+			)->
+		collect(bn | bn.Name)->first()
+	else
+		self.Name
+	endif;
+
+helper context Source!Component def: getPortType(dir: String, num: Integer): String =
 	self.Block->select(bb | bb.oclIsTypeOf(Source!Block))->
 		select(b | b.Type.toLower() = dir + 'port' 
 			and b.Property->exists(p | p.Name='Port' and p.Value = num.toString())
 			)->
-		collect(bn | bn.Name)->first();
+		collect(bn | bn.Port)->first()->collect(pt | pt.Type)->first();
 
 rule Connection2Connection {
 	from
 		scon: Source!Connection (not scon.refImmediateComposite().isFunctionBlock)
 	to
 		tcon: Source!Connection (
-			src <- scon.src,
-			dst <- scon.dst,
+			src <- scon.src.getPortConnection,
+			dst <- scon.dst.getPortConnection,
 			Name <- scon.Name
 		)
 }
+
+helper context Source!Port def: getPortConnection: Source!Port =
+	if self.refImmediateComposite().isPortBlock then
+		self.refImmediateComposite().refImmediateComposite().Port->
+			select(p | p.Direction = self.refImmediateComposite().Type.substring(1, self.refImmediateComposite().Type.indexOf('port')).toLower()
+				and self.refImmediateComposite().Property->exists(po | po.Name='Port' and po.Value = p.Num.toString()))->first()
+	else
+		self
+	endif;
 
 helper context Source!System def: isFunctionBlock: Boolean =
 	if self.hasBlockOfType('S-Function') and self.hasBlockOfType('Demux')
@@ -137,34 +164,18 @@ helper context Source!System def: countSFunctionPorts (dir : String): Integer =
 		select(sf | sf.Type = 'S-Function')->
 		collect(bp | bp.Port)->flatten()->select(p | p.Direction = dir)->size();
 
+helper context Source!Component def: isPortBlock: Boolean =
+	if self.oclIsTypeOf(Source!Block) then
+		self.Type = 'Inport' or self.Type = 'Outport'
+	else
+		false
+	endif;
+
 helper context Source!System def: countPortBlocks (dir : String): Integer =
 	self.Block->select(b | b.oclIsTypeOf(Source!Block))->select(p | p.Type = dir + 'port')->size();
 
 helper context Source!System def: countBlocks: Integer =
 	self.Block->select(b | b.oclIsTypeOf(Source!Block))->size();
-
-helper context Source!Port def: getPortType: String =
-	if not self.Type.oclIsUndefined() then
-	--if not self.Type.oclIsUndefined() then
-		self.Type
-	else -- if type is not there, 
-		self.refImmediateComposite().refImmediateComposite().Connection->select(c | c.src = self or c.dst = self)->
-			iterate(p; pt : String = '' | 
-			if pt <> '' then
-				pt
-			else 
-				if not p.src.Type.oclIsUndefined() then
-					p.src.Type
-				else
-					if not p.dst.Type.oclIsUndefined() then
-						p.dst.Type
-					else
-						pt
-					endif
-				endif
-			endif
-		)
-	endif;
 
 helper context Source!System def: connectionExists
 	(srcBlockType : String, srcPortDir : String, srcPortNum : Integer, 

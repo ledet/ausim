@@ -97,7 +97,7 @@ rule PortBlock2Port {
 
 rule Property2Property {
 	from
-		srcp: Source!Property (not srcp.refImmediateComposite().isPortBlock)
+		srcp: Source!Property (srcp.processProperty)
 	to
 		sysp: SysML!Property (
 			name<-srcp.Name,
@@ -124,12 +124,15 @@ rule Property2Property {
 	}
 }
 
+helper context Source!Property def: processProperty : Boolean =
+	not self.refImmediateComposite().isPortBlock and not self.Name.startsWith('Position-');
+
 rule Block2Block {
 	from
 		srcb: Source!Block (not srcb.isPortBlock and not srcb.isFunction)
 	to
 		sysb: SysML!Class (
-			name <- srcb.Name,
+			name <- srcb.Name.regexReplaceAll('\n', ' '),
 			ownedAttribute <- srcb.Port
 				->append(thisModule.ChildAssoc(srcb))
 				->union(srcb.Property)
@@ -163,7 +166,7 @@ rule Block2Block {
 			thisModule.inPortIBDChildListNextY<-thisModule.inPortIBDChildListNextY.append(thisModule.inPortInitY);
 			thisModule.outPortIBDChildListNextY<-thisModule.outPortIBDChildListNextY.append(thisModule.outPortInitY);
 		}
-		thisModule.CreateBDDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_classifier')->first(), sysb, true, srcb.ID);
+		thisModule.CreateBDDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_classifier')->first(), sysb, false, srcb.ID);
 	}
 }
 
@@ -172,7 +175,7 @@ rule FunctionBlock2Block {
 		srcb: Source!Block (not srcb.isPortBlock and srcb.isFunction)
 	to
 		sysb: SysML!Class (
-			name <- srcb.Name,
+			name <- srcb.Name.regexReplaceAll('\n', ' '),
 			ownedAttribute <- srcb.Port
 				->append(thisModule.ChildAssoc(srcb))
 				->union(srcb.Property),
@@ -228,16 +231,12 @@ rule ChildSystem2Block {
 		srcs: Source!System (srcs.refImmediateComposite().oclIsTypeOf(Source!System))
 	to
 		sysb: SysML!Class (
-			name <- srcs.Name,
+			name <- srcs.Name.regexReplaceAll('\n', ' '),
 			ownedAttribute <- srcs.Port->union(srcs.Block->select(p | p.isPortBlock))
 				->union(srcs.Block->select(bnp | not bnp.isPortBlock)->collect(b | thisModule.ParentAssoc(b)))
 				->union(srcs.Property)
-				->append(thisModule.ChildAssoc(srcs))
---			ownedAttribute <- srcs.Port
---				->append(thisModule.ChildAssoc(srcs))
---				->union(srcs.Block->select(p | p.isPortBlock))
---				->union(srcs.Block->select(bnp | not bnp.isPortBlock)->collect(b | thisModule.ParentAssoc(b)))
---				->union(srcs.Property)
+				->append(thisModule.ChildAssoc(srcs)),
+			ownedConnector <- srcs.Connection->collect(con | thisModule.Connection2Connector(con))
 		),
 		bb : SysML!Block (
 			base_Class<-sysb
@@ -268,17 +267,12 @@ rule ChildSystem2Block {
 			thisModule.outPortIBDChildListNextY<-thisModule.outPortIBDChildListNextY.append(thisModule.outPortInitY);
 		}
 		thisModule.CreateBDDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_classifier')->first(), sysb, false, srcs.ID);
-		thisModule.CreateBDDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_classifier')->first(), sysb, true, srcs.ID);
 		for (c in srcs.Block) {
 			if (not c.isPortBlock) {
 				thisModule.CreateIBDChildBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_blockproperty_as_composite')->first(), thisModule.resolveTemp(c, 'sysb'), srcs.ID, c);
 			}
 		}
 		thisModule.CreateIBDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_composite')->first(), sysb, srcs.ID);
---		for (con in srcs.Connection) {
-			--thisModule.Connection2Connector(con);
---			thisModule.resolveTemp(con, 'sysc').name.println();
---		}
 		thisModule.CreateIBDDiag(SysMLnot!Diagram.allInstancesFrom('notDef')->select(s | s.type='InternalBlock')->first(), srcs, srcs.Name);
 	}
 }
@@ -288,7 +282,7 @@ rule System2Block {
 		srcs: Source!System (not srcs.refImmediateComposite().oclIsTypeOf(Source!System))
 	to
 		sysb: SysML!Class (
-			name <- srcs.Name,
+			name <- srcs.Name.regexReplaceAll('\n', ' '),
 			ownedAttribute <- srcs.Port->union(srcs.Block->select(p | p.isPortBlock))
 				->union(srcs.Block->select(bnp | not bnp.isPortBlock)->collect(b | thisModule.ParentAssoc(b)))
 				->union(srcs.Property),
@@ -298,18 +292,6 @@ rule System2Block {
 			base_Class<-sysb
 		)
 	do {
---		if (not thisModule.blockList.includes(srcs.ID)) {
---			thisModule.blockList<-thisModule.blockList.append(srcs.ID);
---			thisModule.blockPropertyCount<-thisModule.blockPropertyCount.append(thisModule.blockPropInitCount);
---			thisModule.blockOperationCount<-thisModule.blockOperationCount.append(thisModule.blockOpInitCount);
---			thisModule.blockHeight<-thisModule.blockHeight.append(thisModule.blockInitHeight);
---			thisModule.inPortBDDListNextY<-thisModule.inPortBDDListNextY.append(thisModule.inPortInitY);
---			thisModule.outPortBDDListNextY<-thisModule.outPortBDDListNextY.append(thisModule.outPortInitY);
---			thisModule.inPortIBDParentListNextY<-thisModule.inPortIBDParentListNextY.append(thisModule.inPortInitY);
---			thisModule.outPortIBDParentListNextY<-thisModule.outPortIBDParentListNextY.append(thisModule.outPortInitY);
---			thisModule.inPortIBDChildListNextY<-thisModule.inPortIBDChildListNextY.append(thisModule.inPortInitY);
---			thisModule.outPortIBDChildListNextY<-thisModule.outPortIBDChildListNextY.append(thisModule.outPortInitY);
---		}
 		thisModule.CreateBDDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_classifier')->first(), sysb, false, srcs.ID);
 		for (c in srcs.Block) {
 			if (not c.isPortBlock) {
@@ -317,10 +299,6 @@ rule System2Block {
 			}
 		}
 		thisModule.CreateIBDBlockShape(SysMLnot!Shape.allInstancesFrom('notDef')->select(s | s.type='shape_sysml_block_as_composite')->first(), sysb, srcs.ID);
-		--for (con in srcs.Connection) {
-			--thisModule.Connection2Connector(con);
---			thisModule.resolveTemp(con, 'sysc').name.println();
-		--}
 		thisModule.CreateIBDDiag(SysMLnot!Diagram.allInstancesFrom('notDef')->select(s | s.type='InternalBlock')->first(), srcs, srcs.Name);
 	}
 }
@@ -626,9 +604,9 @@ rule CreateAssociationConnector(src : SysMLnot!Connector, ele : SysML!Associatio
 			children<-src.children->
 				select(d | d.oclIsTypeOf(SysMLnot!DecorationNode) and not d.layoutConstraint.oclIsUndefined())->collect(n | thisModule.ShapeDecorationNodeHasLC(n)),
 			styles<-Sequence{srcEnd, trgEnd},
-			bendpoints<-src.bendpoints,
-			sourceAnchor<-src.sourceAnchor,
-			targetAnchor<-src.targetAnchor,
+			bendpoints<-bEnd,
+			sourceAnchor<-srcAnc,
+			targetAnchor<-trgAnc,
 			element<-ele
 		),
 		srcEnd: SysMLnot!EObjectValueStyle (
@@ -638,7 +616,10 @@ rule CreateAssociationConnector(src : SysMLnot!Connector, ele : SysML!Associatio
 		trgEnd: SysMLnot!EObjectValueStyle (
 			name<-'semantic_target_end',
 			eObjectValue<-ele.memberEnd->last()
-		)
+		),
+		bEnd: SysMLnot!RelativeBendpoints (),
+		srcAnc: SysMLnot!IdentityAnchor (),
+		trgAnc: SysMLnot!IdentityAnchor ()
 }
 
 rule CreateConnectorConnector(src : SysMLnot!Connector, ele : SysML!Connector, pid : String, srcEnd : SysML!Port, trgEnd : SysML!Port) {
@@ -742,14 +723,14 @@ lazy rule ChildAssoc {
 		child: Source!Component
 	to
 		prop: SysML!Property (
-			name<-child.refImmediateComposite().Name.toLower(),
+			name<-child.refImmediateComposite().Name.toLower().regexReplaceAll('\n', ' '),
 			type<-child.refImmediateComposite(),
 			association<-assoc
 			--SysML!Association.allInstancesFrom('uml')->
 				--any(a | a.name = srcb.refImmediateComposite().Name + ' has a ' + srcb.Name)
 		),
 		assoc: SysML!Association (
-			name<-child.refImmediateComposite().Name + ' has a ' + child.Name
+			name<-(child.refImmediateComposite().Name + ' has a ' + child.Name).regexReplaceAll('\n', ' ')
 		)
 }
 
@@ -758,7 +739,7 @@ lazy rule ParentAssoc {
 		child: Source!Component
 	to
 		prop: SysML!Property (
-			name<-child.Name.toLower(),
+			name<-child.Name.toLower().regexReplaceAll('\n', ' '),
 			type<-child,
 			aggregation<-'composite',
 			association<-thisModule.getAssociation(child)

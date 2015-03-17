@@ -59,8 +59,6 @@
 			<outmodel name="srccomp" model="srcModelCompressed" metamodel="Source"/>
 		</atl.launch>
 
-		<atl.saveModel derived="false" model="srcModelCompressed" path="${modelPath}/SysML/${rootModelName}/${modelName}Source.xmi"/>
-
 		<atl.launch path="${transPath}/ATL/SourcePropertyTypes2SysMLTypes.asm">
 			<inmodel name="src" model="srcModelCompressed"/>
 			<outmodel name="prop" model="sysMLTypes" metamodel="SysML"/>

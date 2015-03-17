@@ -13,95 +13,24 @@ rule Model2Model {
 		)
 }
 
---rule System2SystemWPorts {
---	from
---		bi: Source!System (bi.hasPortsProperty)
---	to
---		bo: Source!System (
---			Name <- bi.Name,
---			ID <- bi.ID,
---			Property <- bi.Property,
---			Port <- thisModule.generateSequence(bi.getInportCount)->collect(i | thisModule.createInPort(i.toString() + thisModule.nameDelim + bi.getPortName(i, 'in') + thisModule.typeDelim))->
---				union(thisModule.generateSequence(bi.getOutportCount)->collect(o | thisModule.createOutPort(o.toString() + thisModule.nameDelim + bi.getPortName(o, 'out') + thisModule.typeDelim))),
---			Block <- bi.Block
---		)
---}
-
 rule System2System {
 	from
 		bi: Source!System
-		--bi: Source!System (not bi.hasPortsProperty)
 	to
 		bo: Source!System (
 			Name <- bi.Name,
 			ID <- bi.ID,
 			Property <- bi.Property,
 			Port <- thisModule.generateSequence(bi.getInportCount)->collect(i | thisModule.createInPort(i.toString() + thisModule.nameDelim + bi.getPortName(i, 'in') + thisModule.typeDelim))->
-				union(thisModule.generateSequence(bi.getOutportCount)->collect(o | thisModule.createOutPort(o.toString() + thisModule.nameDelim + bi.getPortName(o, 'out') + thisModule.typeDelim))),
+				union(thisModule.generateSequence(bi.getOutportCount)->collect(o | thisModule.createOutPort(o.toString() + thisModule.nameDelim + bi.getPortName(o, 'out') + thisModule.typeDelim)))->
+				union(bi.Block->select(p |  p.isRootPortBlock)->collect(po | thisModule.PortBlock2Port(po))),
 			Block <- bi.Block
 		)
 }
 
---rule Block2BlockWInport {
---	from
---		bi: Source!Block (bi.needsInport and not bi.needsOutport)
---	to
---		bo: Source!Block (
---			Name <- bi.Name,
---			ID <- bi.ID,
---			Type <- bi.Type,
---			Property <- bi.Property,
---			Port <- thisModule.generateSequence(bi.getInportCount)->collect(i | thisModule.createInPort(i.toString() + thisModule.nameDelim + bi.getPortName(i, 'in') + thisModule.typeDelim))->
---				union(thisModule.generateSequence(bi.getOutportCount)->collect(o | thisModule.createOutPort(o.toString() + thisModule.nameDelim + bi.getPortName(o, 'out') + thisModule.typeDelim)))
---		)
---}
---
---rule Block2BlockWOutport {
---	from
---		bi: Source!Block (not bi.needsInport and bi.needsOutport)
---	to
---		bo: Source!Block (
---			Name <- bi.Name,
---			ID <- bi.ID,
---			Type <- bi.Type,
---			Property <- bi.Property,
---			Port <- thisModule.generateSequence(bi.getInportCount)->collect(i | thisModule.createInPort(i.toString() + thisModule.nameDelim + bi.getPortName(i, 'in') + thisModule.typeDelim))->
---				union(thisModule.generateSequence(bi.getOutportCount)->collect(o | thisModule.createOutPort(o.toString() + thisModule.nameDelim + bi.getPortName(o, 'out') + thisModule.typeDelim)))
---		)
---}
---
---rule Block2BlockWInOutport {
---	from
---		bi: Source!Block (bi.needsInport or bi.needsOutport)
---	to
---		bo: Source!Block (
---			Name <- bi.Name,
---			ID <- bi.ID,
---			Type <- bi.Type,
---			Property <- bi.Property,
---			Port <- thisModule.generateSequence(bi.getInportCount)->collect(i | thisModule.createInPort(i.toString() + thisModule.nameDelim + bi.getPortName(i, 'in') + thisModule.typeDelim))->
---				union(thisModule.generateSequence(bi.getOutportCount)->collect(o | thisModule.createOutPort(o.toString() + thisModule.nameDelim + bi.getPortName(o, 'out') + thisModule.typeDelim)))
---		)
---}
-
---rule Block2BlockWPorts {
---	from
---		bi: Source!Block (bi.needsInport or bi.needsOutport or bi.hasPortsProperty)
---	to
---		bo: Source!Block (
---			Name <- bi.Name,
---			ID <- bi.ID,
---			Type <- bi.Type,
---			Property <- bi.Property,
---			Port <- thisModule.generateSequence(bi.getInportCount)->collect(i | thisModule.createInPort(i.toString() + thisModule.nameDelim + bi.getPortName(i, 'in') + thisModule.typeDelim))->
---				union(thisModule.generateSequence(bi.getOutportCount)->collect(o | thisModule.createOutPort(o.toString() + thisModule.nameDelim + bi.getPortName(o, 'out') + thisModule.typeDelim)))
---		)
---}
-
 rule Block2Block {
 	from
 		bi: Source!Block
-	--	bi: Source!Block (not bi.needsInport and not bi.needsOutport and not bi.hasPortsProperty)
 	to
 		bo: Source!Block (
 			Name <- bi.Name,
@@ -110,6 +39,17 @@ rule Block2Block {
 			Property <- bi.Property,
 			Port <- thisModule.generateSequence(bi.getInportCount)->collect(i | thisModule.createInPort(i.toString() + thisModule.nameDelim + bi.getPortName(i, 'in') + thisModule.typeDelim + bi.getPortType))->
 				union(thisModule.generateSequence(bi.getOutportCount)->collect(o | thisModule.createOutPort(o.toString() + thisModule.nameDelim + bi.getPortName(o, 'out') + thisModule.typeDelim + bi.getPortType)))
+		)
+}
+
+lazy rule PortBlock2Port {
+	from
+		bi: Source!Block
+	to
+		p: Source!Port (
+			Name <- bi.Name,
+			Direction <- bi.getPortDirection,
+			Num <- bi.getPortNum
 		)
 }
 
@@ -151,20 +91,13 @@ lazy rule createOutPort {
 helper def: nameDelim : String = '#n#';
 helper def: typeDelim : String = '#t#';
 
---helper def: InOutportBlockTypeList : Sequence(String) = Sequence{}; -- we assume this results in [i, o] format, and that if both occur, they will be same value
---helper def: InOutportBlockTypeList : String = '|';
 helper def: InOutportKeywordList : Sequence(String) = Sequence{'Ports', 'PortCounts'}; -- we assume this results in [i, o] or [i] format, and that if both occur, they will be same value
---helper def: InOutportKeywordList : String = '|Ports|PortCounts|'; -- we assume this results in [i, o] format, and that if both occur, they will be same value
 helper def: InportBlockTypeList : Sequence(String) = Sequence{'Terminator', 'Outport', 'Gain', 'Switch', 'Abs', 'Stop', 'UnitDelay'};
 helper def: InportBlockCountList : Sequence(String) = Sequence{1, 1, 1, 3, 1, 1, 1};
 helper def: InportKeywordList : Sequence(String) = Sequence{'Inputs'}; -- we assume a single integer
 helper def: OutportBlockTypeList : Sequence(String) = Sequence{'Inport', 'Constant', 'Gain', 'Switch', 'Abs', 'UnitDelay'};
 helper def: OutportBlockCountList : Sequence(String) = Sequence{1, 1, 1, 1, 1, 1};
 helper def: OutportKeywordList : Sequence(String) = Sequence{'Outputs'}; -- we assume a single integer
---helper def: InportBlockTypeList : String = '|Terminator|Outport|Gain|Switch|Abs|Stop|UnitDelay|';
---helper def: InportKeywordList : String = '|Inputs|'; -- we assume a single integer
---helper def: OutportBlockTypeList : String = '|Inport|Constant|Gain|Switch|Abs|UnitDelay|';
---helper def: OutportKeywordList : String = '|Outputs|'; -- we assume a single integer
 
 helper context Source!Component def: hasPortsProperty: Boolean =
 	self.Property->exists(p | p.isPortsProperty);
@@ -225,6 +158,21 @@ helper context String def: getNFromArray(n : Integer): Integer =
 		0
 	endif;
 
+helper context Source!Component def: isRootPortBlock: Boolean =
+	if self.oclIsTypeOf(Source!Block) and self.refImmediateComposite().oclIsTypeOf(Source!System) then
+		self.refImmediateComposite().ID = 'Root' and (self.Type = 'Inport' or self.Type = 'Outport')
+	else
+		false
+	endif;
+
+helper context Source!Block def: getPortDirection: String =
+	self.Type.substring(1, self.Type.indexOf('port')).toLower();
+
+helper context Source!Block def: getPortNum: Integer =
+	self.Property->select(p | p.Name = 'Port')->
+		collect(v | v.Value)->first().toInteger();
+
+
 helper context Source!Component def: getPortName(num : Integer, dir : String): String = 
 	self.Port->iterate(port; name : String = '' |
 		if port.Num = num and port.Direction = dir then
@@ -248,7 +196,6 @@ helper context Source!Component def: getPortType: String =
 		else
 			type
 		endif);
-
 
 helper def : generateSequence(num : Integer): Sequence(Integer) =
 	if num = 0 then

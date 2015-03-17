@@ -1,43 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?><ModelInformation Version="0.9">
-<Model>
-<GraphicalInterface>
-      
-      
-      
-      
-      
+  <Model>
+    <GraphicalInterface>
       
       
       <P Name="ParameterArgumentNames"/>
-      <P Name="ComputedModelVersion">1.31</P>
+      <P Name="ComputedModelVersion">1.589</P>
+      
+      
       
       
     </GraphicalInterface>
-<P Name="SavedCharacterEncoding">ISO-8859-1</P>
-<P Name="SaveDefaultBlockParams">on</P>
-<P Name="ScopeRefreshTime">0.035000</P>
-<P Name="OverrideScopeRefreshTime">on</P>
-<P Name="DisableAllScopes">off</P>
-<P Name="DataTypeOverride">UseLocalSettings</P>
-<P Name="DataTypeOverrideAppliesTo">AllNumericTypes</P>
-<P Name="MinMaxOverflowLogging">UseLocalSettings</P>
-<P Name="MinMaxOverflowArchiveMode">Overwrite</P>
-<P Name="FPTRunName">Run 1</P>
-<P Name="MaxMDLFileLineLength">120</P>
-<ConfigManagerSettings>
+    <P Name="SavedCharacterEncoding">ISO-8859-1</P>
+    <P Name="PreLoadFcn">load busobjects.mat;</P>
+    <P Name="SaveDefaultBlockParams">on</P>
+    <P Name="ScopeRefreshTime">0.035000</P>
+    <P Name="OverrideScopeRefreshTime">on</P>
+    <P Name="DisableAllScopes">off</P>
+    <P Name="DataTypeOverride">UseLocalSettings</P>
+    <P Name="DataTypeOverrideAppliesTo">AllNumericTypes</P>
+    <P Name="MinMaxOverflowLogging">UseLocalSettings</P>
+    <P Name="MinMaxOverflowArchiveMode">Overwrite</P>
+    <P Name="FPTRunName">Run 1</P>
+    <P Name="MaxMDLFileLineLength">120</P>
+    <ConfigManagerSettings>
       <P Name="UpdateHistory">UpdateHistoryNever</P>
       <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
       <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
-      <P Name="RTWModifiedTimeStamp">346438472</P>
-      <P Name="ModelVersionFormat">1.%&lt;AutoIncrement:31&gt;</P>
+      <P Name="RTWModifiedTimeStamp">346786088</P>
+      <P Name="ModelVersionFormat">1.%&lt;AutoIncrement:589&gt;</P>
       <P Name="ConfigurationManager">None</P>
     </ConfigManagerSettings>
-<EditorSettings>
+    <EditorSettings>
       <P Name="SampleTimeColors">off</P>
       <P Name="SampleTimeAnnotations">off</P>
       <P Name="LibraryLinkDisplay">none</P>
       <P Name="WideLines">off</P>
-      <P Name="ShowLineDimensions">off</P>
+      <P Name="ShowLineDimensions">on</P>
       <P Name="ShowPortDataTypes">off</P>
       <P Name="ShowDesignRanges">off</P>
       <P Name="ShowLoopsOnError">on</P>
@@ -57,7 +55,7 @@
       <P Name="BrowserShowLibraryLinks">off</P>
       <P Name="BrowserLookUnderMasks">off</P>
     </EditorSettings>
-<SimulationSettings>
+    <SimulationSettings>
       <P Name="SimulationMode">normal</P>
       <P Name="LinearizationMsg">none</P>
       <P Name="Profile">off</P>
@@ -67,7 +65,7 @@
       <P Name="AccelMakeCommand">make_rtw</P>
       <P Name="TryForcingSFcnDF">off</P>
     </SimulationSettings>
-<Verification>
+    <Verification>
       <P Name="RecordCoverage">off</P>
       <P Name="CovPath">/</P>
       <P Name="CovSaveName">covdata</P>
@@ -83,7 +81,7 @@
       <P Name="CovModelRefEnable">Off</P>
       <P Name="CovExternalEMLEnable">off</P>
     </Verification>
-<ExternalMode>
+    <ExternalMode>
       <P Name="ExtModeBatchMode">off</P>
       <P Name="ExtModeEnableFloating">on</P>
       <P Name="ExtModeTrigType">manual</P>
@@ -106,20 +104,20 @@
       <P Name="ExtModeLogAll">on</P>
       <P Name="ExtModeAutoUpdateStatusClock">on</P>
     </ExternalMode>
-<EngineSettings>
+    <EngineSettings>
       <P Name="BufferReuse">on</P>
     </EngineSettings>
-<ModelReferenceSettings>
+    <ModelReferenceSettings>
       <P Name="ShowModelReferenceBlockVersion">off</P>
       <P Name="ShowModelReferenceBlockIO">off</P>
     </ModelReferenceSettings>
-<ConfigurationSet>
+    <ConfigurationSet>
       <Array PropName="ConfigurationSets" Type="Handle" Dimension="1*1">
 	<Object ObjectID="1" Version="1.12.0" ClassName="Simulink.ConfigSet">
 	  <Array PropName="Components" Type="Handle" Dimension="1*9">
 	    <Object ObjectID="2" Version="1.12.0" ClassName="Simulink.SolverCC">
 	      <P Name="StartTime">0.0</P>
-	      <P Name="StopTime">10.0</P>
+	      <P Name="StopTime">inf</P>
 	      <P Name="AbsTol">auto</P>
 	      <P Name="FixedStep">auto</P>
 	      <P Name="InitialStep">auto</P>
@@ -137,8 +135,8 @@
 	      <P Name="SolverMode">Auto</P>
 	      <P Name="EnableConcurrentExecution">off</P>
 	      <P Name="ConcurrentTasks">off</P>
-	      <P Name="Solver">ode45</P>
-	      <P Name="SolverName">ode45</P>
+	      <P Name="Solver">ode15s</P>
+	      <P Name="SolverName">ode15s</P>
 	      <P Name="SolverJacobianMethodControl">auto</P>
 	      <P Name="ShapePreserveControl">DisableAll</P>
 	      <P Name="ZeroCrossControl">DisableAll</P>
@@ -562,16 +560,16 @@
 	  </Array>
 	  <P Name="Name">Configuration</P>
 	  <P Name="CurrentDlgPage">Solver</P>
-	  <P Name="ConfigPrmDlgPosition"> [ 165, 92, 1045, 722 ] </P>
+	  <P Name="ConfigPrmDlgPosition"> [ 167, 98, 857, 644 ] </P>
 	</Object>
       </Array>
       <Object Reference="true" PropName="ActiveConfigurationSet" ObjectID="1" ClassName="Simulink.ConfigSet">
       </Object>
     </ConfigurationSet>
-<ConcurrentExecutionSettings>
+    <ConcurrentExecutionSettings>
       <P Name="ExplicitPartitioning">off</P>
     </ConcurrentExecutionSettings>
-<SystemDefaults>
+    <SystemDefaults>
       <P Name="PaperOrientation">landscape</P>
       <P Name="PaperPositionMode">auto</P>
       <P Name="PaperType">usletter</P>
@@ -583,7 +581,7 @@
       <P Name="ModelBrowserWidth">200</P>
       <P Name="ScreenColor">white</P>
     </SystemDefaults>
-<BlockDefaults>
+    <BlockDefaults>
       <P Name="ForegroundColor">black</P>
       <P Name="BackgroundColor">white</P>
       <P Name="DropShadow">off</P>
@@ -596,7 +594,7 @@
       <P Name="BlockRotation">0</P>
       <P Name="BlockMirror">off</P>
     </BlockDefaults>
-<AnnotationDefaults>
+    <AnnotationDefaults>
       <P Name="HorizontalAlignment">center</P>
       <P Name="VerticalAlignment">middle</P>
       <P Name="ForegroundColor">black</P>
@@ -608,187 +606,90 @@
       <P Name="FontAngle">normal</P>
       <P Name="UseDisplayTextAsClickCallback">off</P>
     </AnnotationDefaults>
-<LineDefaults>
+    <LineDefaults>
       <P Name="FontName">Helvetica</P>
       <P Name="FontSize">9</P>
       <P Name="FontWeight">normal</P>
       <P Name="FontAngle">normal</P>
     </LineDefaults>
-<System>
-<P Name="Location">[587, 331, 962, 600]</P><P Name="Open">on</P><P Name="ZoomFactor">100</P><P Name="ReportName">simulink-default.rpt</P>
-<P Name="SIDHighWatermark">6</P>
-<P Name="ReportName">simulink-default.rpt</P>
-
-<Block BlockType="Inport" Name="Ball Position" SID="1">
-<P Name="Port">1</P>
-<P Name="Position">[-10, 40, 20, 54]</P>
-<P Name="PortDimensions">[2 1]</P>
-</Block>
-<Block BlockType="Inport" Name="Power" SID="2">
-<P Name="Port">2</P>
-<P Name="Position">[-10, 62, 20, 76]</P>
-<P Name="PortDimensions">[4 1]</P>
-</Block>
-<Block BlockType="Inport" Name="Robot Position" SID="3">
-<P Name="Port">3</P>
-<P Name="Position">[-10, 84, 20, 98]</P>
-<P Name="PortDimensions">[8 1]</P>
-</Block>
-<Block BlockType="SubSystem" Name="Embedded MATLAB" SID="4">
-<P Name="Ports">[3, 2]</P>
-
-<System>
-<P Name="Location">[257, 457, 812, 717]</P>
-<P Name="SIDHighWatermark">8</P>
-
-<Block BlockType="Inport" Name="ball_position" SID="4::1">
-<P Name="Port">1</P>
-<P Name="Position">[-10, 40, 20, 54]</P>
-<P Name="PortDimensions">-1</P>
-</Block>
-<Block BlockType="Inport" Name="power" SID="4::2">
-<P Name="Port">2</P>
-<P Name="Position">[-10, 62, 20, 76]</P>
-<P Name="PortDimensions">-1</P>
-</Block>
-<Block BlockType="Inport" Name="robot_position" SID="4::3">
-<P Name="Port">3</P>
-<P Name="Position">[-10, 84, 20, 98]</P>
-<P Name="PortDimensions">-1</P>
-</Block>
-<Block BlockType="Demux" Name=" Demux" SID="4::4">
-<P Name="Ports">[1, 1]</P>
-<P Name="Position">[270, 180, 320, 220]</P>
-<P Name="ZOrder">2</P>
-<P Name="Outputs">1</P>
-</Block>
-<Block BlockType="S-Function" Name=" SFunction" SID="4::5">
-<P Name="Ports">[3, 3]</P>
-<P Name="Position">[180, 100, 230, 180]</P>
-<P Name="PortCounts">[3 3]</P>
-</Block>
-<Block BlockType="Terminator" Name=" Terminator " SID="4::6">
-<P Name="Position">[460, 191, 480, 209]</P>
-</Block>
-<Block BlockType="Outport" Name="actuator_force_1" SID="4::7">
-<P Name="Port">1</P>
-<P Name="Position">[90, 40, 120, 54]</P>
-<P Name="PortDimensions">-1</P>
-</Block>
-<Block BlockType="Outport" Name="actuator_force_2" SID="4::8">
-<P Name="Port">2</P>
-<P Name="Position">[90, 62, 120, 76]</P>
-<P Name="PortDimensions">-1</P>
-</Block>
-
-<Line>
-<P Name="Name">ball_position to  SFunction</P>
-<P Name="Labels">[, ]</P>
-<P Name="src">4::1#out:1</P>
-<P Name="dst">4::5#in:1</P>
-</Line>
-<Line>
-<P Name="Name">power to  SFunction</P>
-<P Name="Labels">[, ]</P>
-<P Name="src">4::2#out:1</P>
-<P Name="dst">4::5#in:2</P>
-</Line>
-<Line>
-<P Name="Name">robot_position to  SFunction</P>
-<P Name="Labels">[, ]</P>
-<P Name="src">4::3#out:1</P>
-<P Name="dst">4::5#in:3</P>
-</Line>
-<Line>
-<P Name="Name"> SFunction to  Demux</P>
-<P Name="Labels">[, ]</P>
-<P Name="src">4::5#out:1</P>
-<P Name="dst">4::4#in:1</P>
-</Line>
-<Line>
-<P Name="Name"> Demux to  Terminator </P>
-<P Name="Labels">[, ]</P>
-<P Name="src">4::4#out:1</P>
-<P Name="dst">4::6#in:1</P>
-</Line>
-<Line>
-<P Name="Name"> SFunction to actuator_force_1</P>
-<P Name="Labels">[, ]</P>
-<P Name="src">4::5#out:2</P>
-<P Name="dst">4::7#in:1</P>
-</Line>
-<Line>
-<P Name="Name"> SFunction to actuator_force_2</P>
-<P Name="Labels">[, ]</P>
-<P Name="src">4::5#out:3</P>
-<P Name="dst">4::8#in:1</P>
-</Line>
-</System>
-</Block>
-<Block BlockType="Outport" Name=" Actuator Force 1" SID="5">
-<P Name="Port">1</P>
-<P Name="Position">[90, 40, 120, 54]</P>
-<P Name="PortDimensions">-1</P>
-</Block>
-<Block BlockType="Outport" Name="Actuator Force 2" SID="6">
-<P Name="Port">2</P>
-<P Name="Position">[90, 62, 120, 76]</P>
-<P Name="PortDimensions">-1</P>
-</Block>
-
-<Line>
-<P Name="Name"/>
-<P Name="Labels">[, ]</P>
-<P Name="src">1#out:1</P>
-<P Name="dst">4#in:1</P>
-</Line>
-<Line>
-<P Name="Name"/>
-<P Name="Labels">[, ]</P>
-<P Name="src">3#out:1</P>
-<P Name="dst">4#in:3</P>
-</Line>
-<Line>
-<P Name="Name"/>
-<P Name="Labels">[, ]</P>
-<P Name="src">4#out:1</P>
-<P Name="dst">5#in:1</P>
-</Line>
-<Line>
-<P Name="Name"/>
-<P Name="Labels">[, ]</P>
-<P Name="src">4#out:2</P>
-<P Name="dst">6#in:1</P>
-</Line>
-<Line>
-<P Name="Name"/>
-<P Name="Labels">[, ]</P>
-<P Name="src">2#out:1</P>
-<P Name="dst">4#in:2</P>
-</Line>
-</System>
-</Model>
-<Stateflow>
-    <machine id="10">
-      <P Name="created">12-Jul-2010 13:46:11</P>
+    
+    <System>
+      <P Name="Location">[31, 50, 1311, 777]</P>
+      <P Name="Open">on</P>
+      <P Name="ZoomFactor">103</P>
+      <P Name="ReportName">simulink-default.rpt</P>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </System>
+  </Model>
+  <Stateflow>
+    <machine id="11">
+      <P Name="created">07-Jul-2010 21:30:39</P>
       <P Name="isLibrary">0</P>
       <P Name="sfVersion">76014001.00040001</P>
       <Children>
-	<target id="21" name="sfun">
+	<target id="50" name="sfun">
 	  <P Name="description">Default Simulink S-Function Target.</P>
 	</target>
-	<target id="22" name="rtw">
-	</target>
-	<chart id="11">
-	  <P Name="name">Embedded MATLAB</P>
-	  <P Name="windowPosition">[208.4 328.65 200.25 189.75]</P>
+	<chart id="12">
+	  <P Name="name">Ball Dynamics/Collision Modeling</P>
+	  <P Name="windowPosition">[384.879 306.305 200.25 189.75]</P>
 	  <P Name="viewLimits">[0 156.75 0 153.75]</P>
-	  <P Name="screen">[1 1 1024 768 1.333333333333333]</P>
-	  <P Name="viewObj">11</P>
-	  <P Name="ssIdHighWaterMark">9</P>
+	  <P Name="screen">[1 1 1680 1050 1.333333333333333]</P>
+	  <P Name="viewObj">12</P>
+	  <P Name="ssIdHighWaterMark">10</P>
 	  <P Name="decomposition">CLUSTER_CHART</P>
 	  <P Name="type">EML_CHART</P>
-	  <P Name="chartFileNumber">7</P>
+	  <P Name="chartFileNumber">2</P>
 	  <P Name="disableImplicitCasting">1</P>
 	  <eml>
 	    <P Name="name">fcn</P>
@@ -799,47 +700,84 @@
 	      <P Name="position">[18 64.5 118 66]</P>
 	      <P Name="fontSize">12</P>
 	      <P Name="superState">SUBCHART</P>
-	      <P Name="subviewer">11</P>
+	      <P Name="subviewer">12</P>
 	      <P Name="type">FUNC_STATE</P>
 	      <P Name="decomposition">CLUSTER_STATE</P>
 	      <eml>
 		<P Name="isEML">1</P>
-		<P Name="script">function [actuator_force_1, actuator_force_2] = fcn(ball_position, power,  robot_position)
+		<P Name="script">function [force, goal] = fcn(ball_velocity,robot_position, ball_position)
 %#eml
+% Initialize variables
 
-d1=(robot_position(1:2,1)-ball_position);
-d2=(robot_position(3:4,1)-ball_position);
-if dot(d1,d1)&gt;5
-   actuator_force_1=-20*d1;
-else
-   r1=(ball_position- [200;50]);
-   actuator_force_1=-11*r1;
+force1=zeros(2,1);
+force2=zeros(2,1);
+force3=zeros(2,1);
+force4=zeros(2,1);
+collision_force=zeros(2,1);
+d1=zeros(2,1);
+d2=zeros(2,1);
+d3=zeros(2,1);
+d4=zeros(2,1);
+K=100;
+goal=0;
+tol=25;
+B=0.01;
+
+% Compute dot products and calculate impulsive forces on the ball
+d1=robot_position(1:2,1)-ball_position;
+d2=robot_position(3:4,1)-ball_position;
+d3=robot_position(5:6,1)-ball_position;
+d4=robot_position(7:8,1)-ball_position;
+
+if   dot(d1,d1) &lt;tol
+     force1=-K*d1;
 end
-if dot(d2,d2)&gt;5
-   actuator_force_2=-25*d2;
-else
-   r2=(ball_position-[200;50]);
-   actuator_force_2=-15*r2;
+
+if   dot(d2,d2) &lt;tol
+     force2=-K*d2;
+end
+
+if   dot(d3,d3) &lt;tol
+     force3=-K*d3;
+end
+
+if   dot(d4,d4) &lt;tol
+     force4=-K*d4;
+end
+
+% Code to check for boundary collisions for the ball
+if ball_position(1,1)&lt;0 
+    collision_force(1,1)=-K*ball_position(1,1);
+end
+
+if ball_position(1,1)&gt;200 
+    collision_force(1,1)=K*(200-ball_position(1,1));
+end
+
+if ball_position(2,1)&lt;0 
+    collision_force(2,1)=-K*ball_position(2,1);
+end
+
+if ball_position(2,1)&gt;100 
+    collision_force(2,1)=K*(100-ball_position(2,1)); 
+end
+
+% Total force
+force=collision_force+force1+force2+force3+force4-B*ball_velocity;
+
+% Goal scored
+if ((ball_position(1,1)&lt;=0) &amp;&amp; (ball_position(2,1)&gt;41) &amp;&amp; (ball_position(2,1)&lt;59))
+    goal=1; 
+end
+
+if ((ball_position(1,1)&gt;=200) &amp;&amp; (ball_position(2,1)&gt;41) &amp;&amp; (ball_position(2,1)&lt;59))
+    goal=1; 
 end</P>
 		<P Name="editorLayout" Class="double">Matrix(4,1)
 [[10.0]; [5.0]; [700.0]; [500.0]]</P>
 	      </eml>
 	    </state>
-	    <data SSID="4" name="ball_position">
-	      <P Name="scope">INPUT_DATA</P>
-	      <props>
-		<array>
-		  <P Name="size">-1</P>
-		</array>
-		<type>
-		  <P Name="method">SF_INHERITED_TYPE</P>
-		  <P Name="primitive">SF_DOUBLE_TYPE</P>
-		</type>
-		<P Name="complexity">SF_COMPLEX_INHERITED</P>
-	      </props>
-	      <P Name="dataType">Inherit: Same as Simulink</P>
-	    </data>
-	    <data SSID="9" name="power">
+	    <data SSID="10" name="ball_velocity">
 	      <P Name="scope">INPUT_DATA</P>
 	      <props>
 		<array>
@@ -856,11 +794,42 @@ end</P>
 	      </props>
 	      <P Name="dataType">Inherit: Same as Simulink</P>
 	    </data>
-	    <data SSID="5" name="actuator_force_1">
+	    <data SSID="4" name="robot_position">
+	      <P Name="scope">INPUT_DATA</P>
+	      <props>
+		<array>
+		  <P Name="size">[8 ;1]</P>
+		</array>
+		<type>
+		  <P Name="method">SF_INHERITED_TYPE</P>
+		  <P Name="primitive">SF_DOUBLE_TYPE</P>
+		</type>
+		<P Name="complexity">SF_COMPLEX_INHERITED</P>
+	      </props>
+	      <P Name="dataType">Inherit: Same as Simulink</P>
+	    </data>
+	    <data SSID="6" name="ball_position">
+	      <P Name="scope">INPUT_DATA</P>
+	      <props>
+		<array>
+		  <P Name="size">[2;1]</P>
+		</array>
+		<type>
+		  <P Name="method">SF_INHERITED_TYPE</P>
+		  <P Name="primitive">SF_DOUBLE_TYPE</P>
+		  <P Name="isSigned">1</P>
+		  <P Name="wordLength">16</P>
+		</type>
+		<P Name="complexity">SF_COMPLEX_INHERITED</P>
+		<P Name="frame">SF_FRAME_INHERITED</P>
+	      </props>
+	      <P Name="dataType">Inherit: Same as Simulink</P>
+	    </data>
+	    <data SSID="5" name="force">
 	      <P Name="scope">OUTPUT_DATA</P>
 	      <props>
 		<array>
-		  <P Name="size">-1</P>
+		  <P Name="size">[2;1]</P>
 		</array>
 		<type>
 		  <P Name="method">SF_INHERITED_TYPE</P>
@@ -871,24 +840,7 @@ end</P>
 	      </props>
 	      <P Name="dataType">Inherit: Same as Simulink</P>
 	    </data>
-	    <data SSID="7" name="robot_position">
-	      <P Name="scope">INPUT_DATA</P>
-	      <props>
-		<array>
-		  <P Name="size">-1</P>
-		</array>
-		<type>
-		  <P Name="method">SF_INHERITED_TYPE</P>
-		  <P Name="primitive">SF_DOUBLE_TYPE</P>
-		  <P Name="isSigned">1</P>
-		  <P Name="wordLength">16</P>
-		</type>
-		<P Name="complexity">SF_COMPLEX_INHERITED</P>
-		<P Name="frame">SF_FRAME_INHERITED</P>
-	      </props>
-	      <P Name="dataType">Inherit: Same as Simulink</P>
-	    </data>
-	    <data SSID="8" name="actuator_force_2">
+	    <data SSID="7" name="goal">
 	      <P Name="scope">OUTPUT_DATA</P>
 	      <props>
 		<array>
@@ -918,23 +870,447 @@ end</P>
 	      </dst>
 	      <P Name="midPoint">[23.5747 24.9468]</P>
 	      <P Name="dataLimits">[23.575 23.575 14.625 34.575]</P>
-	      <P Name="subviewer">11</P>
+	      <P Name="subviewer">12</P>
 	      <P Name="drawStyle">SMART</P>
 	      <P Name="executionOrder">1</P>
 	    </transition>
 	    <junction SSID="3">
 	      <P Name="position">[23.5747 49.5747 7]</P>
-	      <P Name="subviewer">11</P>
+	      <P Name="subviewer">12</P>
+	      <P Name="type">CONNECTIVE_JUNCTION</P>
+	    </junction>
+	  </Children>
+	</chart>
+	<chart id="22">
+	  <P Name="name">Robot 1 Dynamics/Boundary Collisons</P>
+	  <P Name="windowPosition">[375.75 203.25 200.25 189.75]</P>
+	  <P Name="viewLimits">[0 156.75 0 153.75]</P>
+	  <P Name="screen">[1 1 1920 1200 1.333333333333333]</P>
+	  <P Name="viewObj">22</P>
+	  <P Name="ssIdHighWaterMark">5</P>
+	  <P Name="decomposition">CLUSTER_CHART</P>
+	  <P Name="type">EML_CHART</P>
+	  <P Name="chartFileNumber">3</P>
+	  <P Name="disableImplicitCasting">1</P>
+	  <eml>
+	    <P Name="name">fcn</P>
+	  </eml>
+	  <Children>
+	    <state SSID="1">
+	      <P Name="labelString">eML_blk_kernel()</P>
+	      <P Name="position">[18 64.5 118 66]</P>
+	      <P Name="fontSize">12</P>
+	      <P Name="superState">SUBCHART</P>
+	      <P Name="subviewer">22</P>
+	      <P Name="type">FUNC_STATE</P>
+	      <P Name="decomposition">CLUSTER_STATE</P>
+	      <eml>
+		<P Name="isEML">1</P>
+		<P Name="script">function collision_force = fcn(robot_position)
+%#eml
+K=100;
+collision_force=[0; 0]; 
+if robot_position(1,1)&lt;0 
+    collision_force(1,1)=-K*robot_position(1,1);
+end
+
+if robot_position(1,1)&gt;200 
+    collision_force(1,1)=K*(200-robot_position(1,1));
+end
+
+if robot_position(2,1)&lt;0 
+    collision_force(2,1)=-K*robot_position(2,1);
+end
+
+if robot_position(2,1)&gt;100 
+    collision_force(2,1)=K*(100-robot_position(2,1));
+end</P>
+		<P Name="editorLayout" Class="double">Matrix(4,1)
+[[122.0]; [155.0]; [708.0]; [394.0]]</P>
+	      </eml>
+	    </state>
+	    <data SSID="4" name="robot_position">
+	      <P Name="scope">INPUT_DATA</P>
+	      <props>
+		<array>
+		  <P Name="size">-1</P>
+		</array>
+		<type>
+		  <P Name="method">SF_INHERITED_TYPE</P>
+		  <P Name="primitive">SF_DOUBLE_TYPE</P>
+		</type>
+		<P Name="complexity">SF_COMPLEX_INHERITED</P>
+	      </props>
+	      <P Name="dataType">Inherit: Same as Simulink</P>
+	    </data>
+	    <data SSID="5" name="collision_force">
+	      <P Name="scope">OUTPUT_DATA</P>
+	      <props>
+		<array>
+		  <P Name="size">-1</P>
+		</array>
+		<type>
+		  <P Name="method">SF_INHERITED_TYPE</P>
+		  <P Name="primitive">SF_DOUBLE_TYPE</P>
+		</type>
+		<P Name="complexity">SF_COMPLEX_INHERITED</P>
+		<P Name="frame">SF_FRAME_NO</P>
+	      </props>
+	      <P Name="dataType">Inherit: Same as Simulink</P>
+	    </data>
+	    <transition SSID="2">
+	      <P Name="labelString">{eML_blk_kernel();}</P>
+	      <P Name="labelPosition">[32.125 19.875 102.544 14.964]</P>
+	      <P Name="fontSize">12</P>
+	      <src>
+		<P Name="intersection">[0 0 1 0 23.5747 14.625 0 0]</P>
+	      </src>
+	      <dst>
+		<P Name="SSID">3</P>
+		<P Name="intersection">[7 0 -1 -1 23.5747 42.5747 0 0]</P>
+	      </dst>
+	      <P Name="midPoint">[23.5747 24.9468]</P>
+	      <P Name="dataLimits">[23.575 23.575 14.625 34.575]</P>
+	      <P Name="subviewer">22</P>
+	      <P Name="drawStyle">SMART</P>
+	      <P Name="executionOrder">1</P>
+	    </transition>
+	    <junction SSID="3">
+	      <P Name="position">[23.5747 49.5747 7]</P>
+	      <P Name="subviewer">22</P>
+	      <P Name="type">CONNECTIVE_JUNCTION</P>
+	    </junction>
+	  </Children>
+	</chart>
+	<chart id="29">
+	  <P Name="name">Robot 4 Dynamics/Boundary Collisons</P>
+	  <P Name="windowPosition">[405.75 173.25 200.25 189.75]</P>
+	  <P Name="viewLimits">[0 156.75 0 153.75]</P>
+	  <P Name="screen">[1 1 1920 1200 1.333333333333333]</P>
+	  <P Name="viewObj">29</P>
+	  <P Name="ssIdHighWaterMark">5</P>
+	  <P Name="decomposition">CLUSTER_CHART</P>
+	  <P Name="type">EML_CHART</P>
+	  <P Name="chartFileNumber">4</P>
+	  <P Name="disableImplicitCasting">1</P>
+	  <eml>
+	    <P Name="name">fcn</P>
+	  </eml>
+	  <Children>
+	    <state SSID="1">
+	      <P Name="labelString">eML_blk_kernel()</P>
+	      <P Name="position">[18 64.5 118 66]</P>
+	      <P Name="fontSize">12</P>
+	      <P Name="superState">SUBCHART</P>
+	      <P Name="subviewer">29</P>
+	      <P Name="type">FUNC_STATE</P>
+	      <P Name="decomposition">CLUSTER_STATE</P>
+	      <eml>
+		<P Name="isEML">1</P>
+		<P Name="script">function collision_force = fcn(robot_position)
+%#eml
+K=100;
+collision_force=[0; 0]; 
+if robot_position(1,1)&lt;0 
+    collision_force(1,1)=-K*robot_position(1,1);
+end
+
+if robot_position(1,1)&gt;200 
+    collision_force(1,1)=K*(200-robot_position(1,1));
+end
+
+if robot_position(2,1)&lt;0 
+    collision_force(2,1)=-K*robot_position(2,1);
+end
+
+if robot_position(2,1)&gt;100 
+    collision_force(2,1)=K*(100-robot_position(2,1));
+end</P>
+		<P Name="editorLayout" Class="double">Matrix(4,1)
+[[459.0]; [115.0]; [1080.0]; [733.0]]</P>
+	      </eml>
+	    </state>
+	    <data SSID="4" name="robot_position">
+	      <P Name="scope">INPUT_DATA</P>
+	      <props>
+		<array>
+		  <P Name="size">-1</P>
+		</array>
+		<type>
+		  <P Name="method">SF_INHERITED_TYPE</P>
+		  <P Name="primitive">SF_DOUBLE_TYPE</P>
+		</type>
+		<P Name="complexity">SF_COMPLEX_INHERITED</P>
+	      </props>
+	      <P Name="dataType">Inherit: Same as Simulink</P>
+	    </data>
+	    <data SSID="5" name="collision_force">
+	      <P Name="scope">OUTPUT_DATA</P>
+	      <props>
+		<array>
+		  <P Name="size">-1</P>
+		</array>
+		<type>
+		  <P Name="method">SF_INHERITED_TYPE</P>
+		  <P Name="primitive">SF_DOUBLE_TYPE</P>
+		</type>
+		<P Name="complexity">SF_COMPLEX_INHERITED</P>
+		<P Name="frame">SF_FRAME_NO</P>
+	      </props>
+	      <P Name="dataType">Inherit: Same as Simulink</P>
+	    </data>
+	    <transition SSID="2">
+	      <P Name="labelString">{eML_blk_kernel();}</P>
+	      <P Name="labelPosition">[32.125 19.875 102.544 14.964]</P>
+	      <P Name="fontSize">12</P>
+	      <src>
+		<P Name="intersection">[0 0 1 0 23.5747 14.625 0 0]</P>
+	      </src>
+	      <dst>
+		<P Name="SSID">3</P>
+		<P Name="intersection">[7 0 -1 -1 23.5747 42.5747 0 0]</P>
+	      </dst>
+	      <P Name="midPoint">[23.5747 24.9468]</P>
+	      <P Name="dataLimits">[23.575 23.575 14.625 34.575]</P>
+	      <P Name="subviewer">29</P>
+	      <P Name="drawStyle">SMART</P>
+	      <P Name="executionOrder">1</P>
+	    </transition>
+	    <junction SSID="3">
+	      <P Name="position">[23.5747 49.5747 7]</P>
+	      <P Name="subviewer">29</P>
+	      <P Name="type">CONNECTIVE_JUNCTION</P>
+	    </junction>
+	  </Children>
+	</chart>
+	<chart id="36">
+	  <P Name="name">Robot 3 Dynamics/Boundary Collisons</P>
+	  <P Name="windowPosition">[390.75 188.25 200.25 189.75]</P>
+	  <P Name="viewLimits">[0 156.75 0 153.75]</P>
+	  <P Name="screen">[1 1 1920 1200 1.333333333333333]</P>
+	  <P Name="viewObj">36</P>
+	  <P Name="ssIdHighWaterMark">5</P>
+	  <P Name="decomposition">CLUSTER_CHART</P>
+	  <P Name="type">EML_CHART</P>
+	  <P Name="chartFileNumber">5</P>
+	  <P Name="disableImplicitCasting">1</P>
+	  <eml>
+	    <P Name="name">fcn</P>
+	  </eml>
+	  <Children>
+	    <state SSID="1">
+	      <P Name="labelString">eML_blk_kernel()</P>
+	      <P Name="position">[18 64.5 118 66]</P>
+	      <P Name="fontSize">12</P>
+	      <P Name="superState">SUBCHART</P>
+	      <P Name="subviewer">36</P>
+	      <P Name="type">FUNC_STATE</P>
+	      <P Name="decomposition">CLUSTER_STATE</P>
+	      <eml>
+		<P Name="isEML">1</P>
+		<P Name="script">function collision_force = fcn(robot_position)
+%#eml
+K=100;
+collision_force=[0; 0]; 
+if robot_position(1,1)&lt;0 
+    collision_force(1,1)=-K*robot_position(1,1);
+end
+
+if robot_position(1,1)&gt;200 
+    collision_force(1,1)=K*(200-robot_position(1,1));
+end
+
+if robot_position(2,1)&lt;0 
+    collision_force(2,1)=-K*robot_position(2,1);
+end
+
+if robot_position(2,1)&gt;100 
+    collision_force(2,1)=K*(100-robot_position(2,1));
+end</P>
+		<P Name="editorLayout" Class="double">Matrix(4,1)
+[[459.0]; [115.0]; [1080.0]; [733.0]]</P>
+	      </eml>
+	    </state>
+	    <data SSID="4" name="robot_position">
+	      <P Name="scope">INPUT_DATA</P>
+	      <props>
+		<array>
+		  <P Name="size">-1</P>
+		</array>
+		<type>
+		  <P Name="method">SF_INHERITED_TYPE</P>
+		  <P Name="primitive">SF_DOUBLE_TYPE</P>
+		</type>
+		<P Name="complexity">SF_COMPLEX_INHERITED</P>
+	      </props>
+	      <P Name="dataType">Inherit: Same as Simulink</P>
+	    </data>
+	    <data SSID="5" name="collision_force">
+	      <P Name="scope">OUTPUT_DATA</P>
+	      <props>
+		<array>
+		  <P Name="size">-1</P>
+		</array>
+		<type>
+		  <P Name="method">SF_INHERITED_TYPE</P>
+		  <P Name="primitive">SF_DOUBLE_TYPE</P>
+		</type>
+		<P Name="complexity">SF_COMPLEX_INHERITED</P>
+		<P Name="frame">SF_FRAME_NO</P>
+	      </props>
+	      <P Name="dataType">Inherit: Same as Simulink</P>
+	    </data>
+	    <transition SSID="2">
+	      <P Name="labelString">{eML_blk_kernel();}</P>
+	      <P Name="labelPosition">[32.125 19.875 102.544 14.964]</P>
+	      <P Name="fontSize">12</P>
+	      <src>
+		<P Name="intersection">[0 0 1 0 23.5747 14.625 0 0]</P>
+	      </src>
+	      <dst>
+		<P Name="SSID">3</P>
+		<P Name="intersection">[7 0 -1 -1 23.5747 42.5747 0 0]</P>
+	      </dst>
+	      <P Name="midPoint">[23.5747 24.9468]</P>
+	      <P Name="dataLimits">[23.575 23.575 14.625 34.575]</P>
+	      <P Name="subviewer">36</P>
+	      <P Name="drawStyle">SMART</P>
+	      <P Name="executionOrder">1</P>
+	    </transition>
+	    <junction SSID="3">
+	      <P Name="position">[23.5747 49.5747 7]</P>
+	      <P Name="subviewer">36</P>
+	      <P Name="type">CONNECTIVE_JUNCTION</P>
+	    </junction>
+	  </Children>
+	</chart>
+	<chart id="43">
+	  <P Name="name">Robot 2 Dynamics/Boundary Collisons</P>
+	  <P Name="windowPosition">[390.75 188.25 200.25 189.75]</P>
+	  <P Name="viewLimits">[0 156.75 0 153.75]</P>
+	  <P Name="screen">[1 1 1920 1200 1.333333333333333]</P>
+	  <P Name="viewObj">43</P>
+	  <P Name="ssIdHighWaterMark">5</P>
+	  <P Name="decomposition">CLUSTER_CHART</P>
+	  <P Name="type">EML_CHART</P>
+	  <P Name="chartFileNumber">6</P>
+	  <P Name="disableImplicitCasting">1</P>
+	  <eml>
+	    <P Name="name">fcn</P>
+	  </eml>
+	  <Children>
+	    <state SSID="1">
+	      <P Name="labelString">eML_blk_kernel()</P>
+	      <P Name="position">[18 64.5 118 66]</P>
+	      <P Name="fontSize">12</P>
+	      <P Name="superState">SUBCHART</P>
+	      <P Name="subviewer">43</P>
+	      <P Name="type">FUNC_STATE</P>
+	      <P Name="decomposition">CLUSTER_STATE</P>
+	      <eml>
+		<P Name="isEML">1</P>
+		<P Name="script">function collision_force = fcn(robot_position)
+%#eml
+K=100;
+collision_force=[0; 0]; 
+if robot_position(1,1)&lt;0 
+    collision_force(1,1)=-K*robot_position(1,1);
+end
+
+if robot_position(1,1)&gt;200 
+    collision_force(1,1)=K*(200-robot_position(1,1));
+end
+
+if robot_position(2,1)&lt;0 
+    collision_force(2,1)=-K*robot_position(2,1);
+end
+
+if robot_position(2,1)&gt;100 
+    collision_force(2,1)=K*(100-robot_position(2,1));
+end</P>
+		<P Name="editorLayout" Class="double">Matrix(4,1)
+[[459.0]; [115.0]; [1080.0]; [733.0]]</P>
+	      </eml>
+	    </state>
+	    <data SSID="4" name="robot_position">
+	      <P Name="scope">INPUT_DATA</P>
+	      <props>
+		<array>
+		  <P Name="size">-1</P>
+		</array>
+		<type>
+		  <P Name="method">SF_INHERITED_TYPE</P>
+		  <P Name="primitive">SF_DOUBLE_TYPE</P>
+		</type>
+		<P Name="complexity">SF_COMPLEX_INHERITED</P>
+	      </props>
+	      <P Name="dataType">Inherit: Same as Simulink</P>
+	    </data>
+	    <data SSID="5" name="collision_force">
+	      <P Name="scope">OUTPUT_DATA</P>
+	      <props>
+		<array>
+		  <P Name="size">-1</P>
+		</array>
+		<type>
+		  <P Name="method">SF_INHERITED_TYPE</P>
+		  <P Name="primitive">SF_DOUBLE_TYPE</P>
+		</type>
+		<P Name="complexity">SF_COMPLEX_INHERITED</P>
+		<P Name="frame">SF_FRAME_NO</P>
+	      </props>
+	      <P Name="dataType">Inherit: Same as Simulink</P>
+	    </data>
+	    <transition SSID="2">
+	      <P Name="labelString">{eML_blk_kernel();}</P>
+	      <P Name="labelPosition">[32.125 19.875 102.544 14.964]</P>
+	      <P Name="fontSize">12</P>
+	      <src>
+		<P Name="intersection">[0 0 1 0 23.5747 14.625 0 0]</P>
+	      </src>
+	      <dst>
+		<P Name="SSID">3</P>
+		<P Name="intersection">[7 0 -1 -1 23.5747 42.5747 0 0]</P>
+	      </dst>
+	      <P Name="midPoint">[23.5747 24.9468]</P>
+	      <P Name="dataLimits">[23.575 23.575 14.625 34.575]</P>
+	      <P Name="subviewer">43</P>
+	      <P Name="drawStyle">SMART</P>
+	      <P Name="executionOrder">1</P>
+	    </transition>
+	    <junction SSID="3">
+	      <P Name="position">[23.5747 49.5747 7]</P>
+	      <P Name="subviewer">43</P>
 	      <P Name="type">CONNECTIVE_JUNCTION</P>
 	    </junction>
 	  </Children>
 	</chart>
       </Children>
     </machine>
-    <instance id="20">
-      <P Name="name">Embedded MATLAB</P>
-      <P Name="machine">10</P>
-      <P Name="chart">11</P>
+    <instance id="21">
+      <P Name="name">Ball Dynamics/Collision Modeling</P>
+      <P Name="machine">11</P>
+      <P Name="chart">12</P>
+    </instance>
+    <instance id="28">
+      <P Name="name">Robot 1 Dynamics/Boundary Collisons</P>
+      <P Name="machine">11</P>
+      <P Name="chart">22</P>
+    </instance>
+    <instance id="35">
+      <P Name="name">Robot 4 Dynamics/Boundary Collisons</P>
+      <P Name="machine">11</P>
+      <P Name="chart">29</P>
+    </instance>
+    <instance id="42">
+      <P Name="name">Robot 3 Dynamics/Boundary Collisons</P>
+      <P Name="machine">11</P>
+      <P Name="chart">36</P>
+    </instance>
+    <instance id="49">
+      <P Name="name">Robot 2 Dynamics/Boundary Collisons</P>
+      <P Name="machine">11</P>
+      <P Name="chart">43</P>
     </instance>
   </Stateflow>
 </ModelInformation>

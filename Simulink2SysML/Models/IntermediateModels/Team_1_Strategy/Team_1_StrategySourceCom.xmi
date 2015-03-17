@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<simulinksourcemm:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simulinksourcemm="http://simulinksourcemm/1.0" Name="Team_1_Strategy">
+  <Block xsi:type="simulinksourcemm:System" Name="Team_1_Strategy" ID="Root">
+    <Port Direction="in" Name="Ball Position" Type="Array:Float (2)" Num="1"/>
+    <Port Direction="in" Name="Power" Type="Array:Float (4)" Num="2"/>
+    <Port Direction="in" Name="Robot Position" Type="Array:Float (8)" Num="3"/>
+    <Port Direction="out" Name=" Actuator Force 1" Type="" Num="1"/>
+    <Port Direction="out" Name="Actuator Force 2" Type="" Num="2"/>
+    <Block xsi:type="simulinksourcemm:Block" Name="Embedded Code" ID="4" Type="Function">
+      <Port Direction="in" Name="ball_position" Type="" Num="1"/>
+      <Port Direction="in" Name="power" Type="" Num="2"/>
+      <Port Direction="in" Name="robot_position" Type="" Num="3"/>
+      <Port Direction="out" Name="actuator_force_1" Type="" Num="1"/>
+      <Port Direction="out" Name="actuator_force_2" Type="" Num="2"/>
+    </Block>
+    <Connection src="//@Block.0/@Port.0" dst="//@Block.0/@Block.0/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Port.2" dst="//@Block.0/@Block.0/@Port.2" Name=""/>
+    <Connection src="//@Block.0/@Block.0/@Port.3" dst="//@Block.0/@Port.3" Name=""/>
+    <Connection src="//@Block.0/@Block.0/@Port.4" dst="//@Block.0/@Port.4" Name=""/>
+    <Connection src="//@Block.0/@Port.1" dst="//@Block.0/@Block.0/@Port.1" Name=""/>
+  </Block>
+</simulinksourcemm:Model>
