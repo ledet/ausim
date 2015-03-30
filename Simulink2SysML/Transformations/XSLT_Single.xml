@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Unzip" default="xslt">
-	<property name="rootModelName" value="RoboSoccer" />
-	<property name="modelName" value="RoboSoccer" />
+	<property name="rootModelName" value="Team_1_Strategy" />
+	<property name="modelName" value="Team_1_Strategy" />
 	<property name="modelPath" value="../Models/" />
 	<property name="transPath" value="Simulink2SysML" />
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_l-xzQMy1EeSdIu0-z7Dq7g" name="Properties">
-  <packagedElement xmi:type="uml:DataType" xmi:id="_l-xzQcy1EeSdIu0-z7Dq7g" name="Array:Int"/>
-  <packagedElement xmi:type="uml:DataType" xmi:id="_l-xzQsy1EeSdIu0-z7Dq7g" name="Array:Float"/>
-  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_l-xzQ8y1EeSdIu0-z7Dq7g" name="Float"/>
-  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_l-xzRMy1EeSdIu0-z7Dq7g" name="String"/>
-  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_l-xzRcy1EeSdIu0-z7Dq7g" name="Int"/>
-  <packagedElement xmi:type="uml:DataType" xmi:id="_l-xzRsy1EeSdIu0-z7Dq7g" name="Array:Float (2)"/>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_FJL_0MzBEeSdIu0-z7Dq7g" name="Properties">
+  <packagedElement xmi:type="uml:DataType" xmi:id="_FJL_0czBEeSdIu0-z7Dq7g" name="Array:Int"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_FJL_0szBEeSdIu0-z7Dq7g" name="Array:Float"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_FJL_08zBEeSdIu0-z7Dq7g" name="Int"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_FJL_1MzBEeSdIu0-z7Dq7g" name="Float"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_FJL_1czBEeSdIu0-z7Dq7g" name="String"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_FJL_1szBEeSdIu0-z7Dq7g" name="Array:Float (2)"/>
 </uml:Model>

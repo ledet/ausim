@@ -8,12 +8,14 @@
   </Block>
   <Block xsi:type="simulinksourcemm:Block" Type="BusSelector"/>
   <Block xsi:type="simulinksourcemm:Block" Type="Constant">
+    <Property Name="Value" Type="Int" Value="1"/>
     <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit from 'Constant value'"/>
   </Block>
   <Block xsi:type="simulinksourcemm:Block" Type="Demux">
     <Property Name="Outputs" Type="Int" Value="4"/>
   </Block>
   <Block xsi:type="simulinksourcemm:Block" Type="Gain">
+    <Property Name="Gain" Type="Int" Value="1"/>
     <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
   </Block>
   <Block xsi:type="simulinksourcemm:Block" Type="Inport">

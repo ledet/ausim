@@ -7,16 +7,20 @@
     <Port Direction="out" Name=" Actuator Force 1" Type="" Num="1"/>
     <Port Direction="out" Name="Actuator Force 2" Type="" Num="2"/>
     <Block xsi:type="simulinksourcemm:Block" Name="Embedded Code" ID="4" Type="Function">
+      <Property Name="Position-x" Type="Int" Value="100"/>
+      <Property Name="Position-y" Type="Int" Value="45"/>
+      <Property Name="Position-width" Type="Int" Value="170"/>
+      <Property Name="Position-height" Type="Int" Value="170"/>
       <Port Direction="in" Name="ball_position" Type="" Num="1"/>
       <Port Direction="in" Name="power" Type="" Num="2"/>
       <Port Direction="in" Name="robot_position" Type="" Num="3"/>
       <Port Direction="out" Name="actuator_force_1" Type="" Num="1"/>
       <Port Direction="out" Name="actuator_force_2" Type="" Num="2"/>
     </Block>
-    <Connection src="//@Block.0/@Port.0" dst="//@Block.0/@Block.0/@Port.0" Name=""/>
-    <Connection src="//@Block.0/@Port.2" dst="//@Block.0/@Block.0/@Port.2" Name=""/>
-    <Connection src="//@Block.0/@Block.0/@Port.3" dst="//@Block.0/@Port.3" Name=""/>
-    <Connection src="//@Block.0/@Block.0/@Port.4" dst="//@Block.0/@Port.4" Name=""/>
-    <Connection src="//@Block.0/@Port.1" dst="//@Block.0/@Block.0/@Port.1" Name=""/>
+    <Connection src="//@Block.0/@Port.0" dst="//@Block.0/@Block.0/@Port.0"/>
+    <Connection src="//@Block.0/@Port.2" dst="//@Block.0/@Block.0/@Port.2"/>
+    <Connection src="//@Block.0/@Block.0/@Port.3" dst="//@Block.0/@Port.3"/>
+    <Connection src="//@Block.0/@Block.0/@Port.4" dst="//@Block.0/@Port.4"/>
+    <Connection src="//@Block.0/@Port.1" dst="//@Block.0/@Block.0/@Port.1"/>
   </Block>
 </simulinksourcemm:Model>

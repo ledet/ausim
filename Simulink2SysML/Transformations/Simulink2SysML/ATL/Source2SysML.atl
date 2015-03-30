@@ -233,15 +233,17 @@ rule ChildSystem2Block {
 		sysb: SysML!Class (
 			name <- srcs.Name.regexReplaceAll('\n', ' '),
 			ownedAttribute <- srcs.Port->union(srcs.Block->select(p | p.isPortBlock))
-				->union(srcs.Block->select(bnp | not bnp.isPortBlock)->collect(b | thisModule.ParentAssoc(b)))
+				->union(srcs.Block->select(bnp | not bnp.isPortBlock)
+					->collect(bae | thisModule.hParentAssoc(bae)))
 				->union(srcs.Property)
-				->append(thisModule.ChildAssoc(srcs)),
+				->append(thisModule.hChildAssoc(srcs)),
 			ownedConnector <- srcs.Connection->collect(con | thisModule.Connection2Connector(con))
 		),
 		bb : SysML!Block (
-			base_Class<-sysb
+			base_Class <- sysb
 		)
 	do {
+		('Created System: ' + sysb.name).println();
 		if (not thisModule.blockList.includes(srcs.refImmediateComposite().ID)) {
 			thisModule.blockList<-thisModule.blockList.append(srcs.refImmediateComposite().ID);
 			thisModule.blockPropertyCount<-thisModule.blockPropertyCount.append(thisModule.blockPropInitCount);
@@ -284,7 +286,7 @@ rule System2Block {
 		sysb: SysML!Class (
 			name <- srcs.Name.regexReplaceAll('\n', ' '),
 			ownedAttribute <- srcs.Port->union(srcs.Block->select(p | p.isPortBlock))
-				->union(srcs.Block->select(bnp | not bnp.isPortBlock)->collect(b | thisModule.ParentAssoc(b)))
+				->union(srcs.Block->select(bnp | not bnp.isPortBlock)->collect(b | thisModule.ParentAssocExists(b)))
 				->union(srcs.Property),
 			ownedConnector <- srcs.Connection->collect(con | thisModule.Connection2Connector(con))
 		),
@@ -718,9 +720,23 @@ rule CreateIBDDiag(src : SysMLnot!Diagram, obj : SysML!Object, diagName : String
 		)
 }
 
+helper def : hChildAssoc(child: Source!Component) : SysML!Property =
+	if thisModule.associationExists(child) then
+		thisModule.ChildAssocExists(child)
+	else
+		thisModule.ChildAssoc(child)
+	endif;
+
+helper def : hParentAssoc(child: Source!Component) : SysML!Property =
+	if thisModule.associationExists(child) then
+		thisModule.ParentAssocExists(child)
+	else
+		thisModule.ParentAssoc(child)
+	endif;
+
 lazy rule ChildAssoc {
 	from
-		child: Source!Component
+		child: Source!Component (not thisModule.associationExists(child))
 	to
 		prop: SysML!Property (
 			name<-child.refImmediateComposite().Name.toLower().regexReplaceAll('\n', ' '),
@@ -732,6 +748,9 @@ lazy rule ChildAssoc {
 		assoc: SysML!Association (
 			name<-(child.refImmediateComposite().Name + ' has a ' + child.Name).regexReplaceAll('\n', ' ')
 		)
+	do {
+		('Created association (child): ' + assoc.name).println();
+	}
 }
 
 lazy rule ParentAssoc {
@@ -742,8 +761,46 @@ lazy rule ParentAssoc {
 			name<-child.Name.toLower().regexReplaceAll('\n', ' '),
 			type<-child,
 			aggregation<-'composite',
+			association<-assoc
+		),
+		assoc: SysML!Association (
+			name<-(child.refImmediateComposite().Name + ' has a ' + child.Name).regexReplaceAll('\n', ' ')
+		)
+	do
+	{
+		('Created association (parent): ' + assoc.name).println();
+	}
+}
+
+lazy rule ChildAssocExists {
+	from
+		child: Source!Component
+	to
+		prop: SysML!Property (
+			name<-child.refImmediateComposite().Name.toLower().regexReplaceAll('\n', ' '),
+			type<-child.refImmediateComposite(),
+			association<-thisModule.getAssociation(child)
+			--SysML!Association.allInstancesFrom('uml')->
+				--any(a | a.name = srcb.refImmediateComposite().Name + ' has a ' + srcb.Name)
+		)
+	do {
+		('Set association (child): ' + prop.association.name).println();
+	}
+}
+
+lazy rule ParentAssocExists {
+	from
+		child: Source!Component
+	to
+		prop: SysML!Property (
+			name<-child.Name.toLower().regexReplaceAll('\n', ' '),
+			type<-child,
+			aggregation<-'composite',
 			association<-thisModule.getAssociation(child)
 		)
+	do {
+		('Set association (parent): ' + prop.association.name).println();
+	}
 }
 
 lazy rule ShapeeAnnotations {
@@ -914,9 +971,13 @@ helper def : getAssociationFromPorts(prt1 : SysML!Port, prt2 : SysML!Port) : Sys
 				select(a | (a.memberEnd.first().type = prt1.refImmediateComposite() and a.memberEnd.last().type = prt2.refImmediateComposite())
 					or (a.memberEnd.first().type = prt2.refImmediateComposite() and a.memberEnd.last().type = prt1.refImmediateComposite()))->first();
 
-helper def : getAssociation(child : SysML!Class) : SysML!Association =
+helper def : getAssociation(child : Source!Component) : SysML!Association =
 	SysML!Association.allInstancesFrom('uml')->
-				any(a | a.name = child.refImmediateComposite().Name + ' has a ' + child.Name);
+				any(a | a.name = (child.refImmediateComposite().Name + ' has a ' + child.Name).regexReplaceAll('\n', ' '));
+
+helper def : associationExists(child : Source!Component) : Boolean =
+	SysML!Association.allInstancesFrom('uml')->
+				exists(a | a.name = (child.refImmediateComposite().Name + ' has a ' + child.Name).regexReplaceAll('\n', ' '));
 
 helper def : getBlockShape(propRef : SysML!Property, parentType : String) : SysMLnot!Shape =
 	SysMLnot!Shape.allInstancesFrom('nota')->select(s | s.element = propRef.refImmediateComposite() and s.type.split(thisModule.delimChar).at(2) = parentType)->first();

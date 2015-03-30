@@ -1,0 +1,1586 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Blocks="http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks" xmlns:PortAndFlows="http://www.eclipse.org/papyrus/0.7.0/SysML/PortAndFlows" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks http://www.eclipse.org/papyrus/0.7.0/SysML/PortAndFlows http://www.eclipse.org/papyrus/0.7.0/SysML#//portandflows">
+  <uml:Model xmi:id="_AURKMMy_EeSTnJcbCpz_yA" name="SysMLmodel">
+    <packagedElement xmi:type="uml:Package" xmi:id="_AURKMcy_EeSTnJcbCpz_yA" name="RoboSoccer">
+      <packagedElement xmi:type="uml:Class" xmi:id="_AURKMsy_EeSTnJcbCpz_yA" name="RoboSoccer">
+        <ownedAttribute xmi:id="_AURKM8y_EeSTnJcbCpz_yA" name="2d visualization" type="_AUSYkcy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGN8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AURKNMy_EeSTnJcbCpz_yA" name="ball dynamics" type="_AUTmnsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGOMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AURKNcy_EeSTnJcbCpz_yA" name="bus creator1" type="_AURxfMy_EeSTnJcbCpz_yA" aggregation="composite"/>
+        <ownedAttribute xmi:id="_AURKNsy_EeSTnJcbCpz_yA" name="bus creator2" type="_AURxhcy_EeSTnJcbCpz_yA" aggregation="composite"/>
+        <ownedAttribute xmi:id="_AURKN8y_EeSTnJcbCpz_yA" name="bus creator3" type="_AURxjMy_EeSTnJcbCpz_yA" aggregation="composite"/>
+        <ownedAttribute xmi:id="_AURKOMy_EeSTnJcbCpz_yA" name="bus creator4" type="_AUSYU8y_EeSTnJcbCpz_yA" aggregation="composite"/>
+        <ownedAttribute xmi:id="_AURKOcy_EeSTnJcbCpz_yA" name="bus creator5" type="_AUSYWsy_EeSTnJcbCpz_yA" aggregation="composite"/>
+        <ownedAttribute xmi:id="_AURKOsy_EeSTnJcbCpz_yA" name="bus creator6" type="_AUSYYcy_EeSTnJcbCpz_yA" aggregation="composite"/>
+        <ownedAttribute xmi:id="_AURKO8y_EeSTnJcbCpz_yA" name="bus selector" type="_AUSYacy_EeSTnJcbCpz_yA" aggregation="composite"/>
+        <ownedAttribute xmi:id="_AURKPMy_EeSTnJcbCpz_yA" name="bus selector1" type="_AUSYbsy_EeSTnJcbCpz_yA" aggregation="composite"/>
+        <ownedAttribute xmi:id="_AURKPcy_EeSTnJcbCpz_yA" name="click to read me" type="_AUSYc8y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGAMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AURKPsy_EeSTnJcbCpz_yA" name="robot 1 dynamics" type="_AUUNz8y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGOsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AURKP8y_EeSTnJcbCpz_yA" name="robot 2 dynamics" type="_AUU0y8y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGO8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AURKQMy_EeSTnJcbCpz_yA" name="robot 3 dynamics" type="_AUWC18y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGPMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AURKQcy_EeSTnJcbCpz_yA" name="robot 4 dynamics" type="_AUX4Fcy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGPcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AURKQsy_EeSTnJcbCpz_yA" name="stop simulation" type="_AUSYdcy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGLcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AURKQ8y_EeSTnJcbCpz_yA" name="team_1_strategy" type="_AUSYeMy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGLsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AURKRMy_EeSTnJcbCpz_yA" name="team_1_strategy2" type="_AUSYf8y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGL8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AURKRcy_EeSTnJcbCpz_yA" name="unit delay" type="_AUSYhsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGMMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AURKRsy_EeSTnJcbCpz_yA" name="unit delay1" type="_AUSYisy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGMcy_EeSTnJcbCpz_yA"/>
+        <ownedConnector xmi:id="_AURKR8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURKSMy_EeSTnJcbCpz_yA" role="_AUUN0cy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURKScy_EeSTnJcbCpz_yA" role="_AURxfcy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURKSsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURKS8y_EeSTnJcbCpz_yA" role="_AUU0zcy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURKTMy_EeSTnJcbCpz_yA" role="_AURxfsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURKTcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURKTsy_EeSTnJcbCpz_yA" role="_AUWC2cy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURKT8y_EeSTnJcbCpz_yA" role="_AURxf8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURKUMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURKUcy_EeSTnJcbCpz_yA" role="_AUX4F8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURKUsy_EeSTnJcbCpz_yA" role="_AURxgMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURKU8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURKVMy_EeSTnJcbCpz_yA" role="_AUWC2sy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURKVcy_EeSTnJcbCpz_yA" role="_AURxhsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURKVsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURKV8y_EeSTnJcbCpz_yA" role="_AUX4GMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURKWMy_EeSTnJcbCpz_yA" role="_AURxh8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURKWcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURKWsy_EeSTnJcbCpz_yA" role="_AURxiMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURKW8y_EeSTnJcbCpz_yA" role="_AUSYgcy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURKXMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURKXcy_EeSTnJcbCpz_yA" role="_AUSYg8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURKXsy_EeSTnJcbCpz_yA" role="_AUSYW8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURKX8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURKYMy_EeSTnJcbCpz_yA" role="_AUSYhMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURKYcy_EeSTnJcbCpz_yA" role="_AUSYXMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURKYsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURKY8y_EeSTnJcbCpz_yA" role="_AUSYXcy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURKZMy_EeSTnJcbCpz_yA" role="_AUSYb8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURKZcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURKZsy_EeSTnJcbCpz_yA" role="_AUSYfMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURKZ8y_EeSTnJcbCpz_yA" role="_AUSYVMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURKaMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURKacy_EeSTnJcbCpz_yA" role="_AUSYfcy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURKasy_EeSTnJcbCpz_yA" role="_AUSYVcy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxQMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxQcy_EeSTnJcbCpz_yA" role="_AUSYVsy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxQsy_EeSTnJcbCpz_yA" role="_AUSYasy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxQ8y_EeSTnJcbCpz_yA" name="&lt;signal1>">
+          <end xmi:id="_AURxRMy_EeSTnJcbCpz_yA" role="_AUSYa8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxRcy_EeSTnJcbCpz_yA" role="_AUUN0My_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxRsy_EeSTnJcbCpz_yA" name="&lt;signal2>">
+          <end xmi:id="_AURxR8y_EeSTnJcbCpz_yA" role="_AUSYbMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxSMy_EeSTnJcbCpz_yA" role="_AUU0zMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxScy_EeSTnJcbCpz_yA" name="&lt;signal1>">
+          <end xmi:id="_AURxSsy_EeSTnJcbCpz_yA" role="_AUSYcMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxS8y_EeSTnJcbCpz_yA" role="_AUWC2My_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxTMy_EeSTnJcbCpz_yA" name="&lt;signal2>">
+          <end xmi:id="_AURxTcy_EeSTnJcbCpz_yA" role="_AUSYccy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxTsy_EeSTnJcbCpz_yA" role="_AUX4Fsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxT8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxUMy_EeSTnJcbCpz_yA" role="_AUTmosy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxUcy_EeSTnJcbCpz_yA" role="_AUSYi8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxUsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxU8y_EeSTnJcbCpz_yA" role="_AUSYZcy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxVMy_EeSTnJcbCpz_yA" role="_AUS_YMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxVcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxVsy_EeSTnJcbCpz_yA" role="_AUTmocy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxV8y_EeSTnJcbCpz_yA" role="_AUSYZMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxWMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxWcy_EeSTnJcbCpz_yA" role="_AURxj8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxWsy_EeSTnJcbCpz_yA" role="_AUSYesy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxW8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxXMy_EeSTnJcbCpz_yA" role="_AUU0zsy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxXcy_EeSTnJcbCpz_yA" role="_AURxjsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxXsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxX8y_EeSTnJcbCpz_yA" role="_AUUN0sy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxYMy_EeSTnJcbCpz_yA" role="_AURxjcy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxYcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxYsy_EeSTnJcbCpz_yA" role="_AUSYiMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxY8y_EeSTnJcbCpz_yA" role="_AUSYdsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxZMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxZcy_EeSTnJcbCpz_yA" role="_AUSYjMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxZsy_EeSTnJcbCpz_yA" role="_AUSYh8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxZ8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxaMy_EeSTnJcbCpz_yA" role="_AURxgcy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxacy_EeSTnJcbCpz_yA" role="_AUTmn8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxasy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxa8y_EeSTnJcbCpz_yA" role="_AURxgcy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxbMy_EeSTnJcbCpz_yA" role="_AUSYY8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxbcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxbsy_EeSTnJcbCpz_yA" role="_AURxgcy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxb8y_EeSTnJcbCpz_yA" role="_AUSYe8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxcMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxccy_EeSTnJcbCpz_yA" role="_AURxgcy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxcsy_EeSTnJcbCpz_yA" role="_AUSYgsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxc8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxdMy_EeSTnJcbCpz_yA" role="_AUTmoMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxdcy_EeSTnJcbCpz_yA" role="_AUSYYsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxdsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxd8y_EeSTnJcbCpz_yA" role="_AUTmoMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxeMy_EeSTnJcbCpz_yA" role="_AUSYecy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AURxecy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AURxesy_EeSTnJcbCpz_yA" role="_AUTmoMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AURxe8y_EeSTnJcbCpz_yA" role="_AUSYgMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AURxfMy_EeSTnJcbCpz_yA" name="Bus Creator1">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AURxfcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AURxfsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AURxf8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AURxgMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AURxgcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AURxgsy_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUYfPcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AURxg8y_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AURxhMy_EeSTnJcbCpz_yA" value="Inherit: auto"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AURxhcy_EeSTnJcbCpz_yA" name="Bus Creator2">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AURxhsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AURxh8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AURxiMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AURxicy_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUYfPsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AURxisy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AURxi8y_EeSTnJcbCpz_yA" value="Inherit: auto"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AURxjMy_EeSTnJcbCpz_yA" name="Bus Creator3">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AURxjcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AURxjsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AURxj8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUSYUMy_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUYfP8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUSYUcy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUSYUsy_EeSTnJcbCpz_yA" value="Inherit: auto"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUSYU8y_EeSTnJcbCpz_yA" name="Bus Creator4">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYVMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYVcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYVsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUSYV8y_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUYfQMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUSYWMy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUSYWcy_EeSTnJcbCpz_yA" value="Inherit: auto"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUSYWsy_EeSTnJcbCpz_yA" name="Bus Creator5">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYW8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYXMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYXcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUSYXsy_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUYfQcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUSYX8y_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUSYYMy_EeSTnJcbCpz_yA" value="Inherit: auto"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUSYYcy_EeSTnJcbCpz_yA" name="Bus Creator6">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYYsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYY8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYZMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYZcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUSYZsy_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUYfQsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUSYZ8y_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUSYaMy_EeSTnJcbCpz_yA" value="Inherit: auto"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUSYacy_EeSTnJcbCpz_yA" name="Bus Selector">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYasy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYa8y_EeSTnJcbCpz_yA" name="&lt;signal1> "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYbMy_EeSTnJcbCpz_yA" name="&lt;signal2> "/>
+        <ownedAttribute xmi:id="_AUSYbcy_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUYfQ8y_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUSYbsy_EeSTnJcbCpz_yA" name="Bus Selector1">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYb8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYcMy_EeSTnJcbCpz_yA" name="&lt;signal1> "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYccy_EeSTnJcbCpz_yA" name="&lt;signal2> "/>
+        <ownedAttribute xmi:id="_AUSYcsy_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUYfRMy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUSYc8y_EeSTnJcbCpz_yA" name="CLICK TO READ ME">
+        <ownedAttribute xmi:id="_AUSYdMy_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUZGAMy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUSYdcy_EeSTnJcbCpz_yA" name="Stop Simulation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYdsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUSYd8y_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUZGLcy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUSYeMy_EeSTnJcbCpz_yA" name="Team_1_Strategy">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYecy_EeSTnJcbCpz_yA" name="Ball Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYesy_EeSTnJcbCpz_yA" name="Power "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYe8y_EeSTnJcbCpz_yA" name="Robot Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYfMy_EeSTnJcbCpz_yA" name=" Actuator Force 1 "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYfcy_EeSTnJcbCpz_yA" name="Actuator Force 2 "/>
+        <ownedAttribute xmi:id="_AUSYfsy_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUZGLsy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUSYf8y_EeSTnJcbCpz_yA" name="Team_1_Strategy2">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYgMy_EeSTnJcbCpz_yA" name="Ball Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYgcy_EeSTnJcbCpz_yA" name="Power "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYgsy_EeSTnJcbCpz_yA" name="Robot Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYg8y_EeSTnJcbCpz_yA" name="Actuator Force 3 "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYhMy_EeSTnJcbCpz_yA" name="Actuator Force 4 "/>
+        <ownedAttribute xmi:id="_AUSYhcy_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUZGL8y_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUSYhsy_EeSTnJcbCpz_yA" name="Unit Delay">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYh8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYiMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUSYicy_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUZGMMy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUSYisy_EeSTnJcbCpz_yA" name="Unit Delay1">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYi8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYjMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUSYjcy_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUZGMcy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUSYjsy_EeSTnJcbCpz_yA" name="To Workspace">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUSYj8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUSYkMy_EeSTnJcbCpz_yA" name="2d visualization" type="_AUSYkcy_EeSTnJcbCpz_yA" association="_AUYfNcy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUSYkcy_EeSTnJcbCpz_yA" name="2D Visualization">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUS_YMy_EeSTnJcbCpz_yA" name="In1 "/>
+        <ownedAttribute xmi:id="_AUS_Ycy_EeSTnJcbCpz_yA" name="to workspace" type="_AUSYjsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUYfNcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUS_Ysy_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUZGN8y_EeSTnJcbCpz_yA"/>
+        <ownedConnector xmi:id="_AUS_Y8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUS_ZMy_EeSTnJcbCpz_yA" role="_AUS_YMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUS_Zcy_EeSTnJcbCpz_yA" role="_AUSYj8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUS_Zsy_EeSTnJcbCpz_yA" name="1/mass">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUS_Z8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUS_aMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUS_acy_EeSTnJcbCpz_yA" name="ball dynamics" type="_AUTmnsy_EeSTnJcbCpz_yA" association="_AUYfNsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUS_asy_EeSTnJcbCpz_yA" name="Gain" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUS_a8y_EeSTnJcbCpz_yA" value="1/0.01"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUS_bMy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUS_bcy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUS_bsy_EeSTnJcbCpz_yA" name="Collision Modeling">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUS_b8y_EeSTnJcbCpz_yA" name="ball_velocity "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUS_cMy_EeSTnJcbCpz_yA" name="robot_position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUS_ccy_EeSTnJcbCpz_yA" name="ball_position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUS_csy_EeSTnJcbCpz_yA" name="force "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUS_c8y_EeSTnJcbCpz_yA" name="goal "/>
+        <ownedAttribute xmi:id="_AUS_dMy_EeSTnJcbCpz_yA" name="ball dynamics" type="_AUTmnsy_EeSTnJcbCpz_yA" association="_AUZGMsy_EeSTnJcbCpz_yA"/>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_AUS_dcy_EeSTnJcbCpz_yA" name="Function" specification="_AUS_dsy_EeSTnJcbCpz_yA"/>
+        <ownedOperation xmi:id="_AUS_dsy_EeSTnJcbCpz_yA" name="Function" method="_AUS_dcy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUS_d8y_EeSTnJcbCpz_yA" name="Position">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUS_eMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUS_ecy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUS_esy_EeSTnJcbCpz_yA" name="ball dynamics" type="_AUTmnsy_EeSTnJcbCpz_yA" association="_AUYfN8y_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUS_e8y_EeSTnJcbCpz_yA" name="Unit Delay">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUS_fMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUS_fcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUTmcMy_EeSTnJcbCpz_yA" name="ball dynamics" type="_AUTmnsy_EeSTnJcbCpz_yA" association="_AUYfO8y_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUTmccy_EeSTnJcbCpz_yA" name="Velocity">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUTmcsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUTmc8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUTmdMy_EeSTnJcbCpz_yA" name="ball dynamics" type="_AUTmnsy_EeSTnJcbCpz_yA" association="_AUYfPMy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUTmdcy_EeSTnJcbCpz_yA" name="TEXT_GOAL">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUTmdsy_EeSTnJcbCpz_yA" name="In1 "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUTmd8y_EeSTnJcbCpz_yA" name="Out1 "/>
+        <ownedAttribute xmi:id="_AUTmeMy_EeSTnJcbCpz_yA" name="constant" type="_AUTmiMy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUYfOMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUTmecy_EeSTnJcbCpz_yA" name="constant1" type="_AUTmj8y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUYfOcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUTmesy_EeSTnJcbCpz_yA" name="switch" type="_AUTmlsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUYfOsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUTme8y_EeSTnJcbCpz_yA" name="ball dynamics" type="_AUTmnsy_EeSTnJcbCpz_yA" association="_AUZGOcy_EeSTnJcbCpz_yA"/>
+        <ownedConnector xmi:id="_AUTmfMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUTmfcy_EeSTnJcbCpz_yA" role="_AUTmdsy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUTmfsy_EeSTnJcbCpz_yA" role="_AUTmmMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUTmf8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUTmgMy_EeSTnJcbCpz_yA" role="_AUTmmsy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUTmgcy_EeSTnJcbCpz_yA" role="_AUTmd8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUTmgsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUTmg8y_EeSTnJcbCpz_yA" role="_AUTmicy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUTmhMy_EeSTnJcbCpz_yA" role="_AUTml8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUTmhcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUTmhsy_EeSTnJcbCpz_yA" role="_AUTmkMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUTmh8y_EeSTnJcbCpz_yA" role="_AUTmmcy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUTmiMy_EeSTnJcbCpz_yA" name="Constant">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUTmicy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUTmisy_EeSTnJcbCpz_yA" name="text_goal" type="_AUTmdcy_EeSTnJcbCpz_yA" association="_AUYfOMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUTmi8y_EeSTnJcbCpz_yA" name="Value" type="_AUYfL8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUTmjMy_EeSTnJcbCpz_yA" value="[45, 40, 1.9]"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUTmjcy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUTmjsy_EeSTnJcbCpz_yA" value="Inherit: Inherit from 'Constant value'"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUTmj8y_EeSTnJcbCpz_yA" name="Constant1">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUTmkMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUTmkcy_EeSTnJcbCpz_yA" name="text_goal" type="_AUTmdcy_EeSTnJcbCpz_yA" association="_AUYfOcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUTmksy_EeSTnJcbCpz_yA" name="Value" type="_AUYfL8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUTmk8y_EeSTnJcbCpz_yA" value="[45, 40, -1.9]"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUTmlMy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUTmlcy_EeSTnJcbCpz_yA" value="Inherit: Inherit from 'Constant value'"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUTmlsy_EeSTnJcbCpz_yA" name="Switch">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUTml8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUTmmMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUTmmcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUTmmsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUTmm8y_EeSTnJcbCpz_yA" name="text_goal" type="_AUTmdcy_EeSTnJcbCpz_yA" association="_AUYfOsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUTmnMy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUTmncy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUTmnsy_EeSTnJcbCpz_yA" name="Ball Dynamics">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUTmn8y_EeSTnJcbCpz_yA" name="Robot Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUTmoMy_EeSTnJcbCpz_yA" name="Ball Position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUTmocy_EeSTnJcbCpz_yA" name="Text_Goal "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUTmosy_EeSTnJcbCpz_yA" name="GOAL "/>
+        <ownedAttribute xmi:id="_AUTmo8y_EeSTnJcbCpz_yA" name="1/mass" type="_AUS_Zsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUYfNsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUTmpMy_EeSTnJcbCpz_yA" name="collision modeling" type="_AUS_bsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGMsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUTmpcy_EeSTnJcbCpz_yA" name="position" type="_AUS_d8y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUYfN8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUTmpsy_EeSTnJcbCpz_yA" name="text_goal" type="_AUTmdcy_EeSTnJcbCpz_yA" aggregation="composite"/>
+        <ownedAttribute xmi:id="_AUTmp8y_EeSTnJcbCpz_yA" name="unit delay" type="_AUS_e8y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUYfO8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUTmqMy_EeSTnJcbCpz_yA" name="velocity" type="_AUTmccy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUYfPMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUTmqcy_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUZGOMy_EeSTnJcbCpz_yA"/>
+        <ownedConnector xmi:id="_AUTmqsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUTmq8y_EeSTnJcbCpz_yA" role="_AUTmn8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUTmrMy_EeSTnJcbCpz_yA" role="_AUS_cMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUTmrcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUTmrsy_EeSTnJcbCpz_yA" role="_AUS_csy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUTmr8y_EeSTnJcbCpz_yA" role="_AUS_Z8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUTmsMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUTmscy_EeSTnJcbCpz_yA" role="_AUS_aMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUTmssy_EeSTnJcbCpz_yA" role="_AUTmcsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUTms8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUTmtMy_EeSTnJcbCpz_yA" role="_AUS_fcy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUTmtcy_EeSTnJcbCpz_yA" role="_AUTmosy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUTmtsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUTmt8y_EeSTnJcbCpz_yA" role="_AUTmd8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUTmuMy_EeSTnJcbCpz_yA" role="_AUTmocy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUTmucy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUTmusy_EeSTnJcbCpz_yA" role="_AUTmc8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUTmu8y_EeSTnJcbCpz_yA" role="_AUS_eMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUTmvMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUTmvcy_EeSTnJcbCpz_yA" role="_AUTmc8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUTmvsy_EeSTnJcbCpz_yA" role="_AUS_b8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUTmv8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUTmwMy_EeSTnJcbCpz_yA" role="_AUS_ecy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUTmwcy_EeSTnJcbCpz_yA" role="_AUTmoMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUTmwsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUTmw8y_EeSTnJcbCpz_yA" role="_AUS_ecy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUTmxMy_EeSTnJcbCpz_yA" role="_AUS_ccy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUTmxcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUTmxsy_EeSTnJcbCpz_yA" role="_AUS_c8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUTmx8y_EeSTnJcbCpz_yA" role="_AUS_fMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUTmyMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUTmycy_EeSTnJcbCpz_yA" role="_AUS_c8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUTmysy_EeSTnJcbCpz_yA" role="_AUTmdsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUUNgMy_EeSTnJcbCpz_yA" name="Abs">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNgcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNgsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUUNg8y_EeSTnJcbCpz_yA" name="robot 1 dynamics" type="_AUUNz8y_EeSTnJcbCpz_yA" association="_AUZGAcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUUNhMy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUUNhcy_EeSTnJcbCpz_yA" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUUNhsy_EeSTnJcbCpz_yA" name="Acceleration">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNh8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNiMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUUNicy_EeSTnJcbCpz_yA" name="robot 1 dynamics" type="_AUUNz8y_EeSTnJcbCpz_yA" association="_AUZGAsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUUNisy_EeSTnJcbCpz_yA" name="Gain" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUUNi8y_EeSTnJcbCpz_yA" value="1/(10*P+1)"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUUNjMy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUUNjcy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUUNjsy_EeSTnJcbCpz_yA" name="B">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNj8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNkMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUUNkcy_EeSTnJcbCpz_yA" name="robot 1 dynamics" type="_AUUNz8y_EeSTnJcbCpz_yA" association="_AUZGA8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUUNksy_EeSTnJcbCpz_yA" name="Gain" type="_AUYfMsy_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUUNk8y_EeSTnJcbCpz_yA" value="-2"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUUNlMy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUUNlcy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUUNlsy_EeSTnJcbCpz_yA" name="Boundary Collisons">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNl8y_EeSTnJcbCpz_yA" name="robot_position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNmMy_EeSTnJcbCpz_yA" name="collision_force "/>
+        <ownedAttribute xmi:id="_AUUNmcy_EeSTnJcbCpz_yA" name="robot 1 dynamics" type="_AUUNz8y_EeSTnJcbCpz_yA" association="_AUZGM8y_EeSTnJcbCpz_yA"/>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_AUUNmsy_EeSTnJcbCpz_yA" name="Function" specification="_AUUNm8y_EeSTnJcbCpz_yA"/>
+        <ownedOperation xmi:id="_AUUNm8y_EeSTnJcbCpz_yA" name="Function" method="_AUUNmsy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUUNnMy_EeSTnJcbCpz_yA" name="Compare To Constant">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNncy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNnsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUUNn8y_EeSTnJcbCpz_yA" name="robot 1 dynamics" type="_AUUNz8y_EeSTnJcbCpz_yA" association="_AUZGBMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUUNoMy_EeSTnJcbCpz_yA" name="relop" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUUNocy_EeSTnJcbCpz_yA" value=">"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUUNosy_EeSTnJcbCpz_yA" name="const" type="_AUYfMMy_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUUNo8y_EeSTnJcbCpz_yA" value="[0, 0]"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUUNpMy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUUNpcy_EeSTnJcbCpz_yA" value="uint8"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUUNpsy_EeSTnJcbCpz_yA" name="Energy Loss Calculation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNp8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNqMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUUNqcy_EeSTnJcbCpz_yA" name="robot 1 dynamics" type="_AUUNz8y_EeSTnJcbCpz_yA" association="_AUZGBcy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUUNqsy_EeSTnJcbCpz_yA" name="Position">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNq8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNrMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUUNrcy_EeSTnJcbCpz_yA" name="robot 1 dynamics" type="_AUUNz8y_EeSTnJcbCpz_yA" association="_AUZGBsy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUUNrsy_EeSTnJcbCpz_yA" name="Product">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNr8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNsMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNscy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUUNssy_EeSTnJcbCpz_yA" name="robot 1 dynamics" type="_AUUNz8y_EeSTnJcbCpz_yA" association="_AUZGB8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUUNs8y_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUUNtMy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUUNtcy_EeSTnJcbCpz_yA" name="Rate of Discharge">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNtsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNt8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUUNuMy_EeSTnJcbCpz_yA" name="robot 1 dynamics" type="_AUUNz8y_EeSTnJcbCpz_yA" association="_AUZGCMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUUNucy_EeSTnJcbCpz_yA" name="Gain" type="_AUYfMcy_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUUNusy_EeSTnJcbCpz_yA" value="-0.01"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUUNu8y_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUUNvMy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUUNvcy_EeSTnJcbCpz_yA" name="Saturation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNvsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNv8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUUNwMy_EeSTnJcbCpz_yA" name="robot 1 dynamics" type="_AUUNz8y_EeSTnJcbCpz_yA" association="_AUZGCcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUUNwcy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUUNwsy_EeSTnJcbCpz_yA" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUUNw8y_EeSTnJcbCpz_yA" name="Sum">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNxMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNxcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNxsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNx8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUUNyMy_EeSTnJcbCpz_yA" name="robot 1 dynamics" type="_AUUNz8y_EeSTnJcbCpz_yA" association="_AUZGCsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUUNycy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUUNysy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUUNy8y_EeSTnJcbCpz_yA" name="Velocity">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNzMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUNzcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUUNzsy_EeSTnJcbCpz_yA" name="robot 1 dynamics" type="_AUUNz8y_EeSTnJcbCpz_yA" association="_AUZGC8y_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUUNz8y_EeSTnJcbCpz_yA" name="Robot 1 Dynamics">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUN0My_EeSTnJcbCpz_yA" name="Actuator Force "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUN0cy_EeSTnJcbCpz_yA" name="Robot Position " type="_AUYfNMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUUN0sy_EeSTnJcbCpz_yA" name="Energy " type="_AUYfNMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUUN08y_EeSTnJcbCpz_yA" name="abs" type="_AUUNgMy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGAcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUUN1My_EeSTnJcbCpz_yA" name="acceleration" type="_AUUNhsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGAsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUUN1cy_EeSTnJcbCpz_yA" name="b" type="_AUUNjsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGA8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUUN1sy_EeSTnJcbCpz_yA" name="boundary collisons" type="_AUUNlsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGM8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUUN18y_EeSTnJcbCpz_yA" name="compare to constant" type="_AUUNnMy_EeSTnJcbCpz_yA" aggregation="composite"/>
+        <ownedAttribute xmi:id="_AUU0kMy_EeSTnJcbCpz_yA" name="energy loss calculation" type="_AUUNpsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGBcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU0kcy_EeSTnJcbCpz_yA" name="position" type="_AUUNqsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGBsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU0ksy_EeSTnJcbCpz_yA" name="product" type="_AUUNrsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGB8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU0k8y_EeSTnJcbCpz_yA" name="rate of discharge" type="_AUUNtcy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGCMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU0lMy_EeSTnJcbCpz_yA" name="saturation" type="_AUUNvcy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGCcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU0lcy_EeSTnJcbCpz_yA" name="sum" type="_AUUNw8y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGCsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU0lsy_EeSTnJcbCpz_yA" name="velocity" type="_AUUNy8y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGC8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU0l8y_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUZGOsy_EeSTnJcbCpz_yA"/>
+        <ownedConnector xmi:id="_AUU0mMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0mcy_EeSTnJcbCpz_yA" role="_AUUNiMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0msy_EeSTnJcbCpz_yA" role="_AUUNzMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0m8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0nMy_EeSTnJcbCpz_yA" role="_AUUNt8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0ncy_EeSTnJcbCpz_yA" role="_AUUNp8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0nsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0n8y_EeSTnJcbCpz_yA" role="_AUUNgsy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0oMy_EeSTnJcbCpz_yA" role="_AUUNtsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0ocy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0osy_EeSTnJcbCpz_yA" role="_AUUN0My_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0o8y_EeSTnJcbCpz_yA" role="_AUUNr8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0pMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0pcy_EeSTnJcbCpz_yA" role="_AUUNscy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0psy_EeSTnJcbCpz_yA" role="_AUUNvsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0p8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0qMy_EeSTnJcbCpz_yA" role="_AUUNnsy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0qcy_EeSTnJcbCpz_yA" role="_AUUNsMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0qsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0q8y_EeSTnJcbCpz_yA" role="_AUUNmMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0rMy_EeSTnJcbCpz_yA" role="_AUUNxcy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0rcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0rsy_EeSTnJcbCpz_yA" role="_AUUNx8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0r8y_EeSTnJcbCpz_yA" role="_AUUNh8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0sMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0scy_EeSTnJcbCpz_yA" role="_AUUNkMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0ssy_EeSTnJcbCpz_yA" role="_AUUNxMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0s8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0tMy_EeSTnJcbCpz_yA" role="_AUUNzcy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0tcy_EeSTnJcbCpz_yA" role="_AUUNq8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0tsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0t8y_EeSTnJcbCpz_yA" role="_AUUNzcy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0uMy_EeSTnJcbCpz_yA" role="_AUUNj8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0ucy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0usy_EeSTnJcbCpz_yA" role="_AUUNrMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0u8y_EeSTnJcbCpz_yA" role="_AUUNl8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0vMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0vcy_EeSTnJcbCpz_yA" role="_AUUNrMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0vsy_EeSTnJcbCpz_yA" role="_AUUN0cy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0v8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0wMy_EeSTnJcbCpz_yA" role="_AUUNqMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0wcy_EeSTnJcbCpz_yA" role="_AUUN0sy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0wsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0w8y_EeSTnJcbCpz_yA" role="_AUUNqMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0xMy_EeSTnJcbCpz_yA" role="_AUUNncy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0xcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0xsy_EeSTnJcbCpz_yA" role="_AUUNv8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0x8y_EeSTnJcbCpz_yA" role="_AUUNgcy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU0yMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU0ycy_EeSTnJcbCpz_yA" role="_AUUNv8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU0ysy_EeSTnJcbCpz_yA" role="_AUUNxsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUU0y8y_EeSTnJcbCpz_yA" name="Robot 2 Dynamics">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUU0zMy_EeSTnJcbCpz_yA" name="Actuator Force "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUU0zcy_EeSTnJcbCpz_yA" name="Robot Position " type="_AUYfNMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUU0zsy_EeSTnJcbCpz_yA" name="Energy " type="_AUYfNMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU0z8y_EeSTnJcbCpz_yA" name="abs" type="_AUVbvsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGDMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU00My_EeSTnJcbCpz_yA" name="acceleration" type="_AUVbxMy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGDcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU00cy_EeSTnJcbCpz_yA" name="b" type="_AUVbzMy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGDsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU00sy_EeSTnJcbCpz_yA" name="boundary collisons" type="_AUVb1My_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGNMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU008y_EeSTnJcbCpz_yA" name="compare to constant" type="_AUVb2sy_EeSTnJcbCpz_yA" aggregation="composite"/>
+        <ownedAttribute xmi:id="_AUU01My_EeSTnJcbCpz_yA" name="energy loss calculation" type="_AUVb5My_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGEMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU01cy_EeSTnJcbCpz_yA" name="position" type="_AUWCssy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGEcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU01sy_EeSTnJcbCpz_yA" name="product" type="_AUWCtsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGEsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU018y_EeSTnJcbCpz_yA" name="rate of discharge" type="_AUWCvcy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGE8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU02My_EeSTnJcbCpz_yA" name="saturation" type="_AUWCxcy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGFMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU02cy_EeSTnJcbCpz_yA" name="sum" type="_AUWCy8y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGFcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU02sy_EeSTnJcbCpz_yA" name="velocity" type="_AUWC08y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGFsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUU028y_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUZGO8y_EeSTnJcbCpz_yA"/>
+        <ownedConnector xmi:id="_AUU03My_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU03cy_EeSTnJcbCpz_yA" role="_AUVb3My_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU03sy_EeSTnJcbCpz_yA" role="_AUWCuMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU038y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU04My_EeSTnJcbCpz_yA" role="_AUWCucy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU04cy_EeSTnJcbCpz_yA" role="_AUWCxsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU04sy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU048y_EeSTnJcbCpz_yA" role="_AUU0zMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU05My_EeSTnJcbCpz_yA" role="_AUWCt8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU05cy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU05sy_EeSTnJcbCpz_yA" role="_AUVbwMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU058y_EeSTnJcbCpz_yA" role="_AUWCvsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU06My_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU06cy_EeSTnJcbCpz_yA" role="_AUWCv8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU06sy_EeSTnJcbCpz_yA" role="_AUVb5cy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU068y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU07My_EeSTnJcbCpz_yA" role="_AUVbxsy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU07cy_EeSTnJcbCpz_yA" role="_AUWC1My_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUU07sy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUU078y_EeSTnJcbCpz_yA" role="_AUWCz8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUU08My_EeSTnJcbCpz_yA" role="_AUVbxcy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUVboMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUVbocy_EeSTnJcbCpz_yA" role="_AUVb1sy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUVbosy_EeSTnJcbCpz_yA" role="_AUWCzcy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUVbo8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUVbpMy_EeSTnJcbCpz_yA" role="_AUVbzsy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUVbpcy_EeSTnJcbCpz_yA" role="_AUWCzMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUVbpsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUVbp8y_EeSTnJcbCpz_yA" role="_AUWCx8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUVbqMy_EeSTnJcbCpz_yA" role="_AUVbv8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUVbqcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUVbqsy_EeSTnJcbCpz_yA" role="_AUWCx8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUVbq8y_EeSTnJcbCpz_yA" role="_AUWCzsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUVbrMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUVbrcy_EeSTnJcbCpz_yA" role="_AUWCsMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUVbrsy_EeSTnJcbCpz_yA" role="_AUVb28y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUVbr8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUVbsMy_EeSTnJcbCpz_yA" role="_AUWCsMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUVbscy_EeSTnJcbCpz_yA" role="_AUU0zsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUVbssy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUVbs8y_EeSTnJcbCpz_yA" role="_AUWCtMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUVbtMy_EeSTnJcbCpz_yA" role="_AUU0zcy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUVbtcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUVbtsy_EeSTnJcbCpz_yA" role="_AUWCtMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUVbt8y_EeSTnJcbCpz_yA" role="_AUVb1cy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUVbuMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUVbucy_EeSTnJcbCpz_yA" role="_AUWC1cy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUVbusy_EeSTnJcbCpz_yA" role="_AUWCs8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUVbu8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUVbvMy_EeSTnJcbCpz_yA" role="_AUWC1cy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUVbvcy_EeSTnJcbCpz_yA" role="_AUVbzcy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUVbvsy_EeSTnJcbCpz_yA" name="Abs">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUVbv8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUVbwMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUVbwcy_EeSTnJcbCpz_yA" name="robot 2 dynamics" type="_AUU0y8y_EeSTnJcbCpz_yA" association="_AUZGDMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUVbwsy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUVbw8y_EeSTnJcbCpz_yA" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUVbxMy_EeSTnJcbCpz_yA" name="Acceleration">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUVbxcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUVbxsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUVbx8y_EeSTnJcbCpz_yA" name="robot 2 dynamics" type="_AUU0y8y_EeSTnJcbCpz_yA" association="_AUZGDcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUVbyMy_EeSTnJcbCpz_yA" name="Gain" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUVbycy_EeSTnJcbCpz_yA" value="1/(10*P+0.1)"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUVbysy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUVby8y_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUVbzMy_EeSTnJcbCpz_yA" name="B">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUVbzcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUVbzsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUVbz8y_EeSTnJcbCpz_yA" name="robot 2 dynamics" type="_AUU0y8y_EeSTnJcbCpz_yA" association="_AUZGDsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUVb0My_EeSTnJcbCpz_yA" name="Gain" type="_AUYfMsy_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUVb0cy_EeSTnJcbCpz_yA" value="-2"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUVb0sy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUVb08y_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUVb1My_EeSTnJcbCpz_yA" name="Boundary Collisons">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUVb1cy_EeSTnJcbCpz_yA" name="robot_position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUVb1sy_EeSTnJcbCpz_yA" name="collision_force "/>
+        <ownedAttribute xmi:id="_AUVb18y_EeSTnJcbCpz_yA" name="robot 2 dynamics" type="_AUU0y8y_EeSTnJcbCpz_yA" association="_AUZGNMy_EeSTnJcbCpz_yA"/>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_AUVb2My_EeSTnJcbCpz_yA" name="Function" specification="_AUVb2cy_EeSTnJcbCpz_yA"/>
+        <ownedOperation xmi:id="_AUVb2cy_EeSTnJcbCpz_yA" name="Function" method="_AUVb2My_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUVb2sy_EeSTnJcbCpz_yA" name="Compare To Constant">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUVb28y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUVb3My_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUVb3cy_EeSTnJcbCpz_yA" name="robot 2 dynamics" type="_AUU0y8y_EeSTnJcbCpz_yA" association="_AUZGD8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUVb3sy_EeSTnJcbCpz_yA" name="relop" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUVb38y_EeSTnJcbCpz_yA" value=">"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUVb4My_EeSTnJcbCpz_yA" name="const" type="_AUYfMMy_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUVb4cy_EeSTnJcbCpz_yA" value="[0, 0]"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUVb4sy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUVb48y_EeSTnJcbCpz_yA" value="uint8"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUVb5My_EeSTnJcbCpz_yA" name="Energy Loss Calculation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUVb5cy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWCsMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWCscy_EeSTnJcbCpz_yA" name="robot 2 dynamics" type="_AUU0y8y_EeSTnJcbCpz_yA" association="_AUZGEMy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWCssy_EeSTnJcbCpz_yA" name="Position">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWCs8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWCtMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWCtcy_EeSTnJcbCpz_yA" name="robot 2 dynamics" type="_AUU0y8y_EeSTnJcbCpz_yA" association="_AUZGEcy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWCtsy_EeSTnJcbCpz_yA" name="Product">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWCt8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWCuMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWCucy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWCusy_EeSTnJcbCpz_yA" name="robot 2 dynamics" type="_AUU0y8y_EeSTnJcbCpz_yA" association="_AUZGEsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWCu8y_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWCvMy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWCvcy_EeSTnJcbCpz_yA" name="Rate of Discharge">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWCvsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWCv8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWCwMy_EeSTnJcbCpz_yA" name="robot 2 dynamics" type="_AUU0y8y_EeSTnJcbCpz_yA" association="_AUZGE8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWCwcy_EeSTnJcbCpz_yA" name="Gain" type="_AUYfMcy_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWCwsy_EeSTnJcbCpz_yA" value="-0.01"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUWCw8y_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWCxMy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWCxcy_EeSTnJcbCpz_yA" name="Saturation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWCxsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWCx8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWCyMy_EeSTnJcbCpz_yA" name="robot 2 dynamics" type="_AUU0y8y_EeSTnJcbCpz_yA" association="_AUZGFMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWCycy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWCysy_EeSTnJcbCpz_yA" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWCy8y_EeSTnJcbCpz_yA" name="Sum">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWCzMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWCzcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWCzsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWCz8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWC0My_EeSTnJcbCpz_yA" name="robot 2 dynamics" type="_AUU0y8y_EeSTnJcbCpz_yA" association="_AUZGFcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWC0cy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWC0sy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWC08y_EeSTnJcbCpz_yA" name="Velocity">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWC1My_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWC1cy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWC1sy_EeSTnJcbCpz_yA" name="robot 2 dynamics" type="_AUU0y8y_EeSTnJcbCpz_yA" association="_AUZGFsy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWC18y_EeSTnJcbCpz_yA" name="Robot 3 Dynamics">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWC2My_EeSTnJcbCpz_yA" name="Actuator Force "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWC2cy_EeSTnJcbCpz_yA" name="Robot Position " type="_AUYfNMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWC2sy_EeSTnJcbCpz_yA" name="Energy " type="_AUYfNMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWC28y_EeSTnJcbCpz_yA" name="abs" type="_AUWpzcy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGF8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWC3My_EeSTnJcbCpz_yA" name="acceleration" type="_AUWp08y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGGMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWC3cy_EeSTnJcbCpz_yA" name="b" type="_AUWp28y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGGcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWC3sy_EeSTnJcbCpz_yA" name="boundary collisons" type="_AUWp48y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGNcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWC38y_EeSTnJcbCpz_yA" name="compare to constant" type="_AUWp6cy_EeSTnJcbCpz_yA" aggregation="composite"/>
+        <ownedAttribute xmi:id="_AUWC4My_EeSTnJcbCpz_yA" name="energy loss calculation" type="_AUWp88y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGG8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWC4cy_EeSTnJcbCpz_yA" name="position" type="_AUWp98y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGHMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWC4sy_EeSTnJcbCpz_yA" name="product" type="_AUWp-8y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGHcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWC48y_EeSTnJcbCpz_yA" name="rate of discharge" type="_AUWqAsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGHsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWC5My_EeSTnJcbCpz_yA" name="saturation" type="_AUWqCsy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGH8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWC5cy_EeSTnJcbCpz_yA" name="sum" type="_AUXQ0My_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGIMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWC5sy_EeSTnJcbCpz_yA" name="velocity" type="_AUXQ2My_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGIcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWC58y_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUZGPMy_EeSTnJcbCpz_yA"/>
+        <ownedConnector xmi:id="_AUWC6My_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWC6cy_EeSTnJcbCpz_yA" role="_AUWp68y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWC6sy_EeSTnJcbCpz_yA" role="_AUWp_cy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWC68y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWC7My_EeSTnJcbCpz_yA" role="_AUWp_sy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWC7cy_EeSTnJcbCpz_yA" role="_AUWqC8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWC7sy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWC78y_EeSTnJcbCpz_yA" role="_AUWC2My_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWC8My_EeSTnJcbCpz_yA" role="_AUWp_My_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWC8cy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWC8sy_EeSTnJcbCpz_yA" role="_AUWpz8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWC88y_EeSTnJcbCpz_yA" role="_AUWqA8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWC9My_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWC9cy_EeSTnJcbCpz_yA" role="_AUWqBMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWC9sy_EeSTnJcbCpz_yA" role="_AUWp9My_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWC98y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWC-My_EeSTnJcbCpz_yA" role="_AUWp1cy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWC-cy_EeSTnJcbCpz_yA" role="_AUXQ2cy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWC-sy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWC-8y_EeSTnJcbCpz_yA" role="_AUXQ1My_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWC_My_EeSTnJcbCpz_yA" role="_AUWp1My_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWC_cy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWC_sy_EeSTnJcbCpz_yA" role="_AUWp5cy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWC_8y_EeSTnJcbCpz_yA" role="_AUXQ0sy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWDAMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWDAcy_EeSTnJcbCpz_yA" role="_AUWp3cy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWDAsy_EeSTnJcbCpz_yA" role="_AUXQ0cy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWDA8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWDBMy_EeSTnJcbCpz_yA" role="_AUWqDMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWDBcy_EeSTnJcbCpz_yA" role="_AUWpzsy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWDBsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWDB8y_EeSTnJcbCpz_yA" role="_AUWqDMy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWDCMy_EeSTnJcbCpz_yA" role="_AUXQ08y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWDCcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWDCsy_EeSTnJcbCpz_yA" role="_AUWp9cy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWDC8y_EeSTnJcbCpz_yA" role="_AUWp6sy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWDDMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWDDcy_EeSTnJcbCpz_yA" role="_AUWp9cy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWpwMy_EeSTnJcbCpz_yA" role="_AUWC2sy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWpwcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWpwsy_EeSTnJcbCpz_yA" role="_AUWp-cy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWpw8y_EeSTnJcbCpz_yA" role="_AUWC2cy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWpxMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWpxcy_EeSTnJcbCpz_yA" role="_AUWp-cy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWpxsy_EeSTnJcbCpz_yA" role="_AUWp5My_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWpx8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWpyMy_EeSTnJcbCpz_yA" role="_AUXQ2sy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWpycy_EeSTnJcbCpz_yA" role="_AUWp-My_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUWpysy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUWpy8y_EeSTnJcbCpz_yA" role="_AUXQ2sy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUWpzMy_EeSTnJcbCpz_yA" role="_AUWp3My_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWpzcy_EeSTnJcbCpz_yA" name="Abs">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWpzsy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWpz8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWp0My_EeSTnJcbCpz_yA" name="robot 3 dynamics" type="_AUWC18y_EeSTnJcbCpz_yA" association="_AUZGF8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWp0cy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWp0sy_EeSTnJcbCpz_yA" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWp08y_EeSTnJcbCpz_yA" name="Acceleration">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWp1My_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWp1cy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWp1sy_EeSTnJcbCpz_yA" name="robot 3 dynamics" type="_AUWC18y_EeSTnJcbCpz_yA" association="_AUZGGMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWp18y_EeSTnJcbCpz_yA" name="Gain" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWp2My_EeSTnJcbCpz_yA" value="1/(10*P+1)"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUWp2cy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWp2sy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWp28y_EeSTnJcbCpz_yA" name="B">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWp3My_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWp3cy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWp3sy_EeSTnJcbCpz_yA" name="robot 3 dynamics" type="_AUWC18y_EeSTnJcbCpz_yA" association="_AUZGGcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWp38y_EeSTnJcbCpz_yA" name="Gain" type="_AUYfMsy_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWp4My_EeSTnJcbCpz_yA" value="-2"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUWp4cy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWp4sy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWp48y_EeSTnJcbCpz_yA" name="Boundary Collisons">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWp5My_EeSTnJcbCpz_yA" name="robot_position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWp5cy_EeSTnJcbCpz_yA" name="collision_force "/>
+        <ownedAttribute xmi:id="_AUWp5sy_EeSTnJcbCpz_yA" name="robot 3 dynamics" type="_AUWC18y_EeSTnJcbCpz_yA" association="_AUZGNcy_EeSTnJcbCpz_yA"/>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_AUWp58y_EeSTnJcbCpz_yA" name="Function" specification="_AUWp6My_EeSTnJcbCpz_yA"/>
+        <ownedOperation xmi:id="_AUWp6My_EeSTnJcbCpz_yA" name="Function" method="_AUWp58y_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWp6cy_EeSTnJcbCpz_yA" name="Compare To Constant">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWp6sy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWp68y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWp7My_EeSTnJcbCpz_yA" name="robot 3 dynamics" type="_AUWC18y_EeSTnJcbCpz_yA" association="_AUZGGsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWp7cy_EeSTnJcbCpz_yA" name="relop" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWp7sy_EeSTnJcbCpz_yA" value=">"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUWp78y_EeSTnJcbCpz_yA" name="const" type="_AUYfMMy_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWp8My_EeSTnJcbCpz_yA" value="[0, 0]"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUWp8cy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWp8sy_EeSTnJcbCpz_yA" value="uint8"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWp88y_EeSTnJcbCpz_yA" name="Energy Loss Calculation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWp9My_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWp9cy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWp9sy_EeSTnJcbCpz_yA" name="robot 3 dynamics" type="_AUWC18y_EeSTnJcbCpz_yA" association="_AUZGG8y_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWp98y_EeSTnJcbCpz_yA" name="Position">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWp-My_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWp-cy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWp-sy_EeSTnJcbCpz_yA" name="robot 3 dynamics" type="_AUWC18y_EeSTnJcbCpz_yA" association="_AUZGHMy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWp-8y_EeSTnJcbCpz_yA" name="Product">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWp_My_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWp_cy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWp_sy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWp_8y_EeSTnJcbCpz_yA" name="robot 3 dynamics" type="_AUWC18y_EeSTnJcbCpz_yA" association="_AUZGHcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWqAMy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWqAcy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWqAsy_EeSTnJcbCpz_yA" name="Rate of Discharge">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWqA8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWqBMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWqBcy_EeSTnJcbCpz_yA" name="robot 3 dynamics" type="_AUWC18y_EeSTnJcbCpz_yA" association="_AUZGHsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWqBsy_EeSTnJcbCpz_yA" name="Gain" type="_AUYfMcy_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWqB8y_EeSTnJcbCpz_yA" value="-0.01"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUWqCMy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWqCcy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUWqCsy_EeSTnJcbCpz_yA" name="Saturation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWqC8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUWqDMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUWqDcy_EeSTnJcbCpz_yA" name="robot 3 dynamics" type="_AUWC18y_EeSTnJcbCpz_yA" association="_AUZGH8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUWqDsy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUWqD8y_EeSTnJcbCpz_yA" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUXQ0My_EeSTnJcbCpz_yA" name="Sum">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUXQ0cy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUXQ0sy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUXQ08y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUXQ1My_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUXQ1cy_EeSTnJcbCpz_yA" name="robot 3 dynamics" type="_AUWC18y_EeSTnJcbCpz_yA" association="_AUZGIMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUXQ1sy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUXQ18y_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUXQ2My_EeSTnJcbCpz_yA" name="Velocity">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUXQ2cy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUXQ2sy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUXQ28y_EeSTnJcbCpz_yA" name="robot 3 dynamics" type="_AUWC18y_EeSTnJcbCpz_yA" association="_AUZGIcy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUXQ3My_EeSTnJcbCpz_yA" name="Abs">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUXQ3cy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUXQ3sy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUXQ38y_EeSTnJcbCpz_yA" name="robot 4 dynamics" type="_AUX4Fcy_EeSTnJcbCpz_yA" association="_AUZGIsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUXQ4My_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUXQ4cy_EeSTnJcbCpz_yA" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUXQ4sy_EeSTnJcbCpz_yA" name="Acceleration">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUXQ48y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUXQ5My_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUXQ5cy_EeSTnJcbCpz_yA" name="robot 4 dynamics" type="_AUX4Fcy_EeSTnJcbCpz_yA" association="_AUZGI8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUXQ5sy_EeSTnJcbCpz_yA" name="Gain" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUXQ58y_EeSTnJcbCpz_yA" value="1/(10*P+1)"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUXQ6My_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUXQ6cy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUXQ6sy_EeSTnJcbCpz_yA" name="B">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUXQ68y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUXQ7My_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUXQ7cy_EeSTnJcbCpz_yA" name="robot 4 dynamics" type="_AUX4Fcy_EeSTnJcbCpz_yA" association="_AUZGJMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUXQ7sy_EeSTnJcbCpz_yA" name="Gain" type="_AUYfMsy_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUXQ78y_EeSTnJcbCpz_yA" value="-2"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUXQ8My_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUXQ8cy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUXQ8sy_EeSTnJcbCpz_yA" name="Boundary Collisons">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUXQ88y_EeSTnJcbCpz_yA" name="robot_position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUXQ9My_EeSTnJcbCpz_yA" name="collision_force "/>
+        <ownedAttribute xmi:id="_AUXQ9cy_EeSTnJcbCpz_yA" name="robot 4 dynamics" type="_AUX4Fcy_EeSTnJcbCpz_yA" association="_AUZGNsy_EeSTnJcbCpz_yA"/>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_AUX34My_EeSTnJcbCpz_yA" name="Function" specification="_AUX34cy_EeSTnJcbCpz_yA"/>
+        <ownedOperation xmi:id="_AUX34cy_EeSTnJcbCpz_yA" name="Function" method="_AUX34My_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUX34sy_EeSTnJcbCpz_yA" name="Compare To Constant">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX348y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX35My_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUX35cy_EeSTnJcbCpz_yA" name="robot 4 dynamics" type="_AUX4Fcy_EeSTnJcbCpz_yA" association="_AUZGJcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUX35sy_EeSTnJcbCpz_yA" name="relop" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUX358y_EeSTnJcbCpz_yA" value=">"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUX36My_EeSTnJcbCpz_yA" name="const" type="_AUYfMMy_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUX36cy_EeSTnJcbCpz_yA" value="[0, 0]"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUX36sy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUX368y_EeSTnJcbCpz_yA" value="uint8"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUX37My_EeSTnJcbCpz_yA" name="Energy Loss Calculation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX37cy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX37sy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUX378y_EeSTnJcbCpz_yA" name="robot 4 dynamics" type="_AUX4Fcy_EeSTnJcbCpz_yA" association="_AUZGJsy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUX38My_EeSTnJcbCpz_yA" name="Position">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX38cy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX38sy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUX388y_EeSTnJcbCpz_yA" name="robot 4 dynamics" type="_AUX4Fcy_EeSTnJcbCpz_yA" association="_AUZGJ8y_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUX39My_EeSTnJcbCpz_yA" name="Product">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX39cy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX39sy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX398y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUX3-My_EeSTnJcbCpz_yA" name="robot 4 dynamics" type="_AUX4Fcy_EeSTnJcbCpz_yA" association="_AUZGKMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUX3-cy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUX3-sy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUX3-8y_EeSTnJcbCpz_yA" name="Rate of Discharge">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX3_My_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX3_cy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUX3_sy_EeSTnJcbCpz_yA" name="robot 4 dynamics" type="_AUX4Fcy_EeSTnJcbCpz_yA" association="_AUZGKcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUX3_8y_EeSTnJcbCpz_yA" name="Gain" type="_AUYfMcy_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUX4AMy_EeSTnJcbCpz_yA" value="-0.01"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AUX4Acy_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUX4Asy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUX4A8y_EeSTnJcbCpz_yA" name="Saturation">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX4BMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX4Bcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUX4Bsy_EeSTnJcbCpz_yA" name="robot 4 dynamics" type="_AUX4Fcy_EeSTnJcbCpz_yA" association="_AUZGKsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUX4B8y_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUX4CMy_EeSTnJcbCpz_yA" value="Inherit: Same as input"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUX4Ccy_EeSTnJcbCpz_yA" name="Sum">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX4Csy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX4C8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX4DMy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX4Dcy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUX4Dsy_EeSTnJcbCpz_yA" name="robot 4 dynamics" type="_AUX4Fcy_EeSTnJcbCpz_yA" association="_AUZGK8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUX4D8y_EeSTnJcbCpz_yA" name="OutDataTypeStr" type="_AUYfM8y_EeSTnJcbCpz_yA">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AUX4EMy_EeSTnJcbCpz_yA" value="Inherit: Inherit via internal rule"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUX4Ecy_EeSTnJcbCpz_yA" name="Velocity">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX4Esy_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX4E8y_EeSTnJcbCpz_yA" name=" "/>
+        <ownedAttribute xmi:id="_AUX4FMy_EeSTnJcbCpz_yA" name="robot 4 dynamics" type="_AUX4Fcy_EeSTnJcbCpz_yA" association="_AUZGLMy_EeSTnJcbCpz_yA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AUX4Fcy_EeSTnJcbCpz_yA" name="Robot 4 Dynamics">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX4Fsy_EeSTnJcbCpz_yA" name="Actuator Force "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX4F8y_EeSTnJcbCpz_yA" name="Robot Position " type="_AUYfNMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_AUX4GMy_EeSTnJcbCpz_yA" name="Energy " type="_AUYfNMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUX4Gcy_EeSTnJcbCpz_yA" name="abs" type="_AUXQ3My_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGIsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUYe8My_EeSTnJcbCpz_yA" name="acceleration" type="_AUXQ4sy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGI8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUYe8cy_EeSTnJcbCpz_yA" name="b" type="_AUXQ6sy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGJMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUYe8sy_EeSTnJcbCpz_yA" name="boundary collisons" type="_AUXQ8sy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGNsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUYe88y_EeSTnJcbCpz_yA" name="compare to constant" type="_AUX34sy_EeSTnJcbCpz_yA" aggregation="composite"/>
+        <ownedAttribute xmi:id="_AUYe9My_EeSTnJcbCpz_yA" name="energy loss calculation" type="_AUX37My_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGJsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUYe9cy_EeSTnJcbCpz_yA" name="position" type="_AUX38My_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGJ8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUYe9sy_EeSTnJcbCpz_yA" name="product" type="_AUX39My_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGKMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUYe98y_EeSTnJcbCpz_yA" name="rate of discharge" type="_AUX3-8y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGKcy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUYe-My_EeSTnJcbCpz_yA" name="saturation" type="_AUX4A8y_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGKsy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUYe-cy_EeSTnJcbCpz_yA" name="sum" type="_AUX4Ccy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGK8y_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUYe-sy_EeSTnJcbCpz_yA" name="velocity" type="_AUX4Ecy_EeSTnJcbCpz_yA" aggregation="composite" association="_AUZGLMy_EeSTnJcbCpz_yA"/>
+        <ownedAttribute xmi:id="_AUYe-8y_EeSTnJcbCpz_yA" name="robosoccer" type="_AURKMsy_EeSTnJcbCpz_yA" association="_AUZGPcy_EeSTnJcbCpz_yA"/>
+        <ownedConnector xmi:id="_AUYe_My_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYe_cy_EeSTnJcbCpz_yA" role="_AUX4Dcy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYe_sy_EeSTnJcbCpz_yA" role="_AUXQ48y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYe_8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfAMy_EeSTnJcbCpz_yA" role="_AUXQ5My_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfAcy_EeSTnJcbCpz_yA" role="_AUX4Esy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYfAsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfA8y_EeSTnJcbCpz_yA" role="_AUX3_cy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfBMy_EeSTnJcbCpz_yA" role="_AUX37cy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYfBcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfBsy_EeSTnJcbCpz_yA" role="_AUXQ3sy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfB8y_EeSTnJcbCpz_yA" role="_AUX3_My_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYfCMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfCcy_EeSTnJcbCpz_yA" role="_AUX4Fsy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfCsy_EeSTnJcbCpz_yA" role="_AUX39cy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYfC8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfDMy_EeSTnJcbCpz_yA" role="_AUX398y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfDcy_EeSTnJcbCpz_yA" role="_AUX4BMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYfDsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfD8y_EeSTnJcbCpz_yA" role="_AUX35My_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfEMy_EeSTnJcbCpz_yA" role="_AUX39sy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYfEcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfEsy_EeSTnJcbCpz_yA" role="_AUXQ9My_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfE8y_EeSTnJcbCpz_yA" role="_AUX4C8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYfFMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfFcy_EeSTnJcbCpz_yA" role="_AUXQ7My_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfFsy_EeSTnJcbCpz_yA" role="_AUX4Csy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYfF8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfGMy_EeSTnJcbCpz_yA" role="_AUX4E8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfGcy_EeSTnJcbCpz_yA" role="_AUX38cy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYfGsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfG8y_EeSTnJcbCpz_yA" role="_AUX4E8y_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfHMy_EeSTnJcbCpz_yA" role="_AUXQ68y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYfHcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfHsy_EeSTnJcbCpz_yA" role="_AUX38sy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfH8y_EeSTnJcbCpz_yA" role="_AUXQ88y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYfIMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfIcy_EeSTnJcbCpz_yA" role="_AUX38sy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfIsy_EeSTnJcbCpz_yA" role="_AUX4F8y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYfI8y_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfJMy_EeSTnJcbCpz_yA" role="_AUX37sy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfJcy_EeSTnJcbCpz_yA" role="_AUX4GMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYfJsy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfJ8y_EeSTnJcbCpz_yA" role="_AUX37sy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfKMy_EeSTnJcbCpz_yA" role="_AUX348y_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYfKcy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfKsy_EeSTnJcbCpz_yA" role="_AUX4Bcy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfK8y_EeSTnJcbCpz_yA" role="_AUXQ3cy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_AUYfLMy_EeSTnJcbCpz_yA">
+          <end xmi:id="_AUYfLcy_EeSTnJcbCpz_yA" role="_AUX4Bcy_EeSTnJcbCpz_yA"/>
+          <end xmi:id="_AUYfLsy_EeSTnJcbCpz_yA" role="_AUX4DMy_EeSTnJcbCpz_yA"/>
+        </ownedConnector>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_AUYfL8y_EeSTnJcbCpz_yA" name="Array:Float"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_AUYfMMy_EeSTnJcbCpz_yA" name="Array:Int"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_AUYfMcy_EeSTnJcbCpz_yA" name="Float"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_AUYfMsy_EeSTnJcbCpz_yA" name="Int"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_AUYfM8y_EeSTnJcbCpz_yA" name="String"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_AUYfNMy_EeSTnJcbCpz_yA" name="Array:Float (2)"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfNcy_EeSTnJcbCpz_yA" name="2D Visualization has a To Workspace" memberEnd="_AUSYkMy_EeSTnJcbCpz_yA _AUS_Ycy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfNsy_EeSTnJcbCpz_yA" name="Ball Dynamics has a 1/mass" memberEnd="_AUS_acy_EeSTnJcbCpz_yA _AUTmo8y_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfN8y_EeSTnJcbCpz_yA" name="Ball Dynamics has a Position" memberEnd="_AUS_esy_EeSTnJcbCpz_yA _AUTmpcy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfOMy_EeSTnJcbCpz_yA" name="TEXT_GOAL has a Constant" memberEnd="_AUTmisy_EeSTnJcbCpz_yA _AUTmeMy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfOcy_EeSTnJcbCpz_yA" name="TEXT_GOAL has a Constant1" memberEnd="_AUTmkcy_EeSTnJcbCpz_yA _AUTmecy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfOsy_EeSTnJcbCpz_yA" name="TEXT_GOAL has a Switch" memberEnd="_AUTmm8y_EeSTnJcbCpz_yA _AUTmesy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfO8y_EeSTnJcbCpz_yA" name="Ball Dynamics has a Unit Delay" memberEnd="_AUTmcMy_EeSTnJcbCpz_yA _AUTmp8y_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfPMy_EeSTnJcbCpz_yA" name="Ball Dynamics has a Velocity" memberEnd="_AUTmdMy_EeSTnJcbCpz_yA _AUTmqMy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfPcy_EeSTnJcbCpz_yA" name="RoboSoccer has a Bus Creator1" memberEnd="_AURxgsy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfPsy_EeSTnJcbCpz_yA" name="RoboSoccer has a Bus Creator2" memberEnd="_AURxicy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfP8y_EeSTnJcbCpz_yA" name="RoboSoccer has a Bus Creator3" memberEnd="_AUSYUMy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfQMy_EeSTnJcbCpz_yA" name="RoboSoccer has a Bus Creator4" memberEnd="_AUSYV8y_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfQcy_EeSTnJcbCpz_yA" name="RoboSoccer has a Bus Creator5" memberEnd="_AUSYXsy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfQsy_EeSTnJcbCpz_yA" name="RoboSoccer has a Bus Creator6" memberEnd="_AUSYZsy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfQ8y_EeSTnJcbCpz_yA" name="RoboSoccer has a Bus Selector" memberEnd="_AUSYbcy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUYfRMy_EeSTnJcbCpz_yA" name="RoboSoccer has a Bus Selector1" memberEnd="_AUSYcsy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGAMy_EeSTnJcbCpz_yA" name="RoboSoccer has a CLICK TO READ ME" memberEnd="_AUSYdMy_EeSTnJcbCpz_yA _AURKPcy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGAcy_EeSTnJcbCpz_yA" name="Robot 1 Dynamics has a Abs" memberEnd="_AUUNg8y_EeSTnJcbCpz_yA _AUUN08y_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGAsy_EeSTnJcbCpz_yA" name="Robot 1 Dynamics has a Acceleration" memberEnd="_AUUNicy_EeSTnJcbCpz_yA _AUUN1My_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGA8y_EeSTnJcbCpz_yA" name="Robot 1 Dynamics has a B" memberEnd="_AUUNkcy_EeSTnJcbCpz_yA _AUUN1cy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGBMy_EeSTnJcbCpz_yA" name="Robot 1 Dynamics has a Compare To Constant" memberEnd="_AUUNn8y_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGBcy_EeSTnJcbCpz_yA" name="Robot 1 Dynamics has a Energy Loss Calculation" memberEnd="_AUUNqcy_EeSTnJcbCpz_yA _AUU0kMy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGBsy_EeSTnJcbCpz_yA" name="Robot 1 Dynamics has a Position" memberEnd="_AUUNrcy_EeSTnJcbCpz_yA _AUU0kcy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGB8y_EeSTnJcbCpz_yA" name="Robot 1 Dynamics has a Product" memberEnd="_AUUNssy_EeSTnJcbCpz_yA _AUU0ksy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGCMy_EeSTnJcbCpz_yA" name="Robot 1 Dynamics has a Rate of Discharge" memberEnd="_AUUNuMy_EeSTnJcbCpz_yA _AUU0k8y_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGCcy_EeSTnJcbCpz_yA" name="Robot 1 Dynamics has a Saturation" memberEnd="_AUUNwMy_EeSTnJcbCpz_yA _AUU0lMy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGCsy_EeSTnJcbCpz_yA" name="Robot 1 Dynamics has a Sum" memberEnd="_AUUNyMy_EeSTnJcbCpz_yA _AUU0lcy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGC8y_EeSTnJcbCpz_yA" name="Robot 1 Dynamics has a Velocity" memberEnd="_AUUNzsy_EeSTnJcbCpz_yA _AUU0lsy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGDMy_EeSTnJcbCpz_yA" name="Robot 2 Dynamics has a Abs" memberEnd="_AUVbwcy_EeSTnJcbCpz_yA _AUU0z8y_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGDcy_EeSTnJcbCpz_yA" name="Robot 2 Dynamics has a Acceleration" memberEnd="_AUVbx8y_EeSTnJcbCpz_yA _AUU00My_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGDsy_EeSTnJcbCpz_yA" name="Robot 2 Dynamics has a B" memberEnd="_AUVbz8y_EeSTnJcbCpz_yA _AUU00cy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGD8y_EeSTnJcbCpz_yA" name="Robot 2 Dynamics has a Compare To Constant" memberEnd="_AUVb3cy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGEMy_EeSTnJcbCpz_yA" name="Robot 2 Dynamics has a Energy Loss Calculation" memberEnd="_AUWCscy_EeSTnJcbCpz_yA _AUU01My_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGEcy_EeSTnJcbCpz_yA" name="Robot 2 Dynamics has a Position" memberEnd="_AUWCtcy_EeSTnJcbCpz_yA _AUU01cy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGEsy_EeSTnJcbCpz_yA" name="Robot 2 Dynamics has a Product" memberEnd="_AUWCusy_EeSTnJcbCpz_yA _AUU01sy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGE8y_EeSTnJcbCpz_yA" name="Robot 2 Dynamics has a Rate of Discharge" memberEnd="_AUWCwMy_EeSTnJcbCpz_yA _AUU018y_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGFMy_EeSTnJcbCpz_yA" name="Robot 2 Dynamics has a Saturation" memberEnd="_AUWCyMy_EeSTnJcbCpz_yA _AUU02My_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGFcy_EeSTnJcbCpz_yA" name="Robot 2 Dynamics has a Sum" memberEnd="_AUWC0My_EeSTnJcbCpz_yA _AUU02cy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGFsy_EeSTnJcbCpz_yA" name="Robot 2 Dynamics has a Velocity" memberEnd="_AUWC1sy_EeSTnJcbCpz_yA _AUU02sy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGF8y_EeSTnJcbCpz_yA" name="Robot 3 Dynamics has a Abs" memberEnd="_AUWp0My_EeSTnJcbCpz_yA _AUWC28y_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGGMy_EeSTnJcbCpz_yA" name="Robot 3 Dynamics has a Acceleration" memberEnd="_AUWp1sy_EeSTnJcbCpz_yA _AUWC3My_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGGcy_EeSTnJcbCpz_yA" name="Robot 3 Dynamics has a B" memberEnd="_AUWp3sy_EeSTnJcbCpz_yA _AUWC3cy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGGsy_EeSTnJcbCpz_yA" name="Robot 3 Dynamics has a Compare To Constant" memberEnd="_AUWp7My_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGG8y_EeSTnJcbCpz_yA" name="Robot 3 Dynamics has a Energy Loss Calculation" memberEnd="_AUWp9sy_EeSTnJcbCpz_yA _AUWC4My_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGHMy_EeSTnJcbCpz_yA" name="Robot 3 Dynamics has a Position" memberEnd="_AUWp-sy_EeSTnJcbCpz_yA _AUWC4cy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGHcy_EeSTnJcbCpz_yA" name="Robot 3 Dynamics has a Product" memberEnd="_AUWp_8y_EeSTnJcbCpz_yA _AUWC4sy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGHsy_EeSTnJcbCpz_yA" name="Robot 3 Dynamics has a Rate of Discharge" memberEnd="_AUWqBcy_EeSTnJcbCpz_yA _AUWC48y_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGH8y_EeSTnJcbCpz_yA" name="Robot 3 Dynamics has a Saturation" memberEnd="_AUWqDcy_EeSTnJcbCpz_yA _AUWC5My_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGIMy_EeSTnJcbCpz_yA" name="Robot 3 Dynamics has a Sum" memberEnd="_AUXQ1cy_EeSTnJcbCpz_yA _AUWC5cy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGIcy_EeSTnJcbCpz_yA" name="Robot 3 Dynamics has a Velocity" memberEnd="_AUXQ28y_EeSTnJcbCpz_yA _AUWC5sy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGIsy_EeSTnJcbCpz_yA" name="Robot 4 Dynamics has a Abs" memberEnd="_AUXQ38y_EeSTnJcbCpz_yA _AUX4Gcy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGI8y_EeSTnJcbCpz_yA" name="Robot 4 Dynamics has a Acceleration" memberEnd="_AUXQ5cy_EeSTnJcbCpz_yA _AUYe8My_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGJMy_EeSTnJcbCpz_yA" name="Robot 4 Dynamics has a B" memberEnd="_AUXQ7cy_EeSTnJcbCpz_yA _AUYe8cy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGJcy_EeSTnJcbCpz_yA" name="Robot 4 Dynamics has a Compare To Constant" memberEnd="_AUX35cy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGJsy_EeSTnJcbCpz_yA" name="Robot 4 Dynamics has a Energy Loss Calculation" memberEnd="_AUX378y_EeSTnJcbCpz_yA _AUYe9My_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGJ8y_EeSTnJcbCpz_yA" name="Robot 4 Dynamics has a Position" memberEnd="_AUX388y_EeSTnJcbCpz_yA _AUYe9cy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGKMy_EeSTnJcbCpz_yA" name="Robot 4 Dynamics has a Product" memberEnd="_AUX3-My_EeSTnJcbCpz_yA _AUYe9sy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGKcy_EeSTnJcbCpz_yA" name="Robot 4 Dynamics has a Rate of Discharge" memberEnd="_AUX3_sy_EeSTnJcbCpz_yA _AUYe98y_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGKsy_EeSTnJcbCpz_yA" name="Robot 4 Dynamics has a Saturation" memberEnd="_AUX4Bsy_EeSTnJcbCpz_yA _AUYe-My_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGK8y_EeSTnJcbCpz_yA" name="Robot 4 Dynamics has a Sum" memberEnd="_AUX4Dsy_EeSTnJcbCpz_yA _AUYe-cy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGLMy_EeSTnJcbCpz_yA" name="Robot 4 Dynamics has a Velocity" memberEnd="_AUX4FMy_EeSTnJcbCpz_yA _AUYe-sy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGLcy_EeSTnJcbCpz_yA" name="RoboSoccer has a Stop Simulation" memberEnd="_AUSYd8y_EeSTnJcbCpz_yA _AURKQsy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGLsy_EeSTnJcbCpz_yA" name="RoboSoccer has a Team_1_Strategy" memberEnd="_AUSYfsy_EeSTnJcbCpz_yA _AURKQ8y_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGL8y_EeSTnJcbCpz_yA" name="RoboSoccer has a Team_1_Strategy2" memberEnd="_AUSYhcy_EeSTnJcbCpz_yA _AURKRMy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGMMy_EeSTnJcbCpz_yA" name="RoboSoccer has a Unit Delay" memberEnd="_AUSYicy_EeSTnJcbCpz_yA _AURKRcy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGMcy_EeSTnJcbCpz_yA" name="RoboSoccer has a Unit Delay1" memberEnd="_AUSYjcy_EeSTnJcbCpz_yA _AURKRsy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGMsy_EeSTnJcbCpz_yA" name="Ball Dynamics has a Collision Modeling" memberEnd="_AUS_dMy_EeSTnJcbCpz_yA _AUTmpMy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGM8y_EeSTnJcbCpz_yA" name="Robot 1 Dynamics has a Boundary Collisons" memberEnd="_AUUNmcy_EeSTnJcbCpz_yA _AUUN1sy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGNMy_EeSTnJcbCpz_yA" name="Robot 2 Dynamics has a Boundary Collisons" memberEnd="_AUVb18y_EeSTnJcbCpz_yA _AUU00sy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGNcy_EeSTnJcbCpz_yA" name="Robot 3 Dynamics has a Boundary Collisons" memberEnd="_AUWp5sy_EeSTnJcbCpz_yA _AUWC3sy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGNsy_EeSTnJcbCpz_yA" name="Robot 4 Dynamics has a Boundary Collisons" memberEnd="_AUXQ9cy_EeSTnJcbCpz_yA _AUYe8sy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGN8y_EeSTnJcbCpz_yA" name="RoboSoccer has a 2D Visualization" memberEnd="_AUS_Ysy_EeSTnJcbCpz_yA _AURKM8y_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGOMy_EeSTnJcbCpz_yA" name="RoboSoccer has a Ball Dynamics" memberEnd="_AUTmqcy_EeSTnJcbCpz_yA _AURKNMy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGOcy_EeSTnJcbCpz_yA" name="Ball Dynamics has a TEXT_GOAL" memberEnd="_AUTme8y_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGOsy_EeSTnJcbCpz_yA" name="RoboSoccer has a Robot 1 Dynamics" memberEnd="_AUU0l8y_EeSTnJcbCpz_yA _AURKPsy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGO8y_EeSTnJcbCpz_yA" name="RoboSoccer has a Robot 2 Dynamics" memberEnd="_AUU028y_EeSTnJcbCpz_yA _AURKP8y_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGPMy_EeSTnJcbCpz_yA" name="RoboSoccer has a Robot 3 Dynamics" memberEnd="_AUWC58y_EeSTnJcbCpz_yA _AURKQMy_EeSTnJcbCpz_yA"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_AUZGPcy_EeSTnJcbCpz_yA" name="RoboSoccer has a Robot 4 Dynamics" memberEnd="_AUYe-8y_EeSTnJcbCpz_yA _AURKQcy_EeSTnJcbCpz_yA"/>
+    <profileApplication xmi:id="_AUZGPsy_EeSTnJcbCpz_yA">
+      <eAnnotations xmi:id="_AUZGP8y_EeSTnJcbCpz_yA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#/"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_AUZGQMy_EeSTnJcbCpz_yA">
+      <eAnnotations xmi:id="_AUZGQcy_EeSTnJcbCpz_yA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//modelelements"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_AUZGQsy_EeSTnJcbCpz_yA">
+      <eAnnotations xmi:id="_AUZGQ8y_EeSTnJcbCpz_yA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_AUZGRMy_EeSTnJcbCpz_yA">
+      <eAnnotations xmi:id="_AUZGRcy_EeSTnJcbCpz_yA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//portandflows"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_AUZGRsy_EeSTnJcbCpz_yA">
+      <eAnnotations xmi:id="_AUZGR8y_EeSTnJcbCpz_yA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//constraints"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_AUZGSMy_EeSTnJcbCpz_yA">
+      <eAnnotations xmi:id="_AUZGScy_EeSTnJcbCpz_yA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//activities"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_AUZGSsy_EeSTnJcbCpz_yA">
+      <eAnnotations xmi:id="_AUZGS8y_EeSTnJcbCpz_yA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//allocations"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_AUZGTMy_EeSTnJcbCpz_yA">
+      <eAnnotations xmi:id="_AUZGTcy_EeSTnJcbCpz_yA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_AUZGTsy_EeSTnJcbCpz_yA">
+      <eAnnotations xmi:id="_AUZGT8y_EeSTnJcbCpz_yA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//interactions"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_AUZGUMy_EeSTnJcbCpz_yA">
+      <eAnnotations xmi:id="_AUZGUcy_EeSTnJcbCpz_yA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//statemachines"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_AUZGUsy_EeSTnJcbCpz_yA">
+      <eAnnotations xmi:id="_AUZGU8y_EeSTnJcbCpz_yA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//usecases"/>
+      </eAnnotations>
+    </profileApplication>
+  </uml:Model>
+  <Blocks:Block xmi:id="_AUZtEMy_EeSTnJcbCpz_yA" base_Class="_AUSYjsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtEcy_EeSTnJcbCpz_yA" base_Class="_AUS_Zsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtEsy_EeSTnJcbCpz_yA" base_Class="_AUS_d8y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtE8y_EeSTnJcbCpz_yA" base_Class="_AUTmiMy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtFMy_EeSTnJcbCpz_yA" base_Class="_AUTmj8y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtFcy_EeSTnJcbCpz_yA" base_Class="_AUTmlsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtFsy_EeSTnJcbCpz_yA" base_Class="_AUS_e8y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtF8y_EeSTnJcbCpz_yA" base_Class="_AUTmccy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtGMy_EeSTnJcbCpz_yA" base_Class="_AURxfMy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtGcy_EeSTnJcbCpz_yA" base_Class="_AURxhcy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtGsy_EeSTnJcbCpz_yA" base_Class="_AURxjMy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtG8y_EeSTnJcbCpz_yA" base_Class="_AUSYU8y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtHMy_EeSTnJcbCpz_yA" base_Class="_AUSYWsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtHcy_EeSTnJcbCpz_yA" base_Class="_AUSYYcy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtHsy_EeSTnJcbCpz_yA" base_Class="_AUSYacy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtH8y_EeSTnJcbCpz_yA" base_Class="_AUSYbsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtIMy_EeSTnJcbCpz_yA" base_Class="_AUSYc8y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtIcy_EeSTnJcbCpz_yA" base_Class="_AUUNgMy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtIsy_EeSTnJcbCpz_yA" base_Class="_AUUNhsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtI8y_EeSTnJcbCpz_yA" base_Class="_AUUNjsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtJMy_EeSTnJcbCpz_yA" base_Class="_AUUNnMy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtJcy_EeSTnJcbCpz_yA" base_Class="_AUUNpsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtJsy_EeSTnJcbCpz_yA" base_Class="_AUUNqsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtJ8y_EeSTnJcbCpz_yA" base_Class="_AUUNrsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtKMy_EeSTnJcbCpz_yA" base_Class="_AUUNtcy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtKcy_EeSTnJcbCpz_yA" base_Class="_AUUNvcy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtKsy_EeSTnJcbCpz_yA" base_Class="_AUUNw8y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtK8y_EeSTnJcbCpz_yA" base_Class="_AUUNy8y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtLMy_EeSTnJcbCpz_yA" base_Class="_AUVbvsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtLcy_EeSTnJcbCpz_yA" base_Class="_AUVbxMy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtLsy_EeSTnJcbCpz_yA" base_Class="_AUVbzMy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtL8y_EeSTnJcbCpz_yA" base_Class="_AUVb2sy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtMMy_EeSTnJcbCpz_yA" base_Class="_AUVb5My_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtMcy_EeSTnJcbCpz_yA" base_Class="_AUWCssy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtMsy_EeSTnJcbCpz_yA" base_Class="_AUWCtsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtM8y_EeSTnJcbCpz_yA" base_Class="_AUWCvcy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUZtNMy_EeSTnJcbCpz_yA" base_Class="_AUWCxcy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUIMy_EeSTnJcbCpz_yA" base_Class="_AUWCy8y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUIcy_EeSTnJcbCpz_yA" base_Class="_AUWC08y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUIsy_EeSTnJcbCpz_yA" base_Class="_AUWpzcy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUI8y_EeSTnJcbCpz_yA" base_Class="_AUWp08y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUJMy_EeSTnJcbCpz_yA" base_Class="_AUWp28y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUJcy_EeSTnJcbCpz_yA" base_Class="_AUWp6cy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUJsy_EeSTnJcbCpz_yA" base_Class="_AUWp88y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUJ8y_EeSTnJcbCpz_yA" base_Class="_AUWp98y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUKMy_EeSTnJcbCpz_yA" base_Class="_AUWp-8y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUKcy_EeSTnJcbCpz_yA" base_Class="_AUWqAsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUKsy_EeSTnJcbCpz_yA" base_Class="_AUWqCsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUK8y_EeSTnJcbCpz_yA" base_Class="_AUXQ0My_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaULMy_EeSTnJcbCpz_yA" base_Class="_AUXQ2My_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaULcy_EeSTnJcbCpz_yA" base_Class="_AUXQ3My_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaULsy_EeSTnJcbCpz_yA" base_Class="_AUXQ4sy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUL8y_EeSTnJcbCpz_yA" base_Class="_AUXQ6sy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUMMy_EeSTnJcbCpz_yA" base_Class="_AUX34sy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUMcy_EeSTnJcbCpz_yA" base_Class="_AUX37My_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUMsy_EeSTnJcbCpz_yA" base_Class="_AUX38My_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUM8y_EeSTnJcbCpz_yA" base_Class="_AUX39My_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUNMy_EeSTnJcbCpz_yA" base_Class="_AUX3-8y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUNcy_EeSTnJcbCpz_yA" base_Class="_AUX4A8y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUNsy_EeSTnJcbCpz_yA" base_Class="_AUX4Ccy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUN8y_EeSTnJcbCpz_yA" base_Class="_AUX4Ecy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUOMy_EeSTnJcbCpz_yA" base_Class="_AUSYdcy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUOcy_EeSTnJcbCpz_yA" base_Class="_AUSYeMy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUOsy_EeSTnJcbCpz_yA" base_Class="_AUSYf8y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUO8y_EeSTnJcbCpz_yA" base_Class="_AUSYhsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUPMy_EeSTnJcbCpz_yA" base_Class="_AUSYisy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUPcy_EeSTnJcbCpz_yA" base_Class="_AUS_bsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUPsy_EeSTnJcbCpz_yA" base_Class="_AUUNlsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUP8y_EeSTnJcbCpz_yA" base_Class="_AUVb1My_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUQMy_EeSTnJcbCpz_yA" base_Class="_AUWp48y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUQcy_EeSTnJcbCpz_yA" base_Class="_AUXQ8sy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUQsy_EeSTnJcbCpz_yA" base_Class="_AUSYkcy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUQ8y_EeSTnJcbCpz_yA" base_Class="_AUTmnsy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaURMy_EeSTnJcbCpz_yA" base_Class="_AUTmdcy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaURcy_EeSTnJcbCpz_yA" base_Class="_AUUNz8y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaURsy_EeSTnJcbCpz_yA" base_Class="_AUU0y8y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUaUR8y_EeSTnJcbCpz_yA" base_Class="_AUWC18y_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUa7MMy_EeSTnJcbCpz_yA" base_Class="_AUX4Fcy_EeSTnJcbCpz_yA"/>
+  <Blocks:Block xmi:id="_AUa7Mcy_EeSTnJcbCpz_yA" base_Class="_AURKMsy_EeSTnJcbCpz_yA"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Msy_EeSTnJcbCpz_yA" base_Port="_AUS_YMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7M8y_EeSTnJcbCpz_yA" base_Port="_AUSYj8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7NMy_EeSTnJcbCpz_yA" base_Port="_AUTmn8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Ncy_EeSTnJcbCpz_yA" base_Port="_AUTmoMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Nsy_EeSTnJcbCpz_yA" base_Port="_AUTmocy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7N8y_EeSTnJcbCpz_yA" base_Port="_AUTmosy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7OMy_EeSTnJcbCpz_yA" base_Port="_AUS_Z8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Ocy_EeSTnJcbCpz_yA" base_Port="_AUS_aMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Osy_EeSTnJcbCpz_yA" base_Port="_AUS_b8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7O8y_EeSTnJcbCpz_yA" base_Port="_AUS_cMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7PMy_EeSTnJcbCpz_yA" base_Port="_AUS_ccy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Pcy_EeSTnJcbCpz_yA" base_Port="_AUS_csy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Psy_EeSTnJcbCpz_yA" base_Port="_AUS_c8y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7P8y_EeSTnJcbCpz_yA" base_Port="_AUS_eMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7QMy_EeSTnJcbCpz_yA" base_Port="_AUS_ecy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Qcy_EeSTnJcbCpz_yA" base_Port="_AUTmdsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Qsy_EeSTnJcbCpz_yA" base_Port="_AUTmd8y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Q8y_EeSTnJcbCpz_yA" base_Port="_AUTmicy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7RMy_EeSTnJcbCpz_yA" base_Port="_AUTmkMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Rcy_EeSTnJcbCpz_yA" base_Port="_AUTml8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Rsy_EeSTnJcbCpz_yA" base_Port="_AUTmmMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7R8y_EeSTnJcbCpz_yA" base_Port="_AUTmmcy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7SMy_EeSTnJcbCpz_yA" base_Port="_AUTmmsy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Scy_EeSTnJcbCpz_yA" base_Port="_AUS_fMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Ssy_EeSTnJcbCpz_yA" base_Port="_AUS_fcy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7S8y_EeSTnJcbCpz_yA" base_Port="_AUTmcsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7TMy_EeSTnJcbCpz_yA" base_Port="_AUTmc8y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Tcy_EeSTnJcbCpz_yA" base_Port="_AURxfcy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Tsy_EeSTnJcbCpz_yA" base_Port="_AURxfsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7T8y_EeSTnJcbCpz_yA" base_Port="_AURxf8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7UMy_EeSTnJcbCpz_yA" base_Port="_AURxgMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Ucy_EeSTnJcbCpz_yA" base_Port="_AURxgcy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Usy_EeSTnJcbCpz_yA" base_Port="_AURxhsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7U8y_EeSTnJcbCpz_yA" base_Port="_AURxh8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7VMy_EeSTnJcbCpz_yA" base_Port="_AURxiMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUa7Vcy_EeSTnJcbCpz_yA" base_Port="_AURxjcy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiQMy_EeSTnJcbCpz_yA" base_Port="_AURxjsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiQcy_EeSTnJcbCpz_yA" base_Port="_AURxj8y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiQsy_EeSTnJcbCpz_yA" base_Port="_AUSYVMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiQ8y_EeSTnJcbCpz_yA" base_Port="_AUSYVcy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiRMy_EeSTnJcbCpz_yA" base_Port="_AUSYVsy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiRcy_EeSTnJcbCpz_yA" base_Port="_AUSYW8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiRsy_EeSTnJcbCpz_yA" base_Port="_AUSYXMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiR8y_EeSTnJcbCpz_yA" base_Port="_AUSYXcy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiSMy_EeSTnJcbCpz_yA" base_Port="_AUSYYsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiScy_EeSTnJcbCpz_yA" base_Port="_AUSYY8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiSsy_EeSTnJcbCpz_yA" base_Port="_AUSYZMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiS8y_EeSTnJcbCpz_yA" base_Port="_AUSYZcy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiTMy_EeSTnJcbCpz_yA" base_Port="_AUSYasy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiTcy_EeSTnJcbCpz_yA" base_Port="_AUSYa8y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiTsy_EeSTnJcbCpz_yA" base_Port="_AUSYbMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiT8y_EeSTnJcbCpz_yA" base_Port="_AUSYb8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiUMy_EeSTnJcbCpz_yA" base_Port="_AUSYcMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiUcy_EeSTnJcbCpz_yA" base_Port="_AUSYccy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiUsy_EeSTnJcbCpz_yA" base_Port="_AUUN0My_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiU8y_EeSTnJcbCpz_yA" base_Port="_AUUN0cy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiVMy_EeSTnJcbCpz_yA" base_Port="_AUUN0sy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiVcy_EeSTnJcbCpz_yA" base_Port="_AUUNgcy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiVsy_EeSTnJcbCpz_yA" base_Port="_AUUNgsy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiV8y_EeSTnJcbCpz_yA" base_Port="_AUUNh8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiWMy_EeSTnJcbCpz_yA" base_Port="_AUUNiMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiWcy_EeSTnJcbCpz_yA" base_Port="_AUUNj8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiWsy_EeSTnJcbCpz_yA" base_Port="_AUUNkMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiW8y_EeSTnJcbCpz_yA" base_Port="_AUUNl8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiXMy_EeSTnJcbCpz_yA" base_Port="_AUUNmMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiXcy_EeSTnJcbCpz_yA" base_Port="_AUUNncy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiXsy_EeSTnJcbCpz_yA" base_Port="_AUUNnsy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiX8y_EeSTnJcbCpz_yA" base_Port="_AUUNp8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiYMy_EeSTnJcbCpz_yA" base_Port="_AUUNqMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUbiYcy_EeSTnJcbCpz_yA" base_Port="_AUUNq8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJUMy_EeSTnJcbCpz_yA" base_Port="_AUUNrMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJUcy_EeSTnJcbCpz_yA" base_Port="_AUUNr8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJUsy_EeSTnJcbCpz_yA" base_Port="_AUUNsMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJU8y_EeSTnJcbCpz_yA" base_Port="_AUUNscy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJVMy_EeSTnJcbCpz_yA" base_Port="_AUUNtsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJVcy_EeSTnJcbCpz_yA" base_Port="_AUUNt8y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJVsy_EeSTnJcbCpz_yA" base_Port="_AUUNvsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJV8y_EeSTnJcbCpz_yA" base_Port="_AUUNv8y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJWMy_EeSTnJcbCpz_yA" base_Port="_AUUNxMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJWcy_EeSTnJcbCpz_yA" base_Port="_AUUNxcy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJWsy_EeSTnJcbCpz_yA" base_Port="_AUUNxsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJW8y_EeSTnJcbCpz_yA" base_Port="_AUUNx8y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJXMy_EeSTnJcbCpz_yA" base_Port="_AUUNzMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJXcy_EeSTnJcbCpz_yA" base_Port="_AUUNzcy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJXsy_EeSTnJcbCpz_yA" base_Port="_AUU0zMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJX8y_EeSTnJcbCpz_yA" base_Port="_AUU0zcy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcJYMy_EeSTnJcbCpz_yA" base_Port="_AUU0zsy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcwYMy_EeSTnJcbCpz_yA" base_Port="_AUVbv8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcwYcy_EeSTnJcbCpz_yA" base_Port="_AUVbwMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcwYsy_EeSTnJcbCpz_yA" base_Port="_AUVbxcy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcwY8y_EeSTnJcbCpz_yA" base_Port="_AUVbxsy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcwZMy_EeSTnJcbCpz_yA" base_Port="_AUVbzcy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcwZcy_EeSTnJcbCpz_yA" base_Port="_AUVbzsy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcwZsy_EeSTnJcbCpz_yA" base_Port="_AUVb1cy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcwZ8y_EeSTnJcbCpz_yA" base_Port="_AUVb1sy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcwaMy_EeSTnJcbCpz_yA" base_Port="_AUVb28y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcwacy_EeSTnJcbCpz_yA" base_Port="_AUVb3My_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcwasy_EeSTnJcbCpz_yA" base_Port="_AUVb5cy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcwa8y_EeSTnJcbCpz_yA" base_Port="_AUWCsMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUcwbMy_EeSTnJcbCpz_yA" base_Port="_AUWCs8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUdXcMy_EeSTnJcbCpz_yA" base_Port="_AUWCtMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUdXccy_EeSTnJcbCpz_yA" base_Port="_AUWCt8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUdXcsy_EeSTnJcbCpz_yA" base_Port="_AUWCuMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUdXc8y_EeSTnJcbCpz_yA" base_Port="_AUWCucy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUdXdMy_EeSTnJcbCpz_yA" base_Port="_AUWCvsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUdXdcy_EeSTnJcbCpz_yA" base_Port="_AUWCv8y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUdXdsy_EeSTnJcbCpz_yA" base_Port="_AUWCxsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUdXd8y_EeSTnJcbCpz_yA" base_Port="_AUWCx8y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUdXeMy_EeSTnJcbCpz_yA" base_Port="_AUWCzMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUdXecy_EeSTnJcbCpz_yA" base_Port="_AUWCzcy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUdXesy_EeSTnJcbCpz_yA" base_Port="_AUWCzsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUdXe8y_EeSTnJcbCpz_yA" base_Port="_AUWCz8y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUdXfMy_EeSTnJcbCpz_yA" base_Port="_AUWC1My_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUdXfcy_EeSTnJcbCpz_yA" base_Port="_AUWC1cy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUdXfsy_EeSTnJcbCpz_yA" base_Port="_AUWC2My_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUd-gMy_EeSTnJcbCpz_yA" base_Port="_AUWC2cy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUd-gcy_EeSTnJcbCpz_yA" base_Port="_AUWC2sy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUd-gsy_EeSTnJcbCpz_yA" base_Port="_AUWpzsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUd-g8y_EeSTnJcbCpz_yA" base_Port="_AUWpz8y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUd-hMy_EeSTnJcbCpz_yA" base_Port="_AUWp1My_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUd-hcy_EeSTnJcbCpz_yA" base_Port="_AUWp1cy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUd-hsy_EeSTnJcbCpz_yA" base_Port="_AUWp3My_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUd-h8y_EeSTnJcbCpz_yA" base_Port="_AUWp3cy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUd-iMy_EeSTnJcbCpz_yA" base_Port="_AUWp5My_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUd-icy_EeSTnJcbCpz_yA" base_Port="_AUWp5cy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUd-isy_EeSTnJcbCpz_yA" base_Port="_AUWp6sy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUd-i8y_EeSTnJcbCpz_yA" base_Port="_AUWp68y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUd-jMy_EeSTnJcbCpz_yA" base_Port="_AUWp9My_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelkMy_EeSTnJcbCpz_yA" base_Port="_AUWp9cy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelkcy_EeSTnJcbCpz_yA" base_Port="_AUWp-My_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelksy_EeSTnJcbCpz_yA" base_Port="_AUWp-cy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelk8y_EeSTnJcbCpz_yA" base_Port="_AUWp_My_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUellMy_EeSTnJcbCpz_yA" base_Port="_AUWp_cy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUellcy_EeSTnJcbCpz_yA" base_Port="_AUWp_sy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUellsy_EeSTnJcbCpz_yA" base_Port="_AUWqA8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUell8y_EeSTnJcbCpz_yA" base_Port="_AUWqBMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelmMy_EeSTnJcbCpz_yA" base_Port="_AUWqC8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelmcy_EeSTnJcbCpz_yA" base_Port="_AUWqDMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelmsy_EeSTnJcbCpz_yA" base_Port="_AUXQ0cy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelm8y_EeSTnJcbCpz_yA" base_Port="_AUXQ0sy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelnMy_EeSTnJcbCpz_yA" base_Port="_AUXQ08y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelncy_EeSTnJcbCpz_yA" base_Port="_AUXQ1My_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelnsy_EeSTnJcbCpz_yA" base_Port="_AUXQ2cy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUeln8y_EeSTnJcbCpz_yA" base_Port="_AUXQ2sy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUeloMy_EeSTnJcbCpz_yA" base_Port="_AUX4Fsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelocy_EeSTnJcbCpz_yA" base_Port="_AUX4F8y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelosy_EeSTnJcbCpz_yA" base_Port="_AUX4GMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelo8y_EeSTnJcbCpz_yA" base_Port="_AUXQ3cy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelpMy_EeSTnJcbCpz_yA" base_Port="_AUXQ3sy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelpcy_EeSTnJcbCpz_yA" base_Port="_AUXQ48y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelpsy_EeSTnJcbCpz_yA" base_Port="_AUXQ5My_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelp8y_EeSTnJcbCpz_yA" base_Port="_AUXQ68y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelqMy_EeSTnJcbCpz_yA" base_Port="_AUXQ7My_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelqcy_EeSTnJcbCpz_yA" base_Port="_AUXQ88y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelqsy_EeSTnJcbCpz_yA" base_Port="_AUXQ9My_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUelq8y_EeSTnJcbCpz_yA" base_Port="_AUX348y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMoMy_EeSTnJcbCpz_yA" base_Port="_AUX35My_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMocy_EeSTnJcbCpz_yA" base_Port="_AUX37cy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMosy_EeSTnJcbCpz_yA" base_Port="_AUX37sy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMo8y_EeSTnJcbCpz_yA" base_Port="_AUX38cy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMpMy_EeSTnJcbCpz_yA" base_Port="_AUX38sy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMpcy_EeSTnJcbCpz_yA" base_Port="_AUX39cy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMpsy_EeSTnJcbCpz_yA" base_Port="_AUX39sy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMp8y_EeSTnJcbCpz_yA" base_Port="_AUX398y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMqMy_EeSTnJcbCpz_yA" base_Port="_AUX3_My_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMqcy_EeSTnJcbCpz_yA" base_Port="_AUX3_cy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMqsy_EeSTnJcbCpz_yA" base_Port="_AUX4BMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMq8y_EeSTnJcbCpz_yA" base_Port="_AUX4Bcy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMrMy_EeSTnJcbCpz_yA" base_Port="_AUX4Csy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMrcy_EeSTnJcbCpz_yA" base_Port="_AUX4C8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMrsy_EeSTnJcbCpz_yA" base_Port="_AUX4DMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMr8y_EeSTnJcbCpz_yA" base_Port="_AUX4Dcy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfMsMy_EeSTnJcbCpz_yA" base_Port="_AUX4Esy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfzsMy_EeSTnJcbCpz_yA" base_Port="_AUX4E8y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfzscy_EeSTnJcbCpz_yA" base_Port="_AUSYdsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfzssy_EeSTnJcbCpz_yA" base_Port="_AUSYecy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfzs8y_EeSTnJcbCpz_yA" base_Port="_AUSYesy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfztMy_EeSTnJcbCpz_yA" base_Port="_AUSYe8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfztcy_EeSTnJcbCpz_yA" base_Port="_AUSYfMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfztsy_EeSTnJcbCpz_yA" base_Port="_AUSYfcy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfzt8y_EeSTnJcbCpz_yA" base_Port="_AUSYgMy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfzuMy_EeSTnJcbCpz_yA" base_Port="_AUSYgcy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfzucy_EeSTnJcbCpz_yA" base_Port="_AUSYgsy_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfzusy_EeSTnJcbCpz_yA" base_Port="_AUSYg8y_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfzu8y_EeSTnJcbCpz_yA" base_Port="_AUSYhMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfzvMy_EeSTnJcbCpz_yA" base_Port="_AUSYh8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfzvcy_EeSTnJcbCpz_yA" base_Port="_AUSYiMy_EeSTnJcbCpz_yA" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfzvsy_EeSTnJcbCpz_yA" base_Port="_AUSYi8y_EeSTnJcbCpz_yA" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_AUfzv8y_EeSTnJcbCpz_yA" base_Port="_AUSYjMy_EeSTnJcbCpz_yA" direction="out"/>
+</xmi:XMI>
