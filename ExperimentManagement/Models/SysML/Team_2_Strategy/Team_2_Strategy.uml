@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Blocks="http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks" xmlns:PortAndFlows="http://www.eclipse.org/papyrus/0.7.0/SysML/PortAndFlows" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks http://www.eclipse.org/papyrus/0.7.0/SysML/PortAndFlows http://www.eclipse.org/papyrus/0.7.0/SysML#//portandflows">
+  <uml:Model xmi:id="_mTxZ0NhQEeSc1eHUBPydNQ" name="SysMLmodel">
+    <packagedElement xmi:type="uml:Package" xmi:id="_mTxZ0dhQEeSc1eHUBPydNQ" name="Team_2_Strategy">
+      <packagedElement xmi:type="uml:Class" xmi:id="_mTxZ0thQEeSc1eHUBPydNQ" name="Embedded Code">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_mTxZ09hQEeSc1eHUBPydNQ" name="ball_position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_mTxZ1NhQEeSc1eHUBPydNQ" name="power "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_mTxZ1dhQEeSc1eHUBPydNQ" name="robot_position "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_mTxZ1thQEeSc1eHUBPydNQ" name="actuator_force_3 "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_mTxZ19hQEeSc1eHUBPydNQ" name="actuator_force_4 "/>
+        <ownedAttribute xmi:id="_mTxZ2NhQEeSc1eHUBPydNQ" name="team_2_strategy" type="_mTxZ29hQEeSc1eHUBPydNQ" association="_mTyA-NhQEeSc1eHUBPydNQ"/>
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_mTxZ2dhQEeSc1eHUBPydNQ" name="Function" specification="_mTxZ2thQEeSc1eHUBPydNQ"/>
+        <ownedOperation xmi:id="_mTxZ2thQEeSc1eHUBPydNQ" name="Function" method="_mTxZ2dhQEeSc1eHUBPydNQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_mTxZ29hQEeSc1eHUBPydNQ" name="Team_2_Strategy">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_mTxZ3NhQEeSc1eHUBPydNQ" name="Ball Position " type="_mTyA9dhQEeSc1eHUBPydNQ"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_mTyA4NhQEeSc1eHUBPydNQ" name="Power " type="_mTyA99hQEeSc1eHUBPydNQ"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_mTyA4dhQEeSc1eHUBPydNQ" name="Robot Position " type="_mTyA9thQEeSc1eHUBPydNQ"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_mTyA4thQEeSc1eHUBPydNQ" name="Actuator Force 3 "/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_mTyA49hQEeSc1eHUBPydNQ" name="Actuator Force 4 "/>
+        <ownedAttribute xmi:id="_mTyA5NhQEeSc1eHUBPydNQ" name="embedded code" type="_mTxZ0thQEeSc1eHUBPydNQ" aggregation="composite" association="_mTyA-NhQEeSc1eHUBPydNQ"/>
+        <ownedConnector xmi:id="_mTyA5dhQEeSc1eHUBPydNQ">
+          <end xmi:id="_mTyA5thQEeSc1eHUBPydNQ" role="_mTxZ1thQEeSc1eHUBPydNQ"/>
+          <end xmi:id="_mTyA59hQEeSc1eHUBPydNQ" role="_mTyA4thQEeSc1eHUBPydNQ"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_mTyA6NhQEeSc1eHUBPydNQ">
+          <end xmi:id="_mTyA6dhQEeSc1eHUBPydNQ" role="_mTyA4NhQEeSc1eHUBPydNQ"/>
+          <end xmi:id="_mTyA6thQEeSc1eHUBPydNQ" role="_mTxZ1NhQEeSc1eHUBPydNQ"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_mTyA69hQEeSc1eHUBPydNQ">
+          <end xmi:id="_mTyA7NhQEeSc1eHUBPydNQ" role="_mTxZ19hQEeSc1eHUBPydNQ"/>
+          <end xmi:id="_mTyA7dhQEeSc1eHUBPydNQ" role="_mTyA49hQEeSc1eHUBPydNQ"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_mTyA7thQEeSc1eHUBPydNQ">
+          <end xmi:id="_mTyA79hQEeSc1eHUBPydNQ" role="_mTxZ3NhQEeSc1eHUBPydNQ"/>
+          <end xmi:id="_mTyA8NhQEeSc1eHUBPydNQ" role="_mTxZ09hQEeSc1eHUBPydNQ"/>
+        </ownedConnector>
+        <ownedConnector xmi:id="_mTyA8dhQEeSc1eHUBPydNQ">
+          <end xmi:id="_mTyA8thQEeSc1eHUBPydNQ" role="_mTyA4dhQEeSc1eHUBPydNQ"/>
+          <end xmi:id="_mTyA89hQEeSc1eHUBPydNQ" role="_mTxZ1dhQEeSc1eHUBPydNQ"/>
+        </ownedConnector>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_mTyA9NhQEeSc1eHUBPydNQ" name="Int"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_mTyA9dhQEeSc1eHUBPydNQ" name="Array:Float (2)"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_mTyA9thQEeSc1eHUBPydNQ" name="Array:Float (8)"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_mTyA99hQEeSc1eHUBPydNQ" name="Array:Float (4)"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_mTyA-NhQEeSc1eHUBPydNQ" name="Team_2_Strategy has a Embedded Code" memberEnd="_mTxZ2NhQEeSc1eHUBPydNQ _mTyA5NhQEeSc1eHUBPydNQ"/>
+    <profileApplication xmi:id="_mTyA-dhQEeSc1eHUBPydNQ">
+      <eAnnotations xmi:id="_mTyA-thQEeSc1eHUBPydNQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#/"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_mTyA-9hQEeSc1eHUBPydNQ">
+      <eAnnotations xmi:id="_mTyA_NhQEeSc1eHUBPydNQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//modelelements"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_mTyA_dhQEeSc1eHUBPydNQ">
+      <eAnnotations xmi:id="_mTyA_thQEeSc1eHUBPydNQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_mTyA_9hQEeSc1eHUBPydNQ">
+      <eAnnotations xmi:id="_mTyBANhQEeSc1eHUBPydNQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//portandflows"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_mTyBAdhQEeSc1eHUBPydNQ">
+      <eAnnotations xmi:id="_mTyBAthQEeSc1eHUBPydNQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//constraints"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_mTyBA9hQEeSc1eHUBPydNQ">
+      <eAnnotations xmi:id="_mTyBBNhQEeSc1eHUBPydNQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//activities"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_mTyBBdhQEeSc1eHUBPydNQ">
+      <eAnnotations xmi:id="_mTyBBthQEeSc1eHUBPydNQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//allocations"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_mTyBB9hQEeSc1eHUBPydNQ">
+      <eAnnotations xmi:id="_mTyBCNhQEeSc1eHUBPydNQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//requirements"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_mTyBCdhQEeSc1eHUBPydNQ">
+      <eAnnotations xmi:id="_mTyBCthQEeSc1eHUBPydNQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//interactions"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_mTyBC9hQEeSc1eHUBPydNQ">
+      <eAnnotations xmi:id="_mTyBDNhQEeSc1eHUBPydNQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//statemachines"/>
+      </eAnnotations>
+    </profileApplication>
+    <profileApplication xmi:id="_mTyBDdhQEeSc1eHUBPydNQ">
+      <eAnnotations xmi:id="_mTyBDthQEeSc1eHUBPydNQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/0.7.0/SysML#//usecases"/>
+      </eAnnotations>
+    </profileApplication>
+  </uml:Model>
+  <Blocks:Block xmi:id="_mTyBD9hQEeSc1eHUBPydNQ" base_Class="_mTxZ0thQEeSc1eHUBPydNQ"/>
+  <Blocks:Block xmi:id="_mTyBENhQEeSc1eHUBPydNQ" base_Class="_mTxZ29hQEeSc1eHUBPydNQ"/>
+  <PortAndFlows:FlowPort xmi:id="_mTyBEdhQEeSc1eHUBPydNQ" base_Port="_mTxZ3NhQEeSc1eHUBPydNQ" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_mTyBEthQEeSc1eHUBPydNQ" base_Port="_mTyA4NhQEeSc1eHUBPydNQ" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_mTyBE9hQEeSc1eHUBPydNQ" base_Port="_mTyA4dhQEeSc1eHUBPydNQ" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_mTyBFNhQEeSc1eHUBPydNQ" base_Port="_mTyA4thQEeSc1eHUBPydNQ" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_mTyBFdhQEeSc1eHUBPydNQ" base_Port="_mTyA49hQEeSc1eHUBPydNQ" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_mTyBFthQEeSc1eHUBPydNQ" base_Port="_mTxZ09hQEeSc1eHUBPydNQ" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_mTyBF9hQEeSc1eHUBPydNQ" base_Port="_mTxZ1NhQEeSc1eHUBPydNQ" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_mTyBGNhQEeSc1eHUBPydNQ" base_Port="_mTxZ1dhQEeSc1eHUBPydNQ" direction="in"/>
+  <PortAndFlows:FlowPort xmi:id="_mTyBGdhQEeSc1eHUBPydNQ" base_Port="_mTxZ1thQEeSc1eHUBPydNQ" direction="out"/>
+  <PortAndFlows:FlowPort xmi:id="_mTyBGthQEeSc1eHUBPydNQ" base_Port="_mTxZ19hQEeSc1eHUBPydNQ" direction="out"/>
+</xmi:XMI>

@@ -47,7 +47,16 @@ rule Model2Model {
 					else
 						aps->including(ap)
 					endif
-				)->collect(dt | thisModule.PortPrimitiveType(dt)))
+				)->collect(dt | thisModule.PortPrimitiveType(dt)))->
+				union(Source!Block.allInstancesFrom('src')->
+				select(nud | not nud.Type.oclIsUndefined())->
+				iterate(ap; aps : Set(Source!Block) = Set {} |
+					if aps->collect(apsn | apsn.getType)->includes(ap.getType) then
+						aps
+					else
+						aps->including(ap)
+					endif
+				)->collect(dt | thisModule.BlockType(dt)))
 		)
 }
 
@@ -86,3 +95,19 @@ lazy rule PortPrimitiveType {
 			name <- port.Type
 		)
 }
+
+lazy rule BlockType {
+	from
+		blk : Source!Block (not blk.Type.oclIsUndefined())
+	to
+		btyp : SysML!Class(
+			name <- blk.getType
+		)
+}
+
+helper context Source!Block def : getType : String =
+	if self.Type = 'Reference' then
+		self.Name
+	else
+		self.Type
+	endif;

@@ -33,6 +33,7 @@
         </ownedConnector>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_NTEcMDKeEeS6FP04NH0r_Q" name="Block2">
+        <generalization xmi:type="uml:Generalization" xmi:id="_KndbMALLEeW51KGqQhJsjQ" general="_SpBbQCxeEeS546Hqt01WFA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_TXxJkTKeEeS6FP04NH0r_Q" name="block1" type="_SpBbQCxeEeS546Hqt01WFA" association="_TXutUDKeEeS6FP04NH0r_Q"/>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_QeocYElfEeS3nduX3aVMJg" name="flowport1" visibility="public" aggregation="composite">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RVt1YElfEeS3nduX3aVMJg" value="1"/>
