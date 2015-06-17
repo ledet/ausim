@@ -4,7 +4,7 @@
 
   <xsl:param name="ModelName" select="ModelName"/>
 
-  <xsl:variable name="ChildBlockTypeList" select="'|SubSystem|S-Function|BusSelector|ModelReference|'"/>
+  <xsl:variable name="ChildBlockTypeList" select="'|SubSystem|ModelReference|'"/>
   <xsl:variable name="SkippedElementList" select="'|GraphicalInterface|ConfigManagerSettings|EditorSettings|SimulationSettings|Verification|ExternalMode|EngineSettings|ModelReferenceSettings|ConfigurationSet|ConcurrentExecutionSettings|SystemDefaults|BlockDefaults|AnnotationDefaults|LineDefaults|Stateflow|'"/><!-- Items being listed here that may need to be unskipped later SystemDefaults|BlockDefaults|AnnotationDefaults|LineDefaults -->
   <xsl:variable name="DefaultBlockPropertyList" select="'|Outputs|Port|PortDimensions|OutDataTypeStr|BusOutputAsStruct|FunctionName|PortCounts|'"/><!-- May need to add to this list as more block types are researched -->
   <xsl:variable name="BlockPropertyList" select="'|Outputs|Port|PortDimensions|OutDataTypeStr|BusOutputAsStruct|FunctionName|PortCounts|Ports|Tag|Value|relop|const|Gain|Position|'"/><!-- May need to add to this list as more block types are researched -->
@@ -165,18 +165,9 @@
                 <xsl:attribute name="{name()}">
                   <xsl:value-of select="$value"/>
                 </xsl:attribute>
-                <xsl:choose>
-                  <xsl:when test="$value='S-Function'">
-                    <xsl:attribute name="xsi:type">
-                      <xsl:value-of select="'simulinkmm:SFunctionBlock'" />
-                    </xsl:attribute>
-                  </xsl:when>
-                  <xsl:otherwise>
-                    <xsl:attribute name="xsi:type">
-                      <xsl:value-of select="concat('simulinkmm:', $value, 'Block')" />
-                    </xsl:attribute>
-                  </xsl:otherwise>
-                </xsl:choose>
+                <xsl:attribute name="xsi:type">
+                  <xsl:value-of select="concat('simulinkmm:', $value, 'Block')" />
+                </xsl:attribute>
               </xsl:when>
               <xsl:when test="$tag='Array' and name()='Dimension' and substring($value, 1, 2)='1*'">
                 <xsl:attribute name="{name()}">

@@ -75,7 +75,7 @@
 		<constant value="269:16-269:33"/>
 		<constant value="288:16-288:30"/>
 		<constant value="295:16-295:30"/>
-		<constant value="302:16-302:30"/>
+		<constant value="305:16-305:30"/>
 		<constant value="self"/>
 		<constant value="__resolve__"/>
 		<constant value="1"/>
@@ -892,25 +892,18 @@
 		<constant value="292:3-292:8"/>
 		<constant value="290:3-290:7"/>
 		<constant value="289:2-293:7"/>
-		<constant value="SFunctionBlock"/>
-		<constant value="BusSelectorBlock"/>
-		<constant value="296:5-296:9"/>
-		<constant value="296:22-296:45"/>
-		<constant value="296:5-296:46"/>
-		<constant value="296:50-296:54"/>
-		<constant value="296:67-296:92"/>
-		<constant value="296:50-296:93"/>
-		<constant value="296:5-296:93"/>
-		<constant value="299:3-299:8"/>
-		<constant value="297:3-297:7"/>
-		<constant value="296:2-300:7"/>
+		<constant value="296:2-296:6"/>
+		<constant value="296:2-296:11"/>
+		<constant value="296:2-296:18"/>
+		<constant value="296:21-296:22"/>
+		<constant value="296:2-296:22"/>
 		<constant value="ModelReferenceBlock"/>
-		<constant value="303:5-303:9"/>
-		<constant value="303:22-303:50"/>
-		<constant value="303:5-303:51"/>
-		<constant value="306:3-306:8"/>
-		<constant value="304:3-304:7"/>
-		<constant value="303:2-307:7"/>
+		<constant value="306:5-306:9"/>
+		<constant value="306:22-306:50"/>
+		<constant value="306:5-306:51"/>
+		<constant value="309:3-309:8"/>
+		<constant value="307:3-307:7"/>
+		<constant value="306:2-310:7"/>
 	</cp>
 	<field name="1" type="2"/>
 	<field name="3" type="4"/>
@@ -3821,35 +3814,20 @@
 		</parameters>
 		<code>
 			<load arg="607"/>
-			<push arg="891"/>
-			<push arg="22"/>
-			<findme/>
-			<call arg="621"/>
-			<load arg="607"/>
-			<push arg="892"/>
-			<push arg="22"/>
-			<findme/>
-			<call arg="621"/>
-			<call arg="401"/>
-			<if arg="673"/>
-			<pushf/>
-			<goto arg="82"/>
-			<pusht/>
+			<get arg="275"/>
+			<call arg="629"/>
+			<pushi arg="607"/>
+			<call arg="785"/>
 		</code>
 		<linenumbertable>
-			<lne id="893" begin="0" end="0"/>
-			<lne id="894" begin="1" end="3"/>
+			<lne id="891" begin="0" end="0"/>
+			<lne id="892" begin="0" end="1"/>
+			<lne id="893" begin="0" end="2"/>
+			<lne id="894" begin="3" end="3"/>
 			<lne id="895" begin="0" end="4"/>
-			<lne id="896" begin="5" end="5"/>
-			<lne id="897" begin="6" end="8"/>
-			<lne id="898" begin="5" end="9"/>
-			<lne id="899" begin="0" end="10"/>
-			<lne id="900" begin="12" end="12"/>
-			<lne id="901" begin="14" end="14"/>
-			<lne id="902" begin="0" end="14"/>
 		</linenumbertable>
 		<localvariabletable>
-			<lve slot="0" name="75" begin="0" end="14"/>
+			<lve slot="0" name="75" begin="0" end="4"/>
 		</localvariabletable>
 	</operation>
 	<operation name="53">
@@ -3858,7 +3836,7 @@
 		</parameters>
 		<code>
 			<load arg="607"/>
-			<push arg="903"/>
+			<push arg="896"/>
 			<push arg="22"/>
 			<findme/>
 			<call arg="621"/>
@@ -3868,12 +3846,12 @@
 			<pusht/>
 		</code>
 		<linenumbertable>
-			<lne id="904" begin="0" end="0"/>
-			<lne id="905" begin="1" end="3"/>
-			<lne id="906" begin="0" end="4"/>
-			<lne id="907" begin="6" end="6"/>
-			<lne id="908" begin="8" end="8"/>
-			<lne id="909" begin="0" end="8"/>
+			<lne id="897" begin="0" end="0"/>
+			<lne id="898" begin="1" end="3"/>
+			<lne id="899" begin="0" end="4"/>
+			<lne id="900" begin="6" end="6"/>
+			<lne id="901" begin="8" end="8"/>
+			<lne id="902" begin="0" end="8"/>
 		</linenumbertable>
 		<localvariabletable>
 			<lve slot="0" name="75" begin="0" end="8"/>

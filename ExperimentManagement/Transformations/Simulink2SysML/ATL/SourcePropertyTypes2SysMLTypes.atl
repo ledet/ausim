@@ -49,7 +49,7 @@ rule Model2Model {
 					endif
 				)->collect(dt | thisModule.PortPrimitiveType(dt)))->
 				union(Source!Block.allInstancesFrom('src')->
-				select(nud | not nud.Type.oclIsUndefined())->
+				select(nud | not (nud.Type.oclIsUndefined() or nud.Type = 'Function'))->
 				iterate(ap; aps : Set(Source!Block) = Set {} |
 					if aps->collect(apsn | apsn.getType)->includes(ap.getType) then
 						aps

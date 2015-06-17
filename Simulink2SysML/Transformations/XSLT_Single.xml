@@ -2,13 +2,13 @@
 <project name="XSLT_Single" default="xslt">
 	<property name="rootModelName" value="RoboSoccer" />
 	<property name="modelName" value="RoboSoccer" />
-	<property name="modelPath" value="../Models/IntermediateModels/" />
+	<property name="modelPath" value="../Models" />
 	<property name="transPath" value="Simulink2SysML" />
 
 	<target name="xslt">
-		<xslt style="${transPath}/XSLT/SysMLFinalizeDI.xsl"
-			in="${modelPath}/${rootModelName}/${modelName}.notation"
-			out="${modelPath}/${rootModelName}/${modelName}.di"
+		<xslt style="${transPath}/XSLT/BlockDiagram2SimulinkStructural.xsl"
+			in="${modelPath}/${rootModelName}/${modelName}_slx/simulink/blockdiagram.xml"
+			out="${modelPath}/${rootModelName}/${modelName}/Simulink_Structural.xmi"
 			force="true">
 			<param name="ModelName" expression="${modelName}"/>
 		</xslt>

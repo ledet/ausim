@@ -373,7 +373,7 @@
 <Value xsi:type="simulinkmm:SimInt" Value="1"/>
 </Property>
 	  </Block>
-	  <Block BlockType="S-Function" xsi:type="simulinkmm:SFunctionBlock" Name=" SFunction " SID="4::22">
+	  <Block BlockType="S-Function" Name=" SFunction " SID="4::22">
 	    <Property Name="Tag">
 <Value xsi:type="simulinkmm:SimString" Value="Stateflow S-Function Team_1_Strategy 7"/>
 </Property>

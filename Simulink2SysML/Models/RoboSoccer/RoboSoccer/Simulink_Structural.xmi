@@ -629,7 +629,7 @@
 <Value xsi:type="simulinkmm:SimInt" Value="1"/>
 </Property>
 	      </Block>
-	      <Block BlockType="S-Function" xsi:type="simulinkmm:SFunctionBlock" Name=" SFunction " SID="44::23">
+	      <Block BlockType="S-Function" Name=" SFunction " SID="44::23">
 		<Property Name="Tag">
 <Value xsi:type="simulinkmm:SimString" Value="Stateflow S-Function RoboSoccer 2"/>
 </Property>
@@ -1555,7 +1555,7 @@
 	
 	
       </Block>
-      <Block BlockType="BusSelector" xsi:type="simulinkmm:BusSelectorBlock" Name="Bus&#10;Selector" SID="53">
+      <Block BlockType="BusSelector" Name="Bus&#10;Selector" SID="53">
 	<Property Name="Ports">
 <Value xsi:type="simulinkmm:ValueArray">
 <Entry Index="0">
@@ -1587,7 +1587,7 @@
 	<Port PortNumber="1" Name="&lt;signal1&gt;" RTWStorageClass="Auto" DataLoggingNameMode="SignalName"/>
 	<Port PortNumber="2" Name="&lt;signal2&gt;" RTWStorageClass="Auto" DataLoggingNameMode="SignalName"/>
       </Block>
-      <Block BlockType="BusSelector" xsi:type="simulinkmm:BusSelectorBlock" Name="Bus&#10;Selector1" SID="54">
+      <Block BlockType="BusSelector" Name="Bus&#10;Selector1" SID="54">
 	<Property Name="Ports">
 <Value xsi:type="simulinkmm:ValueArray">
 <Entry Index="0">
@@ -1910,7 +1910,7 @@
 <Value xsi:type="simulinkmm:SimInt" Value="1"/>
 </Property>
 	      </Block>
-	      <Block BlockType="S-Function" xsi:type="simulinkmm:SFunctionBlock" Name=" SFunction " SID="108::18">
+	      <Block BlockType="S-Function" Name=" SFunction " SID="108::18">
 		<Property Name="Tag">
 <Value xsi:type="simulinkmm:SimString" Value="Stateflow S-Function RoboSoccer 3"/>
 </Property>
@@ -2872,7 +2872,7 @@
 <Value xsi:type="simulinkmm:SimInt" Value="1"/>
 </Property>
 	      </Block>
-	      <Block BlockType="S-Function" xsi:type="simulinkmm:SFunctionBlock" Name=" SFunction " SID="463::18">
+	      <Block BlockType="S-Function" Name=" SFunction " SID="463::18">
 		<Property Name="Tag">
 <Value xsi:type="simulinkmm:SimString" Value="Stateflow S-Function RoboSoccer 6"/>
 </Property>
@@ -3833,7 +3833,7 @@
 <Value xsi:type="simulinkmm:SimInt" Value="1"/>
 </Property>
 	      </Block>
-	      <Block BlockType="S-Function" xsi:type="simulinkmm:SFunctionBlock" Name=" SFunction " SID="492::18">
+	      <Block BlockType="S-Function" Name=" SFunction " SID="492::18">
 		<Property Name="Tag">
 <Value xsi:type="simulinkmm:SimString" Value="Stateflow S-Function RoboSoccer 5"/>
 </Property>
@@ -4794,7 +4794,7 @@
 <Value xsi:type="simulinkmm:SimInt" Value="1"/>
 </Property>
 	      </Block>
-	      <Block BlockType="S-Function" xsi:type="simulinkmm:SFunctionBlock" Name=" SFunction " SID="507::18">
+	      <Block BlockType="S-Function" Name=" SFunction " SID="507::18">
 		<Property Name="Tag">
 <Value xsi:type="simulinkmm:SimString" Value="Stateflow S-Function RoboSoccer 4"/>
 </Property>
