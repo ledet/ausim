@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_N_NeUALEEeW51KGqQhJsjQ" name="Properties">
-  <packagedElement xmi:type="uml:DataType" xmi:id="_N_NeUQLEEeW51KGqQhJsjQ" name="Array:Int"/>
-  <packagedElement xmi:type="uml:DataType" xmi:id="_N_NeUgLEEeW51KGqQhJsjQ" name="Array:Float"/>
-  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N_NeUwLEEeW51KGqQhJsjQ" name="String"/>
-  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N_NeVALEEeW51KGqQhJsjQ" name="Float"/>
-  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_N_NeVQLEEeW51KGqQhJsjQ" name="Int"/>
-  <packagedElement xmi:type="uml:DataType" xmi:id="_N_NeVgLEEeW51KGqQhJsjQ" name="Array:Float (2)"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeVwLEEeW51KGqQhJsjQ" name="BusSelector"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeWALEEeW51KGqQhJsjQ" name="CLICK TO READ ME"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeWQLEEeW51KGqQhJsjQ" name="Saturate"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeWgLEEeW51KGqQhJsjQ" name="Compare&#xA;To Constant"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeWwLEEeW51KGqQhJsjQ" name="Integrator"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeXALEEeW51KGqQhJsjQ" name="Stop"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeXQLEEeW51KGqQhJsjQ" name="Gain"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeXgLEEeW51KGqQhJsjQ" name="Function"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeXwLEEeW51KGqQhJsjQ" name="Constant"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeYALEEeW51KGqQhJsjQ" name="Abs"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeYQLEEeW51KGqQhJsjQ" name="ModelReference"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeYgLEEeW51KGqQhJsjQ" name="Sum"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeYwLEEeW51KGqQhJsjQ" name="Product"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeZALEEeW51KGqQhJsjQ" name="UnitDelay"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeZQLEEeW51KGqQhJsjQ" name="BusCreator"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeZgLEEeW51KGqQhJsjQ" name="ToWorkspace"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_N_NeZwLEEeW51KGqQhJsjQ" name="Switch"/>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_T6XvMFYIEeWrncv4DKgFSA" name="Properties">
+  <packagedElement xmi:type="uml:DataType" xmi:id="_T6XvMVYIEeWrncv4DKgFSA" name="Array:Int"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_T6XvMlYIEeWrncv4DKgFSA" name="Array:Float"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_T6XvM1YIEeWrncv4DKgFSA" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_T6XvNFYIEeWrncv4DKgFSA" name="Float"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_T6XvNVYIEeWrncv4DKgFSA" name="Int"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_T6XvNlYIEeWrncv4DKgFSA" name="Array:Float (2)"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvN1YIEeWrncv4DKgFSA" name="Product"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvOFYIEeWrncv4DKgFSA" name="Sum"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvOVYIEeWrncv4DKgFSA" name="CLICK TO READ ME"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvOlYIEeWrncv4DKgFSA" name="Switch"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvO1YIEeWrncv4DKgFSA" name="Compare&#xA;To Constant"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvPFYIEeWrncv4DKgFSA" name="BusSelector"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvPVYIEeWrncv4DKgFSA" name="BusCreator"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvPlYIEeWrncv4DKgFSA" name="Integrator"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvP1YIEeWrncv4DKgFSA" name="Stop"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvQFYIEeWrncv4DKgFSA" name="UnitDelay"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvQVYIEeWrncv4DKgFSA" name="ToWorkspace"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvQlYIEeWrncv4DKgFSA" name="Constant"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvQ1YIEeWrncv4DKgFSA" name="Abs"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvRFYIEeWrncv4DKgFSA" name="ModelReference"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvRVYIEeWrncv4DKgFSA" name="Gain"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T6XvRlYIEeWrncv4DKgFSA" name="Saturate"/>
 </uml:Model>

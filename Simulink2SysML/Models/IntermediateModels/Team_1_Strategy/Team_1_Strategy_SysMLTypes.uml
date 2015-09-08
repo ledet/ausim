@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_IVVLsMzBEeSdIu0-z7Dq7g" name="Properties">
-  <packagedElement xmi:type="uml:DataType" xmi:id="_IVVLsczBEeSdIu0-z7Dq7g" name="Array:Float (2)"/>
-  <packagedElement xmi:type="uml:DataType" xmi:id="_IVVLsszBEeSdIu0-z7Dq7g" name="Array:Float (8)"/>
-  <packagedElement xmi:type="uml:DataType" xmi:id="_IVVLs8zBEeSdIu0-z7Dq7g" name="Array:Float (4)"/>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_rxF3QFYJEeWrncv4DKgFSA" name="Properties">
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_rxF3QVYJEeWrncv4DKgFSA" name="Int"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_rxF3QlYJEeWrncv4DKgFSA" name="Array:Float (2)"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_rxF3Q1YJEeWrncv4DKgFSA" name="Array:Float (8)"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_rxF3RFYJEeWrncv4DKgFSA" name="Array:Float (4)"/>
 </uml:Model>
