@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xsi:schemaLocation="http://www.omg.org/XMI" xmlns:xalan="http://xml.apache.org/xalan" xmlns:simulinkmm="http://simulinkmm/1.0">
 
-	<!--xsl:param name="settingsModel" select="document('Simulink_Settings.xmi')/ModelInformation" /-->
-	<xsl:param name="settingsFileName" select="settingsFileName" />
-
+	<xsl:param name="settingsFileName" select="settingsFileName"/>
 	<xsl:param name="settingsModel" select="document($settingsFileName)/ModelInformation" />
 	
 	<xsl:variable name="numRootInports">
-		<xsl:value-of select="count(/simulinkmm:ModelInformation/Model/System/Block[@BlockType = 'Inport'])" />
+		<xsl:value-of select="count(simulinkmm:ModelInformation/Model/System/Block[@BlockType = 'Inport'])" />
 	</xsl:variable>
 	<xsl:variable name="numRootOutports">
-		<xsl:value-of select="count(/simulinkmm:ModelInformation/Model/System/Block[@BlockType = 'Outport'])" />
+		<xsl:value-of select="count(simulinkmm:ModelInformation/Model/System/Block[@BlockType = 'Outport'])" />
 	</xsl:variable>
 
 	<xsl:template name="Property_2_P" match="Property">
@@ -64,7 +62,6 @@
 		</xsl:element>
 	</xsl:template>
 
-
 	<xsl:template name="Block_2_Block" match="Block">
 		<xsl:element name="Block">
 			<xsl:attribute name="BlockType">
@@ -87,7 +84,9 @@
 
 			<xsl:for-each select="System">
 				<xsl:text>&#xa;</xsl:text>
-				<xsl:call-template name="System_2_System" />
+				<xsl:call-template name="System_2_System">
+					<xsl:with-param name="isSubSystem" select=" 'true' " />
+				</xsl:call-template>
 				<xsl:text>&#xa;</xsl:text>
 			</xsl:for-each>
 
@@ -96,7 +95,6 @@
 				<xsl:call-template name="Port_2_Port" />
 				<xsl:text>&#xa;</xsl:text>
 			</xsl:for-each>
-
 		</xsl:element>
 	</xsl:template>
 
@@ -132,7 +130,7 @@
 	<xsl:template name="System_2_System" match="System">
 		<xsl:param name="isSubSystem" select="."/>
 		<xsl:element name="System">
-			<xsl:if test="$isSubSystem = 'true' ">
+			<xsl:if test="$isSubSystem = 'false' ">
 				<xsl:text>&#xa;</xsl:text>
 				<xsl:copy-of select="$settingsModel/Model/System/P" />
 			</xsl:if>
@@ -157,7 +155,7 @@
 		</xsl:element>
 	</xsl:template>
 
-	<xsl:template name="System_2_GraphicalInterface" match="/simulinkmm:ModelInformation/Model">
+	<xsl:template name="System_2_GraphicalInterface" match="simulinkmm:ModelInformation/Model">
 		<xsl:element name="GraphicalInterface">							
 			<xsl:text>&#xa;</xsl:text>
 			<xsl:element name="P">
@@ -242,7 +240,7 @@
 	</xsl:template>
 
 
-	<xsl:template match="/simulinkmm:ModelInformation">
+	<xsl:template match="simulinkmm:ModelInformation">
 		<xsl:element name="ModelInformation">
 			<xsl:attribute name="Version">
 				<xsl:value-of select="@Version"/>
@@ -302,7 +300,7 @@
 					<xsl:for-each select="System">
 						<xsl:text>&#xa;</xsl:text>
 						<xsl:call-template name="System_2_System">
-							<xsl:with-param name="isSubSystem" select=" 'true' " />
+							<xsl:with-param name="isSubSystem" select=" 'false' " />
 						</xsl:call-template>
 					</xsl:for-each>
 					<xsl:text>&#xa;</xsl:text>

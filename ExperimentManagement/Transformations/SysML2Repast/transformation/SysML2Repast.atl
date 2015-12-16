@@ -1,0 +1,643 @@
+-- @path Repast=/Simulink2Repast/metamodel/Repast.ecore
+-- @nsURI SysML=http://www.eclipse.org/papyrus/0.7.0/SysML
+-- @nsURI SysMLGUI=http://www.eclipse.org/gmf/runtime/1.0.2/notation
+
+
+--http://www.eclipse.org/papyrus/0.7.0/SysML
+--http://www.eclipse.org/uml2/4.0.0/UML
+
+module SysML2Repast;
+create rep: Repast from sys: SysML, sysGUI: SysMLGUI;
+
+--Transforms class to agent
+rule Class2Agent {
+	from
+		c: SysML!Class (
+			not c.oclIsKindOf(SysML!Activity) and not c.hasBehavior
+		)
+	using {
+		activityList: Sequence(SysML!Activity) = c.getActivityDiagrams;
+		decisionList: Sequence(SysML!DecisionNode) = activityList -> iterate(n; res:
+				Set(SysML!DecisionNode) = Set{} | res -> union(n.getDecisionNodes));
+		taskList: Sequence(SysML!OpaqueAction) = activityList -> iterate(n; res:
+				Set(SysML!OpaqueAction) = Set{} | res -> union(n.getOpaqueNodes));
+
+		joinList: Sequence(SysML!MergeNode) = activityList -> iterate(n; res:
+				Set(SysML!MergeNode) = Set{} | res -> union(n.getMergeNodes));
+		propertyList: Sequence(SysML!Port) = c.ownedPort;
+		endList: Sequence(SysML!ActivityFinalNode) = activityList -> iterate(n; res:
+				Set(SysML!ActivityFinalNode) = Set{} | res -> union(n.getActivityFinalNodes));
+		transitionList: Sequence(SysML!ControlFlow) = activityList -> iterate(a; res:
+				Set(SysML!ControlFlow) = Set{} | res -> union(a.getConnections));	    
+		bhvList: Sequence(SysML!InitialNode) = activityList -> iterate(a; res:
+				Set(SysML!InitialNode) = Set{} | res -> union(a.getInitialNodes));
+
+		key: Integer = 0;
+		sourceCounter: Integer = 0;
+		targetCounter: Integer = 0;
+
+		bhvMap: Map(Integer, SysML!Node)= Map{};
+		taskMap: Map(Integer, SysML!Node)= Map{};
+		decMap: Map(Integer, SysML!Node)= Map{};
+		joinMap: Map(Integer, SysML!Node)= Map{};
+		endMap: Map(Integer, SysML!Node)= Map{};
+
+	--	transitionSet: Sequence(SysML!ControlFlow) = Sequence{};
+	--	tempTarget: SysML!Node = OclUndefined;
+		tempTransition: Repast!transition = OclUndefined;
+		tempBoolTransition: Repast!booleantransition = OclUndefined;
+		tempDecision: Repast!decisionstep = OclUndefined;
+		loops: Sequence(SysML!ActivityNode) = Sequence{};
+	}
+	to
+		r: Repast!agent (
+			version <- 1,
+			agentclassname <- c.name,
+			agentcomment <- 'This is an agent.',
+			agentinterfaces <- '',
+			agentparentclassname <- '',
+			agentimports <- '',
+			behaviorsteps <- behavior,
+			tasksteps <- task,
+			decisionsteps <- decision,
+			joinsteps <- join,
+			agentproperties <- property,	
+			endsteps <- end,
+			connections <- connection
+		),
+		behavior: Repast!behaviorsteps (),
+		task: Repast!tasksteps (),
+		decision: Repast!decisionsteps (),
+		join: Repast!joinsteps(),
+		property: Repast!agentproperties (),
+		end: Repast!endsteps(),
+		connection: Repast!connections (
+			transitions <- transition,
+			booleantransitions <- booleantransition
+		),		
+		transition: Repast!transitions (),
+		booleantransition: Repast!booleantransitions ()
+		do{
+			
+			--behaviorstep
+			for(it1 in activityList){
+                if(it1.oclIsKindOf(SysML!Activity)){
+               		r.behaviorsteps.behaviorstep <- r.behaviorsteps.behaviorstep.append(thisModule.Activity2Behavior(it1, c.getEmbeddedCodeClass));
+
+                }
+            }
+			
+			for(it8 in bhvList){
+				if(it8.oclIsKindOf(SysML!InitialNode)){
+					bhvMap<-bhvMap.union(Map{(key, it8)});
+	                key <- key +1;	
+				}
+			}
+			key <- 0;
+			--taskstep
+			for(it2 in taskList){
+                if(it2.oclIsKindOf(SysML!OpaqueAction)){
+                	r.tasksteps.taskstep <- r.tasksteps.taskstep.append(thisModule.Function2Task(it2));
+                	taskMap<-taskMap.union(Map{(key, it2)}); 
+                	key <- key +1;
+                }
+            }
+			key <- 0;
+			--decisionstep
+			for(it3 in decisionList){
+                if(it3.oclIsKindOf(SysML!DecisionNode)){
+                    tempDecision <- thisModule.Function2Decision(it3);
+                    if(loops -> includes(tempDecision)){
+                        tempDecision.branchType <-'while';
+                    }else{
+                        tempDecision.branchType <-'if';    
+                    }                        
+               		r.decisionsteps.decisionstep <- r.decisionsteps.decisionstep.append(tempDecision);  
+               		decMap<-decMap.union(Map{(key, it3)});  
+               		key <- key +1;
+                }
+            }
+			
+			key <- 0;
+			--joinstep
+			for(it4 in joinList){
+                if(it4.oclIsKindOf(SysML!MergeNode)){
+                	r.joinsteps.joinstep <- r.joinsteps.joinstep.append(thisModule.Function2JoinStep(it4));
+                	joinMap<-joinMap.union(Map{(key, it4)}); 
+                	key <- key +1;
+                }
+            }
+			
+			--agentproperties
+			for(it5 in propertyList){
+                if(it5.oclIsKindOf(SysML!Port)){
+                r.agentproperties.agentproperty <- r.agentproperties.agentproperty.append(thisModule.Outport2Property(it5));
+                }
+            }
+			key <- 0;
+			--endstep
+			for(it6 in endList){
+                if(it6.oclIsKindOf(SysML!ActivityFinalNode)){
+                	r.endsteps.endstep <- r.endsteps.endstep.append(thisModule.Function2EndStep(it6));
+                	endMap<-endMap.union(Map{(key, it6)});  
+                	key <- key +1;
+                }
+            }
+	
+			for(it5 in transitionList){ 
+				
+				if(it5.getSourceTransitionType = 'behavior'){			 	
+                	for(it7 in bhvMap.getKeys()){
+				 			if (it5.source = bhvMap.get(it7)){
+                   				sourceCounter <- it7;
+				 			}
+				 	}     
+				}else if(it5.getSourceTransitionType = 'decision'){									
+				 	for(it7 in decMap.getKeys()){
+				 			if (it5.source = decMap.get(it7)){
+                   				sourceCounter <- it7;
+				 			}
+				 	} 
+                }else if(it5.getSourceTransitionType = 'task'){
+                    for(it7 in taskMap.getKeys()){
+				 			if (it5.source = taskMap.get(it7)){
+                   				sourceCounter <- it7;
+
+				 			}
+				 	}
+        
+                }else if(it5.getSourceTransitionType = 'join'){
+                	for(it7 in joinMap.getKeys()){
+				 			if (it5.source = joinMap.get(it7)){
+                   				sourceCounter <- it7;
+
+				 			}
+				 	}
+                   
+                }else if(it5.getSourceTransitionType = 'end'){                 
+                   	for(it7 in endMap.getKeys()){
+				 			if (it5.source = endMap.get(it7)){
+                   				sourceCounter <- it7;
+				 			}
+				 	}
+                } 
+						 
+	            if(it5.getTargetTransitionType = 'decision'){				   		             	
+                   	for(it9 in decMap.getKeys()){
+				 			if (it5.target = decMap.get(it9)){
+                   				targetCounter <- it9;
+				 			}
+				 	}                 	           
+                }else if(it5.getTargetTransitionType = 'task'){             			              	
+                   	for(it9 in taskMap.getKeys()){
+				 			if (it5.target = taskMap.get(it9)){
+                   				targetCounter <- it9;
+				 			}
+				 	}                	
+                }else if(it5.getTargetTransitionType = 'join'){				   		            	
+                   	for(it9 in joinMap.getKeys()){
+				 			if (it5.target = joinMap.get(it9)){
+                   				targetCounter <- it9;
+				 			}
+				 	}                	
+                }else if(it5.getTargetTransitionType = 'end'){				   		            	
+                   	for(it9 in endMap.getKeys()){
+				 			if (it5.target = endMap.get(it9)){
+                   				targetCounter <- it9;
+				 			}
+				 	}                 	
+                }                
+		
+                	if(it5.oclIsKindOf(SysML!ControlFlow) and (it5.name<>'true' and it5.name <> 'false')){
+                		tempTransition <-thisModule.ControlFlow2Transition(it5, sourceCounter, targetCounter);        
+                		transition.transition<- transition.transition.append(tempTransition);
+                	}                
+                	else if(it5.oclIsKindOf(SysML!ControlFlow) and (it5.name='true' or it5.name = 'false')){
+                		tempBoolTransition <-thisModule.ControlFlow2BooleanTransition(it5, sourceCounter, targetCounter);
+                		booleantransition.booleantransition<- booleantransition.booleantransition.append(tempBoolTransition);
+                	}     
+			}
+	                
+		}
+
+
+			
+		
+	
+}
+
+--Transforms activity to behavior
+lazy rule Activity2Behavior {
+	from
+		a: SysML!Activity, c: SysML!Class
+	to
+		d: Repast!behaviorstep (
+			x <- a.refImmediateComposite().getXCoordinate,
+			y <- a.refImmediateComposite().getYCoordinate,			
+			scheduleannotationstart <- 1,
+			scheduleannotationpick <- '',
+			scheduleannotationinterval <-1,
+            scheduleannotationpriority <- 1,
+            scheduleannotationduration <-1,
+			scheduleannotationshuffle <- 0,
+			watchannotationid <- '',
+			watchannotationquery <- '',
+			watchannotationtargetclassname <- '',
+			watchannotationtargetfieldnames <- '',
+			watchannotationtriggercondition <- '',
+			watchannotationtriggerschedule <-1,
+			watchannotationtriggerdelta <- 1,
+			watchannotationtriggerpriority <-1,
+			watchannotationpick <- '',
+			comment <- 'This is the step behavior.',
+			visibility <- a.getVisibilityValue,
+			returntype <- 'def',
+			compiledname <- c.name.trim(),
+			parameters <- a.refImmediateComposite().getInPorts,
+			exceptions <- '',
+			label<- label
+		),
+		label: Repast!Label(
+			x <- a.refImmediateComposite().getXCoordinate,
+			y <- a.refImmediateComposite().getYCoordinate,
+			text <- c.name.trim()		
+		)
+}
+
+--Transforms activity to task
+lazy rule Function2Task {
+	from
+		oa: SysML!OpaqueAction
+	to
+		t: Repast!taskstep (
+			x <- oa.getXCoordinate,
+			y <- oa.getYCoordinate,
+			command1 <- oa.name,
+			comment <- 'This is a task.',
+			command2 <- '',
+			command3 <- '',
+			command4 <- '',
+			command5 <- '',
+			label<- label
+		),
+		label: Repast!Label(
+			x <- oa.getXCoordinate,
+			y <- oa.getYCoordinate,
+			text <- ''
+		)
+}
+
+--Transforms activity to decision
+lazy rule Function2Decision {
+	from
+		a: SysML!DecisionNode
+	to
+		d: Repast!decisionstep (
+			x <- a.getXCoordinate,
+			y <- a.getYCoordinate,
+			criteria <- a.name,
+			comment <- 'This is an agent decision.' --    branchType <- 'if'
+			,
+			label<- label
+		),
+		label: Repast!Label(
+			x <- a.getXCoordinate,
+			y <- a.getYCoordinate,
+			text <- ''
+		)
+}
+
+--Transforms merge node to joinstep
+lazy rule Function2JoinStep{
+	from
+		a: SysML!MergeNode
+	to
+		d: Repast!joinstep (
+			x <- a.getXCoordinate,
+			y <- a.getYCoordinate
+		)
+}
+
+--Transforms outport to property
+lazy rule Outport2Property {
+	from
+		o: SysML!Port (
+			o.isOutPort
+		)
+	to
+		p: Repast!agentproperty (
+			compiledname <- o.name.trim(),
+			visibility <- o.getVisibilityValue,
+			type <- o.getDataType,
+			comment <- 'This is an agent property.',
+			x <- o.getXCoordinate,
+			y <- o.getYCoordinate,
+			defaultvalue <- '[0,0]',
+			label<- label
+		),
+		label: Repast!Label(
+			x <- o.getXCoordinate,
+			y <- o.getYCoordinate,
+			text <- o.name.trim()
+		)
+}
+
+--Transforms merge node to endstep
+lazy rule Function2EndStep{
+	from
+		a: SysML!ActivityFinalNode
+	to
+		d: Repast!endstep (
+			x <- a.getXCoordinate,
+			y <- a.getYCoordinate
+		)
+}
+
+--Transforms control flow to transition
+lazy rule ControlFlow2Transition {
+	from
+		c: SysML!ControlFlow, sCounter: Integer, tCounter: Integer
+	using {
+		tempObject: Repast!bendpoints = OclUndefined;
+	}
+	to
+		t: Repast!transition (
+			transitionsource <- transitionSource,
+			transitiontarget <- transitionTarget
+		),
+		transitionSource: Repast!transitionsource (
+			type <- c.getSourceTransitionType,
+			index <- sCounter,
+			anchor <- 0
+		),
+		transitionTarget: Repast!transitiontarget (
+			type <- c.getTargetTransitionType,
+			index <- tCounter,
+			anchor <- 0
+		)
+	do{
+			tempObject <- thisModule.bendpoint(1); 
+			t.bendpoints <- tempObject;
+		
+	}
+		
+}
+
+--Transforms control flow to boolean transition
+lazy rule ControlFlow2BooleanTransition {
+	from
+		c: SysML!ControlFlow, sCounter: Integer, tCounter: Integer
+	using {
+		tempObject: Repast!bendpoints = OclUndefined;
+	}
+	to
+		t: Repast!booleantransition (
+			value <- c.name.getStringBool,
+			transitionsource <- transitionSource,
+			transitiontarget <- transitionTarget			
+		),
+		transitionSource: Repast!transitionsource (
+			type <- c.getSourceTransitionType,
+			index <- sCounter,
+			anchor <- 0
+		),
+		transitionTarget: Repast!transitiontarget (
+			type <- c.getTargetTransitionType,
+			index <- tCounter,
+			anchor <- 0
+		)
+		do{
+			tempObject <- thisModule.bendpoint(1); 
+			t.bendpoints <- tempObject;
+		
+	}
+}
+
+lazy rule bendpoint {
+	from
+		id: Integer
+	to
+		tstr: Repast!bendpoints (
+		)
+}
+
+helper context String def: getStringBool: Boolean =
+	if self='true' then
+		true
+	else
+		false
+	endif;
+
+--Returns source transition type
+helper context SysML!ControlFlow def: getSourceTransitionType: String =
+	if self.source.oclIsKindOf(SysML!OpaqueAction) then
+		'task'
+	else
+		if self.source.oclIsKindOf(SysML!MergeNode) then
+			'join'
+		else
+			if self.source.oclIsKindOf(SysML!DecisionNode) then
+				'decision'
+			else
+				'behavior'
+			endif
+		endif
+	endif;
+
+--Returns target transition type
+helper context SysML!ControlFlow def: getTargetTransitionType: String =
+	if self.target.oclIsKindOf(SysML!OpaqueAction) then
+		'task'
+	else
+		if self.target.oclIsKindOf(SysML!MergeNode) then
+			'join'
+		else
+			if self.target.oclIsKindOf(SysML!DecisionNode) then
+				'decision'
+			else
+				'end'
+			endif
+		endif
+	endif;
+
+--Returns target node
+helper context SysML!ControlFlow def: getTargetNode: String =
+	SysML!ControlFlow.allInstances() -> iterate(s; res: SysML!Node=OclUndefined | 
+		if self=s
+		then
+			s.target
+		else 
+			res
+		endif
+);
+
+--Returns source node
+helper context SysML!ControlFlow def: getNextControlFlow: String =
+	SysML!ControlFlow.allInstances() -> iterate(s; res: SysML!ControlFlow=OclUndefined | 
+		if self.target = s.source
+		then
+			s
+		else 
+			res
+		endif
+);
+
+helper context SysML!Element def: getXCoordinate: Integer =
+	SysMLGUI!Bounds.allInstances() -> iterate(s; res: Integer = -4 | 
+		if s.refImmediateComposite().element=self
+		then
+			s.refImmediateComposite().layoutConstraint.x
+		else 
+			res
+		endif
+);
+	
+
+
+helper context SysML!Element def: getYCoordinate: Integer =
+	SysMLGUI!Bounds.allInstances() -> iterate(s; res: Integer = -4 | 
+		if s.refImmediateComposite().element=self
+		then
+			s.refImmediateComposite().layoutConstraint.y
+		else 
+			res
+		endif
+);
+
+helper context SysML!Class def: hasBehavior: Boolean =
+	if self.ownedBehavior.size() =0 then
+			false
+		else
+			true
+		endif;
+
+--Returns inports as string of behavior parameter
+helper context SysML!Class def: getInPorts: String =
+	self.ownedPort -> iterate(p; res: String = '' | res + if p.isInPort and res <> '' then
+			', ' + p.getDataType + ' ' + p.name 
+		else
+			if p.isInPort and res = '' then
+			 	p.getDataType + ' ' + p.name 
+			 else
+			 	''
+				endif
+		endif);
+
+--Returns true if it is a inport
+helper context SysML!Port def: isInPort: Boolean =
+	SysML!FlowPort.allInstancesFrom('sys') -> iterate(f; res: Boolean = false | if f.
+			direction.toString() = 'in' and self = f.base_Port then
+			true
+		else
+			res
+		endif);
+
+--Returns set of activity diagrams in the SysML
+helper context SysML!Class def: getActivityDiagrams: Sequence(SysML!Activity) =	
+	if self.ownedBehavior.size() = 0 then 
+		self.getEmbeddedCodeClass.ownedBehavior -> iterate(b; res: Sequence(SysML!Activity) = Sequence{} | if b.
+			oclIsKindOf(SysML!Activity) then
+			res -> union(Sequence{b})
+		else
+			res
+		endif)
+	else
+		self.ownedBehavior -> iterate(b; res: Sequence(SysML!Activity) = Sequence{} | if b.
+			oclIsKindOf(SysML!Activity) then
+			res -> union(Sequence{b})
+		else
+			res
+		endif)
+	endif;
+
+--Returns the visibility value
+helper context SysML!Element def: getVisibilityValue: Integer =
+	let value: Integer =
+		0
+	in
+		if self.visibility.oclIsUndefined() then
+			value
+		else
+			if self.visibility = #private then
+				1
+			else
+				if self.visibility = #public then
+					value
+				else
+					if self.visibility = #protected then
+						2
+					else
+						3
+					endif
+				endif
+			endif
+		endif;
+
+--Returns the data type value
+helper context SysML!Element def: getDataType: String =
+	let id: String =
+		self.type.toString()
+	in
+		if id <> 'OclUndefined' and id.substring(5, id.size())= 'Array' then
+			'double[]'
+		else
+			''
+		endif;
+
+helper context SysML!Class def: getEmbeddedCodeClass: SysML!Class =
+	self.ownedAttribute -> iterate(b; res: SysML!Class = OclUndefined | if b.
+			oclIsKindOf(SysML!Property) and b.type.oclIsTypeOf(SysML!Class) then
+			b.type
+		else
+			res
+		endif);
+
+--Returns set of Opaque Actions in Activity
+helper context SysML!Activity def: getOpaqueNodes: Sequence(SysML!OpaqueAction) =
+	self.ownedNode -> iterate(n; res: Sequence(SysML!OpaqueAction) = Sequence{} | if n.
+			oclIsKindOf(SysML!OpaqueAction) then
+			res -> union(Sequence{n})
+		else
+			res
+		endif);
+
+--Returns set of Decision Nodes in Activity
+helper context SysML!Activity def: getDecisionNodes: Sequence(SysML!DecisionNode) =
+	self.ownedNode -> iterate(n; res: Sequence(SysML!DecisionNode) = Sequence{} | if n.
+			oclIsKindOf(SysML!DecisionNode) then
+			res -> union(Sequence{n})
+		else
+			res
+		endif);
+
+helper context SysML!Activity def: getMergeNodes: Sequence(SysML!MergeNode) =
+	self.ownedNode -> iterate(n; res: Sequence(SysML!MergeNode) = Sequence{} | if n.
+			oclIsKindOf(SysML!MergeNode) then
+			res -> union(Sequence{n})
+		else
+			res
+		endif);
+helper context SysML!Activity def: getActivityFinalNodes: Sequence(SysML!ActivityFinalNode) =
+	self.ownedNode -> iterate(n; res: Sequence(SysML!ActivityFinalNode) = Sequence{} | if n.
+			oclIsKindOf(SysML!ActivityFinalNode) then
+			res -> union(Sequence{n})
+		else
+			res
+		endif);
+
+helper context SysML!Activity def: getInitialNodes: Sequence(SysML!InitialNode) =
+	self.ownedNode -> iterate(n; res: Sequence(SysML!InitialNode) = Sequence{} | if n.
+			oclIsKindOf(SysML!InitialNode) then
+			res -> union(Sequence{n})
+		else
+			res
+		endif);
+
+--Returns connections in an activity diagram
+helper context SysML!Activity def: getConnections: Sequence(SysML!ControlFlow) =
+	self.edge -> iterate(b; res: Sequence(SysML!ControlFlow) = Sequence{} | if b.
+			oclIsKindOf(SysML!ControlFlow) then
+			res -> union(Sequence{b})
+		else
+			res
+		endif);

@@ -1,0 +1,3563 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<simulinkmm:ModelInformation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simulinkmm="http://simulinkmm/1.0" Version="0.9">
+  <Model Name="RoboSoccer">
+    <System>
+      <Block xsi:type="simulinkmm:SubSystemBlock" BlockType="SubSystem" Name="2D Visualization" SID="1">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+          </Value>
+        </Property>
+        <System>
+          <Block BlockType="ToWorkspace" Name="To Workspace" SID="1::1">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Inport" Name="_6LBBV5j2EeWc0Z0vgK_QHA" SID="1::1"/>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="1#in:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="1::1#in:1"/>
+            </Property>
+          </Line>
+        </System>
+      </Block>
+      <Block xsi:type="simulinkmm:SubSystemBlock" BlockType="SubSystem" Name="Ball Dynamics" SID="2">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="3"/>
+            </Entry>
+          </Value>
+        </Property>
+        <System>
+          <Block BlockType="Gain" Name="1/mass" SID="2::1">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="Gain">
+              <Value xsi:type="simulinkmm:SimString" Value="1/0.01"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block Name="Collision Modeling" SID="2::2">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="3"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Integrator" Name="Position" SID="2::3">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block xsi:type="simulinkmm:SubSystemBlock" BlockType="SubSystem" Name="TEXT_GOAL" SID="4">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <System>
+              <Block BlockType="Constant" Name="Constant" SID="4::1">
+                <Property Name="Ports">
+                  <Value xsi:type="simulinkmm:ValueArray">
+                    <Entry Index="0">
+                      <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                    </Entry>
+                  </Value>
+                </Property>
+                <Property Name="OutDataTypeStr">
+                  <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit from 'Constant value'"/>
+                </Property>
+              </Block>
+              <Block BlockType="Constant" Name="Constant1" SID="4::2">
+                <Property Name="Ports">
+                  <Value xsi:type="simulinkmm:ValueArray">
+                    <Entry Index="0">
+                      <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                    </Entry>
+                  </Value>
+                </Property>
+                <Property Name="OutDataTypeStr">
+                  <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit from 'Constant value'"/>
+                </Property>
+              </Block>
+              <Block BlockType="Switch" Name="Switch" SID="4::3">
+                <Property Name="Ports">
+                  <Value xsi:type="simulinkmm:ValueArray">
+                    <Entry Index="0">
+                      <Value xsi:type="simulinkmm:SimInt" Value="3"/>
+                    </Entry>
+                    <Entry Index="1">
+                      <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                    </Entry>
+                  </Value>
+                </Property>
+                <Property Name="OutDataTypeStr">
+                  <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+                </Property>
+              </Block>
+              <Block BlockType="Inport" Name="_6LBBxZj2EeWc0Z0vgK_QHA" SID="4::1"/>
+              <Block BlockType="Outport" Name="_6LBBxpj2EeWc0Z0vgK_QHA" SID="4::1"/>
+              <Line>
+                <Property Name="Name">
+                  <Value xsi:type="simulinkmm:SimString" Value=""/>
+                </Property>
+                <Property Name="Labels">
+                  <Value xsi:type="simulinkmm:ValueArray">
+                    <Entry Index="0">
+                      <Value xsi:type="simulinkmm:SimInt"/>
+                    </Entry>
+                    <Entry Index="1">
+                      <Value xsi:type="simulinkmm:SimInt"/>
+                    </Entry>
+                  </Value>
+                </Property>
+                <Property Name="src">
+                  <Value xsi:type="simulinkmm:SimString" Value="4#in:1"/>
+                </Property>
+                <Property Name="dst">
+                  <Value xsi:type="simulinkmm:SimString" Value="4::3#in:2"/>
+                </Property>
+              </Line>
+              <Line>
+                <Property Name="Name">
+                  <Value xsi:type="simulinkmm:SimString" Value=""/>
+                </Property>
+                <Property Name="Labels">
+                  <Value xsi:type="simulinkmm:ValueArray">
+                    <Entry Index="0">
+                      <Value xsi:type="simulinkmm:SimInt"/>
+                    </Entry>
+                    <Entry Index="1">
+                      <Value xsi:type="simulinkmm:SimInt"/>
+                    </Entry>
+                  </Value>
+                </Property>
+                <Property Name="src">
+                  <Value xsi:type="simulinkmm:SimString" Value="4::3#out:1"/>
+                </Property>
+                <Property Name="dst">
+                  <Value xsi:type="simulinkmm:SimString" Value="4#out:1"/>
+                </Property>
+              </Line>
+              <Line>
+                <Property Name="Name">
+                  <Value xsi:type="simulinkmm:SimString" Value=""/>
+                </Property>
+                <Property Name="Labels">
+                  <Value xsi:type="simulinkmm:ValueArray">
+                    <Entry Index="0">
+                      <Value xsi:type="simulinkmm:SimInt"/>
+                    </Entry>
+                    <Entry Index="1">
+                      <Value xsi:type="simulinkmm:SimInt"/>
+                    </Entry>
+                  </Value>
+                </Property>
+                <Property Name="src">
+                  <Value xsi:type="simulinkmm:SimString" Value="4::1#out:1"/>
+                </Property>
+                <Property Name="dst">
+                  <Value xsi:type="simulinkmm:SimString" Value="4::3#in:1"/>
+                </Property>
+              </Line>
+              <Line>
+                <Property Name="Name">
+                  <Value xsi:type="simulinkmm:SimString" Value=""/>
+                </Property>
+                <Property Name="Labels">
+                  <Value xsi:type="simulinkmm:ValueArray">
+                    <Entry Index="0">
+                      <Value xsi:type="simulinkmm:SimInt"/>
+                    </Entry>
+                    <Entry Index="1">
+                      <Value xsi:type="simulinkmm:SimInt"/>
+                    </Entry>
+                  </Value>
+                </Property>
+                <Property Name="src">
+                  <Value xsi:type="simulinkmm:SimString" Value="4::2#out:1"/>
+                </Property>
+                <Property Name="dst">
+                  <Value xsi:type="simulinkmm:SimString" Value="4::3#in:3"/>
+                </Property>
+              </Line>
+            </System>
+          </Block>
+          <Block BlockType="UnitDelay" Name="Unit Delay" SID="2::5">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Integrator" Name="Velocity" SID="2::6">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Inport" Name="_6LBBXpj2EeWc0Z0vgK_QHA" SID="2::1"/>
+          <Block BlockType="Outport" Name="_6LBBX5j2EeWc0Z0vgK_QHA" SID="2::1"/>
+          <Block BlockType="Outport" Name="_6LBBYJj2EeWc0Z0vgK_QHA" SID="2::2"/>
+          <Block BlockType="Outport" Name="_6LBBYZj2EeWc0Z0vgK_QHA" SID="2::3"/>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="2#in:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="2::2#in:2"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="2::2#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="2::1#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="2::1#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="2::6#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="2::5#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="2#out:3"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="4#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="2#out:2"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="2::6#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="2::3#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="2::6#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="2::2#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="2::3#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="2#out:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="2::3#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="2::2#in:3"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="2::2#out:2"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="2::5#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="2::2#out:2"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="4#in:1"/>
+            </Property>
+          </Line>
+        </System>
+      </Block>
+      <Block BlockType="BusCreator" Name="Bus Creator1" SID="3">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="4"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="OutDataTypeStr">
+          <Value xsi:type="simulinkmm:SimString" Value="Inherit: auto"/>
+        </Property>
+      </Block>
+      <Block BlockType="BusCreator" Name="Bus Creator2" SID="4">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="OutDataTypeStr">
+          <Value xsi:type="simulinkmm:SimString" Value="Inherit: auto"/>
+        </Property>
+      </Block>
+      <Block BlockType="BusCreator" Name="Bus Creator3" SID="5">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="OutDataTypeStr">
+          <Value xsi:type="simulinkmm:SimString" Value="Inherit: auto"/>
+        </Property>
+      </Block>
+      <Block BlockType="BusCreator" Name="Bus Creator4" SID="6">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="OutDataTypeStr">
+          <Value xsi:type="simulinkmm:SimString" Value="Inherit: auto"/>
+        </Property>
+      </Block>
+      <Block BlockType="BusCreator" Name="Bus Creator5" SID="7">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="OutDataTypeStr">
+          <Value xsi:type="simulinkmm:SimString" Value="Inherit: auto"/>
+        </Property>
+      </Block>
+      <Block BlockType="BusCreator" Name="Bus Creator6" SID="8">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="3"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="OutDataTypeStr">
+          <Value xsi:type="simulinkmm:SimString" Value="Inherit: auto"/>
+        </Property>
+      </Block>
+      <Block BlockType="BusSelector" Name="Bus Selector" SID="9">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+            </Entry>
+          </Value>
+        </Property>
+      </Block>
+      <Block BlockType="BusSelector" Name="Bus Selector1" SID="10">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+            </Entry>
+          </Value>
+        </Property>
+      </Block>
+      <Block BlockType="CLICK TO READ ME" Name="CLICK TO READ ME" SID="11"/>
+      <Block xsi:type="simulinkmm:SubSystemBlock" BlockType="SubSystem" Name="Robot 1 Dynamics" SID="12">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+            </Entry>
+          </Value>
+        </Property>
+        <System>
+          <Block BlockType="Abs" Name="Abs" SID="12::1">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Same as input"/>
+            </Property>
+          </Block>
+          <Block BlockType="Gain" Name="Acceleration" SID="12::2">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="Gain">
+              <Value xsi:type="simulinkmm:SimString" Value="1/(10*P+1)"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Gain" Name="B" SID="12::3">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="Gain">
+              <Value xsi:type="simulinkmm:SimInt" Value="-2"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block Name="Boundary Collisons" SID="12::4">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Compare To Constant" Name="Compare To Constant" SID="12::5">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="relop">
+              <Value xsi:type="simulinkmm:SimString" Value=">"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="uint8"/>
+            </Property>
+          </Block>
+          <Block BlockType="Integrator" Name="Energy Loss Calculation" SID="12::6">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Integrator" Name="Position" SID="12::7">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Product" Name="Product" SID="12::8">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Gain" Name="Rate of Discharge" SID="12::9">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="Gain">
+              <Value xsi:type="simulinkmm:SimFloat" Value="-0.01"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Saturate" Name="Saturation" SID="12::10">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Same as input"/>
+            </Property>
+          </Block>
+          <Block BlockType="Sum" Name="Sum" SID="12::11">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="3"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Integrator" Name="Velocity" SID="12::12">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Inport" Name="_6LBB2Jj2EeWc0Z0vgK_QHA" SID="12::1"/>
+          <Block BlockType="Outport" Name="_6LBB2Zj2EeWc0Z0vgK_QHA" SID="12::1"/>
+          <Block BlockType="Outport" Name="_6LBB2pj2EeWc0Z0vgK_QHA" SID="12::2"/>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::2#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12::12#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::9#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12::6#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::1#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12::9#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12#in:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12::8#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::8#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12::10#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::5#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12::8#in:2"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::4#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12::11#in:2"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::11#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12::2#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::3#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12::11#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::12#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12::7#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::12#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12::3#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::7#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12::4#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::7#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12#out:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::6#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12#out:2"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::6#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12::5#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::10#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12::1#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="12::10#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="12::11#in:3"/>
+            </Property>
+          </Line>
+        </System>
+      </Block>
+      <Block xsi:type="simulinkmm:SubSystemBlock" BlockType="SubSystem" Name="Robot 2 Dynamics" SID="13">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+            </Entry>
+          </Value>
+        </Property>
+        <System>
+          <Block BlockType="Abs" Name="Abs" SID="13::1">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Same as input"/>
+            </Property>
+          </Block>
+          <Block BlockType="Gain" Name="Acceleration" SID="13::2">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="Gain">
+              <Value xsi:type="simulinkmm:SimString" Value="1/(10*P+0.1)"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Gain" Name="B" SID="13::3">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="Gain">
+              <Value xsi:type="simulinkmm:SimInt" Value="-2"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block Name="Boundary Collisons" SID="13::4">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Compare To Constant" Name="Compare To Constant" SID="13::5">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="relop">
+              <Value xsi:type="simulinkmm:SimString" Value=">"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="uint8"/>
+            </Property>
+          </Block>
+          <Block BlockType="Integrator" Name="Energy Loss Calculation" SID="13::6">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Integrator" Name="Position" SID="13::7">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Product" Name="Product" SID="13::8">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Gain" Name="Rate of Discharge" SID="13::9">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="Gain">
+              <Value xsi:type="simulinkmm:SimFloat" Value="-0.01"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Saturate" Name="Saturation" SID="13::10">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Same as input"/>
+            </Property>
+          </Block>
+          <Block BlockType="Sum" Name="Sum" SID="13::11">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="3"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Integrator" Name="Velocity" SID="13::12">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Inport" Name="_6LBCdpj2EeWc0Z0vgK_QHA" SID="13::1"/>
+          <Block BlockType="Outport" Name="_6LBCd5j2EeWc0Z0vgK_QHA" SID="13::1"/>
+          <Block BlockType="Outport" Name="_6LBoAJj2EeWc0Z0vgK_QHA" SID="13::2"/>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::5#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13::8#in:2"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::8#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13::10#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13#in:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13::8#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::1#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13::9#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::9#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13::6#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::2#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13::12#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::11#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13::2#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::4#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13::11#in:2"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::3#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13::11#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::10#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13::1#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::10#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13::11#in:3"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::6#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13::5#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::6#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13#out:2"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::7#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13#out:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::7#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13::4#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::12#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13::7#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="13::12#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="13::3#in:1"/>
+            </Property>
+          </Line>
+        </System>
+      </Block>
+      <Block xsi:type="simulinkmm:SubSystemBlock" BlockType="SubSystem" Name="Robot 3 Dynamics" SID="14">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+            </Entry>
+          </Value>
+        </Property>
+        <System>
+          <Block BlockType="Abs" Name="Abs" SID="14::1">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Same as input"/>
+            </Property>
+          </Block>
+          <Block BlockType="Gain" Name="Acceleration" SID="14::2">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="Gain">
+              <Value xsi:type="simulinkmm:SimString" Value="1/(10*P+1)"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Gain" Name="B" SID="14::3">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="Gain">
+              <Value xsi:type="simulinkmm:SimInt" Value="-2"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block Name="Boundary Collisons" SID="14::4">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Compare To Constant" Name="Compare To Constant" SID="14::5">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="relop">
+              <Value xsi:type="simulinkmm:SimString" Value=">"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="uint8"/>
+            </Property>
+          </Block>
+          <Block BlockType="Integrator" Name="Energy Loss Calculation" SID="14::6">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Integrator" Name="Position" SID="14::7">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Product" Name="Product" SID="14::8">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Gain" Name="Rate of Discharge" SID="14::9">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="Gain">
+              <Value xsi:type="simulinkmm:SimFloat" Value="-0.01"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Saturate" Name="Saturation" SID="14::10">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Same as input"/>
+            </Property>
+          </Block>
+          <Block BlockType="Sum" Name="Sum" SID="14::11">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="3"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Integrator" Name="Velocity" SID="14::12">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Inport" Name="_6LBo9pj2EeWc0Z0vgK_QHA" SID="14::1"/>
+          <Block BlockType="Outport" Name="_6LBo95j2EeWc0Z0vgK_QHA" SID="14::1"/>
+          <Block BlockType="Outport" Name="_6LBo-Jj2EeWc0Z0vgK_QHA" SID="14::2"/>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::5#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14::8#in:2"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::8#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14::10#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14#in:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14::8#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::1#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14::9#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::9#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14::6#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::2#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14::12#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::11#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14::2#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::4#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14::11#in:2"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::3#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14::11#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::10#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14::1#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::10#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14::11#in:3"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::6#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14::5#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::6#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14#out:2"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::7#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14#out:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::7#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14::4#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::12#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14::7#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="14::12#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="14::3#in:1"/>
+            </Property>
+          </Line>
+        </System>
+      </Block>
+      <Block xsi:type="simulinkmm:SubSystemBlock" BlockType="SubSystem" Name="Robot 4 Dynamics" SID="15">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+            </Entry>
+          </Value>
+        </Property>
+        <System>
+          <Block BlockType="Abs" Name="Abs" SID="15::1">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Same as input"/>
+            </Property>
+          </Block>
+          <Block BlockType="Gain" Name="Acceleration" SID="15::2">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="Gain">
+              <Value xsi:type="simulinkmm:SimString" Value="1/(10*P+1)"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Gain" Name="B" SID="15::3">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="Gain">
+              <Value xsi:type="simulinkmm:SimInt" Value="-2"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block Name="Boundary Collisons" SID="15::4">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Compare To Constant" Name="Compare To Constant" SID="15::5">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="relop">
+              <Value xsi:type="simulinkmm:SimString" Value=">"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="uint8"/>
+            </Property>
+          </Block>
+          <Block BlockType="Integrator" Name="Energy Loss Calculation" SID="15::6">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Integrator" Name="Position" SID="15::7">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Product" Name="Product" SID="15::8">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Gain" Name="Rate of Discharge" SID="15::9">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="Gain">
+              <Value xsi:type="simulinkmm:SimFloat" Value="-0.01"/>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Saturate" Name="Saturation" SID="15::10">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Same as input"/>
+            </Property>
+          </Block>
+          <Block BlockType="Sum" Name="Sum" SID="15::11">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="3"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="OutDataTypeStr">
+              <Value xsi:type="simulinkmm:SimString" Value="Inherit: Inherit via internal rule"/>
+            </Property>
+          </Block>
+          <Block BlockType="Integrator" Name="Velocity" SID="15::12">
+            <Property Name="Ports">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+                </Entry>
+              </Value>
+            </Property>
+          </Block>
+          <Block BlockType="Inport" Name="_6LBplJj2EeWc0Z0vgK_QHA" SID="15::1"/>
+          <Block BlockType="Outport" Name="_6LBplZj2EeWc0Z0vgK_QHA" SID="15::1"/>
+          <Block BlockType="Outport" Name="_6LBplpj2EeWc0Z0vgK_QHA" SID="15::2"/>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::11#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15::2#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::2#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15::12#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::9#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15::6#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::1#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15::9#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15#in:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15::8#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::8#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15::10#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::5#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15::8#in:2"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::4#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15::11#in:2"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::3#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15::11#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::12#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15::7#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::12#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15::3#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::7#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15::4#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::7#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15#out:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::6#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15#out:2"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::6#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15::5#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::10#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15::1#in:1"/>
+            </Property>
+          </Line>
+          <Line>
+            <Property Name="Name">
+              <Value xsi:type="simulinkmm:SimString" Value=""/>
+            </Property>
+            <Property Name="Labels">
+              <Value xsi:type="simulinkmm:ValueArray">
+                <Entry Index="0">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+                <Entry Index="1">
+                  <Value xsi:type="simulinkmm:SimInt"/>
+                </Entry>
+              </Value>
+            </Property>
+            <Property Name="src">
+              <Value xsi:type="simulinkmm:SimString" Value="15::10#out:1"/>
+            </Property>
+            <Property Name="dst">
+              <Value xsi:type="simulinkmm:SimString" Value="15::11#in:3"/>
+            </Property>
+          </Line>
+        </System>
+      </Block>
+      <Block BlockType="Stop" Name="Stop Simulation" SID="16">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+          </Value>
+        </Property>
+      </Block>
+      <Block BlockType="ModelReference" Name="Team_1_Strategy" SID="17">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="3"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+            </Entry>
+          </Value>
+        </Property>
+      </Block>
+      <Block BlockType="ModelReference" Name="Team_1_Strategy2" SID="18">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="3"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="2"/>
+            </Entry>
+          </Value>
+        </Property>
+      </Block>
+      <Block BlockType="UnitDelay" Name="Unit Delay" SID="19">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+          </Value>
+        </Property>
+      </Block>
+      <Block BlockType="UnitDelay" Name="Unit Delay1" SID="20">
+        <Property Name="Ports">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt" Value="1"/>
+            </Entry>
+          </Value>
+        </Property>
+      </Block>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="12#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="3#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="13#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="3#in:2"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="14#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="3#in:3"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="15#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="3#in:4"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="14#out:2"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="4#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="15#out:2"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="4#in:2"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="4#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="18#in:2"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="18#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="7#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="18#out:2"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="7#in:2"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="7#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="10#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="17#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="6#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="17#out:2"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="6#in:2"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="6#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="9#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="9#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="12#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="9#out:2"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="13#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="10#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="14#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="10#out:2"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="15#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="2#out:3"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="20#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="8#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="1#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="2#out:2"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="8#in:3"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="5#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="17#in:2"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="13#out:2"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="5#in:2"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="12#out:2"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="5#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="19#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="16#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="20#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="19#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="3#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="2#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="3#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="8#in:2"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="3#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="17#in:3"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="3#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="18#in:3"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="2#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="8#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="2#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="17#in:1"/>
+        </Property>
+      </Line>
+      <Line>
+        <Property Name="Name">
+          <Value xsi:type="simulinkmm:SimString" Value=""/>
+        </Property>
+        <Property Name="Labels">
+          <Value xsi:type="simulinkmm:ValueArray">
+            <Entry Index="0">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+            <Entry Index="1">
+              <Value xsi:type="simulinkmm:SimInt"/>
+            </Entry>
+          </Value>
+        </Property>
+        <Property Name="src">
+          <Value xsi:type="simulinkmm:SimString" Value="2#out:1"/>
+        </Property>
+        <Property Name="dst">
+          <Value xsi:type="simulinkmm:SimString" Value="18#in:1"/>
+        </Property>
+      </Line>
+    </System>
+  </Model>
+</simulinkmm:ModelInformation>

@@ -310,7 +310,7 @@ helper context String def: getPortDirection: String =
 
 --
 helper context SysML!Class def: isSystem: Boolean =
-	if self.ownedBehavior.size() = 0 and not self.oclIsTypeOf(SysML!Activity) then
+	if self.ownedBehavior.size() = 0 and self.ownedAttribute.size() > 0 and  (not self.oclIsTypeOf(SysML!Activity)) then
 		true
 	else
 		false

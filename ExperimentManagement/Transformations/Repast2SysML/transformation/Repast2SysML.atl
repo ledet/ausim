@@ -1,0 +1,528 @@
+-- @path Repast=/metamodel/Repast.ecore
+-- @nsURI SysML=http://www.eclipse.org/uml2/4.0.0/UML
+-- @nsURI SysMLnota=http://www.eclipse.org/gmf/runtime/1.0.2/notation
+-- @nsURI SysMLdi=http://www.eclipse.org/papyrus/0.7.0/sashdi
+
+--http://www.eclipse.org/papyrus/0.7.0/SysML
+--http://www.eclipse.org/uml2/4.0.0/UML
+
+module Repast2SysML;
+create sys: SysML, nota: SysMLnota, di: SysMLdi from rep: Repast;
+
+
+rule Agent2Model {
+	from
+		a: Repast!agent
+	using {
+		tempActivity: SysML!Activity = OclUndefined;
+		tempDiag: SysMLnota!Diagram =OclUndefined;
+	}
+	to
+		ac: SysML!Model (
+			name <- a.agentclassname
+		)
+	do {
+		ac.packagedElement <- ac.packagedElement.append(thisModule.Agent2Activity(a));
+		tempDiag <- thisModule.CreateActivityDiag(ac.packagedElement.first(), a.agentclassname);
+		thisModule.di(tempDiag);
+	}
+}
+
+lazy rule CreateActivityDiag {
+	from
+		obj : SysML!Activity, diagName : String
+	using{
+		allEdges: Sequence (SysML!ControlFlow) = obj.edge;
+		tempSource: SysML!Node = OclUndefined;
+		tempTarget: SysML!Node = OclUndefined;
+		source: SysMLnota!Shape = OclUndefined;
+		target: SysMLnota!Shape = OclUndefined;
+	}
+	to
+		acd: SysMLnota!Diagram (
+			name <- diagName,
+			type<-'PapyrusUMLActivityDiagram',
+			measurementUnit <- 'Pixel',
+			element<-obj
+		)
+	do{
+			acd.children <- acd.children.append (thisModule.CreateActivityShape('2001', 'Segoe UI', 0, obj));
+		    acd.styles <- acd.styles.append (thisModule.CreateStyles(''));
+		    
+		    for (e in allEdges){
+		    	tempSource <- e.source;
+		    	tempTarget <- e.target;
+		    	acd.edges <- acd.edges.append (thisModule.CreateConnector('4004', 0, tempSource.getShape, tempTarget.getShape, e));
+		    	
+		    }
+		    
+	}
+}
+lazy rule di{
+	from
+		nota: SysMLnota!Diagram
+	to
+		di: SysMLdi!SashWindowsMngr(	
+		)
+	do{
+		di.pageList <- thisModule.PageList(nota);
+		di.sashModel <- thisModule.SashModel(nota);
+	}
+}
+
+lazy rule PageList{
+		from
+		nota: SysMLnota!Diagram
+	to
+		pl: SysMLdi!PageList(	
+		)
+	do{
+		pl.availablePage <- pl.availablePage.append(thisModule.PageRef(nota));
+	}
+
+}
+lazy rule AvailablePage {
+	from
+		nota: SysMLnota!Diagram
+	to
+		al: SysMLdi!AvailableList(	
+		)
+	do{
+		al.availablePage <- al.availablePage.append(thisModule.PageRef(nota));
+	}
+}
+
+lazy rule PageRef {
+	from
+		nota: SysMLnota!Diagram
+	to
+		ref: SysMLdi!PageRef (
+			emfPageIdentifier <- nota	
+		)
+}
+
+lazy rule SashModel {
+	from
+		nota: SysMLnota!Diagram
+	to
+		sh: SysMLdi!SashModel (
+				
+	)
+	do{
+		sh.windows <- sh.windows.append(thisModule.Window(nota));
+		sh.currentSelection <- sh.windows.first().children.first();
+	}
+}
+
+lazy rule Window {
+	from
+		nota: SysMLnota!Diagram
+	to
+		w: SysMLdi!Window (	
+			
+	)do{
+		w.children <- thisModule.TabFolder(nota);	
+	
+	}
+}
+
+lazy rule TabFolder {
+	from
+		nota: SysMLnota!Diagram
+	to
+		t: SysMLdi!TabFolder (	
+			
+	)
+	do{
+		t.children <- t.children.append(thisModule.PageRef(nota));	
+	}
+}
+
+lazy rule Agent2Activity {
+	from
+		a: Repast!agent
+	using {				
+		key: Integer = 0;
+		loopKey: Integer = 0;
+		loops: Sequence(SysML!Node) = Sequence{};
+		bhvMap: Map(Integer, SysML!Node)= Map{};
+		taskMap: Map(Integer, SysML!Node)= Map{};
+		decMap: Map(Integer, SysML!Node)= Map{};
+		loopMap: Map(Integer, SysML!Node)= Map{};
+		joinMap: Map(Integer, SysML!Node)= Map{};
+		endMap: Map(Integer, SysML!Node)= Map{};
+		tempSource: SysML!Node = OclUndefined;
+		tempTarget: SysML!Node = OclUndefined;
+		loop: SysML!Node = OclUndefined;
+		loopTarget: Map(Integer, SysML!Node)= Map{};
+	}
+	to
+		ac: SysML!Activity (
+			name <- a.agentclassname
+		)
+	do {
+		
+		for (it4 in a.behaviorsteps.behaviorstep){
+			ac.ownedNode <- ac.ownedNode.append(thisModule.Behavior2InitialNode(it4));
+			bhvMap<-bhvMap.union(Map{(key, ac.ownedNode.last())}); 
+			key<- key + 1;
+		}
+		key <- 0;
+		
+		for (it2 in a.tasksteps.taskstep){			
+			ac.ownedNode <- ac.ownedNode.append(thisModule.Task2OpaqueAction(it2));
+			taskMap<-taskMap.union(Map{(key, ac.ownedNode.last())}); 
+			key<- key + 1;
+		}		
+		key <- 0;
+		
+		for (it1 in a.decisionsteps.decisionstep){		
+
+			ac.ownedNode <- ac.ownedNode.append(thisModule.Decision2DecisionNode(it1));				
+			decMap<-decMap.union(Map{(key, ac.ownedNode.last())});
+			key<- key + 1;
+			
+			if(it1.branchType = 'while'){
+				loops <- loops.union(Sequence {ac.ownedNode.last()});
+				loopMap<-loopMap.union(Map{(loopKey, ac.ownedNode.last())});
+				loopKey <- loopKey +1;
+			}
+		}
+
+		key <- 0;
+		for (it3 in a.joinsteps.joinstep){			 
+			ac.ownedNode <- ac.ownedNode.append(thisModule.Join2MergeNode(it3, key));
+			joinMap<-joinMap.union(Map{(key, ac.ownedNode.last())});
+			key<- key + 1;
+		}		
+
+		key <- 0;
+		for (it4 in a.endsteps.endstep){			 
+			ac.ownedNode <- ac.ownedNode.append(thisModule.ActivityFinalNode('FinalNode'));
+			endMap<-endMap.union(Map{(key, ac.ownedNode.last())});
+			key<- key + 1;
+		}
+		--ac.ownedNode <- ac.ownedNode.append(thisModule.ActivityFinalNode('FinalNode'));		
+		
+		for(it5 in a.connections.booleantransitions.booleantransition){
+			if(it5.transitionsource.type = 'task')
+				tempSource <- taskMap.get(it5.transitionsource.index);
+			else if (it5.transitionsource.type = 'join')
+				tempSource <- joinMap.get(it5.transitionsource.index);
+			else if (it5.transitionsource.type = 'decision')
+				tempSource <- decMap.get(it5.transitionsource.index);
+			else if (it5.transitionsource.type = 'behavior')
+				tempSource <- bhvMap.get(it5.transitionsource.index);
+			
+			if(it5.transitiontarget.type = 'task')
+				tempTarget <- taskMap.get(it5.transitiontarget.index);
+			else if (it5.transitiontarget.type = 'join')
+				tempTarget <- joinMap.get(it5.transitiontarget.index);
+			else if (it5.transitiontarget.type = 'decision')
+				tempTarget <- decMap.get(it5.transitiontarget.index);
+			else if (it5.transitiontarget.type = 'end')
+				tempTarget <- endMap.get(it5.transitiontarget.index);
+			
+			for(it6 in loops){
+				if(it6 = tempSource and it5.value){
+					for(it7 in loopMap.getKeys()){
+						if(it6 = loopMap.get(it7))
+							loopKey <- it7;
+					}	
+					loopTarget<-loopTarget.union(Map{(loopKey, tempTarget)});					
+				}
+			}
+			ac.edge <- ac.edge.append (thisModule.BoolTransition2ControlFlow(it5, tempSource, tempTarget));
+		}		
+		
+		for(it5 in a.connections.transitions.transition){
+			if(it5.transitionsource.type = 'task')
+				tempSource <- taskMap.get(it5.transitionsource.index);
+			else if (it5.transitionsource.type = 'join')
+				tempSource <- joinMap.get(it5.transitionsource.index);
+			else if (it5.transitionsource.type = 'decision')
+				tempSource <- decMap.get(it5.transitionsource.index);
+			else if (it5.transitionsource.type = 'behavior')
+				tempSource <- bhvMap.get(it5.transitionsource.index);
+			
+			if(it5.transitiontarget.type = 'task')
+				tempTarget <- taskMap.get(it5.transitiontarget.index);
+			else if (it5.transitiontarget.type = 'join')
+				tempTarget <- joinMap.get(it5.transitiontarget.index);
+			else if (it5.transitiontarget.type = 'decision')
+				tempTarget <- decMap.get(it5.transitiontarget.index);
+			else if (it5.transitiontarget.type = 'end')
+				tempTarget <- endMap.get(it5.transitiontarget.index);
+
+			ac.edge <- ac.edge.append (thisModule.Transition2ControlFlow(it5, tempSource, tempTarget));		
+		}
+		
+		for(it8 in loopTarget.getKeys()){
+			for(it6 in ac.edge){
+				if(it6.source = loopTarget.get(it8)){
+						loopTarget<-loopTarget.union(Map{(it8, it6.target)});
+						
+					}
+				for(it7 in ac.edge){
+					if(it7.source = loopTarget.get(it8)){
+						loopTarget<-loopTarget.union(Map{(it8, it7.target)});
+						
+					}
+				}
+			}			
+		}
+		
+		for(it9 in loopMap.getKeys()){
+				ac.edge <- ac.edge.append (thisModule.ControlFlow(loopTarget.get(it9), loopMap.get(it9)));
+			}
+		
+	}
+}
+
+lazy rule CreateStyles{
+	from
+		type : String
+	to
+		style: SysMLnota!DiagramStyle ()
+}
+
+lazy rule CreateActivityShape{
+	from
+		type : String, fontName : String, lineColor: Integer, ac: SysML!Activity
+	to sh: SysMLnota!Shape (
+			type <- type,
+			fontName <- fontName,
+			lineColor <- lineColor,
+			layoutConstraint <- thisModule.Bounds(''),
+			element <- ac
+		)
+	do{
+			sh.children <- sh.children.append(thisModule.DecorationNode(OclUndefined, '5001'));
+			sh.children <- sh.children.append(thisModule.DecorationNode(OclUndefined, '7001'));
+			sh.children <- sh.children.append(thisModule.DecorationNode(OclUndefined, '7002'));
+			sh.children <- sh.children.append(thisModule.DecorationNode(OclUndefined, '7003'));
+			sh.children <- sh.children.append(thisModule.DecorationNode(ac, '7004'));
+	}
+}
+
+lazy rule CreateNodeShape{
+	from
+		type : String, fontName : String, lineColor: Integer, node: SysML!Node, decNodeType: String
+	to sh: SysMLnota!Shape (
+			type <- type,
+			fontName <- fontName,
+			lineColor <- lineColor,
+			layoutConstraint <- thisModule.Bounds(''),
+			element <- node
+		)
+	do{
+		sh.styles <- sh.styles.append (thisModule.HintedDiagramLinkStyle(''));
+		sh.children <- sh.children.append(thisModule.DecorationNode(OclUndefined, decNodeType));
+
+		if(type ='3038')
+			sh.children <- sh.children.append(thisModule.DecorationNode(OclUndefined, '5098'));
+	}
+}
+
+lazy rule DecorationNode{
+	from
+		ac: SysML!Object, type: String, x: Integer, y: Integer
+	to 
+		dec: SysMLnota!DecorationNode(
+			type <- type			
+		)
+	do{
+			if(not ac.oclIsUndefined() and ac.oclIsTypeOf(SysML!Activity)){
+				for(n in ac.ownedNode){
+					if (n.oclIsTypeOf(SysML!InitialNode))
+						dec.children <- dec.children.append (thisModule.CreateNodeShape('3004', 'Segoe UI', 0, n, '5080'));
+					else if (n.oclIsTypeOf(SysML!OpaqueAction))
+						dec.children <- dec.children.append (thisModule.CreateNodeShape('3007', 'Segoe UI', 0, n, '5003'));
+					else if (n.oclIsTypeOf(SysML!DecisionNode))
+						dec.children <- dec.children.append (thisModule.CreateNodeShape('3038', 'Segoe UI', 0, n, '5043'));
+					else if (n.oclIsTypeOf(SysML!MergeNode))
+						dec.children <- dec.children.append (thisModule.CreateNodeShape('3039', 'Segoe UI', 0, n, '5099'));					
+					else if (n.oclIsTypeOf(SysML!ActivityFinalNode))
+						dec.children <- dec.children.append (thisModule.CreateNodeShape('3005', 'Segoe UI', 0, n, '5081'));
+				}
+			}else if(ac.oclIsTypeOf(SysML!ControlFlow)){
+				dec.layoutConstraint <- thisModule.Location(type);
+			}else if(type = '7001' or type = '7002' or type = '7003'){
+					dec.layoutConstraint <- thisModule.Bounds('');
+					dec.styles <- dec.styles.append (thisModule.SortingStyle(''));
+					dec.styles <- dec.styles.append (thisModule.FilteringStyle(''));				
+				
+--				dec.x <- x;
+--				dec.y <-y;
+			
+			}
+			
+			if(type ='6003' or type = '6004')
+				dec.visible <- false;
+	}
+
+}
+
+
+lazy rule Location{
+	from
+		type : String
+	to
+		lo: SysMLnota!Location (
+			
+	)do {
+		if (type = '6009')
+			lo.y <- 20;
+		else if (type = '6011')
+			lo.y <- -20;
+	}
+
+}
+
+lazy rule HintedDiagramLinkStyle{
+	from
+		type : String
+	to
+		bo: SysMLnota!HintedDiagramLinkStyle ()
+
+}
+
+lazy rule Bounds{
+	from
+		type : String
+	to
+		bo: SysMLnota!Bounds ()
+}
+
+lazy rule SortingStyle{
+	from
+		type : String
+	to
+		bo: SysMLnota!SortingStyle ()
+}
+
+lazy rule FilteringStyle{
+	from
+		type : String
+	to
+		bo: SysMLnota!FilteringStyle ()
+}
+
+lazy rule CreateConnector{
+	from
+		type : String, lineColor : String, source: SysMLnota!Shape, target: SysMLnota!Shape, obj: SysML!ControlFlow
+	to
+		con: SysMLnota!Connector (
+			type <- type,
+			lineColor <- lineColor,
+			source <- source,
+			target <- target,
+			element <- obj
+		)
+	do{
+		con.children <- con.children.append(thisModule.DecorationNode(OclUndefined, '6003'));
+		con.children <- con.children.append(thisModule.DecorationNode(OclUndefined, '6004'));
+		con.children <- con.children.append(thisModule.DecorationNode(OclUndefined, '6009'));
+		con.children <- con.children.append(thisModule.DecorationNode(OclUndefined, '6011'));
+		con.bendpoints <- thisModule.RelativeBendpoints('');
+	}
+}
+lazy rule RelativeBendpoints{
+	from
+		type: String
+	to
+		dec: SysMLnota!RelativeBendpoints ()
+
+}
+
+lazy rule Decision2DecisionNode{
+	from
+		d: Repast!decisionstep
+	to
+		dec: SysML!DecisionNode (
+			name <- d.criteria + d.branchType
+		)
+}
+
+lazy rule Task2OpaqueAction{
+	from
+		t: Repast!taskstep
+	to
+		o: SysML!OpaqueAction (
+			name <- t.label.text
+		)
+}
+
+lazy rule Join2MergeNode{
+	from
+		t: Repast!joinstep, id: Integer
+	to
+		m: SysML!MergeNode (
+			name <- 'MergeNode' + id.toString()
+		)
+}
+
+lazy rule ActivityFinalNode{
+	from
+		fName:String
+	to
+		f: SysML!ActivityFinalNode (
+			name <- fName
+		)
+}
+
+lazy rule Behavior2InitialNode{
+	from
+		b: Repast!behaviorstep
+	to
+		dec: SysML!InitialNode (
+			name <- b.compiledname
+		)
+}
+
+lazy rule Transition2ControlFlow{
+	from
+		t: Repast!transition, source: SysML!Node, target: SysML!Node
+	to
+		dec: SysML!ControlFlow (
+			name <- 'ControlFlow',
+			source <- source,
+			target <- target
+		)
+}
+
+lazy rule BoolTransition2ControlFlow{
+	from
+		t: Repast!booleantransition, source: SysML!Node, target: SysML!Node
+	to
+		dec: SysML!ControlFlow (
+			name <- 'ControlFlow' + t.value,
+			source <- source,
+			target <- target
+		)
+}
+
+lazy rule ControlFlow{
+	from
+		source: SysML!Node, target: SysML!Node
+	to
+		dec: SysML!ControlFlow (
+			name <- 'ControlFlow',
+			source <- source,
+			target <- target
+		)
+}
+helper context SysML!FinalNode def: getShape : SysMLnota!Shape =
+	SysMLnota!Shape.allInstances()->select(s | s.element =self )->first();
+
+helper context SysML!OpaqueAction def: getShape : SysMLnota!Shape =
+	SysMLnota!Shape.allInstances()->select(s | s.element =self )->first();	
+
+helper context SysML!MergeNode def: getShape : SysMLnota!Shape =
+	SysMLnota!Shape.allInstances()->select(s | s.element =self )->first();	
+
+helper context SysML!InitialNode def: getShape : SysMLnota!Shape =
+	SysMLnota!Shape.allInstances()->select(s | s.element =self )->first();
+
+helper context SysML!DecisionNode def: getShape : SysMLnota!Shape =
+	SysMLnota!Shape.allInstances()->select(s | s.element =self )->first();

@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<simulinksourcemm:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simulinksourcemm="http://simulinksourcemm/1.0" Name="RoboSoccer">
+  <Block xsi:type="simulinksourcemm:System" Name="RoboSoccer" ID="Root">
+    <Block xsi:type="simulinksourcemm:System" Name="2D Visualization" ID="1">
+      <Port Direction="in" Name="_FmOWGBT7EeWq3M2wkDjRpA" Num="1"/>
+      <Block xsi:type="simulinksourcemm:Block" Name="To Workspace" ID="1::1" Type="ToWorkspace">
+        <Port Direction="in" Name="_FmOWIBT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Connection src="//@Block.0/@Block.0/@Port.0" dst="//@Block.0/@Block.0/@Block.0/@Port.0" Name=""/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:System" Name="Ball Dynamics" ID="2">
+      <Port Direction="in" Name="_FmOWIxT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOWJBT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOWJRT7EeWq3M2wkDjRpA" Num="2"/>
+      <Port Direction="out" Name="_FmOWJhT7EeWq3M2wkDjRpA" Num="3"/>
+      <Block xsi:type="simulinksourcemm:Block" Name="1/mass" ID="2::1" Type="Gain">
+        <Property Name="Gain" Type="String" Value="1/0.01"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOWURT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOWUhT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Collision Modeling" ID="2::2">
+        <Port Direction="in" Name="_FmOWWRT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="in" Name="_FmOWWhT7EeWq3M2wkDjRpA" Num="2"/>
+        <Port Direction="in" Name="_FmOWWxT7EeWq3M2wkDjRpA" Num="3"/>
+        <Port Direction="out" Name="_FmOWXBT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOWXRT7EeWq3M2wkDjRpA" Num="2"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Position" ID="2::3" Type="Integrator">
+        <Port Direction="in" Name="_FmOWYxT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOWZBT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:System" Name="TEXT_GOAL" ID="4">
+        <Port Direction="in" Name="_FmOWihT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOWixT7EeWq3M2wkDjRpA" Num="1"/>
+        <Block xsi:type="simulinksourcemm:Block" Name="Constant" ID="4::1" Type="Constant">
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit from 'Constant value'"/>
+          <Port Direction="out" Name="_FmOWchT7EeWq3M2wkDjRpA" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name="Constant1" ID="4::2" Type="Constant">
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit from 'Constant value'"/>
+          <Port Direction="out" Name="_FmOWehT7EeWq3M2wkDjRpA" Num="1"/>
+        </Block>
+        <Block xsi:type="simulinksourcemm:Block" Name="Switch" ID="4::3" Type="Switch">
+          <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+          <Port Direction="in" Name="_FmOWghT7EeWq3M2wkDjRpA" Num="1"/>
+          <Port Direction="in" Name="_FmOWgxT7EeWq3M2wkDjRpA" Num="2"/>
+          <Port Direction="in" Name="_FmOWhBT7EeWq3M2wkDjRpA" Num="3"/>
+          <Port Direction="out" Name="_FmOWhRT7EeWq3M2wkDjRpA" Num="1"/>
+        </Block>
+        <Connection src="//@Block.0/@Block.1/@Block.3/@Port.0" dst="//@Block.0/@Block.1/@Block.3/@Block.2/@Port.1" Name=""/>
+        <Connection src="//@Block.0/@Block.1/@Block.3/@Block.2/@Port.3" dst="//@Block.0/@Block.1/@Block.3/@Port.1" Name=""/>
+        <Connection src="//@Block.0/@Block.1/@Block.3/@Block.0/@Port.0" dst="//@Block.0/@Block.1/@Block.3/@Block.2/@Port.0" Name=""/>
+        <Connection src="//@Block.0/@Block.1/@Block.3/@Block.1/@Port.0" dst="//@Block.0/@Block.1/@Block.3/@Block.2/@Port.2" Name=""/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Unit Delay" ID="2::5" Type="UnitDelay">
+        <Port Direction="in" Name="_FmOWaBT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOWaRT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Velocity" ID="2::6" Type="Integrator">
+        <Port Direction="in" Name="_FmOWbRT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOWbhT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Connection src="//@Block.0/@Block.1/@Port.0" dst="//@Block.0/@Block.1/@Block.1/@Port.1" Name=""/>
+      <Connection src="//@Block.0/@Block.1/@Block.1/@Port.3" dst="//@Block.0/@Block.1/@Block.0/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.1/@Block.0/@Port.1" dst="//@Block.0/@Block.1/@Block.5/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.1/@Block.4/@Port.1" dst="//@Block.0/@Block.1/@Port.3" Name=""/>
+      <Connection src="//@Block.0/@Block.1/@Block.3/@Port.1" dst="//@Block.0/@Block.1/@Port.2" Name=""/>
+      <Connection src="//@Block.0/@Block.1/@Block.5/@Port.1" dst="//@Block.0/@Block.1/@Block.2/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.1/@Block.5/@Port.1" dst="//@Block.0/@Block.1/@Block.1/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.1/@Block.2/@Port.1" dst="//@Block.0/@Block.1/@Port.1" Name=""/>
+      <Connection src="//@Block.0/@Block.1/@Block.2/@Port.1" dst="//@Block.0/@Block.1/@Block.1/@Port.2" Name=""/>
+      <Connection src="//@Block.0/@Block.1/@Block.1/@Port.4" dst="//@Block.0/@Block.1/@Block.4/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.1/@Block.1/@Port.4" dst="//@Block.0/@Block.1/@Block.3/@Port.0" Name=""/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus Creator1" ID="3" Type="BusCreator">
+      <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+      <Port Direction="in" Name="_FmOVuRT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="in" Name="_FmOVuhT7EeWq3M2wkDjRpA" Num="2"/>
+      <Port Direction="in" Name="_FmOVuxT7EeWq3M2wkDjRpA" Num="3"/>
+      <Port Direction="in" Name="_FmOVvBT7EeWq3M2wkDjRpA" Num="4"/>
+      <Port Direction="out" Name="_FmOVvRT7EeWq3M2wkDjRpA" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus Creator2" ID="4" Type="BusCreator">
+      <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+      <Port Direction="in" Name="_FmOVwxT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="in" Name="_FmOVxBT7EeWq3M2wkDjRpA" Num="2"/>
+      <Port Direction="out" Name="_FmOVxRT7EeWq3M2wkDjRpA" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus Creator3" ID="5" Type="BusCreator">
+      <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+      <Port Direction="in" Name="_FmOVyxT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="in" Name="_FmOVzBT7EeWq3M2wkDjRpA" Num="2"/>
+      <Port Direction="out" Name="_FmOVzRT7EeWq3M2wkDjRpA" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus Creator4" ID="6" Type="BusCreator">
+      <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+      <Port Direction="in" Name="_FmOV0xT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="in" Name="_FmOV1BT7EeWq3M2wkDjRpA" Num="2"/>
+      <Port Direction="out" Name="_FmOV1RT7EeWq3M2wkDjRpA" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus Creator5" ID="7" Type="BusCreator">
+      <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+      <Port Direction="in" Name="_FmOV2xT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="in" Name="_FmOV3BT7EeWq3M2wkDjRpA" Num="2"/>
+      <Port Direction="out" Name="_FmOV3RT7EeWq3M2wkDjRpA" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus Creator6" ID="8" Type="BusCreator">
+      <Property Name="OutDataTypeStr" Type="String" Value="Inherit: auto"/>
+      <Port Direction="in" Name="_FmOV4xT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="in" Name="_FmOV5BT7EeWq3M2wkDjRpA" Num="2"/>
+      <Port Direction="in" Name="_FmOV5RT7EeWq3M2wkDjRpA" Num="3"/>
+      <Port Direction="out" Name="_FmOV5hT7EeWq3M2wkDjRpA" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus Selector" ID="9" Type="BusSelector">
+      <Port Direction="in" Name="_FmOV7BT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOV7RT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOV7hT7EeWq3M2wkDjRpA" Num="2"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Bus Selector1" ID="10" Type="BusSelector">
+      <Port Direction="in" Name="_FmOV8hT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOV8xT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOV9BT7EeWq3M2wkDjRpA" Num="2"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="CLICK TO READ ME" ID="11" Type="CLICK TO READ ME"/>
+    <Block xsi:type="simulinksourcemm:System" Name="Robot 1 Dynamics" ID="12">
+      <Port Direction="in" Name="_FmOWnRT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOWnhT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOWnxT7EeWq3M2wkDjRpA" Num="2"/>
+      <Block xsi:type="simulinksourcemm:Block" Name="Abs" ID="12::1" Type="Abs">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="_FmOW4hT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOW4xT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Acceleration" ID="12::2" Type="Gain">
+        <Property Name="Gain" Type="String" Value="1/(10*P+1)"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOW6RT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOW6hT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="B" ID="12::3" Type="Gain">
+        <Property Name="Gain" Type="Int" Value="-2"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOW8hT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOW8xT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Boundary Collisons" ID="12::4">
+        <Port Direction="in" Name="_FmOW-hT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOW-xT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Compare To Constant" ID="12::5" Type="Compare To Constant">
+        <Property Name="relop" Type="String" Value=">"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="uint8"/>
+        <Port Direction="in" Name="_FmOXART7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOXAhT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Energy Loss Calculation" ID="12::6" Type="Integrator">
+        <Port Direction="in" Name="_FmOXDBT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOXDRT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Position" ID="12::7" Type="Integrator">
+        <Port Direction="in" Name="_FmOXERT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOXEhT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Product" ID="12::8" Type="Product">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOXFhT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="in" Name="_FmOXFxT7EeWq3M2wkDjRpA" Num="2"/>
+        <Port Direction="out" Name="_FmOXGBT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Rate of Discharge" ID="12::9" Type="Gain">
+        <Property Name="Gain" Type="Float" Value="-0.01"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOXHhT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOXHxT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Saturation" ID="12::10" Type="Saturate">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="_FmOXJxT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOXKBT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Sum" ID="12::11" Type="Sum">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOXLhT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="in" Name="_FmOXLxT7EeWq3M2wkDjRpA" Num="2"/>
+        <Port Direction="in" Name="_FmOXMBT7EeWq3M2wkDjRpA" Num="3"/>
+        <Port Direction="out" Name="_FmOXMRT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Velocity" ID="12::12" Type="Integrator">
+        <Port Direction="in" Name="_FmOXNxT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOXOBT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Connection src="//@Block.0/@Block.11/@Block.1/@Port.1" dst="//@Block.0/@Block.11/@Block.11/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Block.8/@Port.1" dst="//@Block.0/@Block.11/@Block.5/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Block.0/@Port.1" dst="//@Block.0/@Block.11/@Block.8/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Port.0" dst="//@Block.0/@Block.11/@Block.7/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Block.7/@Port.2" dst="//@Block.0/@Block.11/@Block.9/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Block.4/@Port.1" dst="//@Block.0/@Block.11/@Block.7/@Port.1" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Block.3/@Port.1" dst="//@Block.0/@Block.11/@Block.10/@Port.1" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Block.10/@Port.3" dst="//@Block.0/@Block.11/@Block.1/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Block.2/@Port.1" dst="//@Block.0/@Block.11/@Block.10/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Block.11/@Port.1" dst="//@Block.0/@Block.11/@Block.6/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Block.11/@Port.1" dst="//@Block.0/@Block.11/@Block.2/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Block.6/@Port.1" dst="//@Block.0/@Block.11/@Block.3/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Block.6/@Port.1" dst="//@Block.0/@Block.11/@Port.1" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Block.5/@Port.1" dst="//@Block.0/@Block.11/@Port.2" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Block.5/@Port.1" dst="//@Block.0/@Block.11/@Block.4/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Block.9/@Port.1" dst="//@Block.0/@Block.11/@Block.0/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.11/@Block.9/@Port.1" dst="//@Block.0/@Block.11/@Block.10/@Port.2" Name=""/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:System" Name="Robot 2 Dynamics" ID="13">
+      <Port Direction="in" Name="_FmOXOxT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOXPBT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOXPRT7EeWq3M2wkDjRpA" Num="2"/>
+      <Block xsi:type="simulinksourcemm:Block" Name="Abs" ID="13::1" Type="Abs">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="_FmOXgBT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOXgRT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Acceleration" ID="13::2" Type="Gain">
+        <Property Name="Gain" Type="String" Value="1/(10*P+0.1)"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOXhxT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOXiBT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="B" ID="13::3" Type="Gain">
+        <Property Name="Gain" Type="Int" Value="-2"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOXkBT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOXkRT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Boundary Collisons" ID="13::4">
+        <Port Direction="in" Name="_FmOXmBT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOXmRT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Compare To Constant" ID="13::5" Type="Compare To Constant">
+        <Property Name="relop" Type="String" Value=">"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="uint8"/>
+        <Port Direction="in" Name="_FmOXnxT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOXoBT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Energy Loss Calculation" ID="13::6" Type="Integrator">
+        <Port Direction="in" Name="_FmOXqhT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOXqxT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Position" ID="13::7" Type="Integrator">
+        <Port Direction="in" Name="_FmOXrxT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOXsBT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Product" ID="13::8" Type="Product">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOXtBT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="in" Name="_FmOXtRT7EeWq3M2wkDjRpA" Num="2"/>
+        <Port Direction="out" Name="_FmOXthT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Rate of Discharge" ID="13::9" Type="Gain">
+        <Property Name="Gain" Type="Float" Value="-0.01"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOXvBT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOXvRT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Saturation" ID="13::10" Type="Saturate">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="_FmOXxRT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOXxhT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Sum" ID="13::11" Type="Sum">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOXzBT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="in" Name="_FmOXzRT7EeWq3M2wkDjRpA" Num="2"/>
+        <Port Direction="in" Name="_FmOXzhT7EeWq3M2wkDjRpA" Num="3"/>
+        <Port Direction="out" Name="_FmOXzxT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Velocity" ID="13::12" Type="Integrator">
+        <Port Direction="in" Name="_FmOX1RT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOX1hT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Connection src="//@Block.0/@Block.12/@Block.4/@Port.1" dst="//@Block.0/@Block.12/@Block.7/@Port.1" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Block.7/@Port.2" dst="//@Block.0/@Block.12/@Block.9/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Port.0" dst="//@Block.0/@Block.12/@Block.7/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Block.0/@Port.1" dst="//@Block.0/@Block.12/@Block.8/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Block.8/@Port.1" dst="//@Block.0/@Block.12/@Block.5/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Block.1/@Port.1" dst="//@Block.0/@Block.12/@Block.11/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Block.10/@Port.3" dst="//@Block.0/@Block.12/@Block.1/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Block.3/@Port.1" dst="//@Block.0/@Block.12/@Block.10/@Port.1" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Block.2/@Port.1" dst="//@Block.0/@Block.12/@Block.10/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Block.9/@Port.1" dst="//@Block.0/@Block.12/@Block.0/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Block.9/@Port.1" dst="//@Block.0/@Block.12/@Block.10/@Port.2" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Block.5/@Port.1" dst="//@Block.0/@Block.12/@Block.4/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Block.5/@Port.1" dst="//@Block.0/@Block.12/@Port.2" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Block.6/@Port.1" dst="//@Block.0/@Block.12/@Port.1" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Block.6/@Port.1" dst="//@Block.0/@Block.12/@Block.3/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Block.11/@Port.1" dst="//@Block.0/@Block.12/@Block.6/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.12/@Block.11/@Port.1" dst="//@Block.0/@Block.12/@Block.2/@Port.0" Name=""/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:System" Name="Robot 3 Dynamics" ID="14">
+      <Port Direction="in" Name="_FmOX2RT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOX2hT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOX2xT7EeWq3M2wkDjRpA" Num="2"/>
+      <Block xsi:type="simulinksourcemm:Block" Name="Abs" ID="14::1" Type="Abs">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="_FmOYHhT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOYHxT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Acceleration" ID="14::2" Type="Gain">
+        <Property Name="Gain" Type="String" Value="1/(10*P+1)"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOYJRT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOYJhT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="B" ID="14::3" Type="Gain">
+        <Property Name="Gain" Type="Int" Value="-2"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOYLhT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOYLxT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Boundary Collisons" ID="14::4">
+        <Port Direction="in" Name="_FmOYNhT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOYNxT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Compare To Constant" ID="14::5" Type="Compare To Constant">
+        <Property Name="relop" Type="String" Value=">"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="uint8"/>
+        <Port Direction="in" Name="_FmOYPRT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOYPhT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Energy Loss Calculation" ID="14::6" Type="Integrator">
+        <Port Direction="in" Name="_FmOYSBT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOYSRT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Position" ID="14::7" Type="Integrator">
+        <Port Direction="in" Name="_FmOYTRT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOYThT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Product" ID="14::8" Type="Product">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOYUhT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="in" Name="_FmOYUxT7EeWq3M2wkDjRpA" Num="2"/>
+        <Port Direction="out" Name="_FmOYVBT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Rate of Discharge" ID="14::9" Type="Gain">
+        <Property Name="Gain" Type="Float" Value="-0.01"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOYWhT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOYWxT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Saturation" ID="14::10" Type="Saturate">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="_FmOYYxT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOYZBT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Sum" ID="14::11" Type="Sum">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOYahT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="in" Name="_FmOYaxT7EeWq3M2wkDjRpA" Num="2"/>
+        <Port Direction="in" Name="_FmOYbBT7EeWq3M2wkDjRpA" Num="3"/>
+        <Port Direction="out" Name="_FmOYbRT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Velocity" ID="14::12" Type="Integrator">
+        <Port Direction="in" Name="_FmOYcxT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOYdBT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Connection src="//@Block.0/@Block.13/@Block.4/@Port.1" dst="//@Block.0/@Block.13/@Block.7/@Port.1" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Block.7/@Port.2" dst="//@Block.0/@Block.13/@Block.9/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Port.0" dst="//@Block.0/@Block.13/@Block.7/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Block.0/@Port.1" dst="//@Block.0/@Block.13/@Block.8/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Block.8/@Port.1" dst="//@Block.0/@Block.13/@Block.5/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Block.1/@Port.1" dst="//@Block.0/@Block.13/@Block.11/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Block.10/@Port.3" dst="//@Block.0/@Block.13/@Block.1/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Block.3/@Port.1" dst="//@Block.0/@Block.13/@Block.10/@Port.1" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Block.2/@Port.1" dst="//@Block.0/@Block.13/@Block.10/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Block.9/@Port.1" dst="//@Block.0/@Block.13/@Block.0/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Block.9/@Port.1" dst="//@Block.0/@Block.13/@Block.10/@Port.2" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Block.5/@Port.1" dst="//@Block.0/@Block.13/@Block.4/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Block.5/@Port.1" dst="//@Block.0/@Block.13/@Port.2" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Block.6/@Port.1" dst="//@Block.0/@Block.13/@Port.1" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Block.6/@Port.1" dst="//@Block.0/@Block.13/@Block.3/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Block.11/@Port.1" dst="//@Block.0/@Block.13/@Block.6/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.13/@Block.11/@Port.1" dst="//@Block.0/@Block.13/@Block.2/@Port.0" Name=""/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:System" Name="Robot 4 Dynamics" ID="15">
+      <Port Direction="in" Name="_FmOYdxT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOYeBT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOYeRT7EeWq3M2wkDjRpA" Num="2"/>
+      <Block xsi:type="simulinksourcemm:Block" Name="Abs" ID="15::1" Type="Abs">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="_FmOYvBT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOYvRT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Acceleration" ID="15::2" Type="Gain">
+        <Property Name="Gain" Type="String" Value="1/(10*P+1)"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOYwxT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOYxBT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="B" ID="15::3" Type="Gain">
+        <Property Name="Gain" Type="Int" Value="-2"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOYzBT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOYzRT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Boundary Collisons" ID="15::4">
+        <Port Direction="in" Name="_FmOY1BT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOY1RT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Compare To Constant" ID="15::5" Type="Compare To Constant">
+        <Property Name="relop" Type="String" Value=">"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="uint8"/>
+        <Port Direction="in" Name="_FmOY2xT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOY3BT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Energy Loss Calculation" ID="15::6" Type="Integrator">
+        <Port Direction="in" Name="_FmOY5hT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOY5xT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Position" ID="15::7" Type="Integrator">
+        <Port Direction="in" Name="_FmOY6xT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOY7BT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Product" ID="15::8" Type="Product">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOY8BT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="in" Name="_FmOY8RT7EeWq3M2wkDjRpA" Num="2"/>
+        <Port Direction="out" Name="_FmOY8hT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Rate of Discharge" ID="15::9" Type="Gain">
+        <Property Name="Gain" Type="Float" Value="-0.01"/>
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOY-BT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOY-RT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Saturation" ID="15::10" Type="Saturate">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Same as input"/>
+        <Port Direction="in" Name="_FmOZART7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOZAhT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Sum" ID="15::11" Type="Sum">
+        <Property Name="OutDataTypeStr" Type="String" Value="Inherit: Inherit via internal rule"/>
+        <Port Direction="in" Name="_FmOZCBT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="in" Name="_FmOZCRT7EeWq3M2wkDjRpA" Num="2"/>
+        <Port Direction="in" Name="_FmOZChT7EeWq3M2wkDjRpA" Num="3"/>
+        <Port Direction="out" Name="_FmOZCxT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="Velocity" ID="15::12" Type="Integrator">
+        <Port Direction="in" Name="_FmOZERT7EeWq3M2wkDjRpA" Num="1"/>
+        <Port Direction="out" Name="_FmOZEhT7EeWq3M2wkDjRpA" Num="1"/>
+      </Block>
+      <Connection src="//@Block.0/@Block.14/@Block.10/@Port.3" dst="//@Block.0/@Block.14/@Block.1/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Block.1/@Port.1" dst="//@Block.0/@Block.14/@Block.11/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Block.8/@Port.1" dst="//@Block.0/@Block.14/@Block.5/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Block.0/@Port.1" dst="//@Block.0/@Block.14/@Block.8/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Port.0" dst="//@Block.0/@Block.14/@Block.7/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Block.7/@Port.2" dst="//@Block.0/@Block.14/@Block.9/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Block.4/@Port.1" dst="//@Block.0/@Block.14/@Block.7/@Port.1" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Block.3/@Port.1" dst="//@Block.0/@Block.14/@Block.10/@Port.1" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Block.2/@Port.1" dst="//@Block.0/@Block.14/@Block.10/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Block.11/@Port.1" dst="//@Block.0/@Block.14/@Block.6/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Block.11/@Port.1" dst="//@Block.0/@Block.14/@Block.2/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Block.6/@Port.1" dst="//@Block.0/@Block.14/@Block.3/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Block.6/@Port.1" dst="//@Block.0/@Block.14/@Port.1" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Block.5/@Port.1" dst="//@Block.0/@Block.14/@Port.2" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Block.5/@Port.1" dst="//@Block.0/@Block.14/@Block.4/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Block.9/@Port.1" dst="//@Block.0/@Block.14/@Block.0/@Port.0" Name=""/>
+      <Connection src="//@Block.0/@Block.14/@Block.9/@Port.1" dst="//@Block.0/@Block.14/@Block.10/@Port.2" Name=""/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Stop Simulation" ID="16" Type="Stop">
+      <Port Direction="in" Name="_FmOV-xT7EeWq3M2wkDjRpA" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Team_1_Strategy" ID="17" Type="ModelReference">
+      <Port Direction="in" Name="_FmOV_xT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="in" Name="_FmOWABT7EeWq3M2wkDjRpA" Num="2"/>
+      <Port Direction="in" Name="_FmOWART7EeWq3M2wkDjRpA" Num="3"/>
+      <Port Direction="out" Name="_FmOWAhT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOWAxT7EeWq3M2wkDjRpA" Num="2"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Team_1_Strategy2" ID="18" Type="ModelReference">
+      <Port Direction="in" Name="_FmOWBxT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="in" Name="_FmOWCBT7EeWq3M2wkDjRpA" Num="2"/>
+      <Port Direction="in" Name="_FmOWCRT7EeWq3M2wkDjRpA" Num="3"/>
+      <Port Direction="out" Name="_FmOWChT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOWCxT7EeWq3M2wkDjRpA" Num="2"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Unit Delay" ID="19" Type="UnitDelay">
+      <Port Direction="in" Name="_FmOWDxT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOWEBT7EeWq3M2wkDjRpA" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Unit Delay1" ID="20" Type="UnitDelay">
+      <Port Direction="in" Name="_FmOWFBT7EeWq3M2wkDjRpA" Num="1"/>
+      <Port Direction="out" Name="_FmOWFRT7EeWq3M2wkDjRpA" Num="1"/>
+    </Block>
+    <Connection src="//@Block.0/@Block.11/@Port.1" dst="//@Block.0/@Block.2/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.12/@Port.1" dst="//@Block.0/@Block.2/@Port.1" Name=""/>
+    <Connection src="//@Block.0/@Block.13/@Port.1" dst="//@Block.0/@Block.2/@Port.2" Name=""/>
+    <Connection src="//@Block.0/@Block.14/@Port.1" dst="//@Block.0/@Block.2/@Port.3" Name=""/>
+    <Connection src="//@Block.0/@Block.13/@Port.2" dst="//@Block.0/@Block.3/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.14/@Port.2" dst="//@Block.0/@Block.3/@Port.1" Name=""/>
+    <Connection src="//@Block.0/@Block.3/@Port.2" dst="//@Block.0/@Block.17/@Port.1" Name=""/>
+    <Connection src="//@Block.0/@Block.17/@Port.3" dst="//@Block.0/@Block.6/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.17/@Port.4" dst="//@Block.0/@Block.6/@Port.1" Name=""/>
+    <Connection src="//@Block.0/@Block.6/@Port.2" dst="//@Block.0/@Block.9/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.16/@Port.3" dst="//@Block.0/@Block.5/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.16/@Port.4" dst="//@Block.0/@Block.5/@Port.1" Name=""/>
+    <Connection src="//@Block.0/@Block.5/@Port.2" dst="//@Block.0/@Block.8/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.8/@Port.1" dst="//@Block.0/@Block.11/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.8/@Port.2" dst="//@Block.0/@Block.12/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.9/@Port.1" dst="//@Block.0/@Block.13/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.9/@Port.2" dst="//@Block.0/@Block.14/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.1/@Port.3" dst="//@Block.0/@Block.19/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.7/@Port.3" dst="//@Block.0/@Block.0/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.1/@Port.2" dst="//@Block.0/@Block.7/@Port.2" Name=""/>
+    <Connection src="//@Block.0/@Block.4/@Port.2" dst="//@Block.0/@Block.16/@Port.1" Name=""/>
+    <Connection src="//@Block.0/@Block.12/@Port.2" dst="//@Block.0/@Block.4/@Port.1" Name=""/>
+    <Connection src="//@Block.0/@Block.11/@Port.2" dst="//@Block.0/@Block.4/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.18/@Port.1" dst="//@Block.0/@Block.15/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.19/@Port.1" dst="//@Block.0/@Block.18/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.2/@Port.4" dst="//@Block.0/@Block.1/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.2/@Port.4" dst="//@Block.0/@Block.7/@Port.1" Name=""/>
+    <Connection src="//@Block.0/@Block.2/@Port.4" dst="//@Block.0/@Block.16/@Port.2" Name=""/>
+    <Connection src="//@Block.0/@Block.2/@Port.4" dst="//@Block.0/@Block.17/@Port.2" Name=""/>
+    <Connection src="//@Block.0/@Block.1/@Port.1" dst="//@Block.0/@Block.7/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.1/@Port.1" dst="//@Block.0/@Block.16/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.1/@Port.1" dst="//@Block.0/@Block.17/@Port.0" Name=""/>
+  </Block>
+</simulinksourcemm:Model>

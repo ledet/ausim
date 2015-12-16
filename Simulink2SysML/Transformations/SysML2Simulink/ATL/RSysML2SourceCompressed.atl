@@ -1,0 +1,422 @@
+-- @path Source=/metamodels/SimulinkSourceMM.ecore
+-- @nsURI SysML=http://www.eclipse.org/papyrus/0.7.0/SysML
+-- @nsURI SysMLGUI=http://www.eclipse.org/gmf/runtime/1.0.2/notation
+
+
+--http://www.eclipse.org/papyrus/0.7.0/SysML
+--http://www.eclipse.org/uml2/4.0.0/UML
+
+module RSysML2SourceCompressed;
+create trgt: Source from src: SysML;
+
+rule Class2Model {
+	from
+		smdl: SysML!Class (
+			smdl.isRoot()
+		)
+	using {
+		tempSystem: Source!System = OclUndefined;
+		tempBlock: Source!Block = OclUndefined;
+	}
+	to
+		tmdl: Source!Model (
+			Name <- smdl.name
+		)
+	do{
+			tempSystem<- thisModule.Package2System(smdl);  
+            tmdl.Block<- tmdl.Block.append(tempSystem);           
+            
+		}
+}
+
+lazy rule Package2System {
+	from
+		smdl: SysML!Class
+	using {
+		tempBlock: Source!Block = OclUndefined;
+		ownedAttributes: SysML!Package = smdl.ownedAttribute;
+		classes: Sequence(SysML!Class) = smdl.refImmediateComposite().packagedElement;
+		bCounter: Integer = 1;
+		isSystem: Boolean = false;
+		ownedConnectors: Sequence(SysML!Connector) = smdl.ownedConnector;
+		rolePorts: Sequence(SysML!Port) = Sequence{};
+		role1: SysML!Port = OclUndefined;
+		role2: SysML!Port = OclUndefined;
+		src: Source!Port = OclUndefined;
+		dst: Source!Port = OclUndefined;
+		tempConn: Source!Connection = OclUndefined;
+		tempConnector: Sequence(SysML!Connector) = OclUndefined;
+		tempPortDir: String = OclUndefined;
+		counter: Integer = 0;
+	}
+	to
+		tmdl: Source!System (
+			Name <- smdl.name,
+			ID <- 'Root'
+		)
+	do {
+		for(it1 in ownedAttributes) {
+			for(it2 in classes){		    		
+		    		if(it2.oclIsKindOf(SysML!Class) and it2 = it1.type ){
+		    		 	for(a in it2.ownedAttribute){			    			
+		    				if (a.type.oclIsTypeOf(SysML!Class)){
+		    					if(a.isSystem()){		
+				 				 					    					
+		    						isSystem <- true;
+		    					}
+		    				}
+		    			}
+		    			if(isSystem){
+			    			tempBlock <- thisModule.Class2System(it2, bCounter);  
+			    			tmdl.Block <- tmdl.Block.append(tempBlock);
+		                	bCounter <- bCounter + 1; 
+		    			}			
+		    			else {		    			
+		                    tempBlock <- thisModule.Class2Block(it2, smdl, bCounter); 
+		                    tmdl.Block <- tmdl.Block.append(tempBlock);
+		                	bCounter <- bCounter + 1; 
+		    			}
+		    			isSystem <- false;
+		    		}
+		    		
+		    	}
+		} 
+		
+		for(con in ownedConnectors){
+			rolePorts <- con.end;
+			role1 <- rolePorts.first().role;
+			role2 <- rolePorts.last().role;
+	
+			if(role1.isInputPort())
+				tempPortDir <- 'in';
+			else
+				tempPortDir <- 'out';
+			
+			for(port in tmdl.Port){
+					if(port.Name = role1.__xmiID__.toString() )
+						src <- port;
+			}
+			
+			if (src.oclIsUndefined() ){
+					for(blk in tmdl.Block) {
+						for(p in blk.Port){
+							if(p.Name = role1.__xmiID__.toString() ){
+								src <- p;
+							}
+						}
+					}
+			}
+			
+			if(role2.isInputPort())
+				tempPortDir <- 'in';
+			else
+				tempPortDir <- 'out';
+			
+		
+				for(port in tmdl.Port ){
+						if(port.Name = role2.__xmiID__.toString() )
+							dst <- port;
+				}
+			
+			
+			if (dst.oclIsUndefined()){
+				for(blk in tmdl.Block) {		
+						for(p in blk.Port){		
+							if(p.Name = role2.__xmiID__.toString() ){
+									dst <- p;									
+							}
+						}
+						
+					}
+			}
+
+ 
+			tempConn <- thisModule.Connection('', src, dst);			
+			tmdl.Connection <- tmdl.Connection.append(tempConn);
+
+            src <- OclUndefined;
+            dst <- OclUndefined;
+            role1 <- OclUndefined;
+            role2 <- OclUndefined;
+		}
+	}
+}
+
+
+
+lazy rule Class2Block {
+	from
+		smdl: SysML!Class, refMdl:SysML!Class, id: String
+	using {
+		generalization: Sequence(SysML!Generalization) = smdl.generalization;
+		ownedAttributes: Sequence(SysML!Port) = smdl.ownedAttribute;
+		tempPort: Source!Port = OclUndefined;
+		tempProperty: Source!Property = OclUndefined;
+		inPCounter: Integer = 0;
+		outPCounter: Integer = 0;
+		direction: String = '';
+
+		rolePorts: Sequence(SysML!Port) = Sequence{};
+		role1: SysML!Port = OclUndefined;
+		role2: SysML!Port = OclUndefined;
+		src: Source!Port = OclUndefined;
+		dst: Source!Port = OclUndefined;
+		tempConn: Source!Connection = OclUndefined;
+		ownedConnectors: Sequence(SysML!Connector) = refMdl.ownedConnector;
+	}
+	to
+		tmdl: Source!Block (
+			Name <- smdl.name,
+			ID <- id.toString()
+		)
+	do {
+		for(g in generalization) {
+			for(c in g.getAllClassTypes()){
+					if (c = g.general)
+						tmdl.Type <- c.name;
+				}
+		}
+		for(it1 in ownedAttributes) {
+					if (it1.type.oclIsTypeOf(SysML!PrimitiveType)){
+						tempProperty <- thisModule.Property(it1.name, it1.type.
+								name, it1.defaultValue.value); 		   
+        				tmdl.Property <- tmdl.Property.append(tempProperty);  
+					}
+					
+		    		if(it1.oclIsKindOf(SysML!Port)){
+		    			
+--		    			for(con in ownedConnectors){
+--		    				rolePorts <- con.end;
+--							role1 <- rolePorts.first().role;
+--							role2 <- rolePorts.last().role;
+--							if (role1 = it1 or role2 = it1){
+--								it1.name <- role1.refImmediateComposite().name + ' to ' + role2.refImmediateComposite().name;	
+--								it1.name.println();
+--							}
+--		    			}
+		    			
+		    			
+		    			if(it1.isInputPort()){
+		    				inPCounter <- inPCounter + 1;
+		    				 tempPort <- thisModule.Port2Port(it1, inPCounter, 'in');
+		    			}else{
+		    				outPCounter <- outPCounter + 1;
+		    				tempPort <- thisModule.Port2Port(it1, outPCounter, 'out');
+		    			}
+                     
+                    tmdl.Port <- tmdl.Port.append(tempPort);    		
+		    		}
+		    		
+		}
+	}
+}
+
+lazy rule Class2System {
+	from
+		smdl: SysML!Class, id: Integer
+	using {
+		ownedAttributes: Sequence(SysML!Port) = smdl.ownedAttribute;
+		classList: Sequence(SysML!Class) = smdl.refImmediateComposite().packagedElement;
+		tempPort: Source!Port = OclUndefined;
+		inPCounter: Integer = 0;
+		outPCounter: Integer = 0;
+		direction: String = '';
+		tempBlock: Source!Block = OclUndefined;
+		bCounter: Integer = 1;
+		isSystemBlock: Boolean = false;
+
+		rolePorts: Sequence(SysML!Port) = Sequence{};
+		role1: SysML!Port = OclUndefined;
+		role2: SysML!Port = OclUndefined;
+		src: Source!Port = OclUndefined;
+		dst: Source!Port = OclUndefined;
+		tempConn: Source!Connection = OclUndefined;
+		ownedConnectors: Sequence(SysML!Connector) = smdl.ownedConnector;
+		tempConnector: Sequence(SysML!Connector) = OclUndefined;
+		tempPortDir: String = OclUndefined;
+		counter: Integer = 0;
+	}
+	to
+		tmdl: Source!System (
+			Name <- smdl.name,
+			ID <- id.toString()
+		)
+	do {
+		for(it1 in ownedAttributes) {
+		    		if(it1.oclIsKindOf(SysML!Port)){
+--		    			for(con in ownedConnectors){
+--		    				rolePorts <- con.end;
+--							role1 <- rolePorts.first().role;
+--							role2 <- rolePorts.last().role;
+--							if (role1 = it1 or role2 = it1){
+--								it1.name <- role1.refImmediateComposite().name + ' to ' + role2.refImmediateComposite().name;	
+--								it1.name.println();
+--							}
+--		    			}
+		    			
+		    			
+		    			if(it1.isInputPort()){
+		    				inPCounter <- inPCounter + 1;
+		    				 tempPort <- thisModule.Port2Port(it1, inPCounter, 'in');
+		    			}else{
+		    				outPCounter <- outPCounter + 1;
+		    				tempPort <- thisModule.Port2Port(it1, outPCounter, 'out');
+		    			}
+                     
+                    tmdl.Port <- tmdl.Port.append(tempPort);    		
+		    		}
+		    		
+		}
+		for(it2 in smdl.ownedAttribute) {
+			for (c in classList){
+				if(c = it2.type and (not it2.association.oclIsUndefined()) and not (it2.
+						aggregation.toString() = 'none') and (c.ownedConnector.toString()
+						= 'Sequence {}')){
+							tempBlock <- thisModule.Class2Block(c, smdl, id.toString() + '::' +
+									bCounter.toString());  
+		                   	tmdl.Block <- tmdl.Block.append(tempBlock);
+		                   	bCounter <- bCounter + 1; 	
+				}else if (c = it2.type and not (it2.aggregation.toString()
+						= 'none')){					
+							tempBlock <- thisModule.Class2System(c, bCounter);  
+		                    tmdl.Block <- tmdl.Block.append(tempBlock);
+		                    bCounter <- bCounter + 1; 
+					}  					
+						
+					
+			}
+		}
+		for(con in ownedConnectors){
+			rolePorts <- con.end;
+			role1 <- rolePorts.first().role;
+			role2 <- rolePorts.last().role;
+	
+			if(role1.isInputPort())
+				tempPortDir <- 'in';
+			else
+				tempPortDir <- 'out';
+			
+			for(port in tmdl.Port){
+					if(port.Name = role1.__xmiID__.toString() )
+						src <- port;
+			}
+			
+			if (src.oclIsUndefined() ){
+					for(blk in tmdl.Block) {
+						for(p in blk.Port){
+							if(p.Name = role1.__xmiID__.toString() ){
+								src <- p;
+							}
+						}
+					}
+			}
+			
+			if(role2.isInputPort())
+				tempPortDir <- 'in';
+			else
+				tempPortDir <- 'out';
+			
+		
+				for(port in tmdl.Port ){
+						if(port.Name = role2.__xmiID__.toString() )
+							dst <- port;
+				}
+			
+			
+			if (dst.oclIsUndefined()){
+				for(blk in tmdl.Block) {
+			--		blk.Name.println();
+						for(p in blk.Port){						
+--							role2.name.println();
+							if(p.Name = role2.__xmiID__.toString() ){
+--								p.Num.toString().println();
+									dst <- p;
+									
+							}
+						}
+						
+					}
+			}
+
+ 
+			tempConn <- thisModule.Connection('', src, dst);			
+			tmdl.Connection <- tmdl.Connection.append(tempConn);
+
+            src <- OclUndefined;
+            dst <- OclUndefined;
+            role1 <- OclUndefined;
+            role2 <- OclUndefined;
+		}
+	}
+}
+
+lazy rule Port2Port {
+	from
+		smdl: SysML!Port, id: Integer, direction: String
+	to
+		tmdl: Source!Port (
+			Name <- smdl.__xmiID__,
+			Direction <- direction,
+			Num <- id
+		)
+}
+
+lazy rule Property {
+	from
+		name: String, type: String, value: String
+	to
+		tprp: Source!Property (
+			Name <- name,
+			Type <- type,
+			Value <- value
+		)
+}
+
+lazy rule Connection {
+	from
+		name: String, srcPort: Source!Port, dstPort: Source!Port
+	to
+		tprt: Source!Connection (
+			src <- srcPort,
+			dst <- dstPort,
+			Name <- name
+		)
+}
+
+helper context SysML!Port def: isInputPort(): Boolean =
+	SysML!FlowPort.allInstances() -> iterate(f; res: Boolean = false | if f.direction.
+			toString() = 'in' and self = f.base_Port then
+			true
+		else
+			res
+		endif);
+
+helper context Source!System def: isRefImmediate(name: String): Boolean =
+	if self.refImmediateComposite().Name.toLower = name.toLower then
+		true
+	else
+		false
+	endif;
+
+helper context SysML!Property def: isSystem(): Boolean =
+	if not (self.type.name = self.refImmediateComposite().refImmediateComposite().name)
+			then
+		true
+	else
+		false
+	endif;
+
+helper context SysML!Class def: isRoot(): Boolean =
+	if self.name = self.refImmediateComposite().name then
+		true
+	else
+		false
+	endif;
+
+helper context SysML!Generalization def: getAllClassTypes(): Sequence(SysML!Class) =
+	SysML!Class.allInstances() -> iterate(p; res: Sequence(SysML!Class) = Sequence{} | if
+			p.oclIsKindOf(SysML!Class) then
+			res -> union(Sequence{p})
+		else
+			res
+		endif);

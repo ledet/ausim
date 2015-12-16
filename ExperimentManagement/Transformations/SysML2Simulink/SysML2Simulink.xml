@@ -3,7 +3,7 @@
 	<property name="rootModelName" value="${model}" />
 	<property name="modelName" value="${subModel}" />
 	<property name="metaModelPath" value="../../MetaModels" />
-	<property name="modelPath" value="../../Models/" />
+	<property name="modelPath" value="../../Models" />
 	<property name="transPath" value="./" />
 	
 	<target name="Sys2Sim">
@@ -23,13 +23,17 @@
 			<outmodel name="trgt" model="srcCompModel" metamodel="Source"/>
 		</atl.launch>
 
+		<atl.saveModel derived="false" model="srcCompModel" path="${modelPath}/PIM/${rootModelName}/${modelName}/RSSourceCompressed.xmi"/>
+
 		<atl.launch path="${transPath}/ATL/SourceCompressed2Source.asm">
 			<option name="allowInterModelReferences" value="true"/>
 			<inmodel name="srccomp" model="srcCompModel"/>
 			<outmodel name="src" model="srcModel" metamodel="Source"/>
 		</atl.launch>
 
-		<atl.launch path="${transPath}/ATL/Source2Simulink.asm">
+		<atl.saveModel derived="false" model="srcModel" path="${modelPath}/PIM/${rootModelName}/${modelName}/RSSource.xmi"/>
+
+		<atl.launch path="${transPath}/ATL/simulinkSource_2_simulinkStructural.asm">
 			<option name="allowInterModelReferences" value="true"/>
 			<inmodel name="inputModel" model="srcModel"/>
 			<outmodel name="outputModel" model="simModel" metamodel="SimulinkMM"/>
@@ -48,7 +52,7 @@
 
 		<zip destfile="${modelPath}/Simulink/${rootModelName}/${modelName}.slx" basedir="${modelPath}/PIM/${rootModelName}/${modelName}_slx" />
 
-		<delete file="${modelPath}/PIM/${rootModelName}/${modelName}/Simulink_Structural.xmi" />
+		<!--delete file="${modelPath}/PIM/${rootModelName}/${modelName}/Simulink_Structural.xmi" /-->
 
 		<!-- Would like to at some point make Simulink Settings have Stateflow stuff -->
 		<!--delete file="${modelPath}/${rootModelName}/${modelName}_slx/simulink/blockdiagram.xml" /-->

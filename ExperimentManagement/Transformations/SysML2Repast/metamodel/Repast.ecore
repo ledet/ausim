@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="agent" nsURI="http://agent/1.0" nsPrefix="">
+  <eClassifiers xsi:type="ecore:EClass" name="agent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="agentcomment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="agentclassname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="agentparentclassname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="agentinterfaces" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="agentimports" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorsteps" eType="#//behaviorsteps"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasksteps" eType="#//tasksteps"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decisionsteps" eType="#//decisionsteps"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="joinsteps" eType="#//joinsteps"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agentproperties" eType="#//agentproperties"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endsteps" eType="#//endsteps"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connections" eType="#//connections"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" upperBound="-1"
+        eType="#//context" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="step">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="label" eType="#//Label"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Label">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="behaviorstep" eSuperTypes="#//step">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheduleannotationstart"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheduleannotationpick"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheduleannotationinterval"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheduleannotationpriority"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheduleannotationduration"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheduleannotationshuffle"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="watchannotationid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="watchannotationquery" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="watchannotationtargetclassname"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="watchannotationtargetfieldnames"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="watchannotationtriggercondition"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="watchannotationtriggerschedule"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="watchannotationtriggerdelta"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="watchannotationtriggerpriority"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="watchannotationpick" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returntype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compiledname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exceptions" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="taskstep" eSuperTypes="#//step">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="command1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="command2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="command3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="command4" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="command5" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="decisionstep" eSuperTypes="#//step">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="criteria" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="branchType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="joinstep">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="agentproperty" eSuperTypes="#//step">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compiledname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="endstep">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="connections">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" eType="#//transitions"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="booleantransitions" eType="#//booleantransitions"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="transition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitionsource" eType="#//transitionsource"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitiontarget" eType="#//transitiontarget"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bendpoints" eType="#//bendpoints"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="transitionsource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anchor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="transitiontarget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anchor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="booleantransition" eSuperTypes="#//transition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="context">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xmlns_xsi" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xsi_noNamespaceSchemaLocation"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="projection" upperBound="-1"
+        eType="#//projection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="has" upperBound="-1" eType="#//agent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="projection">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
+        eType="#//attribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="decisionsteps">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decisionstep" upperBound="-1"
+        eType="#//decisionstep" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="tasksteps">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="taskstep" upperBound="-1"
+        eType="#//taskstep" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="behaviorsteps">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorstep" upperBound="-1"
+        eType="#//behaviorstep" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="agentproperties">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agentproperty" upperBound="-1"
+        eType="#//agentproperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="transitions">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" upperBound="-1"
+        eType="#//transition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="endsteps">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endstep" upperBound="-1"
+        eType="#//endstep" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="joinsteps">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="joinstep" upperBound="-1"
+        eType="#//joinstep" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="booleantransitions">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="booleantransition" upperBound="-1"
+        eType="#//booleantransition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bendpoints" eType="#//bendpoints"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="bendpoints"/>
+</ecore:EPackage>

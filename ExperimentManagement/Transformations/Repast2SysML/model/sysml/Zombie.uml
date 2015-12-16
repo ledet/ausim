@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_yKdt0HT6EeW7wJqJKPbjZg" name="Zombie">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_yKdt0XT6EeW7wJqJKPbjZg" name="Zombie" node="_yKdt43T6EeW7wJqJKPbjZg _yKdt5HT6EeW7wJqJKPbjZg _yKdt5XT6EeW7wJqJKPbjZg _yKdt5nT6EeW7wJqJKPbjZg _yKdt53T6EeW7wJqJKPbjZg _yKdt6HT6EeW7wJqJKPbjZg _yKdt6XT6EeW7wJqJKPbjZg _yKdt6nT6EeW7wJqJKPbjZg _yKdt63T6EeW7wJqJKPbjZg _yKdt7HT6EeW7wJqJKPbjZg _yKdt7XT6EeW7wJqJKPbjZg _yKdt7nT6EeW7wJqJKPbjZg _yKdt73T6EeW7wJqJKPbjZg _yKdt8HT6EeW7wJqJKPbjZg _yKdt8XT6EeW7wJqJKPbjZg _yKdt8nT6EeW7wJqJKPbjZg _yKdt83T6EeW7wJqJKPbjZg">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt0nT6EeW7wJqJKPbjZg" name="ControlFlowtrue" source="_yKdt7XT6EeW7wJqJKPbjZg" target="_yKdt7nT6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt03T6EeW7wJqJKPbjZg" name="ControlFlowfalse" source="_yKdt7XT6EeW7wJqJKPbjZg" target="_yKdt53T6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt1HT6EeW7wJqJKPbjZg" name="ControlFlowtrue" source="_yKdt7nT6EeW7wJqJKPbjZg" target="_yKdt6HT6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt1XT6EeW7wJqJKPbjZg" name="ControlFlowtrue" source="_yKdt73T6EeW7wJqJKPbjZg" target="_yKdt6nT6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt1nT6EeW7wJqJKPbjZg" name="ControlFlowfalse" source="_yKdt73T6EeW7wJqJKPbjZg" target="_yKdt8XT6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt13T6EeW7wJqJKPbjZg" name="ControlFlowtrue" source="_yKdt8HT6EeW7wJqJKPbjZg" target="_yKdt63T6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt2HT6EeW7wJqJKPbjZg" name="ControlFlowtrue" source="_yKdt8XT6EeW7wJqJKPbjZg" target="_yKdt7HT6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt2XT6EeW7wJqJKPbjZg" name="ControlFlowfalse" source="_yKdt8XT6EeW7wJqJKPbjZg" target="_yKdt83T6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt2nT6EeW7wJqJKPbjZg" name="ControlFlow" source="_yKdt43T6EeW7wJqJKPbjZg" target="_yKdt5XT6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt23T6EeW7wJqJKPbjZg" name="ControlFlow" source="_yKdt5HT6EeW7wJqJKPbjZg" target="_yKdt6XT6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt3HT6EeW7wJqJKPbjZg" name="ControlFlow" source="_yKdt5XT6EeW7wJqJKPbjZg" target="_yKdt5nT6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt3XT6EeW7wJqJKPbjZg" name="ControlFlow" source="_yKdt5nT6EeW7wJqJKPbjZg" target="_yKdt7XT6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt3nT6EeW7wJqJKPbjZg" name="ControlFlow" source="_yKdt53T6EeW7wJqJKPbjZg" target="_yKdt8nT6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt33T6EeW7wJqJKPbjZg" name="ControlFlow" source="_yKdt6XT6EeW7wJqJKPbjZg" target="_yKdt73T6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt4HT6EeW7wJqJKPbjZg" name="ControlFlow" source="_yKdt6nT6EeW7wJqJKPbjZg" target="_yKdt8HT6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt4XT6EeW7wJqJKPbjZg" name="ControlFlow" source="_yKdt6HT6EeW7wJqJKPbjZg" target="_yKdt7XT6EeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yKdt4nT6EeW7wJqJKPbjZg" name="ControlFlow" source="_yKdt63T6EeW7wJqJKPbjZg" target="_yKdt73T6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_yKdt43T6EeW7wJqJKPbjZg" name="Embedded Code" outgoing="_yKdt2nT6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_yKdt5HT6EeW7wJqJKPbjZg" name="Embedded Code" outgoing="_yKdt23T6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_yKdt5XT6EeW7wJqJKPbjZg" name="Grid Neighbors" outgoing="_yKdt3HT6EeW7wJqJKPbjZg" incoming="_yKdt2nT6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_yKdt5nT6EeW7wJqJKPbjZg" name="Initialize loop" outgoing="_yKdt3XT6EeW7wJqJKPbjZg" incoming="_yKdt3HT6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_yKdt53T6EeW7wJqJKPbjZg" name="Do Task" outgoing="_yKdt3nT6EeW7wJqJKPbjZg" incoming="_yKdt03T6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_yKdt6HT6EeW7wJqJKPbjZg" name="Point with most humans" outgoing="_yKdt4XT6EeW7wJqJKPbjZg" incoming="_yKdt1HT6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_yKdt6XT6EeW7wJqJKPbjZg" name="Find Humans" outgoing="_yKdt33T6EeW7wJqJKPbjZg" incoming="_yKdt23T6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_yKdt6nT6EeW7wJqJKPbjZg" name="Get Object" outgoing="_yKdt4HT6EeW7wJqJKPbjZg" incoming="_yKdt1XT6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_yKdt63T6EeW7wJqJKPbjZg" name="save human" outgoing="_yKdt4nT6EeW7wJqJKPbjZg" incoming="_yKdt13T6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_yKdt7HT6EeW7wJqJKPbjZg" name="Braaaaaains!" incoming="_yKdt2HT6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_yKdt7XT6EeW7wJqJKPbjZg" name="GridCell cell in gridCellswhile" outgoing="_yKdt0nT6EeW7wJqJKPbjZg _yKdt03T6EeW7wJqJKPbjZg" incoming="_yKdt3XT6EeW7wJqJKPbjZg _yKdt4XT6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_yKdt7nT6EeW7wJqJKPbjZg" name="cell.size() > maxCountif" outgoing="_yKdt1HT6EeW7wJqJKPbjZg" incoming="_yKdt0nT6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_yKdt73T6EeW7wJqJKPbjZg" name="objects.hasNext()while" outgoing="_yKdt1XT6EeW7wJqJKPbjZg _yKdt1nT6EeW7wJqJKPbjZg" incoming="_yKdt33T6EeW7wJqJKPbjZg _yKdt4nT6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_yKdt8HT6EeW7wJqJKPbjZg" name="o instanceof Humanif" outgoing="_yKdt13T6EeW7wJqJKPbjZg" incoming="_yKdt4HT6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_yKdt8XT6EeW7wJqJKPbjZg" name="humans.size() > 0if" outgoing="_yKdt2HT6EeW7wJqJKPbjZg _yKdt2XT6EeW7wJqJKPbjZg" incoming="_yKdt1nT6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_yKdt8nT6EeW7wJqJKPbjZg" name="FinalNode" incoming="_yKdt3nT6EeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_yKdt83T6EeW7wJqJKPbjZg" name="FinalNode" incoming="_yKdt2XT6EeW7wJqJKPbjZg"/>
+  </packagedElement>
+</uml:Model>

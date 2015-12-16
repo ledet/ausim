@@ -18,6 +18,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Activity" eType="#//Activity"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Block" upperBound="-1"
@@ -44,4 +46,26 @@
   <eClassifiers xsi:type="ecore:EClass" name="ToSysMLComment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Body" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Activity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Input" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Output" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Node" upperBound="-1" eType="#//Node"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Action" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Next" eType="#//Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Decision" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="False" eType="#//Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Merge" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Initial" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Final" eSuperTypes="#//Node"/>
 </ecore:EPackage>

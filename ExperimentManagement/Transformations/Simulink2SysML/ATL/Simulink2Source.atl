@@ -293,14 +293,11 @@ helper context Simulink!Block def: isSubsystemBlock: Boolean =
 	endif;
 
 helper context Simulink!Block def: isPortedBlock: Boolean =
-	self.Port.size() > 0;
-
---helper context Simulink!Block def: isPortedBlock: Boolean =
---	if self.oclIsKindOf(Simulink!SFunctionBlock) or self.oclIsKindOf(Simulink!BusSelectorBlock) then
---		true
---	else
---		false
---	endif;
+	if self.oclIsKindOf(Simulink!SFunctionBlock) or self.oclIsKindOf(Simulink!BusSelectorBlock) then
+		true
+	else
+		false
+	endif;
 
 helper context Simulink!Block def: isListBlock: Boolean =
 	if self.oclIsKindOf(Simulink!ModelReferenceBlock) then

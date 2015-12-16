@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<simulinksourcemm:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simulinksourcemm="http://simulinksourcemm/1.0" Name="Team_1_Strategy">
+  <Block xsi:type="simulinksourcemm:System" Name="Team_1_Strategy" ID="Root">
+    <Property Name="System - SIDHighWatermark" Type="Int" Value="6"/>
+    <Property Name="System - ReportName" Type="String" Value="simulink-default.rpt"/>
+    <Block xsi:type="simulinksourcemm:Block" Name="Ball Position " ID="1" Type="Inport">
+      <Property Name="Port" Type="Int" Value="1"/>
+      <Property Name="Position" Type="Array:Int" Value="[-10, 40, 20, 54]"/>
+      <Property Name="PortDimensions" Type="Array:Int" Value="[2, 1]"/>
+      <Port Direction="out" Name="" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Power " ID="2" Type="Inport">
+      <Property Name="Port" Type="Int" Value="2"/>
+      <Property Name="Position" Type="Array:Int" Value="[-10, 60, 20, 74]"/>
+      <Property Name="PortDimensions" Type="Array:Int" Value="[4, 1]"/>
+      <Port Direction="out" Name="" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Robot Position " ID="3" Type="Inport">
+      <Property Name="Port" Type="Int" Value="3"/>
+      <Property Name="Position" Type="Array:Int" Value="[-10, 60, 20, 74]"/>
+      <Property Name="PortDimensions" Type="Array:Int" Value="[8, 1]"/>
+      <Port Direction="out" Name="" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:System" Name="Embedded MATLAB" ID="4">
+      <Property Name="System - Location" Type="Array:Int" Value="[257, 457, 812, 717]"/>
+      <Property Name="System - SIDHighWatermark" Type="Int" Value="8"/>
+      <Port Direction="in" Name="ball_position " Num="1"/>
+      <Port Direction="in" Name="power " Num="2"/>
+      <Port Direction="in" Name="robot_position " Num="3"/>
+      <Port Direction="out" Name="actuator_force_1 " Num="1"/>
+      <Port Direction="out" Name="actuator_force_2 " Num="2"/>
+      <Block xsi:type="simulinksourcemm:Block" Name="ball_position " ID="4::1" Type="Inport">
+        <Property Name="Port" Type="Int" Value="1"/>
+        <Property Name="Position" Type="Array:Int" Value="[-10, 40, 20, 54]"/>
+        <Property Name="PortDimensions" Type="Int" Value="-1"/>
+        <Port Direction="out" Name="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="power " ID="4::2" Type="Inport">
+        <Property Name="Port" Type="Int" Value="2"/>
+        <Property Name="Position" Type="Array:Int" Value="[-10, 60, 20, 74]"/>
+        <Property Name="PortDimensions" Type="Int" Value="-1"/>
+        <Port Direction="out" Name="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="robot_position " ID="4::3" Type="Inport">
+        <Property Name="Port" Type="Int" Value="3"/>
+        <Property Name="Position" Type="Array:Int" Value="[-10, 60, 20, 74]"/>
+        <Property Name="PortDimensions" Type="Int" Value="-1"/>
+        <Port Direction="out" Name="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name=" Demux" ID="4::4" Type="Demux">
+        <Property Name="Position" Type="Array:Int" Value="[270, 180, 320, 220]"/>
+        <Property Name="ZOrder" Type="Int" Value="2"/>
+        <Property Name="Outputs" Type="Int" Value="1"/>
+        <Port Direction="in" Name="" Num="1"/>
+        <Port Direction="out" Name="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name=" SFunction" ID="4::5" Type="S-Function">
+        <Property Name="Position" Type="Array:Int" Value="[180, 100, 230, 180]"/>
+        <Property Name="PortCounts" Type="Array:Int" Value="[3, 3]"/>
+        <Port Direction="in" Name="" Num="1"/>
+        <Port Direction="in" Name="" Num="2"/>
+        <Port Direction="in" Name="" Num="3"/>
+        <Port Direction="out" Name="" Num="1"/>
+        <Port Direction="out" Name="" Num="2"/>
+        <Port Direction="out" Name="" Num="3"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name=" Terminator " ID="4::6" Type="Terminator">
+        <Property Name="Position" Type="Array:Int" Value="[460, 191, 480, 209]"/>
+        <Port Direction="in" Name="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="actuator_force_1 " ID="4::7" Type="Outport">
+        <Property Name="Port" Type="Int" Value="1"/>
+        <Property Name="Position" Type="Array:Int" Value="[90, 40, 120, 54]"/>
+        <Property Name="PortDimensions" Type="Int" Value="-1"/>
+        <Port Direction="in" Name="" Num="1"/>
+      </Block>
+      <Block xsi:type="simulinksourcemm:Block" Name="actuator_force_2 " ID="4::8" Type="Outport">
+        <Property Name="Port" Type="Int" Value="2"/>
+        <Property Name="Position" Type="Array:Int" Value="[90, 60, 120, 74]"/>
+        <Property Name="PortDimensions" Type="Int" Value="-1"/>
+        <Port Direction="in" Name="" Num="1"/>
+      </Block>
+      <Connection src="//@Block.0/@Block.3/@Block.0/@Port.0" dst="//@Block.0/@Block.3/@Block.4/@Port.0" Name="ball_position  to  SFunction"/>
+      <Connection src="//@Block.0/@Block.3/@Block.1/@Port.0" dst="//@Block.0/@Block.3/@Block.4/@Port.1" Name="power  to  SFunction"/>
+      <Connection src="//@Block.0/@Block.3/@Block.2/@Port.0" dst="//@Block.0/@Block.3/@Block.4/@Port.2" Name="robot_position  to  SFunction"/>
+      <Connection src="//@Block.0/@Block.3/@Block.4/@Port.3" dst="//@Block.0/@Block.3/@Block.3/@Port.0" Name=" SFunction to  Demux"/>
+      <Connection src="//@Block.0/@Block.3/@Block.3/@Port.1" dst="//@Block.0/@Block.3/@Block.5/@Port.0" Name=" Demux to  Terminator "/>
+      <Connection src="//@Block.0/@Block.3/@Block.4/@Port.4" dst="//@Block.0/@Block.3/@Block.6/@Port.0" Name=" SFunction to actuator_force_1 "/>
+      <Connection src="//@Block.0/@Block.3/@Block.4/@Port.5" dst="//@Block.0/@Block.3/@Block.7/@Port.0" Name=" SFunction to actuator_force_2 "/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name=" Actuator Force 1 " ID="5" Type="Outport">
+      <Property Name="Port" Type="Int" Value="1"/>
+      <Property Name="Position" Type="Array:Int" Value="[90, 40, 120, 54]"/>
+      <Property Name="PortDimensions" Type="Int" Value="-1"/>
+      <Port Direction="in" Name="" Num="1"/>
+    </Block>
+    <Block xsi:type="simulinksourcemm:Block" Name="Actuator Force 2 " ID="6" Type="Outport">
+      <Property Name="Port" Type="Int" Value="2"/>
+      <Property Name="Position" Type="Array:Int" Value="[90, 60, 120, 74]"/>
+      <Property Name="PortDimensions" Type="Int" Value="-1"/>
+      <Port Direction="in" Name="" Num="1"/>
+    </Block>
+    <Connection src="//@Block.0/@Block.0/@Port.0" dst="//@Block.0/@Block.3/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.2/@Port.0" dst="//@Block.0/@Block.3/@Port.1" Name=""/>
+    <Connection src="//@Block.0/@Block.3/@Port.3" dst="//@Block.0/@Block.4/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.3/@Port.4" dst="//@Block.0/@Block.5/@Port.0" Name=""/>
+    <Connection src="//@Block.0/@Block.1/@Port.0" dst="//@Block.0/@Block.3/@Port.2" Name=""/>
+  </Block>
+</simulinksourcemm:Model>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_x-39IHTfEeW7wJqJKPbjZg" name="Human">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_x-39IXTfEeW7wJqJKPbjZg" name="Human" node="_x-39LXTfEeW7wJqJKPbjZg _x-39LnTfEeW7wJqJKPbjZg _x-39L3TfEeW7wJqJKPbjZg _x-39MHTfEeW7wJqJKPbjZg _x-39MXTfEeW7wJqJKPbjZg _x-39MnTfEeW7wJqJKPbjZg _x-39M3TfEeW7wJqJKPbjZg _x-39NHTfEeW7wJqJKPbjZg _x-39NXTfEeW7wJqJKPbjZg _x-39NnTfEeW7wJqJKPbjZg _x-39N3TfEeW7wJqJKPbjZg">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_x-39InTfEeW7wJqJKPbjZg" name="ControlFlow" source="_x-39LXTfEeW7wJqJKPbjZg" target="_x-39LnTfEeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_x-39I3TfEeW7wJqJKPbjZg" name="ControlFlow" source="_x-39LnTfEeW7wJqJKPbjZg" target="_x-39L3TfEeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_x-39JHTfEeW7wJqJKPbjZg" name="ControlFlow" source="_x-39L3TfEeW7wJqJKPbjZg" target="_x-39M3TfEeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_x-39JXTfEeW7wJqJKPbjZg" name="ControlFlow" source="_x-39MXTfEeW7wJqJKPbjZg" target="_x-39NnTfEeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_x-39JnTfEeW7wJqJKPbjZg" name="ControlFlow" source="_x-39MnTfEeW7wJqJKPbjZg" target="_x-39NnTfEeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_x-39J3TfEeW7wJqJKPbjZg" name="ControlFlow" source="_x-39NnTfEeW7wJqJKPbjZg" target="_x-39N3TfEeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_x-39KHTfEeW7wJqJKPbjZg" name="ControlFlowtrue" source="_x-39M3TfEeW7wJqJKPbjZg" target="_x-39NHTfEeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_x-39KXTfEeW7wJqJKPbjZg" name="ControlFlowfalse" source="_x-39M3TfEeW7wJqJKPbjZg" target="_x-39NXTfEeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_x-39KnTfEeW7wJqJKPbjZg" name="ControlFlowtrue" source="_x-39NHTfEeW7wJqJKPbjZg" target="_x-39MHTfEeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_x-39K3TfEeW7wJqJKPbjZg" name="ControlFlowtrue" source="_x-39NXTfEeW7wJqJKPbjZg" target="_x-39MXTfEeW7wJqJKPbjZg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_x-39LHTfEeW7wJqJKPbjZg" name="ControlFlowfalse" source="_x-39NXTfEeW7wJqJKPbjZg" target="_x-39MnTfEeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_x-39LXTfEeW7wJqJKPbjZg" name="Embedded Code" outgoing="_x-39InTfEeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_x-39LnTfEeW7wJqJKPbjZg" name="Grid Neighbors" outgoing="_x-39I3TfEeW7wJqJKPbjZg" incoming="_x-39InTfEeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_x-39L3TfEeW7wJqJKPbjZg" name="Initialize loop" outgoing="_x-39JHTfEeW7wJqJKPbjZg" incoming="_x-39I3TfEeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_x-39MHTfEeW7wJqJKPbjZg" name="Point with least zombies" incoming="_x-39KnTfEeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_x-39MXTfEeW7wJqJKPbjZg" name="Move" outgoing="_x-39JXTfEeW7wJqJKPbjZg" incoming="_x-39K3TfEeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_x-39MnTfEeW7wJqJKPbjZg" name="Reset energy" outgoing="_x-39JnTfEeW7wJqJKPbjZg" incoming="_x-39LHTfEeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_x-39M3TfEeW7wJqJKPbjZg" name="GridCell cell in gridCellswhile" outgoing="_x-39KHTfEeW7wJqJKPbjZg _x-39KXTfEeW7wJqJKPbjZg" incoming="_x-39JHTfEeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_x-39NHTfEeW7wJqJKPbjZg" name="cell.size() &lt; minCountif" outgoing="_x-39KnTfEeW7wJqJKPbjZg" incoming="_x-39KHTfEeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_x-39NXTfEeW7wJqJKPbjZg" name="energy > 0if" outgoing="_x-39K3TfEeW7wJqJKPbjZg _x-39LHTfEeW7wJqJKPbjZg" incoming="_x-39KXTfEeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:MergeNode" xmi:id="_x-39NnTfEeW7wJqJKPbjZg" name="MergeNode0" outgoing="_x-39J3TfEeW7wJqJKPbjZg" incoming="_x-39JXTfEeW7wJqJKPbjZg _x-39JnTfEeW7wJqJKPbjZg"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_x-39N3TfEeW7wJqJKPbjZg" name="FinalNode" incoming="_x-39J3TfEeW7wJqJKPbjZg"/>
+  </packagedElement>
+</uml:Model>

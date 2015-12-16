@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="SysML2Simulink" default="Sys2Sim">
+	<property name="rootModelName" value="${model}" />
+	<property name="modelName" value="${subModel}" />
+	<property name="metaModelPath" value="../../MetaModels" />
+	<property name="modelPath" value="../../Models/" />
+	<property name="transPath" value="./" />
+	
+	<target name="Sys2Sim">
+
+		<atl.loadModel name="SimulinkSourceMM" metamodel="MOF" path="${metaModelPath}/SimulinkSourceMM.ecore"/>
+		<atl.loadModel name="Source" metamodel="MOF" path="${metaModelPath}/SimulinkSourceMM.ecore"/>
+    	<atl.loadModel name="SimulinkMM" metamodel="MOF" path="${metaModelPath}/SimulinkMM.ecore"/>
+		<atl.loadModel name="SysML" metamodel="MOF" nsUri="http://www.eclipse.org/papyrus/0.7.0/SysML"/>
+		<atl.loadModel name="SysMLGUI" metamodel="MOF" nsUri="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
+    	<atl.loadModel name="SysMLModel" metamodel="SysML" path="${modelPath}/SysML/${rootModelName}/${modelName}.uml"/>
+    	<atl.loadModel name="SysMLNotation" metamodel="SysMLGUI" path="${modelPath}/SysML/${rootModelName}/${modelName}.notation"/>
+
+		<atl.launch path="${transPath}/ATL/SysML2SourceCompressed.asm">
+			<option name="allowInterModelReferences" value="true"/>
+			<inmodel name="src" model="SysMLModel"/>
+			<inmodel name="sysGUI" model="SysMLNotation"/>
+			<outmodel name="trgt" model="srcCompModel" metamodel="Source"/>
+		</atl.launch>
+
+		<atl.launch path="${transPath}/ATL/SourceCompressed2Source.asm">
+			<option name="allowInterModelReferences" value="true"/>
+			<inmodel name="srccomp" model="srcCompModel"/>
+			<outmodel name="src" model="srcModel" metamodel="Source"/>
+		</atl.launch>
+
+		<atl.launch path="${transPath}/ATL/Source2Simulink.asm">
+			<option name="allowInterModelReferences" value="true"/>
+			<inmodel name="inputModel" model="srcModel"/>
+			<outmodel name="outputModel" model="simModel" metamodel="SimulinkMM"/>
+		</atl.launch>
+
+		<atl.saveModel derived="false" model="simModel" path="${modelPath}/PIM/${rootModelName}/${modelName}/Simulink_Structural.xmi"/>
+
+		<xslt style="${transPath}/XSLT/SimulinkStructural2BlockDiagram.xsl"
+			in="${modelPath}/PIM/${rootModelName}/${modelName}/Simulink_Structural.xmi"
+			out="${modelPath}/PIM/${rootModelName}/${modelName}_slx/simulink/blockdiagram.xml"
+			force="true">
+			<param name="settingsFileName" expression="../${modelPath}/PIM/${rootModelName}/${modelName}/Simulink_Settings.xmi"/>
+		</xslt>
+
+		<!-- Add some stuff here for creating rest of Simulink stuff (if if doesn't exist) -->
+
+		<zip destfile="${modelPath}/Simulink/${rootModelName}/${modelName}.slx" basedir="${modelPath}/PIM/${rootModelName}/${modelName}_slx" />
+
+		<delete file="${modelPath}/PIM/${rootModelName}/${modelName}/Simulink_Structural.xmi" />
+
+		<!-- Would like to at some point make Simulink Settings have Stateflow stuff -->
+		<!--delete file="${modelPath}/${rootModelName}/${modelName}_slx/simulink/blockdiagram.xml" /-->
+
+	</target>
+	
+</project>

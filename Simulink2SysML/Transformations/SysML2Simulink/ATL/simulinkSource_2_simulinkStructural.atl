@@ -1,0 +1,395 @@
+-- @path SimulinkMM=/SysML_2_Simulink_kaan/metamodels/SimulinkMM.ecore
+-- @path SimulinkSourceMM=/SysML_2_Simulink_kaan/metamodels/SimulinkSourceMM.ecore
+
+
+module simulinkSource_2_simulinkStructural;
+create outputModel: SimulinkMM from inputModel: SimulinkSourceMM;
+
+-- TODO Annotation
+
+helper def: globalModelInformation: SimulinkMM!ModelInformation = OclUndefined;
+
+rule model_2_modelInformation {
+	from
+		model: SimulinkSourceMM!Model
+		
+	to
+		modelInformation: SimulinkMM!ModelInformation(
+			Version <- '0.9'
+		)
+	do{
+		thisModule.globalModelInformation <- modelInformation;
+	}
+	
+}
+
+rule system_2_model {
+	from
+		system: SimulinkSourceMM!System (system.ID = 'Root')
+
+	to
+		outputModel: SimulinkMM!Model(
+			Name <- system.Name
+		)
+		
+	do{
+		thisModule.globalModelInformation.Model <- outputModel;
+		
+		outputModel.System <- SimulinkMM!System.newInstance();
+		
+		for (it in system.Property){
+			thisModule.property_2_property(it);
+			
+			-- Remove this string 'System - '
+			SimulinkMM!Property.allInstances().last().Name <- SimulinkMM!Property.allInstances().last().Name.substring(10, SimulinkMM!Property.allInstances().last().Name.size()) ;
+			outputModel.System.Property <- outputModel.System.Property.append(SimulinkMM!Property.allInstances().last());
+		}
+		
+		for (it in system.Block){
+			if(it.oclIsTypeOf(SimulinkSourceMM!System)){
+				thisModule.system_2_SubSystem(outputModel.System, it);
+			}
+			else if(it.oclIsTypeOf(SimulinkSourceMM!Block)){
+				if(it.Type = 'S-Function')
+					thisModule.sFunction_2_sFunction(outputModel.System, it);
+				else
+					thisModule.block_2_block(outputModel.System, it);
+			}
+		}
+		
+		for (it in system.Connection){
+			thisModule.connection_2_Line(outputModel.System, it);
+		}
+	}
+}
+
+rule property_2_property (inputProperty: SimulinkSourceMM!Property){
+	using{
+		newProperty		: SimulinkMM!Property	= OclUndefined;
+		newValue		: SimulinkMM!Value		= OclUndefined;
+		newEntry		: SimulinkMM!Property	= OclUndefined;
+		newEntryValue	: SimulinkMM!Property	= OclUndefined;
+		iterationIndex	: Integer				= 0;
+		entryArray		: Sequence(String)		= OclUndefined;
+	}
+	
+	to outputProperty: SimulinkMM!Property(
+		Name <- inputProperty.Name
+	)
+	
+	do{
+		--outputProperty <- SimulinkMM!Property.newInstance();
+		
+		if(inputProperty.Type = 'Array:Int'){
+			newValue <- SimulinkMM!ValueArray.newInstance();
+			
+			entryArray <- inputProperty.Value.toString().substring(2, inputProperty.Value.size()-1).split(', ');
+			iterationIndex <- 0;
+			for (it2 in entryArray) {
+				newEntry <- SimulinkMM!Entry.newInstance();
+				newEntry.Index <- iterationIndex;
+				newValue.Entry <- newValue.Entry.append(newEntry);
+				
+				newEntryValue <- SimulinkMM!SimInt.newInstance();
+				newEntryValue.Value <- it2.toInteger();
+				newEntry.Value <- newEntryValue;
+				
+				iterationIndex <- iterationIndex + 1;
+			}
+		}
+		else if(inputProperty.Type = 'Array:Float'){
+			newValue <- SimulinkMM!ValueArray.newInstance();
+			
+			entryArray <- inputProperty.Value.toString().substring(2, inputProperty.Value.size()-1).split(', ');
+			iterationIndex <- 0;
+			for (it2 in entryArray) {
+				newEntry <- SimulinkMM!Entry.newInstance();
+				newEntry.Index <- iterationIndex;
+				newValue.Entry <- newValue.Entry.append(newEntry);
+				
+				newEntryValue <- SimulinkMM!SimFloat.newInstance(); -- We changed here for RoboSoccer after the first version (T_1_S). It was: newEntryValue <- SimulinkMM!SimFloat.newInstance();
+				newEntryValue.Value <- it2.toReal();
+				newEntry.Value <- newEntryValue;
+				
+				iterationIndex <- iterationIndex + 1;
+			}
+		}
+		else if(inputProperty.Type = 'Boolean'){
+			newValue <- SimulinkMM!SimBool.newInstance();
+			newValue.Value <- thisModule.toBoolean(inputProperty.Value);
+		}
+		else if (inputProperty.Type = 'Int'){
+			newValue <- SimulinkMM!SimInt.newInstance();
+			newValue.Value <- inputProperty.Value.toInteger();
+		}
+		else if (inputProperty.Type = 'Float'){
+			newValue <- SimulinkMM!SimFloat.newInstance();
+			newValue.Value <- inputProperty.Value.toReal();
+		}
+		else{
+			newValue <- SimulinkMM!SimString.newInstance();
+			newValue.Value <- inputProperty.Value;
+		}
+		
+		outputProperty.Value <- newValue;
+	}
+	
+}
+
+rule block_2_block (parent: SimulinkMM!System, inputBlock: SimulinkSourceMM!Block){
+	using{
+		iterationIndex : Integer = 0;
+	}
+	
+	to outputBlock: SimulinkMM!Block(
+		Name <- inputBlock.Name,
+		SID <- inputBlock.ID,
+		BlockType <- inputBlock.Type
+	)
+	
+	do{
+	--	if(inputBlock.Type = 'Demux')
+		thisModule.portsPropertyAdder(inputBlock, outputBlock);
+		
+		parent.Block <- parent.Block.append(outputBlock);
+		for(it in inputBlock.Property){
+			thisModule.property_2_property(it);
+			outputBlock.Property <- outputBlock.Property.append(SimulinkMM!Property.allInstances().last());
+		}
+	}
+}
+
+rule sFunction_2_sFunction (parent: SimulinkMM!System, inputBlock: SimulinkSourceMM!Block){
+	using{
+		iterationIndex : Integer = 0;
+		tempPort: SimulinkMM!Port = OclUndefined;
+	}
+	
+	to outputBlock: SimulinkMM!Block(
+		Name <- inputBlock.Name,
+		SID <- inputBlock.ID,
+		BlockType <- inputBlock.Type
+	)
+	
+	do{
+		thisModule.portsPropertyAdder(inputBlock, outputBlock);
+		
+		parent.Block <- parent.Block.append(outputBlock);
+		for(it in inputBlock.Property){
+			thisModule.property_2_property(it);
+			outputBlock.Property <- outputBlock.Property.append(SimulinkMM!Property.allInstances().last());
+		}
+		
+		for(it in inputBlock.Port){
+			if(not (it.Name = '')){
+				tempPort <- SimulinkMM!Port.newInstance();
+				tempPort.PortNumber <- it.Num;
+				tempPort.Name <- it.Name;
+				tempPort.DataLoggingNameMode <- 'SignalName';
+				tempPort.RTWStorageClass <- 'Auto';
+				
+				outputBlock.Port <- outputBlock.Port.append(tempPort);
+			}
+		}
+	}
+}
+
+rule system_2_SubSystem (parentSystem: SimulinkMM!System, inputBlock: SimulinkSourceMM!Block){
+	using{
+		iterationIndex : Integer = 0;
+		newBlock: SimulinkMM!Block = OclUndefined;
+		systemProperties: Sequence(SimulinkMM!Property) = Sequence{};
+	}
+	
+	to outputBlock: SimulinkMM!SubSystemBlock(
+		BlockType <- 'SubSystem',
+		Name <- inputBlock.Name,
+		SID <- inputBlock.ID,
+		System <- SimulinkMM!System.newInstance()
+	)
+	
+	do{
+		outputBlock.Name.debug();
+		thisModule.portsPropertyAdder(inputBlock, outputBlock);
+		
+		for (it in inputBlock.Block){
+			parentSystem.Block <- parentSystem.Block.append(outputBlock);
+			if(it.oclIsTypeOf(SimulinkSourceMM!System))
+				thisModule.system_2_SubSystem(outputBlock.System, it);
+			else if(it.Type = 'S-Function')
+				thisModule.sFunction_2_sFunction(outputBlock.System, it);
+			else
+				thisModule.block_2_block(outputBlock.System, it);
+		}
+		
+		for(it in inputBlock.Property){
+			thisModule.property_2_property(it);
+			if(it.Name.startsWith('System - ')){
+				SimulinkMM!Property.allInstances().last().Name <- SimulinkMM!Property.allInstances().last().Name.substring(10, SimulinkMM!Property.allInstances().last().Name.size()) ;
+				outputBlock.System.Property <- outputBlock.System.Property.append(SimulinkMM!Property.allInstances().last());
+			}
+			else{
+				outputBlock.Property <- outputBlock.Property.append(SimulinkMM!Property.allInstances().last());
+			}
+		}
+		
+		for (it in inputBlock.Connection){
+			thisModule.connection_2_Line(outputBlock.System, it);
+		}
+	}
+}
+
+
+rule connection_2_Line(parentSystem: SimulinkMM!System, inputConnection: SimulinkSourceMM!Connection){
+	using{
+		tempProperty: SimulinkMM!Property = OclUndefined;
+		tempValue: SimulinkMM!Value = OclUndefined;
+		tempEntry: SimulinkMM!Entry = OclUndefined;
+		tempEntryValue: SimulinkMM!SimInt = OclUndefined;
+	}
+	
+	to outputLine: SimulinkMM!Line()
+	
+	do{
+		if(not (inputConnection.Name = OclUndefined)){
+			tempProperty <- SimulinkMM!Property.newInstance();
+			tempProperty.Name <- 'Name';
+			tempValue <- SimulinkMM!SimString.newInstance();
+			tempValue.Value <- inputConnection.Name;
+			tempProperty.Value <- tempValue;
+			outputLine.Property <- outputLine.Property.append(tempProperty);
+			
+			tempProperty <- SimulinkMM!Property.newInstance();
+			tempProperty.Name <- 'Labels';
+			tempValue <- SimulinkMM!ValueArray.newInstance();
+			
+			tempEntry <- SimulinkMM!Entry.newInstance();
+			tempEntry.Index <- 0;
+			tempEntryValue <- SimulinkMM!SimInt.newInstance();
+			tempEntryValue.Value <- 0;
+			tempEntry.Value <- tempEntryValue;
+			tempValue.Entry <- tempValue.Entry.append(tempEntry);
+			
+			tempEntry <- SimulinkMM!Entry.newInstance();
+			tempEntry.Index <- 1;
+			tempEntryValue <- SimulinkMM!SimInt.newInstance();
+			tempEntryValue.Value <- 0;
+			tempEntry.Value <- tempEntryValue;
+			tempValue.Entry <- tempValue.Entry.append(tempEntry);
+			
+			tempProperty.Value <- tempValue;
+			outputLine.Property <- outputLine.Property.append(tempProperty);
+			
+		}
+		
+		tempProperty <- SimulinkMM!Property.newInstance();
+		tempProperty.Name <- 'src';
+		tempValue <- SimulinkMM!SimString.newInstance();
+		tempValue.Value <- inputConnection.src.refImmediateComposite().ID.concat('#').concat(inputConnection.src.Direction).concat(':').concat(inputConnection.src.Num.toString());
+		tempProperty.Value <- tempValue;
+		outputLine.Property <- outputLine.Property.append(tempProperty);
+		
+		tempProperty <- SimulinkMM!Property.newInstance();
+		tempProperty.Name <- 'dst';
+		tempValue <- SimulinkMM!SimString.newInstance();
+		tempValue.Value <- inputConnection.dst.refImmediateComposite().ID.concat('#').concat(inputConnection.dst.Direction).concat(':').concat(inputConnection.dst.Num.toString());
+		tempProperty.Value <- tempValue;
+		outputLine.Property <- outputLine.Property.append(tempProperty);
+		
+		parentSystem.Line <- parentSystem.Line.append(outputLine);
+	}
+}
+
+
+-- For creating "Ports" property in blocks
+rule portsPropertyAdder(inputBlock: SimulinkSourceMM!Block, outputBlock: SimulinkMM!Block){
+	using{
+		inputPortCounter: Integer = 0;
+		outputPortCounter: Integer = 0;
+		portIndex: Integer = 0;
+		portProperty: SimulinkMM!Property = OclUndefined;
+		tempValue: SimulinkMM!Value = OclUndefined;
+		tempEntry: SimulinkMM!Entry = OclUndefined;
+		tempEntryValue: SimulinkMM!Value = OclUndefined;
+	}
+	
+	do{
+		for (it in inputBlock.Port){
+			if(it.Direction = 'in')
+				inputPortCounter <- inputPortCounter + 1;
+			else if(it.Direction = 'out')
+				outputPortCounter <- outputPortCounter + 1;
+		}
+		
+		if (inputPortCounter > 0 or outputPortCounter > 0){
+			portProperty <- SimulinkMM!Property.newInstance();
+			portProperty.Name <- 'Ports';
+			tempValue <- SimulinkMM!ValueArray.newInstance();
+			
+			if (inputPortCounter > 0){
+				tempEntry <- SimulinkMM!Entry.newInstance();
+				tempEntry.Index <- portIndex;
+				portIndex <- portIndex + 1;
+				tempEntryValue <- SimulinkMM!SimInt.newInstance();
+				tempEntryValue.Value <- inputPortCounter;
+				tempEntry.Value <- tempEntryValue;
+				tempValue.Entry <- tempValue.Entry.append(tempEntry);
+			}
+			
+			if (outputPortCounter > 0){
+				tempEntry <- SimulinkMM!Entry.newInstance();
+				tempEntry.Index <- portIndex;
+				tempEntryValue <- SimulinkMM!SimInt.newInstance();
+				tempEntryValue.Value <- outputPortCounter;
+				tempEntry.Value <- tempEntryValue;
+				tempValue.Entry <- tempValue.Entry.append(tempEntry);
+			}
+			
+			portProperty.Value <- tempValue;
+			outputBlock.Property <- outputBlock.Property.append(portProperty);
+		}
+	}
+}
+
+
+helper def : typeConverter (inputType: String): String = 
+	if (inputType = 'Boolean') then
+		'simulinkmm:SimBool'
+	
+	else if (inputType = 'Int') then
+		'simulinkmm:SimInt'
+	
+	else if (inputType = 'Float') then
+		'simulinkmm:SimFloat'	
+	
+	else if (inputType = 'String') then
+		'simulinkmm:SimString'
+	
+	else if (inputType = 'Array:Int') then
+		'simulinkmm:ValueArray'
+	
+	else
+		''
+	
+	endif
+	endif
+	endif
+	endif
+	endif
+;
+
+helper def : isArray (dataType: String): Boolean =
+	if(dataType.startsWith('Array:')) then
+		true
+	else
+		false
+	endif
+;
+
+helper def: toBoolean (data: String): Boolean =
+	if(data.toLower() = 'true') then
+		true
+	else
+		false
+	endif
+;

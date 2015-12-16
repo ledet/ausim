@@ -1,4 +1,6 @@
-/Simulink2Source.asm
-/Source2SourceWPorts.asm
-/Source2SourceCompressed.asm
+/Simulink2SourceDefaults.asm
 /Source2SourceWConnections.asm
+/SysMLFinalize.asm
+/Source2SysML.asm
+/SourcePropertyTypes2SysMLTypes.asm
+/Simulink2Source.asm

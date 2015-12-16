@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<agent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://agent/1.0" version="1" agentcomment="This is an agent." agentclassname="Team_1_Strategy" agentparentclassname="" agentinterfaces="" agentimports="">
+  <behaviorsteps>
+    <behaviorstep x="100" y="173" comment="This is the step behavior." scheduleannotationstart="1" scheduleannotationpick="" scheduleannotationinterval="1" scheduleannotationpriority="1" scheduleannotationduration="1" scheduleannotationshuffle="0" watchannotationid="" watchannotationquery="" watchannotationtargetclassname="" watchannotationtargetfieldnames="" watchannotationtriggercondition="" watchannotationtriggerschedule="1" watchannotationtriggerdelta="1" watchannotationtriggerpriority="1" watchannotationpick="" visibility="0" returntype="def" compiledname="Embedded Code" parameters="double[] ball_position, double[] power, double[] robot_position" exceptions="">
+      <label text="Embedded Code" x="100" y="173"/>
+    </behaviorstep>
+  </behaviorsteps>
+  <tasksteps>
+    <taskstep x="-50" y="174" comment="This is a task." command1="actuator_force_1=-22*d1" command2="" command3="" command4="" command5="">
+      <label text="" x="-50" y="174"/>
+    </taskstep>
+    <taskstep x="134" y="336" comment="This is a task." command1="actuator_force_2=-15*r2" command2="" command3="" command4="" command5="">
+      <label text="" x="134" y="336"/>
+    </taskstep>
+    <taskstep x="4" y="39" comment="This is a task." command1="d1=(robot_position(1:2,1)-ball_position)" command2="" command3="" command4="" command5="">
+      <label text="" x="4" y="39"/>
+    </taskstep>
+    <taskstep x="134" y="192" comment="This is a task." command1="actuator_force_1=-11*r1" command2="" command3="" command4="" command5="">
+      <label text="" x="134" y="192"/>
+    </taskstep>
+    <taskstep x="4" y="75" comment="This is a task." command1="d2=(robot_position(3:4,1)-ball_position)" command2="" command3="" command4="" command5="">
+      <label text="" x="4" y="75"/>
+    </taskstep>
+    <taskstep x="-37" y="318" comment="This is a task." command1="actuator_force_2=-25*d2" command2="" command3="" command4="" command5="">
+      <label text="" x="-37" y="318"/>
+    </taskstep>
+    <taskstep x="134" y="300" comment="This is a task." command1="r2=(ball_position-[200;50])" command2="" command3="" command4="" command5="">
+      <label text="" x="134" y="300"/>
+    </taskstep>
+    <taskstep x="125" y="156" comment="This is a task." command1="r1=(ball_position- [200;50])" command2="" command3="" command4="" command5="">
+      <label text="" x="125" y="156"/>
+    </taskstep>
+  </tasksteps>
+  <decisionsteps>
+    <decisionstep x="-4" y="-4" comment="This is an agent decision." criteria="dot(d2,d2)>5" branchType="if">
+      <label text="" x="-4" y="-4"/>
+    </decisionstep>
+    <decisionstep x="104" y="111" comment="This is an agent decision." criteria="dot(d1,d1)>5" branchType="if">
+      <label text="" x="104" y="111"/>
+    </decisionstep>
+  </decisionsteps>
+  <joinsteps>
+    <joinstep x="98" y="354"/>
+    <joinstep x="-4" y="-4"/>
+  </joinsteps>
+  <agentproperties>
+    <agentproperty x="-10" y="90" comment="This is an agent property." visibility="0" compiledname="Ball Position" type="double[]" defaultvalue="[0,0]">
+      <label text="Ball Position" x="-10" y="90"/>
+    </agentproperty>
+    <agentproperty x="-10" y="117" comment="This is an agent property." visibility="0" compiledname="Power" type="double[]" defaultvalue="[0,0]">
+      <label text="Power" x="-10" y="117"/>
+    </agentproperty>
+    <agentproperty x="-10" y="144" comment="This is an agent property." visibility="0" compiledname="Robot Position" type="double[]" defaultvalue="[0,0]">
+      <label text="Robot Position" x="-10" y="144"/>
+    </agentproperty>
+    <agentproperty x="612" y="108" comment="This is an agent property." visibility="0" compiledname="Actuator Force 1" type="double[]" defaultvalue="[0,0]">
+      <label text="Actuator Force 1" x="612" y="108"/>
+    </agentproperty>
+    <agentproperty x="612" y="135" comment="This is an agent property." visibility="0" compiledname="Actuator Force 2" type="double[]" defaultvalue="[0,0]">
+      <label text="Actuator Force 2" x="612" y="135"/>
+    </agentproperty>
+  </agentproperties>
+  <endsteps>
+    <endstep x="98" y="399"/>
+  </endsteps>
+  <connections>
+    <transitions>
+      <transition>
+        <transitionsource type="task" index="6" anchor="0"/>
+        <transitiontarget type="task" index="1" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="task" index="2" anchor="0"/>
+        <transitiontarget type="task" index="4" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="behavior" index="0" anchor="0"/>
+        <transitiontarget type="task" index="2" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="task" index="0" anchor="0"/>
+        <transitiontarget type="join" index="1" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="task" index="3" anchor="0"/>
+        <transitiontarget type="join" index="1" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="join" index="0" anchor="0"/>
+        <transitiontarget type="end" index="0" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="task" index="4" anchor="0"/>
+        <transitiontarget type="decision" index="1" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="join" index="1" anchor="0"/>
+        <transitiontarget type="decision" index="0" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="task" index="7" anchor="0"/>
+        <transitiontarget type="task" index="3" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="task" index="5" anchor="0"/>
+        <transitiontarget type="join" index="0" anchor="0"/>
+        <bendpoints/>
+      </transition>
+      <transition>
+        <transitionsource type="task" index="1" anchor="0"/>
+        <transitiontarget type="join" index="0" anchor="0"/>
+        <bendpoints/>
+      </transition>
+    </transitions>
+    <booleantransitions>
+      <booleantransition value="true">
+        <transitionsource type="decision" index="0" anchor="0"/>
+        <transitiontarget type="task" index="5" anchor="0"/>
+        <bendpoints/>
+      </booleantransition>
+      <booleantransition value="false">
+        <transitionsource type="decision" index="0" anchor="0"/>
+        <transitiontarget type="task" index="6" anchor="0"/>
+        <bendpoints/>
+      </booleantransition>
+      <booleantransition value="false">
+        <transitionsource type="decision" index="1" anchor="0"/>
+        <transitiontarget type="task" index="7" anchor="0"/>
+        <bendpoints/>
+      </booleantransition>
+      <booleantransition value="true">
+        <transitionsource type="decision" index="1" anchor="0"/>
+        <transitiontarget type="task" index="0" anchor="0"/>
+        <bendpoints/>
+      </booleantransition>
+    </booleantransitions>
+  </connections>
+</agent>

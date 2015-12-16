@@ -1,92 +1,93 @@
-<?xml version="1.0" encoding="UTF-8"?><di:SashWindowsMngr xmlns:di="http://www.eclipse.org/papyrus/0.7.0/sashdi" xmlns:xmi="http://www.omg.org/XMI" xmi:version="2.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<di:SashWindowsMngr xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.eclipse.org/papyrus/0.7.0/sashdi">
   <pageList>
     <availablePage>
-      <emfPageIdentifier href="RoboSoccer.notation#_FmcXsBT7EeWq3M2wkDjRpA"/>
+      <emfPageIdentifier href="RoboSoccer.notation#_6Lx18Jj2EeWc0Z0vgK_QHA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="RoboSoccer.notation#_FmVDDRT7EeWq3M2wkDjRpA"/>
+      <emfPageIdentifier href="RoboSoccer.notation#_6LjznZj2EeWc0Z0vgK_QHA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="RoboSoccer.notation#_FmVDRxT7EeWq3M2wkDjRpA"/>
+      <emfPageIdentifier href="RoboSoccer.notation#_6LkakJj2EeWc0Z0vgK_QHA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="RoboSoccer.notation#_FmVrExT7EeWq3M2wkDjRpA"/>
+      <emfPageIdentifier href="RoboSoccer.notation#_6LkcGZj2EeWc0Z0vgK_QHA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="RoboSoccer.notation#_FmVryRT7EeWq3M2wkDjRpA"/>
+      <emfPageIdentifier href="RoboSoccer.notation#_6LlCTJj2EeWc0Z0vgK_QHA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="RoboSoccer.notation#_FmW4IBT7EeWq3M2wkDjRpA"/>
+      <emfPageIdentifier href="RoboSoccer.notation#_6Lm20Jj2EeWc0Z0vgK_QHA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="RoboSoccer.notation#_FmXgRxT7EeWq3M2wkDjRpA"/>
+      <emfPageIdentifier href="RoboSoccer.notation#_6LosAJj2EeWc0Z0vgK_QHA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="RoboSoccer.notation#_FmYH6xT7EeWq3M2wkDjRpA"/>
+      <emfPageIdentifier href="RoboSoccer.notation#_6LqhMJj2EeWc0Z0vgK_QHA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="RoboSoccer.notation#_FmZ7cBT7EeWq3M2wkDjRpA"/>
+      <emfPageIdentifier href="RoboSoccer.notation#_6LrvUJj2EeWc0Z0vgK_QHA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="RoboSoccer.notation#_FmVC8BT7EeWq3M2wkDjRpA"/>
+      <emfPageIdentifier href="RoboSoccer.notation#_6LjzgJj2EeWc0Z0vgK_QHA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="RoboSoccer.notation#_FmVC8RT7EeWq3M2wkDjRpA"/>
+      <emfPageIdentifier href="RoboSoccer.notation#_6LjzgZj2EeWc0Z0vgK_QHA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="RoboSoccer.notation#_FmVC8hT7EeWq3M2wkDjRpA"/>
+      <emfPageIdentifier href="RoboSoccer.notation#_6Ljzgpj2EeWc0Z0vgK_QHA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="RoboSoccer.notation#_FmVC8xT7EeWq3M2wkDjRpA"/>
+      <emfPageIdentifier href="RoboSoccer.notation#_6Ljzg5j2EeWc0Z0vgK_QHA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="RoboSoccer.notation#_FmVC9BT7EeWq3M2wkDjRpA"/>
+      <emfPageIdentifier href="RoboSoccer.notation#_6LjzhJj2EeWc0Z0vgK_QHA"/>
     </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
-      <children xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="di:TabFolder">
+      <children xsi:type="di:TabFolder">
         <children>
-          <emfPageIdentifier href="RoboSoccer.notation#_FmcXsBT7EeWq3M2wkDjRpA"/>
+          <emfPageIdentifier href="RoboSoccer.notation#_6Lx18Jj2EeWc0Z0vgK_QHA"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboSoccer.notation#_FmVDDRT7EeWq3M2wkDjRpA"/>
+          <emfPageIdentifier href="RoboSoccer.notation#_6LjznZj2EeWc0Z0vgK_QHA"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboSoccer.notation#_FmVDRxT7EeWq3M2wkDjRpA"/>
+          <emfPageIdentifier href="RoboSoccer.notation#_6LkakJj2EeWc0Z0vgK_QHA"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboSoccer.notation#_FmVrExT7EeWq3M2wkDjRpA"/>
+          <emfPageIdentifier href="RoboSoccer.notation#_6LkcGZj2EeWc0Z0vgK_QHA"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboSoccer.notation#_FmVryRT7EeWq3M2wkDjRpA"/>
+          <emfPageIdentifier href="RoboSoccer.notation#_6LlCTJj2EeWc0Z0vgK_QHA"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboSoccer.notation#_FmW4IBT7EeWq3M2wkDjRpA"/>
+          <emfPageIdentifier href="RoboSoccer.notation#_6Lm20Jj2EeWc0Z0vgK_QHA"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboSoccer.notation#_FmXgRxT7EeWq3M2wkDjRpA"/>
+          <emfPageIdentifier href="RoboSoccer.notation#_6LosAJj2EeWc0Z0vgK_QHA"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboSoccer.notation#_FmYH6xT7EeWq3M2wkDjRpA"/>
+          <emfPageIdentifier href="RoboSoccer.notation#_6LqhMJj2EeWc0Z0vgK_QHA"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboSoccer.notation#_FmZ7cBT7EeWq3M2wkDjRpA"/>
+          <emfPageIdentifier href="RoboSoccer.notation#_6LrvUJj2EeWc0Z0vgK_QHA"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboSoccer.notation#_FmVC8BT7EeWq3M2wkDjRpA"/>
+          <emfPageIdentifier href="RoboSoccer.notation#_6LjzgJj2EeWc0Z0vgK_QHA"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboSoccer.notation#_FmVC8RT7EeWq3M2wkDjRpA"/>
+          <emfPageIdentifier href="RoboSoccer.notation#_6LjzgZj2EeWc0Z0vgK_QHA"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboSoccer.notation#_FmVC8hT7EeWq3M2wkDjRpA"/>
+          <emfPageIdentifier href="RoboSoccer.notation#_6Ljzgpj2EeWc0Z0vgK_QHA"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboSoccer.notation#_FmVC8xT7EeWq3M2wkDjRpA"/>
+          <emfPageIdentifier href="RoboSoccer.notation#_6Ljzg5j2EeWc0Z0vgK_QHA"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboSoccer.notation#_FmVC9BT7EeWq3M2wkDjRpA"/>
+          <emfPageIdentifier href="RoboSoccer.notation#_6LjzhJj2EeWc0Z0vgK_QHA"/>
         </children>
       </children>
     </windows>

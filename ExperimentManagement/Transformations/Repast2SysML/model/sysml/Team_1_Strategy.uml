@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_pZLM8Gn6EeW-9dNzEccDQQ" name="Team_1_Strategy">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_pZLM8Wn6EeW-9dNzEccDQQ" name="Team_1_Strategy" node="_pZLNAWn6EeW-9dNzEccDQQ _pZLNAmn6EeW-9dNzEccDQQ _pZLNA2n6EeW-9dNzEccDQQ _pZLNBGn6EeW-9dNzEccDQQ _pZLNBWn6EeW-9dNzEccDQQ _pZLNBmn6EeW-9dNzEccDQQ _pZLNB2n6EeW-9dNzEccDQQ _pZLNCGn6EeW-9dNzEccDQQ _pZLNCWn6EeW-9dNzEccDQQ _pZLNCmn6EeW-9dNzEccDQQ _pZLNC2n6EeW-9dNzEccDQQ _pZLNDGn6EeW-9dNzEccDQQ _pZLNDWn6EeW-9dNzEccDQQ _pZLNDmn6EeW-9dNzEccDQQ">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pZLM8mn6EeW-9dNzEccDQQ" name="ControlFlow" source="_pZLNBWn6EeW-9dNzEccDQQ" target="_pZLNDGn6EeW-9dNzEccDQQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pZLM82n6EeW-9dNzEccDQQ" name="ControlFlow" source="_pZLNBmn6EeW-9dNzEccDQQ" target="_pZLNAmn6EeW-9dNzEccDQQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pZLM9Gn6EeW-9dNzEccDQQ" name="ControlFlow" source="_pZLNCGn6EeW-9dNzEccDQQ" target="_pZLNBWn6EeW-9dNzEccDQQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pZLM9Wn6EeW-9dNzEccDQQ" name="ControlFlow" source="_pZLNB2n6EeW-9dNzEccDQQ" target="_pZLNDWn6EeW-9dNzEccDQQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pZLM9mn6EeW-9dNzEccDQQ" name="ControlFlow" source="_pZLNBGn6EeW-9dNzEccDQQ" target="_pZLNDWn6EeW-9dNzEccDQQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pZLM92n6EeW-9dNzEccDQQ" name="ControlFlow" source="_pZLNAWn6EeW-9dNzEccDQQ" target="_pZLNBmn6EeW-9dNzEccDQQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pZLM-Gn6EeW-9dNzEccDQQ" name="ControlFlow" source="_pZLNAmn6EeW-9dNzEccDQQ" target="_pZLNCmn6EeW-9dNzEccDQQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pZLM-Wn6EeW-9dNzEccDQQ" name="ControlFlow" source="_pZLNCWn6EeW-9dNzEccDQQ" target="_pZLNB2n6EeW-9dNzEccDQQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pZLM-mn6EeW-9dNzEccDQQ" name="ControlFlow" source="_pZLNDGn6EeW-9dNzEccDQQ" target="_pZLNC2n6EeW-9dNzEccDQQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pZLM-2n6EeW-9dNzEccDQQ" name="ControlFlow" source="_pZLNDWn6EeW-9dNzEccDQQ" target="_pZLNDmn6EeW-9dNzEccDQQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pZLM_Gn6EeW-9dNzEccDQQ" name="ControlFlow" source="_pZLNA2n6EeW-9dNzEccDQQ" target="_pZLNDGn6EeW-9dNzEccDQQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pZLM_Wn6EeW-9dNzEccDQQ" name="ControlFlowtrue" source="_pZLNCmn6EeW-9dNzEccDQQ" target="_pZLNA2n6EeW-9dNzEccDQQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pZLM_mn6EeW-9dNzEccDQQ" name="ControlFlowtrue" source="_pZLNC2n6EeW-9dNzEccDQQ" target="_pZLNBGn6EeW-9dNzEccDQQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pZLM_2n6EeW-9dNzEccDQQ" name="ControlFlowfalse" source="_pZLNCmn6EeW-9dNzEccDQQ" target="_pZLNCGn6EeW-9dNzEccDQQ"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_pZLNAGn6EeW-9dNzEccDQQ" name="ControlFlowfalse" source="_pZLNC2n6EeW-9dNzEccDQQ" target="_pZLNCWn6EeW-9dNzEccDQQ"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_pZLNAWn6EeW-9dNzEccDQQ" name="Embedded Code" outgoing="_pZLM92n6EeW-9dNzEccDQQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_pZLNAmn6EeW-9dNzEccDQQ" name="d2=(robot_position(3:4,1)-ball_position)" outgoing="_pZLM-Gn6EeW-9dNzEccDQQ" incoming="_pZLM82n6EeW-9dNzEccDQQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_pZLNA2n6EeW-9dNzEccDQQ" name="actuator_force_1=-22*d1" outgoing="_pZLM_Gn6EeW-9dNzEccDQQ" incoming="_pZLM_Wn6EeW-9dNzEccDQQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_pZLNBGn6EeW-9dNzEccDQQ" name="actuator_force_2=-25*d2" outgoing="_pZLM9mn6EeW-9dNzEccDQQ" incoming="_pZLM_mn6EeW-9dNzEccDQQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_pZLNBWn6EeW-9dNzEccDQQ" name="actuator_force_1=-11*r1" outgoing="_pZLM8mn6EeW-9dNzEccDQQ" incoming="_pZLM9Gn6EeW-9dNzEccDQQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_pZLNBmn6EeW-9dNzEccDQQ" name="d1=(robot_position(1:2,1)-ball_position)" outgoing="_pZLM82n6EeW-9dNzEccDQQ" incoming="_pZLM92n6EeW-9dNzEccDQQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_pZLNB2n6EeW-9dNzEccDQQ" name="actuator_force_2=-15*r2" outgoing="_pZLM9Wn6EeW-9dNzEccDQQ" incoming="_pZLM-Wn6EeW-9dNzEccDQQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_pZLNCGn6EeW-9dNzEccDQQ" name="r1=(ball_position- [200;50])" outgoing="_pZLM9Gn6EeW-9dNzEccDQQ" incoming="_pZLM_2n6EeW-9dNzEccDQQ"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_pZLNCWn6EeW-9dNzEccDQQ" name="r2=(ball_position-[200;50])" outgoing="_pZLM-Wn6EeW-9dNzEccDQQ" incoming="_pZLNAGn6EeW-9dNzEccDQQ"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_pZLNCmn6EeW-9dNzEccDQQ" name="dot(d1,d1)>5" outgoing="_pZLM_Wn6EeW-9dNzEccDQQ _pZLM_2n6EeW-9dNzEccDQQ" incoming="_pZLM-Gn6EeW-9dNzEccDQQ"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_pZLNC2n6EeW-9dNzEccDQQ" name="dot(d2,d2)>5" outgoing="_pZLM_mn6EeW-9dNzEccDQQ _pZLNAGn6EeW-9dNzEccDQQ" incoming="_pZLM-mn6EeW-9dNzEccDQQ"/>
+    <node xmi:type="uml:MergeNode" xmi:id="_pZLNDGn6EeW-9dNzEccDQQ" name="MergeNode0" outgoing="_pZLM-mn6EeW-9dNzEccDQQ" incoming="_pZLM8mn6EeW-9dNzEccDQQ _pZLM_Gn6EeW-9dNzEccDQQ"/>
+    <node xmi:type="uml:MergeNode" xmi:id="_pZLNDWn6EeW-9dNzEccDQQ" name="MergeNode1" outgoing="_pZLM-2n6EeW-9dNzEccDQQ" incoming="_pZLM9Wn6EeW-9dNzEccDQQ _pZLM9mn6EeW-9dNzEccDQQ"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_pZLNDmn6EeW-9dNzEccDQQ" name="FinalNode" incoming="_pZLM-2n6EeW-9dNzEccDQQ"/>
+  </packagedElement>
+</uml:Model>
